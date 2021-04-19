@@ -3447,6 +3447,279 @@ function Item({
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Card/Card.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Card": () => (/* binding */ Card)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/i18n/hooks.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/i18n/hooks.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _Popover_Popover_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Popover/Popover.js */ "./node_modules/@shopify/polaris/dist/esm/components/Popover/Popover.js");
+/* harmony import */ var _ActionList_ActionList_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../ActionList/ActionList.js */ "./node_modules/@shopify/polaris/dist/esm/components/ActionList/ActionList.js");
+/* harmony import */ var _Button_Button_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Button/Button.js */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var _Button_utils_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Button/utils.js */ "./node_modules/@shopify/polaris/dist/esm/components/Button/utils.js");
+/* harmony import */ var _utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilities/use-toggle.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/use-toggle.js");
+/* harmony import */ var _utilities_within_content_context_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../utilities/within-content-context.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/within-content-context.js");
+/* harmony import */ var _ButtonGroup_ButtonGroup_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../ButtonGroup/ButtonGroup.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js");
+/* harmony import */ var _Card_scss_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Card.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.scss.js");
+/* harmony import */ var _components_Header_Header_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Header/Header.js */ "./node_modules/@shopify/polaris/dist/esm/components/Card/components/Header/Header.js");
+/* harmony import */ var _components_Section_Section_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Section/Section.js */ "./node_modules/@shopify/polaris/dist/esm/components/Card/components/Section/Section.js");
+/* harmony import */ var _components_Subsection_Subsection_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Subsection/Subsection.js */ "./node_modules/@shopify/polaris/dist/esm/components/Card/components/Subsection/Subsection.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TypeScript can't generate types that correctly infer the typing of
+// subcomponents so explicitly state the subcomponents in the type definition.
+// Letting this be implicit works in this project but fails in projects that use
+// generated *.d.ts files.
+const Card = function Card({
+  children,
+  hideOnPrint,
+  title,
+  subdued,
+  sectioned,
+  actions,
+  primaryFooterAction,
+  secondaryFooterActions,
+  secondaryFooterActionsDisclosureText,
+  footerActionAlignment = 'right'
+}) {
+  const i18n = (0,_utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_1__.useI18n)();
+  const {
+    value: secondaryActionsPopoverOpen,
+    toggle: toggleSecondaryActionsPopoverOpen
+  } = (0,_utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_2__.useToggle)(false);
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_3__.classNames)(_Card_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.Card, subdued && _Card_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.subdued, hideOnPrint && _Card_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.hideOnPrint);
+  const headerMarkup = title || actions ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Header_Header_js__WEBPACK_IMPORTED_MODULE_5__.Header, {
+    actions: actions,
+    title: title
+  }) : null;
+  const content = sectioned ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Section_Section_js__WEBPACK_IMPORTED_MODULE_6__.Section, null, children) : children;
+  const primaryFooterActionMarkup = primaryFooterAction ? (0,_Button_utils_js__WEBPACK_IMPORTED_MODULE_7__.buttonFrom)(primaryFooterAction, {
+    primary: true
+  }) : null;
+  let secondaryFooterActionsMarkup = null;
+
+  if (secondaryFooterActions && secondaryFooterActions.length) {
+    if (secondaryFooterActions.length === 1) {
+      secondaryFooterActionsMarkup = (0,_Button_utils_js__WEBPACK_IMPORTED_MODULE_7__.buttonFrom)(secondaryFooterActions[0]);
+    } else {
+      secondaryFooterActionsMarkup = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Popover_Popover_js__WEBPACK_IMPORTED_MODULE_8__.Popover, {
+        active: secondaryActionsPopoverOpen,
+        activator: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Button_Button_js__WEBPACK_IMPORTED_MODULE_9__.Button, {
+          disclosure: true,
+          onClick: toggleSecondaryActionsPopoverOpen
+        }, secondaryFooterActionsDisclosureText || i18n.translate('Polaris.Common.more')),
+        onClose: toggleSecondaryActionsPopoverOpen
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ActionList_ActionList_js__WEBPACK_IMPORTED_MODULE_10__.ActionList, {
+        items: secondaryFooterActions
+      })));
+    }
+  }
+
+  const footerMarkup = primaryFooterActionMarkup || secondaryFooterActionsMarkup ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_3__.classNames)(_Card_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.Footer, footerActionAlignment === 'left' && _Card_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.LeftJustified)
+  }, footerActionAlignment === 'right' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ButtonGroup_ButtonGroup_js__WEBPACK_IMPORTED_MODULE_11__.ButtonGroup, null, secondaryFooterActionsMarkup, primaryFooterActionMarkup) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ButtonGroup_ButtonGroup_js__WEBPACK_IMPORTED_MODULE_11__.ButtonGroup, null, primaryFooterActionMarkup, secondaryFooterActionsMarkup)) : null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_utilities_within_content_context_js__WEBPACK_IMPORTED_MODULE_12__.WithinContentContext.Provider, {
+    value: true
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: className
+  }, headerMarkup, content, footerMarkup));
+};
+Card.Header = _components_Header_Header_js__WEBPACK_IMPORTED_MODULE_5__.Header;
+Card.Section = _components_Section_Section_js__WEBPACK_IMPORTED_MODULE_6__.Section;
+Card.Subsection = _components_Subsection_Subsection_js__WEBPACK_IMPORTED_MODULE_13__.Subsection;
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.scss.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Card/Card.scss.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "Card": "Polaris-Card",
+  "subdued": "Polaris-Card--subdued",
+  "Section-hideOnPrint": "Polaris-Card__Section--hideOnPrint",
+  "hideOnPrint": "Polaris-Card--hideOnPrint",
+  "Header": "Polaris-Card__Header",
+  "Section": "Polaris-Card__Section",
+  "Section-fullWidth": "Polaris-Card__Section--fullWidth",
+  "Section-flush": "Polaris-Card__Section--flush",
+  "Section-subdued": "Polaris-Card__Section--subdued",
+  "SectionHeader": "Polaris-Card__SectionHeader",
+  "Subsection": "Polaris-Card__Subsection",
+  "Footer": "Polaris-Card__Footer",
+  "LeftJustified": "Polaris-Card__LeftJustified"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Card/components/Header/Header.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Card/components/Header/Header.js ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Header": () => (/* binding */ Header)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Button_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Button/utils.js */ "./node_modules/@shopify/polaris/dist/esm/components/Button/utils.js");
+/* harmony import */ var _ButtonGroup_ButtonGroup_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../ButtonGroup/ButtonGroup.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js");
+/* harmony import */ var _Stack_Stack_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Stack/Stack.js */ "./node_modules/@shopify/polaris/dist/esm/components/Stack/Stack.js");
+/* harmony import */ var _Heading_Heading_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Heading/Heading.js */ "./node_modules/@shopify/polaris/dist/esm/components/Heading/Heading.js");
+/* harmony import */ var _Card_scss_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Card.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.scss.js");
+
+
+
+
+
+
+
+function Header({
+  children,
+  title,
+  actions
+}) {
+  const actionMarkup = actions ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ButtonGroup_ButtonGroup_js__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, null, (0,_Button_utils_js__WEBPACK_IMPORTED_MODULE_2__.buttonsFrom)(actions, {
+    plain: true
+  })) : null;
+  const titleMarkup = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.isValidElement)(title) ? title : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Heading_Heading_js__WEBPACK_IMPORTED_MODULE_3__.Heading, null, title);
+  const headingMarkup = actionMarkup || children ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Stack_Stack_js__WEBPACK_IMPORTED_MODULE_4__.Stack, {
+    alignment: "baseline"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Stack_Stack_js__WEBPACK_IMPORTED_MODULE_4__.Stack.Item, {
+    fill: true
+  }, titleMarkup), actionMarkup, children) : titleMarkup;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Card_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.Header
+  }, headingMarkup);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Card/components/Section/Section.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Card/components/Section/Section.js ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Section": () => (/* binding */ Section)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _Button_utils_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Button/utils.js */ "./node_modules/@shopify/polaris/dist/esm/components/Button/utils.js");
+/* harmony import */ var _ButtonGroup_ButtonGroup_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../ButtonGroup/ButtonGroup.js */ "./node_modules/@shopify/polaris/dist/esm/components/ButtonGroup/ButtonGroup.js");
+/* harmony import */ var _Stack_Stack_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Stack/Stack.js */ "./node_modules/@shopify/polaris/dist/esm/components/Stack/Stack.js");
+/* harmony import */ var _Card_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Card.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.scss.js");
+/* harmony import */ var _Subheading_Subheading_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Subheading/Subheading.js */ "./node_modules/@shopify/polaris/dist/esm/components/Subheading/Subheading.js");
+
+
+
+
+
+
+
+
+function Section({
+  children,
+  title,
+  subdued,
+  flush,
+  fullWidth,
+  actions,
+  hideOnPrint
+}) {
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_1__.classNames)(_Card_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.Section, flush && _Card_scss_js__WEBPACK_IMPORTED_MODULE_2__.default["Section-flush"], subdued && _Card_scss_js__WEBPACK_IMPORTED_MODULE_2__.default["Section-subdued"], fullWidth && _Card_scss_js__WEBPACK_IMPORTED_MODULE_2__.default["Section-fullWidth"], hideOnPrint && _Card_scss_js__WEBPACK_IMPORTED_MODULE_2__.default["Section-hideOnPrint"]);
+  const actionMarkup = actions ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ButtonGroup_ButtonGroup_js__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, null, (0,_Button_utils_js__WEBPACK_IMPORTED_MODULE_4__.buttonsFrom)(actions, {
+    plain: true
+  })) : null;
+  const titleMarkup = typeof title === 'string' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Subheading_Subheading_js__WEBPACK_IMPORTED_MODULE_5__.Subheading, null, title) : title;
+  const titleAreaMarkup = titleMarkup || actionMarkup ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Card_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.SectionHeader
+  }, actionMarkup ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Stack_Stack_js__WEBPACK_IMPORTED_MODULE_6__.Stack, {
+    alignment: "baseline"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Stack_Stack_js__WEBPACK_IMPORTED_MODULE_6__.Stack.Item, {
+    fill: true
+  }, titleMarkup), actionMarkup) : titleMarkup) : null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: className
+  }, titleAreaMarkup, children);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Card/components/Subsection/Subsection.js":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Card/components/Subsection/Subsection.js ***!
+  \****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Subsection": () => (/* binding */ Subsection)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Card_scss_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Card.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.scss.js");
+
+
+
+function Subsection({
+  children
+}) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Card_scss_js__WEBPACK_IMPORTED_MODULE_1__.default.Subsection
+  }, children);
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/components/DisplayText/DisplayText.js":
 /*!**************************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/components/DisplayText/DisplayText.js ***!
@@ -7390,6 +7663,925 @@ function Item({
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Subheading/Subheading.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Subheading/Subheading.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Subheading": () => (/* binding */ Subheading)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Subheading_scss_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Subheading.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Subheading/Subheading.scss.js");
+
+
+
+function Subheading({
+  element: Element = 'h3',
+  children
+}) {
+  const ariaLabel = typeof children === 'string' ? children : undefined;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Element, {
+    "aria-label": ariaLabel,
+    className: _Subheading_scss_js__WEBPACK_IMPORTED_MODULE_1__.default.Subheading
+  }, children);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Subheading/Subheading.scss.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Subheading/Subheading.scss.js ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "Subheading": "Polaris-Subheading"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Tabs": () => (/* binding */ Tabs)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../utilities/i18n/hooks.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/i18n/hooks.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/CaretDownMinor.svg.mjs");
+/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/HorizontalDotsMinor.svg.mjs");
+/* harmony import */ var _Icon_Icon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Icon/Icon.js */ "./node_modules/@shopify/polaris/dist/esm/components/Icon/Icon.js");
+/* harmony import */ var _Popover_Popover_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Popover/Popover.js */ "./node_modules/@shopify/polaris/dist/esm/components/Popover/Popover.js");
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utilities.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/utilities.js");
+/* harmony import */ var _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Tabs.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.scss.js");
+/* harmony import */ var _components_List_List_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/List/List.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/List/List.js");
+/* harmony import */ var _components_Panel_Panel_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Panel/Panel.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/Panel/Panel.js");
+/* harmony import */ var _components_Tab_Tab_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Tab/Tab.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/Tab/Tab.js");
+/* harmony import */ var _components_TabMeasurer_TabMeasurer_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/TabMeasurer/TabMeasurer.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/TabMeasurer/TabMeasurer.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon_Icon_js__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+  source: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_2__.S,
+  color: "subdued"
+});
+
+var _ref2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon_Icon_js__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+  source: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_3__.S,
+  color: "subdued"
+});
+
+class TabsInner extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      disclosureWidth: 0,
+      containerWidth: Infinity,
+      tabWidths: [],
+      visibleTabs: [],
+      hiddenTabs: [],
+      showDisclosure: false,
+      tabToFocus: -1
+    };
+
+    this.handleKeyPress = event => {
+      const {
+        tabToFocus,
+        visibleTabs,
+        hiddenTabs,
+        showDisclosure
+      } = this.state;
+      const key = event.key;
+      const tabsArrayInOrder = showDisclosure ? visibleTabs.concat(hiddenTabs) : [...visibleTabs];
+      let newFocus = tabsArrayInOrder.indexOf(tabToFocus);
+
+      if (key === 'ArrowRight') {
+        newFocus += 1;
+
+        if (newFocus === tabsArrayInOrder.length) {
+          newFocus = 0;
+        }
+      }
+
+      if (key === 'ArrowLeft') {
+        if (newFocus === -1 || newFocus === 0) {
+          newFocus = tabsArrayInOrder.length - 1;
+        } else {
+          newFocus -= 1;
+        }
+      }
+
+      this.setState({
+        tabToFocus: tabsArrayInOrder[newFocus]
+      });
+    };
+
+    this.renderTabMarkup = (tab, index) => {
+      const {
+        selected,
+        children
+      } = this.props;
+      const {
+        tabToFocus
+      } = this.state;
+      const tabPanelID = tab.panelID || `${tab.id}-panel`;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Tab_Tab_js__WEBPACK_IMPORTED_MODULE_4__.Tab, {
+        key: `${index}-${tab.id}`,
+        id: tab.id,
+        siblingTabHasFocus: tabToFocus > -1,
+        focused: index === tabToFocus,
+        selected: index === selected,
+        onClick: this.handleTabClick,
+        panelID: children ? tabPanelID : undefined,
+        accessibilityLabel: tab.accessibilityLabel,
+        url: tab.url
+      }, tab.content);
+    };
+
+    this.handleFocus = event => {
+      const {
+        selected,
+        tabs
+      } = this.props; // If we are explicitly focusing a non-selected tab, this focuses it
+
+      const target = event.target;
+
+      if (target.classList.contains(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.Tab) || target.classList.contains(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.Item)) {
+        let tabToFocus = -1;
+        tabs.every((tab, index) => {
+          if (tab.id === target.id) {
+            tabToFocus = index;
+            return false;
+          }
+
+          return true;
+        });
+        this.setState({
+          tabToFocus
+        });
+        return;
+      }
+
+      if (target.classList.contains(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.DisclosureActivator)) {
+        return;
+      } // If we are coming in from somewhere other than another tab, focus the
+      // selected tab, and the focus (click) is not on the disclosure activator,
+      // focus the selected tab
+
+
+      if (!event.relatedTarget) {
+        this.setState({
+          tabToFocus: selected
+        });
+        return;
+      }
+
+      const relatedTarget = event.relatedTarget;
+
+      if (relatedTarget instanceof HTMLElement && !relatedTarget.classList.contains(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.Tab) && !relatedTarget.classList.contains(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.Item) && !relatedTarget.classList.contains(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.DisclosureActivator)) {
+        this.setState({
+          tabToFocus: selected
+        });
+      }
+    };
+
+    this.handleBlur = event => {
+      // If we blur and the target is not another tab, forget the focus position
+      if (event.relatedTarget == null) {
+        this.setState({
+          tabToFocus: -1
+        });
+        return;
+      }
+
+      const target = event.relatedTarget; // If we are going to anywhere other than another tab, lose the last focused tab
+
+      if (target instanceof HTMLElement && !target.classList.contains(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.Tab) && !target.classList.contains(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.Item)) {
+        this.setState({
+          tabToFocus: -1
+        });
+      }
+    };
+
+    this.handleDisclosureActivatorClick = () => {
+      this.setState(({
+        showDisclosure
+      }) => ({
+        showDisclosure: !showDisclosure
+      }));
+    };
+
+    this.handleClose = () => {
+      this.setState({
+        showDisclosure: false
+      });
+    };
+
+    this.handleMeasurement = measurements => {
+      const {
+        tabs,
+        selected
+      } = this.props;
+      const {
+        tabToFocus
+      } = this.state;
+      const {
+        hiddenTabWidths: tabWidths,
+        containerWidth,
+        disclosureWidth
+      } = measurements;
+      const {
+        visibleTabs,
+        hiddenTabs
+      } = (0,_utilities_js__WEBPACK_IMPORTED_MODULE_6__.getVisibleAndHiddenTabIndices)(tabs, selected, disclosureWidth, tabWidths, containerWidth);
+      this.setState({
+        tabToFocus: tabToFocus === -1 ? -1 : selected,
+        visibleTabs,
+        hiddenTabs,
+        disclosureWidth,
+        containerWidth,
+        tabWidths
+      });
+    };
+
+    this.handleTabClick = id => {
+      const {
+        tabs,
+        onSelect = noop
+      } = this.props;
+      const tab = tabs.find(aTab => aTab.id === id);
+
+      if (tab == null) {
+        return;
+      }
+
+      const selectedIndex = tabs.indexOf(tab);
+      onSelect(selectedIndex);
+    };
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const {
+      disclosureWidth,
+      tabWidths,
+      containerWidth
+    } = prevState;
+    const {
+      visibleTabs,
+      hiddenTabs
+    } = (0,_utilities_js__WEBPACK_IMPORTED_MODULE_6__.getVisibleAndHiddenTabIndices)(nextProps.tabs, nextProps.selected, disclosureWidth, tabWidths, containerWidth);
+    return {
+      visibleTabs,
+      hiddenTabs,
+      selected: nextProps.selected
+    };
+  }
+
+  render() {
+    const {
+      tabs,
+      selected,
+      fitted,
+      children,
+      i18n,
+      disclosureText
+    } = this.props;
+    const {
+      tabToFocus,
+      visibleTabs,
+      hiddenTabs,
+      showDisclosure
+    } = this.state;
+    const disclosureTabs = hiddenTabs.map(tabIndex => tabs[tabIndex]);
+    const panelMarkup = children ? tabs.map((_tab, index) => {
+      return selected === index ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Panel_Panel_js__WEBPACK_IMPORTED_MODULE_7__.Panel, {
+        id: tabs[index].panelID || `${tabs[index].id}-panel`,
+        tabID: tabs[index].id,
+        key: tabs[index].id
+      }, children) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Panel_Panel_js__WEBPACK_IMPORTED_MODULE_7__.Panel, {
+        id: tabs[index].panelID || `${tabs[index].id}-panel`,
+        tabID: tabs[index].id,
+        key: tabs[index].id,
+        hidden: true
+      });
+    }) : null;
+    const tabsMarkup = visibleTabs.sort((tabA, tabB) => tabA - tabB).map(tabIndex => this.renderTabMarkup(tabs[tabIndex], tabIndex));
+    const disclosureActivatorVisible = visibleTabs.length < tabs.length;
+    const hasCustomDisclosure = Boolean(disclosureText);
+    const classname = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_8__.classNames)(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.Tabs, fitted && _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.fitted, disclosureActivatorVisible && _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.fillSpace);
+    const disclosureTabClassName = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_8__.classNames)(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.DisclosureTab, disclosureActivatorVisible && _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default["DisclosureTab-visible"]);
+    const disclosureButtonClassName = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_8__.classNames)(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.DisclosureActivator, hasCustomDisclosure && _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.Tab);
+    const disclosureButtonContentWrapperClassName = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_8__.classNames)(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.Title, hasCustomDisclosure && _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.titleWithIcon);
+    const disclosureButtonContent = hasCustomDisclosure ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, disclosureText, _ref) : _ref2;
+    const disclosureButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      type: "button",
+      className: disclosureButtonClassName,
+      onClick: this.handleDisclosureActivatorClick,
+      "aria-label": i18n.translate('Polaris.Tabs.toggleTabsLabel')
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+      className: disclosureButtonContentWrapperClassName
+    }, disclosureButtonContent));
+    const activator = disclosureText ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.TabContainer
+    }, disclosureButton) : disclosureButton;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_5__.default.Wrapper
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TabMeasurer_TabMeasurer_js__WEBPACK_IMPORTED_MODULE_9__.TabMeasurer, {
+      tabToFocus: tabToFocus,
+      activator: activator,
+      selected: selected,
+      tabs: tabs,
+      siblingTabHasFocus: tabToFocus > -1,
+      handleMeasurement: this.handleMeasurement
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+      role: "tablist",
+      className: classname,
+      onFocus: this.handleFocus,
+      onBlur: this.handleBlur,
+      onKeyDown: handleKeyDown,
+      onKeyUp: this.handleKeyPress
+    }, tabsMarkup, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+      className: disclosureTabClassName,
+      role: "presentation"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Popover_Popover_js__WEBPACK_IMPORTED_MODULE_10__.Popover, {
+      preferredPosition: "below",
+      activator: activator,
+      active: disclosureActivatorVisible && showDisclosure,
+      onClose: this.handleClose,
+      autofocusTarget: "first-node"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_List_List_js__WEBPACK_IMPORTED_MODULE_11__.List, {
+      focusIndex: hiddenTabs.indexOf(tabToFocus),
+      disclosureTabs: disclosureTabs,
+      onClick: this.handleTabClick,
+      onKeyPress: this.handleKeyPress
+    }))))), panelMarkup);
+  }
+
+}
+
+function noop() {}
+
+function handleKeyDown(event) {
+  const {
+    key
+  } = event;
+
+  if (key === 'ArrowLeft' || key === 'ArrowRight') {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+}
+
+function Tabs(props) {
+  const i18n = (0,_utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_12__.useI18n)();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TabsInner, Object.assign({}, props, {
+    i18n: i18n
+  }));
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.scss.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.scss.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "Tabs": "Polaris-Tabs",
+  "Wrapper": "Polaris-Tabs__Wrapper",
+  "fitted": "Polaris-Tabs--fitted",
+  "TabContainer": "Polaris-Tabs__TabContainer",
+  "Title": "Polaris-Tabs__Title",
+  "fillSpace": "Polaris-Tabs--fillSpace",
+  "Tab": "Polaris-Tabs__Tab",
+  "Tab-selected": "Polaris-Tabs__Tab--selected",
+  "titleWithIcon": "Polaris-Tabs--titleWithIcon",
+  "Panel": "Polaris-Tabs__Panel",
+  "Panel-hidden": "Polaris-Tabs__Panel--hidden",
+  "List": "Polaris-Tabs__List",
+  "Item": "Polaris-Tabs__Item",
+  "DisclosureTab": "Polaris-Tabs__DisclosureTab",
+  "DisclosureTab-visible": "Polaris-Tabs__DisclosureTab--visible",
+  "DisclosureActivator": "Polaris-Tabs__DisclosureActivator",
+  "TabMeasurer": "Polaris-Tabs__TabMeasurer"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/Item/Item.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/Item/Item.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Item": () => (/* binding */ Item)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_features_context_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../utilities/features/context.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/features/context.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _UnstyledLink_UnstyledLink_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../UnstyledLink/UnstyledLink.js */ "./node_modules/@shopify/polaris/dist/esm/components/UnstyledLink/UnstyledLink.js");
+/* harmony import */ var _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Tabs.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.scss.js");
+
+
+
+
+
+
+class Item extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+  constructor(...args) {
+    super(...args);
+    this.context = void 0;
+    this.focusedNode = null;
+
+    this.setFocusedNode = node => {
+      this.focusedNode = node;
+    };
+  }
+
+  componentDidMount() {
+    const {
+      focusedNode
+    } = this;
+    const {
+      focused
+    } = this.props;
+
+    if (focusedNode && focusedNode instanceof HTMLElement && focused) {
+      focusedNode.focus();
+    }
+  }
+
+  componentDidUpdate() {
+    const {
+      focusedNode
+    } = this;
+    const {
+      focused
+    } = this.props;
+
+    if (focusedNode && focusedNode instanceof HTMLElement && focused) {
+      focusedNode.focus();
+    }
+  }
+
+  render() {
+    const {
+      id,
+      panelID,
+      children,
+      url,
+      accessibilityLabel,
+      onClick = noop
+    } = this.props;
+    const classname = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_1__.classNames)(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.Item);
+    const sharedProps = {
+      id,
+      ref: this.setFocusedNode,
+      onClick,
+      className: classname,
+      'aria-controls': panelID,
+      'aria-selected': false,
+      'aria-label': accessibilityLabel
+    };
+    const markup = url ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_UnstyledLink_UnstyledLink_js__WEBPACK_IMPORTED_MODULE_3__.UnstyledLink, Object.assign({}, sharedProps, {
+      url: url
+    }), children) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", Object.assign({}, sharedProps, {
+      type: "button"
+    }), children);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, markup);
+  }
+
+}
+Item.contextType = _utilities_features_context_js__WEBPACK_IMPORTED_MODULE_4__.FeaturesContext;
+
+function noop() {}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/List/List.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/List/List.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "List": () => (/* binding */ List)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@shopify/polaris/dist/esm/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Tabs.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.scss.js");
+/* harmony import */ var _Item_Item_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Item/Item.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/Item/Item.js");
+
+
+
+
+
+function List({
+  focusIndex,
+  disclosureTabs,
+  onClick = noop,
+  onKeyPress = noop
+}) {
+  const tabs = disclosureTabs.map((_ref, index) => {
+    let {
+      id,
+      content
+    } = _ref,
+        tabProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutProperties)(_ref, ["id", "content"]);
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Item_Item_js__WEBPACK_IMPORTED_MODULE_2__.Item, Object.assign({}, tabProps, {
+      key: id,
+      id: id,
+      focused: index === focusIndex,
+      onClick: onClick.bind(null, id)
+    }), content);
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+    className: _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.List,
+    onKeyDown: handleKeyDown,
+    onKeyUp: onKeyPress
+  }, tabs);
+}
+
+function noop() {}
+
+function handleKeyDown(event) {
+  const {
+    key
+  } = event;
+
+  if (key === 'ArrowLeft' || key === 'ArrowRight') {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/Panel/Panel.js":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/Panel/Panel.js ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Panel": () => (/* binding */ Panel)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Tabs.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.scss.js");
+
+
+
+
+function Panel({
+  hidden,
+  id,
+  tabID,
+  children
+}) {
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_1__.classNames)(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.Panel, hidden && _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_2__.default["Panel-hidden"]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: className,
+    id: id,
+    role: "tabpanel",
+    "aria-labelledby": tabID,
+    tabIndex: -1
+  }, children);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/Tab/Tab.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/Tab/Tab.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Tab": () => (/* binding */ Tab)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _utilities_focus_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/focus.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/focus.js");
+/* harmony import */ var _UnstyledLink_UnstyledLink_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../UnstyledLink/UnstyledLink.js */ "./node_modules/@shopify/polaris/dist/esm/components/UnstyledLink/UnstyledLink.js");
+/* harmony import */ var _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Tabs.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.scss.js");
+
+
+
+
+
+
+function Tab({
+  id,
+  focused,
+  siblingTabHasFocus,
+  children,
+  onClick,
+  selected,
+  url,
+  panelID,
+  measuring,
+  accessibilityLabel
+}) {
+  const wasSelected = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(selected);
+  const panelFocused = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+  const node = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null); // A tab can start selected when it is moved from the disclosure dropdown
+  // into the main list, so we need to send focus from the tab to the panel
+  // on mount and update
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (measuring) {
+      return;
+    } // Because of timing issues with the render, we may still have the old,
+    // in-disclosure version of the tab that has focus. Check for this
+    // as a second indicator of focus
+
+
+    const itemHadFocus = focused || document.activeElement && document.activeElement.id === id; // If we just check for selected, the panel for the active tab will
+    // be focused on page load, which we don’t want
+
+    if (itemHadFocus && selected && panelID != null && !panelFocused.current) {
+      focusPanelID(panelID);
+      panelFocused.current = true;
+    }
+
+    if (selected && !wasSelected.current && panelID != null) {
+      focusPanelID(panelID);
+    } else if (focused && node.current != null) {
+      (0,_utilities_focus_js__WEBPACK_IMPORTED_MODULE_1__.focusFirstFocusableNode)(node.current);
+    }
+
+    wasSelected.current = selected;
+  }, [focused, id, measuring, panelID, selected]);
+  const handleClick = onClick && onClick.bind(null, id);
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_2__.classNames)(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Tab, selected && _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Tab-selected"]);
+  let tabIndex;
+
+  if (selected && !siblingTabHasFocus && !measuring) {
+    tabIndex = 0;
+  } else if (focused && !measuring) {
+    tabIndex = 0;
+  } else {
+    tabIndex = -1;
+  }
+
+  const tabContainerClassNames = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_2__.classNames)(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.TabContainer, selected && _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Underline);
+  const markup = url ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_UnstyledLink_UnstyledLink_js__WEBPACK_IMPORTED_MODULE_4__.UnstyledLink, {
+    id: id,
+    url: url,
+    role: "tab",
+    tabIndex: tabIndex,
+    onClick: handleClick,
+    className: className,
+    "aria-selected": selected,
+    "aria-controls": panelID,
+    "aria-label": accessibilityLabel,
+    onMouseUp: _utilities_focus_js__WEBPACK_IMPORTED_MODULE_1__.handleMouseUpByBlurring
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    className: _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Title
+  }, children)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    id: id,
+    role: "tab",
+    type: "button",
+    tabIndex: tabIndex,
+    className: className,
+    onClick: handleClick,
+    "aria-selected": selected,
+    "aria-controls": panelID,
+    "aria-label": accessibilityLabel,
+    onMouseUp: _utilities_focus_js__WEBPACK_IMPORTED_MODULE_1__.handleMouseUpByBlurring
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    className: _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Title
+  }, children));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+    className: tabContainerClassNames,
+    ref: node,
+    role: "presentation"
+  }, markup);
+}
+
+function focusPanelID(panelID) {
+  const panel = document.getElementById(panelID);
+
+  if (panel) {
+    panel.focus({
+      preventScroll: true
+    });
+  }
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/TabMeasurer/TabMeasurer.js":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/TabMeasurer/TabMeasurer.js ***!
+  \******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TabMeasurer": () => (/* binding */ TabMeasurer)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _EventListener_EventListener_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../EventListener/EventListener.js */ "./node_modules/@shopify/polaris/dist/esm/components/EventListener/EventListener.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _utilities_use_component_did_mount_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/use-component-did-mount.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/use-component-did-mount.js");
+/* harmony import */ var _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Tabs.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.scss.js");
+/* harmony import */ var _Tab_Tab_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Tab/Tab.js */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/components/Tab/Tab.js");
+
+
+
+
+
+
+
+const TabMeasurer = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(function TabMeasurer({
+  selected,
+  tabs,
+  activator,
+  tabToFocus,
+  siblingTabHasFocus,
+  handleMeasurement: handleMeasurementProp
+}) {
+  const containerNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const animationFrame = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const handleMeasurement = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => {
+    if (animationFrame.current) {
+      cancelAnimationFrame(animationFrame.current);
+    }
+
+    animationFrame.current = requestAnimationFrame(() => {
+      if (!containerNode.current) {
+        return;
+      }
+
+      const containerWidth = containerNode.current.offsetWidth;
+      const hiddenTabNodes = containerNode.current.children;
+      const hiddenTabNodesArray = Array.from(hiddenTabNodes);
+      const hiddenTabWidths = hiddenTabNodesArray.map(node => {
+        return Math.ceil(node.getBoundingClientRect().width);
+      });
+      const disclosureWidth = hiddenTabWidths.pop() || 0;
+      handleMeasurementProp({
+        containerWidth,
+        disclosureWidth,
+        hiddenTabWidths
+      });
+    });
+  }, [handleMeasurementProp]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    handleMeasurement();
+  }, [handleMeasurement, tabs]);
+  (0,_utilities_use_component_did_mount_js__WEBPACK_IMPORTED_MODULE_1__.useComponentDidMount)(() => {
+    if (true) {
+      setTimeout(handleMeasurement, 0);
+    }
+  });
+  const tabsMarkup = tabs.map((tab, index) => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Tab_Tab_js__WEBPACK_IMPORTED_MODULE_2__.Tab, {
+      measuring: true,
+      key: `${index}${tab.id}Hidden`,
+      id: `${tab.id}Measurer`,
+      siblingTabHasFocus: siblingTabHasFocus,
+      focused: index === tabToFocus,
+      selected: index === selected,
+      onClick: noop,
+      url: tab.url
+    }, tab.content);
+  });
+  const classname = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_3__.classNames)(_Tabs_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.Tabs, _Tabs_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.TabMeasurer);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: classname,
+    ref: containerNode
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventListener_EventListener_js__WEBPACK_IMPORTED_MODULE_5__.EventListener, {
+    event: "resize",
+    handler: handleMeasurement
+  }), tabsMarkup, activator);
+});
+
+function noop() {}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/utilities.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Tabs/utilities.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getVisibleAndHiddenTabIndices": () => (/* binding */ getVisibleAndHiddenTabIndices)
+/* harmony export */ });
+function getVisibleAndHiddenTabIndices(tabs, selected, disclosureWidth, tabWidths, containerWidth) {
+  const sumTabWidths = tabWidths.reduce((sum, width) => sum + width, 0);
+  const arrayOfTabIndices = tabs.map((_, index) => {
+    return index;
+  });
+  const visibleTabs = [];
+  const hiddenTabs = [];
+
+  if (containerWidth > sumTabWidths) {
+    visibleTabs.push(...arrayOfTabIndices);
+  } else {
+    visibleTabs.push(selected);
+    let tabListWidth = tabWidths[selected];
+    arrayOfTabIndices.forEach(currentTabIndex => {
+      if (currentTabIndex !== selected) {
+        const currentTabWidth = tabWidths[currentTabIndex];
+
+        if (tabListWidth + currentTabWidth >= containerWidth - disclosureWidth) {
+          hiddenTabs.push(currentTabIndex);
+          return;
+        }
+
+        visibleTabs.push(currentTabIndex);
+        tabListWidth += currentTabWidth;
+      }
+    });
+  }
+
+  return {
+    visibleTabs,
+    hiddenTabs
+  };
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/components/TextContainer/TextContainer.js":
 /*!******************************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/components/TextContainer/TextContainer.js ***!
@@ -10569,6 +11761,54 @@ function globalIdGeneratorFactory(prefix = '') {
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/utilities/use-component-did-mount.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/utilities/use-component-did-mount.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useComponentDidMount": () => (/* binding */ useComponentDidMount)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _use_is_after_initial_mount_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./use-is-after-initial-mount.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/use-is-after-initial-mount.js");
+
+
+
+/**
+ * Similarly to the life-cycle method componentDidMount, useComponentDidMount
+ * will be invoked after the component has mounted, and only the initial mount.
+ * @param callback Defines a callback to invoke once the component has
+ * initially mounted.
+ * @example
+ * function Playground({active}) {
+ *  useComponentDidMount(() => {
+ *    if (active) {
+ *      console.warning(`Component has mounted.`);
+ *    }
+ *  });
+ *
+ *  return null;
+ * }
+ */
+
+function useComponentDidMount(callback) {
+  const isAfterInitialMount = (0,_use_is_after_initial_mount_js__WEBPACK_IMPORTED_MODULE_1__.useIsAfterInitialMount)();
+  const hasInvokedLifeCycle = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+
+  if (isAfterInitialMount && !hasInvokedLifeCycle.current) {
+    hasInvokedLifeCycle.current = true;
+    return callback();
+  }
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/utilities/use-deep-callback.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/utilities/use-deep-callback.js ***!
@@ -10949,6 +12189,37 @@ react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
 });
 
 var SvgExternalSmallMinor = function SvgExternalSmallMinor(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
+    viewBox: "0 0 20 20"
+  }, props), _ref);
+};
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/HorizontalDotsMinor.svg.mjs":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/HorizontalDotsMinor.svg.mjs ***!
+  \******************************************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "S": () => (/* binding */ SvgHorizontalDotsMinor)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var _ref =
+/*#__PURE__*/
+react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+  d: "M6 10a2 2 0 1 1-4.001-.001A2 2 0 0 1 6 10zm6 0a2 2 0 1 1-4.001-.001A2 2 0 0 1 12 10zm6 0a2 2 0 1 1-4.001-.001A2 2 0 0 1 18 10z"
+});
+
+var SvgHorizontalDotsMinor = function SvgHorizontalDotsMinor(props) {
   return react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
     viewBox: "0 0 20 20"
   }, props), _ref);
@@ -12928,15 +14199,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ App)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _Header_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header/Header */ "./resources/js/Application/Header/Header.jsx");
+/* harmony import */ var _Header_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header/Header */ "./resources/js/Application/Header/Header.jsx");
+/* harmony import */ var _Tab_Tab__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Tab/Tab */ "./resources/js/Application/Tab/Tab.jsx");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/AppProvider/AppProvider.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
+
+
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Header_Header__WEBPACK_IMPORTED_MODULE_2__.default, {});
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.AppProvider, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: 'block',
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: 'block_2',
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Header_Header__WEBPACK_IMPORTED_MODULE_1__.default, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Tab_Tab__WEBPACK_IMPORTED_MODULE_2__.default, {})]
+    })
+  });
 }
 
 /***/ }),
@@ -13079,6 +14361,95 @@ function Header() {
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Frame, {
         topBar: topBarMarkup
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Application/Tab/Tab.jsx":
+/*!**********************************************!*\
+  !*** ./resources/js/Application/Tab/Tab.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Tab)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+function Tab() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      selected = _useState2[0],
+      setSelected = _useState2[1];
+
+  var handleTabChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (selectedTabIndex) {
+    return setSelected(selectedTabIndex);
+  }, []);
+  var Position = {
+    padding: "10px 20px",
+    textAlign: "center",
+    color: "white",
+    fontSize: "22px"
+  };
+  var styles = {
+    Position: Position
+  };
+  var tabs = [{
+    id: 'all-customers-1',
+    content: 'All',
+    accessibilityLabel: 'All customers',
+    panelID: 'all-customers-content-1'
+  }, {
+    id: 'accepts-marketing-1',
+    content: 'Accepts marketing',
+    panelID: 'accepts-marketing-content-1'
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    style: {
+      position: 'relative',
+      minHeight: '200%',
+      width: '100%'
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      style: {
+        top: '0'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Card, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Tabs, {
+          tabs: tabs,
+          selected: selected,
+          onSelect: handleTabChange,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Card.Section, {
+            style: styles.ErrorMessage,
+            title: tabs[selected].content,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+              children: ["Tab ", selected, " selected"]
+            })
+          })
+        })
       })
     })
   });
