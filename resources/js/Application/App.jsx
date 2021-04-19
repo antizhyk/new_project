@@ -6,8 +6,8 @@ import {AppProvider} from '@shopify/polaris';
 export default function App() {
 return(
         <AppProvider >
-            <div className={'block'}>
-                <div className={'block_2'}>
+            <div className={'block__main'}>
+                <div className={'block__header'}>
                     <Header/>
                 </div>
 

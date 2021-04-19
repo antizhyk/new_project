@@ -14212,9 +14212,9 @@ __webpack_require__.r(__webpack_exports__);
 function App() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.AppProvider, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: 'block',
+      className: 'block__main',
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: 'block_2',
+        className: 'block__header',
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Header_Header__WEBPACK_IMPORTED_MODULE_1__.default, {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Tab_Tab__WEBPACK_IMPORTED_MODULE_2__.default, {})]
     })
@@ -14327,14 +14327,7 @@ function Header() {
     }]
   });
 
-  var topBarMarkup = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.TopBar, {
-    showNavigationToggle: true,
-    searchResultsVisible: isSearchActive,
-    searchField: searchFieldMarkup,
-    searchResults: searchResultsMarkup,
-    onSearchResultsDismiss: handleSearchResultsDismiss,
-    onNavigationToggle: handleNavigationToggle
-  });
+  var topBarMarkup = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.TopBar, {});
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     style: {

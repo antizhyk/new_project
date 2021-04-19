@@ -67,12 +67,6 @@ export default function Header() {
 
     const topBarMarkup = (
         <TopBar
-            showNavigationToggle
-            searchResultsVisible={isSearchActive}
-            searchField={searchFieldMarkup}
-            searchResults={searchResultsMarkup}
-            onSearchResultsDismiss={handleSearchResultsDismiss}
-            onNavigationToggle={handleNavigationToggle}
         />
     );
 
