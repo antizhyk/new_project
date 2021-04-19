@@ -1,72 +1,16 @@
-import React, {useCallback, useState} from 'react';
-import {AppProvider, Avatar, Icon, VisuallyHidden, ActionList, Frame, TopBar} from '@shopify/polaris';
-import {ArrowLeftMinor} from '@shopify/polaris-icons';
-import {AppExtensionMinor} from "@shopify/polaris-icons";
-
+import React from 'react';
+import {AppProvider, Frame, TopBar} from '@shopify/polaris';
 
 
 export default function Header() {
-    const [isSecondaryMenuOpen, setIsSecondaryMenuOpen] = useState(false);
-    const [isSearchActive, setIsSearchActive] = useState(false);
-    const [searchValue, setSearchValue] = useState('');
-
-
-    const toggleIsSecondaryMenuOpen = useCallback(
-        () => setIsSecondaryMenuOpen((isSecondaryMenuOpen) => !isSecondaryMenuOpen),
-        [],
-    );
-
-    const handleSearchResultsDismiss = useCallback(() => {
-        setIsSearchActive(false);
-        setSearchValue('');
-    }, []);
-
-    const handleSearchChange = useCallback((value) => {
-        setSearchValue(value);
-        setIsSearchActive(value.length > 0);
-    }, []);
-
-    const handleNavigationToggle = useCallback(() => {
-        console.log('toggle navigation visibility');
-    }, []);
-
-
-    const searchResultsMarkup = (
-        <ActionList
-            items={[{content: 'Shopify help center'}, {content: 'Community forums'}]}
-        />
-    );
-
-    const searchFieldMarkup = (
-        <TopBar.SearchField
-            onChange={handleSearchChange}
-            value={searchValue}
-            placeholder="Search"
-            showFocusBorder
-        />
-    );
-
-    const secondaryMenuMarkup = (
-        <TopBar.Menu
-            activatorContent={
-                <span>
-          <Icon source={AppExtensionMinor} />
-          <VisuallyHidden>Secondary menu</VisuallyHidden>
+    const logo = (
+        <span className={'logo'}>
+            Logo
         </span>
-            }
-            open={isSecondaryMenuOpen}
-            onOpen={toggleIsSecondaryMenuOpen}
-            onClose={toggleIsSecondaryMenuOpen}
-            actions={[
-                {
-                    items: [{content: 'Community forums'}],
-                },
-            ]}
-        />
-    );
-
+    )
     const topBarMarkup = (
         <TopBar
+            logo={logo}
         />
     );
 
@@ -90,7 +34,9 @@ export default function Header() {
                     },
                 }}
             >
-                <Frame topBar={topBarMarkup} />
+
+                <Frame topBar={topBarMarkup}
+                />
             </AppProvider>
         </div>
     );

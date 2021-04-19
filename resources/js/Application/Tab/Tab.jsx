@@ -1,5 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import {Card, Tabs} from '@shopify/polaris';
+import Forms from '../Form/Forms'
 
 export default function Tab() {
     const [selected, setSelected] = useState(0);
@@ -19,27 +20,40 @@ export default function Tab() {
     }
     const tabs = [
         {
-            id: 'all-customers-1',
-            content: 'All',
+            id: 'enter',
+            content: 'Вход',
             accessibilityLabel: 'All customers',
             panelID: 'all-customers-content-1',
         },
         {
-            id: 'accepts-marketing-1',
+            id: 'register',
             content: 'Accepts marketing',
             panelID: 'accepts-marketing-content-1',
         },
     ];
+    const select = (id) =>{
+        if(id === 'enter'){
+            return <Forms/> ;
+        }else if(id === 'register'){
 
+        }
+    }
     return (
-        <div style={{position: 'relative', minHeight: '200%', width: '100%'}}>
+        <div>
             <div style={{ top: '0'}}>
             <Card >
+                <div className={'block__tab'}>
                 <Tabs tabs={tabs} selected={selected} onSelect={handleTabChange} >
-                    <Card.Section style = {styles.ErrorMessage} title={tabs[selected].content}>
-                        <p>Tab {selected} selected</p>
-                    </Card.Section>
+
+                        <Card.Section  style = {styles.ErrorMessage}>
+                            {
+                                select(tabs[selected].id)
+                            }
+
+                        </Card.Section>
+
                 </Tabs>
+                </div>
             </Card>
             </div>
         </div>
