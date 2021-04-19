@@ -155,38 +155,6 @@ var SvgAppExtensionMinor = function SvgAppExtensionMinor(props) {
 
 /***/ }),
 
-/***/ "./node_modules/@shopify/polaris-icons/dist/icons/polaris/arrow-left_minor.svg.mjs":
-/*!*****************************************************************************************!*\
-  !*** ./node_modules/@shopify/polaris-icons/dist/icons/polaris/arrow-left_minor.svg.mjs ***!
-  \*****************************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "S": () => (/* binding */ SvgArrowLeftMinor)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-var _ref =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-  d: "M17 9H5.414l3.293-3.293a.999.999 0 1 0-1.414-1.414l-5 5a.999.999 0 0 0 0 1.414l5 5a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L5.414 11H17a1 1 0 1 0 0-2",
-  fillRule: "evenodd"
-});
-
-var SvgArrowLeftMinor = function SvgArrowLeftMinor(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
-    viewBox: "0 0 20 20"
-  }, props), _ref);
-};
-
-
-
-
-/***/ }),
-
 /***/ "./node_modules/@shopify/polaris-tokens/dist-modern/color-factory.js":
 /*!***************************************************************************!*\
   !*** ./node_modules/@shopify/polaris-tokens/dist-modern/color-factory.js ***!
@@ -12985,14 +12953,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Header)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TopBar/TopBar.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/ActionList/ActionList.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Icon/Icon.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/VisuallyHidden/VisuallyHidden.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/AppProvider/AppProvider.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Frame/Frame.js");
-/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris-icons/dist/icons/polaris/arrow-left_minor.svg.mjs");
-/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris-icons/dist/icons/polaris/app-extension_minor.svg.mjs");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/ActionList/ActionList.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TopBar/TopBar.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Icon/Icon.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/VisuallyHidden/VisuallyHidden.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/AppProvider/AppProvider.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Frame/Frame.js");
+/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris-icons/dist/icons/polaris/app-extension_minor.svg.mjs");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -13015,29 +12982,19 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Header() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      isUserMenuOpen = _useState2[0],
-      setIsUserMenuOpen = _useState2[1];
+      isSecondaryMenuOpen = _useState2[0],
+      setIsSecondaryMenuOpen = _useState2[1];
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      isSecondaryMenuOpen = _useState4[0],
-      setIsSecondaryMenuOpen = _useState4[1];
+      isSearchActive = _useState4[0],
+      setIsSearchActive = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState6 = _slicedToArray(_useState5, 2),
-      isSearchActive = _useState6[0],
-      setIsSearchActive = _useState6[1];
+      searchValue = _useState6[0],
+      setSearchValue = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
-      _useState8 = _slicedToArray(_useState7, 2),
-      searchValue = _useState8[0],
-      setSearchValue = _useState8[1];
-
-  var toggleIsUserMenuOpen = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    return setIsUserMenuOpen(function (isUserMenuOpen) {
-      return !isUserMenuOpen;
-    });
-  }, []);
   var toggleIsSecondaryMenuOpen = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
     return setIsSecondaryMenuOpen(function (isSecondaryMenuOpen) {
       return !isSecondaryMenuOpen;
@@ -13054,34 +13011,8 @@ function Header() {
   var handleNavigationToggle = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
     console.log('toggle navigation visibility');
   }, []);
-  var theme = {
-    logo: {
-      width: 124,
-      topBarSource: 'https://cdn.shopify.com/s/files/1/0446/6937/files/jaded-pixel-logo-color.svg?6215648040070010999',
-      url: 'http://jadedpixel.com',
-      accessibilityLabel: 'Jaded Pixel'
-    }
-  };
 
-  var userMenuMarkup = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.TopBar.UserMenu, {
-    actions: [{
-      items: [{
-        content: 'Back to Shopify',
-        icon: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_3__.S
-      }]
-    }, {
-      items: [{
-        content: 'Community forums'
-      }]
-    }],
-    name: "Dharma",
-    detail: "Jaded Pixel",
-    initials: "D",
-    open: isUserMenuOpen,
-    onToggle: toggleIsUserMenuOpen
-  });
-
-  var searchResultsMarkup = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.ActionList, {
+  var searchResultsMarkup = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.ActionList, {
     items: [{
       content: 'Shopify help center'
     }, {
@@ -13089,18 +13020,18 @@ function Header() {
     }]
   });
 
-  var searchFieldMarkup = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.TopBar.SearchField, {
+  var searchFieldMarkup = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.TopBar.SearchField, {
     onChange: handleSearchChange,
     value: searchValue,
     placeholder: "Search",
     showFocusBorder: true
   });
 
-  var secondaryMenuMarkup = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.TopBar.Menu, {
+  var secondaryMenuMarkup = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.TopBar.Menu, {
     activatorContent: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Icon, {
-        source: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_6__.S
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.VisuallyHidden, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+        source: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_5__.S
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.VisuallyHidden, {
         children: "Secondary menu"
       })]
     }),
@@ -13114,10 +13045,8 @@ function Header() {
     }]
   });
 
-  var topBarMarkup = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.TopBar, {
+  var topBarMarkup = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.TopBar, {
     showNavigationToggle: true,
-    userMenu: userMenuMarkup,
-    secondaryMenu: secondaryMenuMarkup,
     searchResultsVisible: isSearchActive,
     searchField: searchFieldMarkup,
     searchResults: searchResultsMarkup,
@@ -13129,8 +13058,7 @@ function Header() {
     style: {
       height: '250px'
     },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.AppProvider, {
-      theme: theme,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.AppProvider, {
       i18n: {
         Polaris: {
           Avatar: {
@@ -13149,7 +13077,7 @@ function Header() {
           }
         }
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Frame, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Frame, {
         topBar: topBarMarkup
       })
     })
