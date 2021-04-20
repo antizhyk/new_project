@@ -36,7 +36,9 @@ const validField = (event) =>{
         let passwordValueForm = _event.target.querySelector('#password').getAttribute('value');
         let emailValue;
         let passValue;
-        fetch(process.env.MIX_APP_URL + 'api/people')
+        fetch(process.env.MIX_APP_URL + 'api/people', {
+            method: 'POST',
+        })
             .then(response => response.json())
             .then(data =>  {
                 emailValue = data[0].email

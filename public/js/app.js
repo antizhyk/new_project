@@ -15490,7 +15490,9 @@ function Forms() {
 
     var emailValue;
     var passValue;
-    fetch("http://0.0.0.0:81/" + 'api/people').then(function (response) {
+    fetch("http://0.0.0.0:81/" + 'api/people', {
+      method: 'POST'
+    }).then(function (response) {
       return response.json();
     }).then(function (data) {
       emailValue = data[0].email;
