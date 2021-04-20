@@ -1,17 +1,17 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {Button, TextField, Checkbox, Form, FormLayout} from '@shopify/polaris';
 
 export default function Forms() {
-    const [newsletter, setNewsletter] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState(false);
     const [errorsPassword, setErrorsPassword] = useState(false);
 
+
+
 //=============Experment=================
 const validField = (event) =>{
     let valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
-    console.log(valueField);
     if(valueField){
         setErrors(false);
     }else{
@@ -32,15 +32,25 @@ const validField = (event) =>{
     //====================
     const handleSubmit = useCallback((_event) => {
         event.preventDefault();
-        setEmail('');
-        setPassword('');
-        setNewsletter(false);
+        let emailValueForm = _event.target.querySelector('#email').getAttribute('value');
+        let passwordValueForm = _event.target.querySelector('#password').getAttribute('value');
+        let emailValue;
+        let passValue;
+        fetch(process.env.MIX_APP_URL + 'api/people')
+            .then(response => response.json())
+            .then(data =>  {
+                emailValue = data[0].email
+                passValue = data[0].password
+            })
+            .then(data =>{ if(emailValue == emailValueForm && passValue == passwordValueForm){
+                console.log('exelent');
+        }else{
+                alert('Нет такого пользователя');
+            }})
+
     }, []);
 
-    const handleNewsLetterChange = useCallback(
-        (value) => setNewsletter(value),
-        [],
-    );
+
 
     const handleEmailChange = useCallback((value) => setEmail(value), []);
     const handlePasswordChange = useCallback((value) => setPassword(value), []);
@@ -59,6 +69,7 @@ const validField = (event) =>{
                     type="email"
                     error={errors}
                     onBlur={validField}
+                    id='email'
                     helpText={
                         <span>
               Введите e-mail
@@ -69,6 +80,7 @@ const validField = (event) =>{
                     onBlur={validFieldPass}
                     value={password}
                     onChange={handlePasswordChange}
+                    id="password"
                     label="Password"
                     type="password"
                     minLength={6} maxLength={50}

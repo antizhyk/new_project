@@ -15438,35 +15438,29 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Forms() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
-      newsletter = _useState2[0],
-      setNewsletter = _useState2[1];
+      email = _useState2[0],
+      setEmail = _useState2[1];
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState4 = _slicedToArray(_useState3, 2),
-      email = _useState4[0],
-      setEmail = _useState4[1];
+      password = _useState4[0],
+      setPassword = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState6 = _slicedToArray(_useState5, 2),
-      password = _useState6[0],
-      setPassword = _useState6[1];
+      errors = _useState6[0],
+      setErrors = _useState6[1];
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState8 = _slicedToArray(_useState7, 2),
-      errors = _useState8[0],
-      setErrors = _useState8[1];
-
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState10 = _slicedToArray(_useState9, 2),
-      errorsPassword = _useState10[0],
-      setErrorsPassword = _useState10[1]; //=============Experment=================
+      errorsPassword = _useState8[0],
+      setErrorsPassword = _useState8[1]; //=============Experment=================
 
 
   var validField = function validField(event) {
     var valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
-    console.log(valueField);
 
     if (valueField) {
       setErrors(false);
@@ -15489,12 +15483,25 @@ function Forms() {
 
   var handleSubmit = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (_event) {
     event.preventDefault();
-    setEmail('');
-    setPassword('');
-    setNewsletter(false);
-  }, []);
-  var handleNewsLetterChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    return setNewsletter(value);
+
+    var emailValueForm = _event.target.querySelector('#email').getAttribute('value');
+
+    var passwordValueForm = _event.target.querySelector('#password').getAttribute('value');
+
+    var emailValue;
+    var passValue;
+    fetch("http://0.0.0.0:81/" + 'api/people').then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      emailValue = data[0].email;
+      passValue = data[0].password;
+    }).then(function (data) {
+      if (emailValue == emailValueForm && passValue == passwordValueForm) {
+        console.log('exelent');
+      } else {
+        alert('Нет такого пользователя');
+      }
+    });
   }, []);
   var handleEmailChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     return setEmail(value);
@@ -15513,6 +15520,7 @@ function Forms() {
         type: "email",
         error: errors,
         onBlur: validField,
+        id: "email",
         helpText: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
           children: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 e-mail"
         })
@@ -15520,6 +15528,7 @@ function Forms() {
         onBlur: validFieldPass,
         value: password,
         onChange: handlePasswordChange,
+        id: "password",
         label: "Password",
         type: "password",
         minLength: 6,
