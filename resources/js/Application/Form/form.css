@@ -1,0 +1,20 @@
+.form__block{
+    background-color: #dddddd;
+    min-height: calc(100vh - 135px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form__wrap{
+    border: 3px solid gray;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 10px;
+}
+.form__input{
+    margin-bottom: 5px;
+    width: 300px;
+    height: 50px;
+    padding: 5px    ;
+}

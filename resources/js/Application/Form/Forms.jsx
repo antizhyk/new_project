@@ -10,13 +10,17 @@ export  default function Forms(){
     }
 
     return(
-      <form onSubmit={handleSubmit(onSubmit)}>
-          <input type="text" placeholder="Email" name="email" ref={register}/>
-          <input type="password" placeholder="Password" name='password'
-                 ref={register({required: true, minLength: 2, pattern: /sasha/})}
+        <div className={'form__block'}>
+      <form className={'form__wrap'} onSubmit={handleSubmit(onSubmit)}>
+          <input className={'form__input'} type="text" placeholder="Email" name="email" ref={register}
+                 ref={register({required: true, pattern: /^\w*@\w{2,7}\.\w{2,7}/, maxLength: 50})}/>
+          <input className={'form__input'} type="password" placeholder="Password" name='password'
+                 ref={register({required: true, minLength: 6, maxLength: 50})}
               />
+          {errors.email && <p>Email is invalid</p>}
           {errors.password && <p>Password is invalid</p>}
-          <input type="submit"/>
+          <input className={'form__input'} type="submit" />
       </form>
+        </div>
     );
 }

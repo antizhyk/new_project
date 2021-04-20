@@ -1,6 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import {Card, Tabs} from '@shopify/polaris';
 import Forms from '../Form/Forms'
+import FormsRegister from '../Form/FormsRegister'
 
 export default function Tab() {
     const [selected, setSelected] = useState(0);
@@ -35,7 +36,7 @@ export default function Tab() {
         if(id === 'enter'){
             return <Forms/> ;
         }else if(id === 'register'){
-
+            return <FormsRegister/>
         }
     }
     return (
