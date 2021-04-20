@@ -3689,6 +3689,112 @@ function Subsection({
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Connected/Connected.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Connected/Connected.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Connected": () => (/* binding */ Connected)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Connected_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Connected.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Connected/Connected.scss.js");
+/* harmony import */ var _components_Item_Item_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Item/Item.js */ "./node_modules/@shopify/polaris/dist/esm/components/Connected/components/Item/Item.js");
+
+
+
+
+function Connected({
+  children,
+  left,
+  right
+}) {
+  const leftConnectionMarkup = left ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Item_Item_js__WEBPACK_IMPORTED_MODULE_1__.Item, {
+    position: "left"
+  }, left) : null;
+  const rightConnectionMarkup = right ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Item_Item_js__WEBPACK_IMPORTED_MODULE_1__.Item, {
+    position: "right"
+  }, right) : null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Connected_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.Connected
+  }, leftConnectionMarkup, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Item_Item_js__WEBPACK_IMPORTED_MODULE_1__.Item, {
+    position: "primary"
+  }, children), rightConnectionMarkup);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Connected/Connected.scss.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Connected/Connected.scss.js ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "Connected": "Polaris-Connected",
+  "Item": "Polaris-Connected__Item",
+  "Item-primary": "Polaris-Connected__Item--primary",
+  "Item-focused": "Polaris-Connected__Item--focused"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Connected/components/Item/Item.js":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Connected/components/Item/Item.js ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Item": () => (/* binding */ Item)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/use-toggle.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/use-toggle.js");
+/* harmony import */ var _Connected_scss_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Connected.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Connected/Connected.scss.js");
+
+
+
+
+
+function Item({
+  children,
+  position
+}) {
+  const {
+    value: focused,
+    setTrue: forceTrueFocused,
+    setFalse: forceFalseFocused
+  } = (0,_utilities_use_toggle_js__WEBPACK_IMPORTED_MODULE_1__.useToggle)(false);
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_2__.classNames)(_Connected_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Item, focused && _Connected_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Item-focused"], position === 'primary' ? _Connected_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Item-primary"] : _Connected_scss_js__WEBPACK_IMPORTED_MODULE_3__.default["Item-connection"]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    onBlur: forceFalseFocused,
+    onFocus: forceTrueFocused,
+    className: className
+  }, children);
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/components/DisplayText/DisplayText.js":
 /*!**************************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/components/DisplayText/DisplayText.js ***!
@@ -3906,6 +4012,248 @@ function FocusManager({
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_utilities_focus_manager_context_js__WEBPACK_IMPORTED_MODULE_1__.FocusManagerContext.Provider, {
     value: value
   }, children);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Form": () => (/* binding */ Form)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/i18n/hooks.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/i18n/hooks.js");
+/* harmony import */ var _VisuallyHidden_VisuallyHidden_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VisuallyHidden/VisuallyHidden.js */ "./node_modules/@shopify/polaris/dist/esm/components/VisuallyHidden/VisuallyHidden.js");
+
+
+
+
+function Form({
+  acceptCharset,
+  action,
+  autoComplete,
+  children,
+  encType,
+  implicitSubmit = true,
+  method = 'post',
+  name,
+  noValidate,
+  preventDefault = true,
+  target,
+  onSubmit
+}) {
+  const i18n = (0,_utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_1__.useI18n)();
+  const handleSubmit = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(event => {
+    if (!preventDefault) {
+      return;
+    }
+
+    event.preventDefault();
+    onSubmit(event);
+  }, [onSubmit, preventDefault]);
+  const autoCompleteInputs = normalizeAutoComplete(autoComplete);
+  const submitMarkup = implicitSubmit ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_VisuallyHidden_VisuallyHidden_js__WEBPACK_IMPORTED_MODULE_2__.VisuallyHidden, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "submit",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, i18n.translate('Polaris.Common.submit'))) : null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    acceptCharset: acceptCharset,
+    action: action,
+    autoComplete: autoCompleteInputs,
+    encType: encType,
+    method: method,
+    name: name,
+    noValidate: noValidate,
+    target: target,
+    onSubmit: handleSubmit
+  }, children, submitMarkup);
+}
+
+function normalizeAutoComplete(autoComplete) {
+  if (autoComplete == null) {
+    return autoComplete;
+  }
+
+  return autoComplete ? 'on' : 'off';
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FormLayout": () => (/* binding */ FormLayout)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_components_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/components.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/components.js");
+/* harmony import */ var _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormLayout.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.scss.js");
+/* harmony import */ var _components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Item/Item.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Item/Item.js");
+/* harmony import */ var _components_Group_Group_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Group/Group.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Group/Group.js");
+
+
+
+
+
+
+const FormLayout = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(function FormLayout({
+  children
+}) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_1__.default.FormLayout
+  }, react__WEBPACK_IMPORTED_MODULE_0__.Children.map(children, wrapChildren));
+});
+FormLayout.Group = _components_Group_Group_js__WEBPACK_IMPORTED_MODULE_2__.Group;
+
+function wrapChildren(child, index) {
+  if ((0,_utilities_components_js__WEBPACK_IMPORTED_MODULE_3__.isElementOfType)(child, _components_Group_Group_js__WEBPACK_IMPORTED_MODULE_2__.Group)) {
+    return child;
+  }
+
+  const props = {
+    key: index
+  };
+  return (0,_utilities_components_js__WEBPACK_IMPORTED_MODULE_3__.wrapWithComponent)(child, _components_Item_Item_js__WEBPACK_IMPORTED_MODULE_4__.Item, props);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.scss.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.scss.js ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "FormLayout": "Polaris-FormLayout",
+  "Title": "Polaris-FormLayout__Title",
+  "Items": "Polaris-FormLayout__Items",
+  "HelpText": "Polaris-FormLayout__HelpText",
+  "Item": "Polaris-FormLayout__Item",
+  "grouped": "Polaris-FormLayout--grouped",
+  "condensed": "Polaris-FormLayout--condensed"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Group/Group.js":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Group/Group.js ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Group": () => (/* binding */ Group)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_unique_id_hooks_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../utilities/unique-id/hooks.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/unique-id/hooks.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _utilities_components_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../utilities/components.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/components.js");
+/* harmony import */ var _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../FormLayout.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.scss.js");
+/* harmony import */ var _Item_Item_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Item/Item.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Item/Item.js");
+
+
+
+
+
+
+
+function Group({
+  children,
+  condensed,
+  title,
+  helpText
+}) {
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_1__.classNames)(condensed ? _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.condensed : _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.grouped);
+  const id = (0,_utilities_unique_id_hooks_js__WEBPACK_IMPORTED_MODULE_3__.useUniqueId)('FormLayoutGroup');
+  let helpTextElement = null;
+  let helpTextID;
+  let titleElement = null;
+  let titleID;
+
+  if (helpText) {
+    helpTextID = `${id}HelpText`;
+    helpTextElement = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      id: helpTextID,
+      className: _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.HelpText
+    }, helpText);
+  }
+
+  if (title) {
+    titleID = `${id}Title`;
+    titleElement = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      id: titleID,
+      className: _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.Title
+    }, title);
+  }
+
+  const itemsMarkup = react__WEBPACK_IMPORTED_MODULE_0__.Children.map(children, child => (0,_utilities_components_js__WEBPACK_IMPORTED_MODULE_4__.wrapWithComponent)(child, _Item_Item_js__WEBPACK_IMPORTED_MODULE_5__.Item, {}));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    role: "group",
+    className: className,
+    "aria-labelledby": titleID,
+    "aria-describedby": helpTextID
+  }, titleElement, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.Items
+  }, itemsMarkup), helpTextElement);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Item/Item.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/FormLayout/components/Item/Item.js ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Item": () => (/* binding */ Item)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../FormLayout.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.scss.js");
+
+
+
+function Item(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _FormLayout_scss_js__WEBPACK_IMPORTED_MODULE_1__.default.Item
+  }, props.children);
 }
 
 
@@ -5126,6 +5474,76 @@ function Image(_ref) {
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/InlineError/InlineError.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/InlineError/InlineError.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "InlineError": () => (/* binding */ InlineError),
+/* harmony export */   "errorTextID": () => (/* binding */ errorTextID)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/AlertMinor.svg.mjs");
+/* harmony import */ var _Icon_Icon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Icon/Icon.js */ "./node_modules/@shopify/polaris/dist/esm/components/Icon/Icon.js");
+/* harmony import */ var _InlineError_scss_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./InlineError.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/InlineError/InlineError.scss.js");
+
+
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon_Icon_js__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+  source: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_2__.S
+});
+
+function InlineError({
+  message,
+  fieldID
+}) {
+  if (!message) {
+    return null;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    id: errorTextID(fieldID),
+    className: _InlineError_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.InlineError
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _InlineError_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Icon
+  }, _ref), message);
+}
+function errorTextID(id) {
+  return `${id}Error`;
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/InlineError/InlineError.scss.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/InlineError/InlineError.scss.js ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "InlineError": "Polaris-InlineError",
+  "Icon": "Polaris-InlineError__Icon"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/components/KeypressListener/KeypressListener.js":
 /*!************************************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/components/KeypressListener/KeypressListener.js ***!
@@ -5161,6 +5579,171 @@ function KeypressListener({
 }
 
 
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Label/Label.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Label/Label.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Label": () => (/* binding */ Label),
+/* harmony export */   "labelID": () => (/* binding */ labelID)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _Label_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Label.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Label/Label.scss.js");
+
+
+
+
+function labelID(id) {
+  return `${id}Label`;
+}
+function Label({
+  children,
+  id,
+  hidden
+}) {
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_1__.classNames)(_Label_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.Label, hidden && _Label_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.hidden);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: className
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    id: labelID(id),
+    htmlFor: id,
+    className: _Label_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.Text
+  }, children));
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Label/Label.scss.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Label/Label.scss.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "Label": "Polaris-Label",
+  "hidden": "Polaris-Label--hidden",
+  "Text": "Polaris-Label__Text"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Labelled/Labelled.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Labelled/Labelled.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "labelID": () => (/* reexport safe */ _Label_Label_js__WEBPACK_IMPORTED_MODULE_1__.labelID),
+/* harmony export */   "Labelled": () => (/* binding */ Labelled),
+/* harmony export */   "helpTextID": () => (/* binding */ helpTextID)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@shopify/polaris/dist/esm/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _Button_utils_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Button/utils.js */ "./node_modules/@shopify/polaris/dist/esm/components/Button/utils.js");
+/* harmony import */ var _Label_Label_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Label/Label.js */ "./node_modules/@shopify/polaris/dist/esm/components/Label/Label.js");
+/* harmony import */ var _InlineError_InlineError_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../InlineError/InlineError.js */ "./node_modules/@shopify/polaris/dist/esm/components/InlineError/InlineError.js");
+/* harmony import */ var _Labelled_scss_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Labelled.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/Labelled/Labelled.scss.js");
+
+
+
+
+
+
+
+
+
+function Labelled(_ref) {
+  let {
+    id,
+    label,
+    error,
+    action,
+    helpText,
+    children,
+    labelHidden
+  } = _ref,
+      rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_2__.objectWithoutProperties)(_ref, ["id", "label", "error", "action", "helpText", "children", "labelHidden"]);
+
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_3__.classNames)(labelHidden && _Labelled_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.hidden);
+  const actionMarkup = action ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Labelled_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.Action
+  }, (0,_Button_utils_js__WEBPACK_IMPORTED_MODULE_5__.buttonFrom)(action, {
+    plain: true
+  })) : null;
+  const helpTextMarkup = helpText ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Labelled_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.HelpText,
+    id: helpTextID(id)
+  }, helpText) : null;
+  const errorMarkup = error && typeof error !== 'boolean' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Labelled_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.Error
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InlineError_InlineError_js__WEBPACK_IMPORTED_MODULE_6__.InlineError, {
+    message: error,
+    fieldID: id
+  }));
+  const labelMarkup = label ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Labelled_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.LabelWrapper
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Label_Label_js__WEBPACK_IMPORTED_MODULE_1__.Label, Object.assign({
+    id: id
+  }, rest, {
+    hidden: false
+  }), label), actionMarkup) : null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: className
+  }, labelMarkup, children, errorMarkup, helpTextMarkup);
+}
+function helpTextID(id) {
+  return `${id}HelpText`;
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/Labelled/Labelled.scss.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/Labelled/Labelled.scss.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "hidden": "Polaris-Labelled--hidden",
+  "LabelWrapper": "Polaris-Labelled__LabelWrapper",
+  "HelpText": "Polaris-Labelled__HelpText",
+  "Error": "Polaris-Labelled__Error",
+  "Action": "Polaris-Labelled__Action"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
 
 
 /***/ }),
@@ -8606,6 +9189,604 @@ var styles = {
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TextField": () => (/* binding */ TextField)
+/* harmony export */ });
+/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../types.js */ "./node_modules/@shopify/polaris/dist/esm/types.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@shopify/polaris/dist/esm/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var _utilities_unique_id_hooks_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utilities/unique-id/hooks.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/unique-id/hooks.js");
+/* harmony import */ var _utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/i18n/hooks.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/i18n/hooks.js");
+/* harmony import */ var _utilities_css_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utilities/css.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/css.js");
+/* harmony import */ var _utilities_use_is_after_initial_mount_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utilities/use-is-after-initial-mount.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/use-is-after-initial-mount.js");
+/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/CircleCancelMinor.svg.mjs");
+/* harmony import */ var _Icon_Icon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Icon/Icon.js */ "./node_modules/@shopify/polaris/dist/esm/components/Icon/Icon.js");
+/* harmony import */ var _VisuallyHidden_VisuallyHidden_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../VisuallyHidden/VisuallyHidden.js */ "./node_modules/@shopify/polaris/dist/esm/components/VisuallyHidden/VisuallyHidden.js");
+/* harmony import */ var _Label_Label_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Label/Label.js */ "./node_modules/@shopify/polaris/dist/esm/components/Label/Label.js");
+/* harmony import */ var _Labelled_Labelled_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../Labelled/Labelled.js */ "./node_modules/@shopify/polaris/dist/esm/components/Labelled/Labelled.js");
+/* harmony import */ var _Connected_Connected_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Connected/Connected.js */ "./node_modules/@shopify/polaris/dist/esm/components/Connected/Connected.js");
+/* harmony import */ var _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TextField.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.scss.js");
+/* harmony import */ var _components_Resizer_Resizer_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Resizer/Resizer.js */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/components/Resizer/Resizer.js");
+/* harmony import */ var _components_Spinner_Spinner_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Spinner/Spinner.js */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/components/Spinner/Spinner.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon_Icon_js__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+  source: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_2__.S,
+  color: "base"
+});
+
+function TextField({
+  prefix,
+  suffix,
+  placeholder,
+  value,
+  helpText,
+  label,
+  labelAction,
+  labelHidden,
+  disabled,
+  clearButton,
+  readOnly,
+  autoFocus,
+  focused,
+  multiline,
+  error,
+  connectedRight,
+  connectedLeft,
+  type,
+  name,
+  id: idProp,
+  role,
+  step,
+  autoComplete,
+  max,
+  maxLength,
+  min,
+  minLength,
+  pattern,
+  inputMode,
+  spellCheck,
+  ariaOwns,
+  ariaControls,
+  ariaExpanded,
+  ariaActiveDescendant,
+  ariaAutocomplete,
+  showCharacterCount,
+  align,
+  onClearButtonClick,
+  onChange,
+  onFocus,
+  onBlur
+}) {
+  const i18n = (0,_utilities_i18n_hooks_js__WEBPACK_IMPORTED_MODULE_3__.useI18n)();
+  const [height, setHeight] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const [focus, setFocus] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(Boolean(focused));
+  const isAfterInitial = (0,_utilities_use_is_after_initial_mount_js__WEBPACK_IMPORTED_MODULE_4__.useIsAfterInitialMount)();
+  const id = (0,_utilities_unique_id_hooks_js__WEBPACK_IMPORTED_MODULE_5__.useUniqueId)('TextField', idProp);
+  const inputRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const prefixRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const suffixRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const buttonPressTimer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const input = inputRef.current;
+    if (!input || focused === undefined) return;
+    focused ? input.focus() : input.blur();
+  }, [focused]); // Use a typeof check here as Typescript mostly protects us from non-stringy
+  // values but overzealous usage of `any` in consuming apps means people have
+  // been known to pass a number in, so make it clear that doesn't work.
+
+  const normalizedValue = typeof value === 'string' ? value : '';
+  const normalizedStep = step != null ? step : 1;
+  const normalizedMax = max != null ? max : Infinity;
+  const normalizedMin = min != null ? min : -Infinity;
+  const className = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_6__.classNames)(_TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.TextField, Boolean(normalizedValue) && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.hasValue, disabled && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.disabled, readOnly && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.readOnly, error && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.error, multiline && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.multiline, focus && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.focus);
+  const inputType = type === 'currency' ? 'text' : type;
+  const prefixMarkup = prefix ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.Prefix,
+    id: `${id}Prefix`,
+    ref: prefixRef
+  }, prefix) : null;
+  const suffixMarkup = suffix ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.Suffix,
+    id: `${id}Suffix`,
+    ref: suffixRef
+  }, suffix) : null;
+  let characterCountMarkup = null;
+
+  if (showCharacterCount) {
+    const characterCount = normalizedValue.length;
+    const characterCountLabel = maxLength ? i18n.translate('Polaris.TextField.characterCountWithMaxLength', {
+      count: characterCount,
+      limit: maxLength
+    }) : i18n.translate('Polaris.TextField.characterCount', {
+      count: characterCount
+    });
+    const characterCountClassName = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_6__.classNames)(_TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.CharacterCount, multiline && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.AlignFieldBottom);
+    const characterCountText = !maxLength ? characterCount : `${characterCount}/${maxLength}`;
+    characterCountMarkup = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      id: `${id}CharacterCounter`,
+      className: characterCountClassName,
+      "aria-label": characterCountLabel,
+      "aria-live": focus ? 'polite' : 'off',
+      "aria-atomic": "true"
+    }, characterCountText);
+  }
+
+  const clearButtonVisible = normalizedValue !== '';
+  const clearButtonClassName = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_6__.classNames)(_TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.ClearButton, !clearButtonVisible && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default["ClearButton-hidden"]);
+  const clearButtonMarkup = clearButton ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    type: "button",
+    className: clearButtonClassName,
+    onClick: handleClearButtonPress,
+    disabled: disabled,
+    tabIndex: clearButtonVisible ? 0 : -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_VisuallyHidden_VisuallyHidden_js__WEBPACK_IMPORTED_MODULE_8__.VisuallyHidden, null, i18n.translate('Polaris.Common.clear')), _ref) : null;
+  const handleNumberChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(steps => {
+    if (onChange == null) {
+      return;
+    } // Returns the length of decimal places in a number
+
+
+    const dpl = num => (num.toString().split('.')[1] || []).length;
+
+    const numericValue = value ? parseFloat(value) : 0;
+
+    if (isNaN(numericValue)) {
+      return;
+    } // Making sure the new value has the same length of decimal places as the
+    // step / value has.
+
+
+    const decimalPlaces = Math.max(dpl(numericValue), dpl(normalizedStep));
+    const newValue = Math.min(Number(normalizedMax), Math.max(numericValue + steps * normalizedStep, Number(normalizedMin)));
+    onChange(String(newValue.toFixed(decimalPlaces)), id);
+  }, [id, normalizedMax, normalizedMin, onChange, normalizedStep, value]);
+  const handleButtonRelease = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => {
+    clearTimeout(buttonPressTimer.current);
+  }, []);
+  const handleButtonPress = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(onChange => {
+    const minInterval = 50;
+    const decrementBy = 10;
+    let interval = 200;
+
+    const onChangeInterval = () => {
+      if (interval > minInterval) interval -= decrementBy;
+      onChange(0);
+      buttonPressTimer.current = window.setTimeout(onChangeInterval, interval);
+    };
+
+    buttonPressTimer.current = window.setTimeout(onChangeInterval, interval);
+    document.addEventListener('mouseup', handleButtonRelease, {
+      once: true
+    });
+  }, [handleButtonRelease]);
+  const spinnerMarkup = type === 'number' && step !== 0 && !disabled && !readOnly ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Spinner_Spinner_js__WEBPACK_IMPORTED_MODULE_9__.Spinner, {
+    onChange: handleNumberChange,
+    onMouseDown: handleButtonPress,
+    onMouseUp: handleButtonRelease
+  }) : null;
+  const style = multiline && height ? {
+    height
+  } : null;
+  const handleExpandingResize = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(height => {
+    setHeight(height);
+  }, []);
+  const resizer = multiline && isAfterInitial ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Resizer_Resizer_js__WEBPACK_IMPORTED_MODULE_10__.Resizer, {
+    contents: normalizedValue || placeholder,
+    currentHeight: height,
+    minimumLines: typeof multiline === 'number' ? multiline : 1,
+    onHeightChange: handleExpandingResize
+  }) : null;
+  const describedBy = [];
+
+  if (error) {
+    describedBy.push(`${id}Error`);
+  }
+
+  if (helpText) {
+    describedBy.push((0,_Labelled_Labelled_js__WEBPACK_IMPORTED_MODULE_11__.helpTextID)(id));
+  }
+
+  if (showCharacterCount) {
+    describedBy.push(`${id}CharacterCounter`);
+  }
+
+  const labelledBy = [];
+
+  if (prefix) {
+    labelledBy.push(`${id}Prefix`);
+  }
+
+  if (suffix) {
+    labelledBy.push(`${id}Suffix`);
+  }
+
+  labelledBy.unshift((0,_Label_Label_js__WEBPACK_IMPORTED_MODULE_12__.labelID)(id));
+  const inputClassName = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_6__.classNames)(_TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.Input, align && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default[(0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_6__.variationName)('Input-align', align)], suffix && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default["Input-suffixed"], clearButton && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default["Input-hasClearButton"]);
+  const input = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(multiline ? 'textarea' : 'input', (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_13__.objectSpread2)({
+    name,
+    id,
+    disabled,
+    readOnly,
+    role,
+    autoFocus,
+    value: normalizedValue,
+    placeholder,
+    onFocus,
+    onBlur,
+    onKeyPress: handleKeyPress,
+    style,
+    autoComplete: normalizeAutoComplete(autoComplete),
+    className: inputClassName,
+    onChange: handleChange,
+    ref: inputRef,
+    min,
+    max,
+    step,
+    minLength,
+    maxLength,
+    spellCheck,
+    pattern,
+    inputMode,
+    type: inputType,
+    'aria-describedby': describedBy.length ? describedBy.join(' ') : undefined,
+    'aria-labelledby': labelledBy.join(' '),
+    'aria-invalid': Boolean(error),
+    'aria-owns': ariaOwns,
+    'aria-activedescendant': ariaActiveDescendant,
+    'aria-autocomplete': ariaAutocomplete,
+    'aria-controls': ariaControls,
+    'aria-expanded': ariaExpanded
+  }, normalizeAriaMultiline(multiline)));
+  const backdropClassName = (0,_utilities_css_js__WEBPACK_IMPORTED_MODULE_6__.classNames)(_TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default.Backdrop, connectedLeft && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default["Backdrop-connectedLeft"], connectedRight && _TextField_scss_js__WEBPACK_IMPORTED_MODULE_7__.default["Backdrop-connectedRight"]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Labelled_Labelled_js__WEBPACK_IMPORTED_MODULE_11__.Labelled, {
+    label: label,
+    id: id,
+    error: error,
+    action: labelAction,
+    labelHidden: labelHidden,
+    helpText: helpText
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Connected_Connected_js__WEBPACK_IMPORTED_MODULE_14__.Connected, {
+    left: connectedLeft,
+    right: connectedRight
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: className,
+    onFocus: handleFocus,
+    onBlur: handleBlur,
+    onClick: handleClick
+  }, prefixMarkup, input, suffixMarkup, characterCountMarkup, clearButtonMarkup, spinnerMarkup, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: backdropClassName
+  }), resizer)));
+
+  function handleClearButtonPress() {
+    onClearButtonClick && onClearButtonClick(id);
+  }
+
+  function handleKeyPress(event) {
+    const {
+      key,
+      which
+    } = event;
+    const numbersSpec = /[\d.eE+-]$/;
+
+    if (type !== 'number' || which === _types_js__WEBPACK_IMPORTED_MODULE_15__.Key.Enter || numbersSpec.test(key)) {
+      return;
+    }
+
+    event.preventDefault();
+  }
+
+  function containsAffix(target) {
+    return target instanceof HTMLElement && (prefixRef.current && prefixRef.current.contains(target) || suffixRef.current && suffixRef.current.contains(target));
+  }
+
+  function handleChange(event) {
+    onChange && onChange(event.currentTarget.value, id);
+  }
+
+  function handleFocus({
+    target
+  }) {
+    if (containsAffix(target)) {
+      return;
+    }
+
+    setFocus(true);
+  }
+
+  function handleBlur() {
+    setFocus(false);
+  }
+
+  function handleClick({
+    target
+  }) {
+    if (containsAffix(target)) {
+      return;
+    }
+
+    inputRef.current && inputRef.current.focus();
+  }
+}
+
+function normalizeAutoComplete(autoComplete) {
+  if (autoComplete === true) {
+    return 'on';
+  } else if (autoComplete === false) {
+    return 'off';
+  } else {
+    return autoComplete;
+  }
+}
+
+function normalizeAriaMultiline(multiline) {
+  if (!multiline) return undefined;
+  return Boolean(multiline) || multiline > 0 ? {
+    'aria-multiline': true
+  } : undefined;
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.scss.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.scss.js ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "TextField": "Polaris-TextField",
+  "multiline": "Polaris-TextField--multiline",
+  "Input": "Polaris-TextField__Input",
+  "hasValue": "Polaris-TextField--hasValue",
+  "focus": "Polaris-TextField--focus",
+  "Backdrop": "Polaris-TextField__Backdrop",
+  "error": "Polaris-TextField--error",
+  "readOnly": "Polaris-TextField--readOnly",
+  "disabled": "Polaris-TextField--disabled",
+  "Prefix": "Polaris-TextField__Prefix",
+  "Input-hasClearButton": "Polaris-TextField__Input--hasClearButton",
+  "Input-suffixed": "Polaris-TextField__Input--suffixed",
+  "Input-alignRight": "Polaris-TextField__Input--alignRight",
+  "Input-alignLeft": "Polaris-TextField__Input--alignLeft",
+  "Input-alignCenter": "Polaris-TextField__Input--alignCenter",
+  "Suffix": "Polaris-TextField__Suffix",
+  "CharacterCount": "Polaris-TextField__CharacterCount",
+  "AlignFieldBottom": "Polaris-TextField__AlignFieldBottom",
+  "ClearButton": "Polaris-TextField__ClearButton",
+  "ClearButton-hidden": "Polaris-TextField__ClearButton--hidden",
+  "Spinner": "Polaris-TextField__Spinner",
+  "SpinnerIcon": "Polaris-TextField__SpinnerIcon",
+  "Resizer": "Polaris-TextField__Resizer",
+  "DummyInput": "Polaris-TextField__DummyInput",
+  "Segment": "Polaris-TextField__Segment"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/TextField/components/Resizer/Resizer.js":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/TextField/components/Resizer/Resizer.js ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Resizer": () => (/* binding */ Resizer)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _EventListener_EventListener_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../EventListener/EventListener.js */ "./node_modules/@shopify/polaris/dist/esm/components/EventListener/EventListener.js");
+/* harmony import */ var _TextField_scss_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../TextField.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.scss.js");
+
+
+
+
+function Resizer({
+  contents,
+  currentHeight: currentHeightProp = null,
+  minimumLines,
+  onHeightChange
+}) {
+  const contentNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const minimumLinesNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const animationFrame = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  const currentHeight = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(currentHeightProp);
+
+  if (currentHeightProp !== currentHeight.current) {
+    currentHeight.current = currentHeightProp;
+  }
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    return () => {
+      if (animationFrame.current) {
+        cancelAnimationFrame(animationFrame.current);
+      }
+    };
+  }, []);
+  const minimumLinesMarkup = minimumLines ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    ref: minimumLinesNode,
+    className: _TextField_scss_js__WEBPACK_IMPORTED_MODULE_1__.default.DummyInput,
+    dangerouslySetInnerHTML: {
+      __html: getContentsForMinimumLines(minimumLines)
+    }
+  }) : null;
+  const handleHeightCheck = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => {
+    if (animationFrame.current) {
+      cancelAnimationFrame(animationFrame.current);
+    }
+
+    animationFrame.current = requestAnimationFrame(() => {
+      if (!contentNode.current || !minimumLinesNode.current) {
+        return;
+      }
+
+      const newHeight = Math.max(contentNode.current.offsetHeight, minimumLinesNode.current.offsetHeight);
+
+      if (newHeight !== currentHeight.current) {
+        onHeightChange(newHeight);
+      }
+    });
+  }, [onHeightChange]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect)(() => {
+    handleHeightCheck();
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    "aria-hidden": true,
+    className: _TextField_scss_js__WEBPACK_IMPORTED_MODULE_1__.default.Resizer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventListener_EventListener_js__WEBPACK_IMPORTED_MODULE_2__.EventListener, {
+    event: "resize",
+    handler: handleHeightCheck
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    ref: contentNode,
+    className: _TextField_scss_js__WEBPACK_IMPORTED_MODULE_1__.default.DummyInput,
+    dangerouslySetInnerHTML: {
+      __html: getFinalContents(contents)
+    }
+  }), minimumLinesMarkup);
+}
+const ENTITIES_TO_REPLACE = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '\n': '<br>',
+  '\r': ''
+};
+const REPLACE_REGEX = new RegExp(`[${Object.keys(ENTITIES_TO_REPLACE).join()}]`, 'g');
+
+function replaceEntity(entity) {
+  return ENTITIES_TO_REPLACE[entity];
+}
+
+function getContentsForMinimumLines(minimumLines) {
+  let content = '';
+
+  for (let line = 0; line < minimumLines; line++) {
+    content += '<br>';
+  }
+
+  return content;
+}
+
+function getFinalContents(contents) {
+  return contents ? `${contents.replace(REPLACE_REGEX, replaceEntity)}<br>` : '<br>';
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/TextField/components/Spinner/Spinner.js":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/TextField/components/Spinner/Spinner.js ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Spinner": () => (/* binding */ Spinner)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/CaretUpMinor.svg.mjs");
+/* harmony import */ var _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris-icons */ "./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/CaretDownMinor.svg.mjs");
+/* harmony import */ var _Icon_Icon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Icon/Icon.js */ "./node_modules/@shopify/polaris/dist/esm/components/Icon/Icon.js");
+/* harmony import */ var _TextField_scss_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../TextField.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.scss.js");
+
+
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon_Icon_js__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+  source: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_2__.S
+});
+
+var _ref2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Icon_Icon_js__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+  source: _shopify_polaris_icons__WEBPACK_IMPORTED_MODULE_3__.S
+});
+
+function Spinner({
+  onChange,
+  onClick,
+  onMouseDown,
+  onMouseUp
+}) {
+  function handleStep(step) {
+    return () => onChange(step);
+  }
+
+  function handleMouseDown(onChange) {
+    return event => {
+      if (event.button !== 0) return;
+      onMouseDown(onChange);
+    };
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _TextField_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.Spinner,
+    onClick: onClick,
+    "aria-hidden": true
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    role: "button",
+    className: _TextField_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.Segment,
+    tabIndex: -1,
+    onClick: handleStep(1),
+    onMouseDown: handleMouseDown(handleStep(1)),
+    onMouseUp: onMouseUp
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _TextField_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.SpinnerIcon
+  }, _ref)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    role: "button",
+    className: _TextField_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.Segment,
+    tabIndex: -1,
+    onClick: handleStep(-1),
+    onMouseDown: handleMouseDown(handleStep(-1)),
+    onMouseUp: onMouseUp
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _TextField_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.SpinnerIcon
+  }, _ref2)));
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/components/TextStyle/TextStyle.js":
 /*!**********************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/components/TextStyle/TextStyle.js ***!
@@ -12043,6 +13224,37 @@ const WithinFilterContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.c
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/AlertMinor.svg.mjs":
+/*!*********************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/AlertMinor.svg.mjs ***!
+  \*********************************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "S": () => (/* binding */ SvgAlertMinor)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var _ref =
+/*#__PURE__*/
+react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+  d: "M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zM9 9a1 1 0 0 0 2 0V7a1 1 0 1 0-2 0v2zm0 4a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"
+});
+
+var SvgAlertMinor = function SvgAlertMinor(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", Object.assign({
+    viewBox: "0 0 20 20"
+  }, props), _ref);
+};
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/CaretDownMinor.svg.mjs":
 /*!*************************************************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/node_modules/@shopify/polaris-icons/dist/icons/CaretDownMinor.svg.mjs ***!
@@ -14204,56 +15416,123 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Forms)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/react-hook-form.es.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
 function Forms() {
-  var _useForm = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_2__.default)(),
-      register = _useForm.register,
-      handleSubmit = _useForm.handleSubmit,
-      errors = _useForm.errors;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      newsletter = _useState2[0],
+      setNewsletter = _useState2[1];
 
-  var onSubmit = function onSubmit(data) {
-    console.log(data);
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      email = _useState4[0],
+      setEmail = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      password = _useState6[0],
+      setPassword = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      errors = _useState8[0],
+      setErrors = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      errorsPassword = _useState10[0],
+      setErrorsPassword = _useState10[1]; //=============Experment=================
+
+
+  var validField = function validField(event) {
+    var valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
+    console.log(valueField);
+
+    if (valueField) {
+      setErrors(false);
+    } else {
+      setErrors(true);
+    }
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: 'form__block',
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-      className: 'form__wrap',
-      onSubmit: handleSubmit(onSubmit),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", _defineProperty({
-        className: 'form__input',
-        type: "text",
-        placeholder: "Email",
-        name: "email",
-        ref: register
-      }, "ref", register({
-        required: true,
-        pattern: /^\w*@\w{2,7}\.\w{2,7}/,
-        maxLength: 50
-      }))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-        className: 'form__input',
-        type: "password",
-        placeholder: "Password",
-        name: "password",
-        ref: register({
-          required: true,
-          minLength: 6,
-          maxLength: 50
+  var validFieldPass = function validFieldPass(event) {
+    var valueField = event.target.value.match(/.{6,25}/);
+    console.log(valueField);
+
+    if (valueField) {
+      setErrorsPassword(false);
+    } else {
+      setErrorsPassword(true);
+    }
+  }; //====================
+
+
+  var handleSubmit = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (_event) {
+    event.preventDefault();
+    setEmail('');
+    setPassword('');
+    setNewsletter(false);
+  }, []);
+  var handleNewsLetterChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setNewsletter(value);
+  }, []);
+  var handleEmailChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setEmail(value);
+  }, []);
+  var handlePasswordChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setPassword(value);
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Form, {
+    onSubmit: handleSubmit,
+    noValidate: true,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.FormLayout, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+        value: email,
+        onChange: handleEmailChange,
+        label: "Email",
+        type: "email",
+        error: errors,
+        onBlur: validField,
+        helpText: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          children: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 e-mail"
         })
-      }), errors.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-        children: "Email is invalid"
-      }), errors.password && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-        children: "Password is invalid"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-        className: 'form__input',
-        type: "submit"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+        onBlur: validFieldPass,
+        value: password,
+        onChange: handlePasswordChange,
+        label: "Password",
+        type: "password",
+        minLength: 6,
+        maxLength: 50,
+        error: errorsPassword,
+        helpText: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          children: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0430\u0440\u043E\u043B\u044C"
+        })
+      }), errorsPassword && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        children: "\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F \u043C\u0438\u043D\u0438\u043C\u0443\u043C 6 \u0437\u043D\u0430\u043A\u043E\u0432"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
+        submit: true,
+        children: "\u0412\u043E\u0439\u0442\u0438"
       })]
     })
   });
@@ -14273,59 +15552,123 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ FormsRegister)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/react-hook-form.es.js");
-/* harmony import */ var _form_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form.css */ "./resources/js/Application/Form/form.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
 function FormsRegister() {
-  var _useForm = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_3__.default)(),
-      register = _useForm.register,
-      handleSubmit = _useForm.handleSubmit,
-      errors = _useForm.errors;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      newsletter = _useState2[0],
+      setNewsletter = _useState2[1];
 
-  var onSubmit = function onSubmit(data) {
-    console.log(data);
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      email = _useState4[0],
+      setEmail = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      password = _useState6[0],
+      setPassword = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      errors = _useState8[0],
+      setErrors = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      errorsPassword = _useState10[0],
+      setErrorsPassword = _useState10[1]; //=============Experment=================
+
+
+  var validField = function validField(event) {
+    var valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
+    console.log(valueField);
+
+    if (valueField) {
+      setErrors(false);
+    } else {
+      setErrors(true);
+    }
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: 'form__block',
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
-      className: 'form__wrap',
-      onSubmit: handleSubmit(onSubmit),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", _defineProperty({
-        className: 'form__input',
-        type: "text",
-        placeholder: "Email",
-        name: "email",
-        ref: register
-      }, "ref", register({
-        required: true,
-        pattern: /^\w*@\w{2,7}\.\w{2,7}/,
-        maxLength: 50
-      }))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-        className: 'form__input',
-        type: "password",
-        placeholder: "Password",
-        name: "password",
-        ref: register({
-          required: true,
-          minLength: 6,
-          maxLength: 50
+  var validFieldPass = function validFieldPass(event) {
+    var valueField = event.target.value.match(/.{6,25}/);
+    console.log(valueField);
+
+    if (valueField) {
+      setErrorsPassword(false);
+    } else {
+      setErrorsPassword(true);
+    }
+  }; //====================
+
+
+  var handleSubmit = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (_event) {
+    event.preventDefault();
+    setEmail('');
+    setPassword('');
+    setNewsletter(false);
+  }, []);
+  var handleNewsLetterChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setNewsletter(value);
+  }, []);
+  var handleEmailChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setEmail(value);
+  }, []);
+  var handlePasswordChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setPassword(value);
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Form, {
+    onSubmit: handleSubmit,
+    noValidate: true,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.FormLayout, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+        value: email,
+        onChange: handleEmailChange,
+        label: "Email",
+        type: "email",
+        error: errors,
+        onBlur: validField,
+        helpText: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          children: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 e-mail"
         })
-      }), errors.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        children: "Email is invalid"
-      }), errors.password && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        children: "Password is invalid"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-        className: 'form__input',
-        type: "submit",
-        value: "Зарегистрироваться"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+        onBlur: validFieldPass,
+        value: password,
+        onChange: handlePasswordChange,
+        label: "Password",
+        type: "password",
+        minLength: 6,
+        maxLength: 50,
+        error: errorsPassword,
+        helpText: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          children: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0430\u0440\u043E\u043B\u044C"
+        })
+      }), errorsPassword && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        children: "\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F \u043C\u0438\u043D\u0438\u043C\u0443\u043C 6 \u0437\u043D\u0430\u043A\u043E\u0432"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
+        submit: true,
+        children: "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"
       })]
     })
   });
@@ -14453,7 +15796,7 @@ function Tab() {
     panelID: 'all-customers-content-1'
   }, {
     id: 'register',
-    content: 'Accepts marketing',
+    content: 'Регистрация',
     panelID: 'accepts-marketing-content-1'
   }];
 
@@ -14566,30 +15909,6 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n:root{ --polaris-version-number:'6.2.2'; --polaris-animation-skeleton-shimmer:polaris-SkeletonShimmerAnimation; }\n\nhtml, body{ font-size:1.5rem; font-weight:400; line-height:2rem; text-transform:initial; letter-spacing:initial; font-weight:400; color:var(--p-text); }\n\n@media (min-width: 40em){ html, body{ font-size:1.4rem; } }\n\nhtml, body, button{ font-family:-apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif; }\n\nhtml{ position:relative; font-size:62.5%; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; -webkit-text-size-adjust:100%; text-size-adjust:100%; text-rendering:optimizeLegibility; }\n\nbody{ min-height:100%; margin:0; padding:0; background-color:#f4f6f8; }\n\n@media print{ body{ background-color:transparent !important; } }\n\n*, *::before, *::after{ box-sizing:border-box; }\n\nh1, h2, h3, h4, h5, h6, p{ margin:0; font-size:1em; font-weight:400; }\n\nbutton::-moz-focus-inner, [type='button']::-moz-focus-inner, [type='reset']::-moz-focus-inner, [type='submit']::-moz-focus-inner{ border-style:none; }\n\n@keyframes polaris-SkeletonShimmerAnimation{ 0%{ opacity:0.45; }\n  100%{ opacity:0.9; } }\n\n\n.Polaris-Avatar{ position:relative; display:block; overflow:hidden; min-width:3.2rem; max-width:100%; background:var(--p-surface-neutral); color:var(--p-icon-subdued); border-radius:3rem; -webkit-user-select:none; user-select:none; }\n\n@media (forced-colors: active){ .Polaris-Avatar{ border:0.1rem solid transparent; } }\n\n.Polaris-Avatar::after{ content:''; display:block; padding-bottom:100%; }\n\n.Polaris-Avatar--hidden{ visibility:hidden; }\n\n.Polaris-Avatar--sizeSmall{ width:3.2rem; }\n\n.Polaris-Avatar--sizeMedium{ width:4rem; }\n\n.Polaris-Avatar--sizeLarge{ width:6rem; }\n\n.Polaris-Avatar--styleOne{ color:var(--p-decorative-one-text); background:var(--p-decorative-one-surface); }\n\n.Polaris-Avatar--styleTwo{ color:var(--p-decorative-two-text); background:var(--p-decorative-two-surface); }\n\n.Polaris-Avatar--styleThree{ color:var(--p-decorative-three-text); background:var(--p-decorative-three-surface); }\n\n.Polaris-Avatar--styleFour{ color:var(--p-decorative-four-text); background:var(--p-decorative-four-surface); }\n\n.Polaris-Avatar--styleFive{ color:var(--p-decorative-five-text); background:var(--p-decorative-five-surface); }\n\n.Polaris-Avatar--hasImage{ background:transparent; }\n\n.Polaris-Avatar__Image{ position:absolute; top:50%; left:50%; width:100%; height:100%; background-color:var(--p-background); border-radius:3rem; transform:translate(-50%, -50%); object-fit:cover; }\n\n.Polaris-Avatar__Initials{ position:absolute; top:0; right:0; display:flex; align-items:center; justify-content:center; width:100%; height:100%; }\n\n.Polaris-Avatar__Svg{ width:100%; height:100%; }\n\n\n.Polaris-Icon{ display:block; height:2rem; width:2rem; max-height:100%; max-width:100%; margin:auto; }\n\n.Polaris-Icon--applyColor{ color:var(--p-surface); }\n\n.Polaris-Icon--hasBackdrop{ position:relative; display:flex; align-items:center; margin:0.4rem; }\n\n.Polaris-Icon--hasBackdrop::before{ content:''; position:absolute; top:-0.4rem; bottom:-0.4rem; left:-0.4rem; right:-0.4rem; border-radius:50%; }\n\n.Polaris-Icon--colorBase svg{ fill:var(--p-icon); }\n\n.Polaris-Icon--colorBase::before{ background-color:var(--p-surface-neutral); }\n\n.Polaris-Icon--colorSubdued svg{ fill:var(--p-icon-subdued); }\n\n.Polaris-Icon--colorCritical svg{ fill:var(--p-icon-critical); }\n\n.Polaris-Icon--colorCritical::before{ background-color:var(--p-surface-critical); }\n\n.Polaris-Icon--colorWarning svg{ fill:var(--p-icon-warning); }\n\n.Polaris-Icon--colorWarning::before{ background-color:var(--p-surface-warning); }\n\n.Polaris-Icon--colorHighlight svg{ fill:var(--p-icon-highlight); }\n\n.Polaris-Icon--colorHighlight::before{ background-color:var(--p-surface-highlight); }\n\n.Polaris-Icon--colorSuccess svg{ fill:var(--p-icon-success); }\n\n.Polaris-Icon--colorSuccess::before{ background-color:var(--p-surface-success); }\n\n.Polaris-Icon--colorPrimary svg{ fill:var(--p-action-primary); }\n\n.Polaris-Icon__Svg, .Polaris-Icon__Img{ position:relative; display:block; width:100%; max-width:100%; max-height:100%; }\n\n.Polaris-Icon__Placeholder{ padding-bottom:100%; background:currentColor; }\n\n\n.Polaris-VisuallyHidden{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n\n@keyframes Polaris-Spinner--loading{ to{ transform:rotate(360deg); } }\n\n.Polaris-Spinner svg{ animation:Polaris-Spinner--loading 500ms linear infinite; fill:var(--p-border-highlight); }\n\n.Polaris-Spinner--sizeSmall svg{ height:2rem; width:2rem; }\n\n.Polaris-Spinner--sizeLarge svg{ height:4.4rem; width:4.4rem; }\n\n\n.Polaris-Scrollable{ -webkit-overflow-scrolling:touch; position:relative; }\n\n.Polaris-Scrollable:focus{ outline:2px solid var(--p-focused); outline-offset:2px; }\n\n.Polaris-Scrollable--horizontal{ overflow-x:auto; }\n\n.Polaris-Scrollable--vertical{ overflow-y:auto; }\n\n.Polaris-Scrollable--verticalHasScrolling{ overflow-y:scroll; }\n\n.Polaris-Scrollable--hasTopShadow{ box-shadow:inset 0 2rem 2rem -2rem var(--p-hint-from-direct-light); }\n\n.Polaris-Scrollable--hasBottomShadow{ box-shadow:inset 0 -2rem 2rem -2rem var(--p-hint-from-direct-light); }\n\n.Polaris-Scrollable--hasTopShadow.Polaris-Scrollable--hasBottomShadow{ box-shadow:inset 0 2rem 2rem -2rem var(--p-hint-from-direct-light), inset 0 -2rem 2rem -2rem var(--p-hint-from-direct-light); }\n\n\n.Polaris-Popover{ max-width:calc(100vw - 3.2rem); margin:0.5rem 0.8rem 1.6rem; box-shadow:var(--p-popover-shadow); border-radius:var(--p-border-radius-wide); -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:left, top; }\n\n.Polaris-Popover__PopoverOverlay{ -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:opacity; opacity:0; transition:opacity 200ms cubic-bezier(0.36, 0, 1, 1); }\n\n.Polaris-Popover__PopoverOverlay--entering{ opacity:1; }\n\n.Polaris-Popover__PopoverOverlay--open{ opacity:1; }\n\n.Polaris-Popover__PopoverOverlay--exiting{ opacity:0; transition-timing-function:cubic-bezier(0, 0, 0.42, 1); }\n\n.Polaris-Popover--measuring:not(.Polaris-Popover__PopoverOverlay--exiting){ opacity:0; }\n\n.Polaris-Popover--fullWidth{ margin:0; margin-top:0.5rem; }\n\n.Polaris-Popover--fullWidth .Polaris-Popover__Content{ max-width:none; }\n\n.Polaris-Popover--positionedAbove{ margin:1.6rem 0.8rem 0.5rem; }\n\n.Polaris-Popover--positionedAbove.Polaris-Popover--fullWidth{ margin:0 0 0.5rem; }\n\n.Polaris-Popover__Wrapper{ position:relative; overflow:hidden; background-color:var(--p-surface); border-radius:var(--p-border-radius-wide); outline:1px solid transparent; }\n\n.Polaris-Popover__Content{ position:relative; display:flex; flex-direction:column; border-radius:var(--p-border-radius-base); max-width:40rem; max-height:29.5rem; }\n\n.Polaris-Popover__Content:focus{ outline:none; }\n\n.Polaris-Popover__Content--fullHeight{ max-height:none; }\n\n.Polaris-Popover__Content--fluidContent{ max-height:none; max-width:none; }\n\n.Polaris-Popover__Pane{ flex:1 1; max-width:100%; }\n\n.Polaris-Popover__Pane + .Polaris-Popover__Pane{ border-top:0.1rem solid var(--p-divider); }\n\n.Polaris-Popover__Pane:focus{ outline:none; }\n\n.Polaris-Popover__Pane--fixed{ overflow:visible; flex:0 0 auto; }\n\n.Polaris-Popover__Section{ padding:1.6rem; }\n\n.Polaris-Popover__Section + .Polaris-Popover__Section{ border-top:0.1rem solid var(--p-divider); }\n\n.Polaris-Popover__FocusTracker{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n@media print{ .Polaris-Popover__PopoverOverlay--hideOnPrint{ display:none !important; } }\n\n\n.Polaris-PositionedOverlay{ position:absolute; z-index:400; }\n\n.Polaris-PositionedOverlay--fixed{ position:fixed; }\n\n.Polaris-PositionedOverlay--calculating{ visibility:hidden; }\n\n.Polaris-PositionedOverlay--preventInteraction{ pointer-events:none; }\n\n\n.Polaris-Badge{ --p-component-badge-pip-color:var(--p-icon); display:inline-flex; align-items:center; padding:0.3rem 0.8rem; background-color:var(--p-surface-neutral); border:var(--p-override-zero); border-radius:2rem; font-size:1.3rem; line-height:1.6rem; color:var(--p-text); font-weight:var(--p-badge-font-weight); }\n\n@media print{ .Polaris-Badge{ border:solid 0.01rem var(--p-border); border-radius:2rem; } }\n\n.Polaris-Badge--sizeSmall{ font-size:1.2rem; line-height:1.8rem; }\n\n.Polaris-Badge--statusSuccess{ --p-component-badge-pip-color:var(--p-icon-success); background-color:var(--p-surface-success); color:var(--p-text); }\n\n.Polaris-Badge--statusInfo{ --p-component-badge-pip-color:var(--p-icon-highlight); background-color:var(--p-surface-highlight); color:var(--p-text); }\n\n.Polaris-Badge--statusAttention{ --p-component-badge-pip-color:color('yellow', 'dark'); background-color:#ffea8a; color:var(--p-text); }\n\n.Polaris-Badge--statusWarning{ --p-component-badge-pip-color:var(--p-icon-warning); background-color:var(--p-surface-warning); color:var(--p-text, #594430); }\n\n.Polaris-Badge--statusCritical{ --p-component-badge-pip-color:var(--p-icon-critical); background-color:var(--p-surface-critical); color:var(--p-text); }\n\n.Polaris-Badge--statusNew{ background-color:var(--p-surface-neutral); color:var(--p-text); font-weight:500; border:none; }\n\n.Polaris-Badge__Pip{ color:var(--p-component-badge-pip-color); height:1rem; width:1rem; margin:0 0.4rem 0 -0.3rem; border:0.2rem solid currentColor; border-radius:50%; flex-shrink:0; }\n\n.Polaris-Badge--progressIncomplete .Polaris-Badge__Pip{ background:transparent; }\n\n.Polaris-Badge--progressPartiallyComplete .Polaris-Badge__Pip{ background:linear-gradient(to top, currentColor, currentColor 50%, transparent 50%, transparent); }\n\n@media print{ .Polaris-Badge--progressPartiallyComplete .Polaris-Badge__Pip{ background:none; box-shadow:0 -103px 0 -100px currentColor inset; } }\n\n.Polaris-Badge--progressComplete .Polaris-Badge__Pip{ background:currentColor; }\n\n@media print{ .Polaris-Badge--progressComplete .Polaris-Badge__Pip{ background:none; box-shadow:0 0 0 100px currentColor inset; } }\n\n.Polaris-Badge--withinFilter{ border-radius:var(--p-border-radius-base); }\n\n\n.Polaris-TextStyle--variationPositive{ color:var(--p-text-success); }\n\n.Polaris-TextStyle--variationNegative{ color:var(--p-text-critical); }\n\n.Polaris-TextStyle--variationCode{ position:relative; padding:0 0.4rem; border-radius:3px; background-color:var(--p-surface-subdued); display:inline-block; font-size:1.15em; box-shadow:inset 0 0 0 1px var(--p-border-subdued); }\n\n.Polaris-TextStyle--variationCode::after{ content:''; position:absolute; top:0; left:0; width:100%; height:100%; border:1px solid transparent; pointer-events:none; }\n\n.Polaris-TextStyle--variationStrong{ font-weight:600; }\n\n.Polaris-TextStyle--variationSubdued{ color:var(--p-text-subdued); }\n\n\n.Polaris-ActionList{ list-style:none; margin:0; padding:0.8rem 0; }\n\n.Polaris-ActionList__Section--withoutTitle:not(:first-child){ border-top:0.1rem solid var(--p-divider); margin-top:0.8rem; padding-top:0.8rem; }\n\n.Polaris-ActionList__Actions{ list-style:none; margin:0; border-top:0.1rem solid var(--p-divider); padding:0 0.8rem; }\n\n.Polaris-ActionList__Title + .Polaris-ActionList__Actions{ padding-top:0.8rem; }\n\n.Polaris-ActionList > .Polaris-ActionList__Section--withoutTitle .Polaris-ActionList__Actions, .Polaris-ActionList__Section:first-child > .Polaris-ActionList__Section--withoutTitle .Polaris-ActionList__Actions{ border-top:none; }\n\n.Polaris-ActionList__Title{ font-size:1.3rem; font-weight:600; line-height:1.6rem; text-transform:uppercase; padding:1.2rem 1.6rem; }\n\n@media (min-width: 40em){ .Polaris-ActionList__Title{ font-size:1.2rem; } }\n\n.Polaris-ActionList__Item{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; color:inherit; text-decoration:none; position:relative; display:block; width:100%; min-height:4rem; text-align:left; cursor:pointer; padding:1rem 0.8rem; border-radius:var(--p-border-radius-base); border-top:1px solid transparent; }\n\n.Polaris-ActionList__Item:focus{ outline:none; }\n\n.Polaris-ActionList__Item:visited{ color:inherit; }\n\n.Polaris-ActionList__Item::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n@media (forced-colors: active){ .Polaris-ActionList__Item{ border:0.1rem solid transparent; } }\n\n.Polaris-ActionList__Item:hover{ background-color:var(--p-surface-hovered); text-decoration:none; outline:0.3rem solid transparent; }\n\n.Polaris-ActionList__Item.Polaris-ActionList--active{ background-color:var(--p-surface-selected); }\n\n.Polaris-ActionList__Item.Polaris-ActionList--active svg{ fill:var(--p-interactive); }\n\n.Polaris-ActionList__Item.Polaris-ActionList--active::before{ content:''; background-color:var(--p-interactive); position:absolute; top:0; left:-0.8rem; height:100%; display:block; width:0.3rem; border-top-right-radius:var(--p-border-radius-base); border-bottom-right-radius:var(--p-border-radius-base); }\n\n.Polaris-ActionList__Item:active{ background-color:var(--p-surface-pressed); }\n\n.Polaris-ActionList__Item:active svg{ fill:var(--p-interactive); }\n\n.Polaris-ActionList__Item:focus:not(:active){ outline:0.3rem solid transparent; }\n\n.Polaris-ActionList__Item:focus:not(:active)::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-ActionList__Item.Polaris-ActionList--destructive{ color:var(--p-interactive-critical); }\n\n.Polaris-ActionList__Item.Polaris-ActionList--destructive svg{ fill:var(--p-icon-critical); }\n\n.Polaris-ActionList__Item.Polaris-ActionList--destructive:hover{ background-color:var(--p-surface-critical-subdued-hovered); }\n\n.Polaris-ActionList__Item.Polaris-ActionList--destructive:active, .Polaris-ActionList__Item.Polaris-ActionList--destructive.Polaris-ActionList--active{ background-color:var(--p-surface-critical-subdued-pressed); }\n\n.Polaris-ActionList__Item.Polaris-ActionList--disabled{ background-image:none; color:var(--p-text-disabled); }\n\n.Polaris-ActionList__Item.Polaris-ActionList--disabled .Polaris-ActionList__Prefix svg, .Polaris-ActionList__Item.Polaris-ActionList--disabled .Polaris-ActionList__Suffix svg{ fill:var(--p-icon-disabled); }\n\n.Polaris-ActionList__Content{ display:flex; align-items:center; }\n\n.Polaris-ActionList__Prefix{ display:flex; flex:0 0 auto; justify-content:center; align-items:center; height:2rem; width:2rem; border-radius:3px; margin:-1rem 1.6rem -1rem 0; background-size:cover; background-position:center center; }\n\n.Polaris-ActionList__Prefix svg{ fill:var(--p-icon); }\n\n.Polaris-ActionList__Suffix{ margin-left:1.6rem; }\n\n.Polaris-ActionList__Suffix svg{ fill:var(--p-icon); }\n\n.Polaris-ActionList__ContentBlock, .Polaris-ActionList__ContentBlockInner{ display:block; }\n\n.Polaris-ActionList__Text{ min-width:0; max-width:100%; flex:1 1 auto; }\n\n\n.Polaris-Button{ position:relative; position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:3.6rem; min-width:3.6rem; margin:0; padding:0.7rem 1.6rem; background:var(--p-surface); box-shadow:var(--p-button-drop-shadow); border-radius:var(--p-border-radius-base); color:var(--p-text); border:1px solid var(--p-border-neutral-subdued); border-top-color:var(--p-border-subdued); border-bottom-color:var(--p-border-shadow-subdued); line-height:1; text-align:center; cursor:pointer; -webkit-user-select:none; user-select:none; text-decoration:none; -webkit-tap-highlight-color:transparent; }\n\n.Polaris-Button svg{ fill:var(--p-icon); }\n\n.Polaris-Button::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Button:hover{ background:var(--p-action-secondary-hovered); outline:0.1rem solid transparent; }\n\n.Polaris-Button:focus{ box-shadow:var(--p-button-drop-shadow); outline:0; }\n\n.Polaris-Button:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Button:active{ background:var(--p-action-secondary-pressed); box-shadow:var(--p-button-drop-shadow); }\n\n.Polaris-Button:active::after{ border:none; box-shadow:none; }\n\n.Polaris-Button.Polaris-Button--pressed{ background:var(--p-action-secondary-depressed); box-shadow:var(--p-button-pressed-inner-shadow); color:var(--p-text-on-primary); border-color:var(--p-border-depressed); }\n\n.Polaris-Button.Polaris-Button--pressed svg{ fill:currentColor; }\n\n@media (-ms-high-contrast: active){ .Polaris-Button{ border:1px solid windowText; } }\n\n.Polaris-Button.Polaris-Button--disabled{ transition:none; box-shadow:none; border-color:var(--p-border-disabled); background:var(--p-surface-disabled); color:var(--p-text-disabled); }\n\n.Polaris-Button.Polaris-Button--disabled svg{ fill:var(--p-icon-disabled); }\n\n.Polaris-Button.Polaris-Button--connectedDisclosure{ z-index:10; border-top-right-radius:0; border-bottom-right-radius:0; }\n\n.Polaris-Button.Polaris-Button--connectedDisclosure::after{ border-top-right-radius:0; border-bottom-right-radius:0; }\n\n.Polaris-Button.Polaris-Button--connectedDisclosure:focus{ z-index:20; }\n\n.Polaris-Button__Content{ font-size:1.5rem; font-weight:var(--p-button-font-weight, 400); line-height:1.6rem; text-transform:initial; letter-spacing:initial; position:relative; display:flex; justify-content:center; align-items:center; min-width:1px; min-height:1px; }\n\n@media (min-width: 40em){ .Polaris-Button__Content{ font-size:1.4rem; } }\n\n.Polaris-Button:not(.Polaris-Button--plain) .Polaris-Button__Content{ width:100%; }\n\n.Polaris-Button--textAlignLeft{ justify-content:flex-start; text-align:left; }\n\n.Polaris-Button--textAlignLeft .Polaris-Button__Content{ justify-content:flex-start; }\n\n.Polaris-Button--textAlignCenter{ justify-content:center; text-align:center; }\n\n.Polaris-Button--textAlignRight{ justify-content:flex-end; text-align:right; }\n\n.Polaris-Button--textAlignRight .Polaris-Button__Content{ justify-content:flex-end; }\n\n.Polaris-Button__Icon{ margin-left:-0.4rem; }\n\n.Polaris-Button__Icon:last-child{ margin-right:-0.8rem; margin-left:0.4rem; }\n\n.Polaris-Button--fullWidth.Polaris-Button--textAlignLeft .Polaris-Button__Icon:last-child:not(:only-child){ margin-left:auto; }\n\n.Polaris-Button__Icon + *:not(.Polaris-Button__Icon){ margin-left:0.4rem; }\n\n.Polaris-Button--hidden{ visibility:hidden; }\n\n.Polaris-Button__Spinner{ position:absolute; top:50%; left:50%; margin-top:-1rem; margin-left:-1rem; }\n\n.Polaris-Button--primary{ --p-button-color:var(--p-action-primary); --p-button-text:var(--p-text-on-primary); --p-button-color-hover:var(--p-action-primary-hovered); --p-button-color-active:var(--p-action-primary-pressed); --p-button-color-depressed:var(--p-action-primary-depressed); position:relative; background:var(--p-button-color); border-width:0; border-color:transparent; box-shadow:var(--p-button-drop-shadow), var(--p-button-inner-shadow); color:var(--p-button-text); }\n\n.Polaris-Button--primary::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Button--primary:hover{ background:var(--p-button-color-hover); border-color:transparent; color:var(--p-button-text); }\n\n.Polaris-Button--primary:focus{ border-color:transparent; box-shadow:var(--p-button-drop-shadow), var(--p-button-inner-shadow); }\n\n.Polaris-Button--primary:active{ background:var(--p-button-color-active); border-color:transparent; box-shadow:var(--p-button-drop-shadow), var(--p-button-inner-shadow); }\n\n.Polaris-Button--primary.Polaris-Button--pressed{ color:var(--p-button-text); background:var(--p-button-color-depressed); border-color:transparent; box-shadow:var(--p-button-drop-shadow), var(--p-button-inner-shadow); }\n\n.Polaris-Button--primary.Polaris-Button--pressed:hover, .Polaris-Button--primary.Polaris-Button--pressed:focus{ background:var(--p-button-color-depressed); box-shadow:var(--p-button-drop-shadow), var(--p-button-inner-shadow); }\n\n.Polaris-Button--primary svg{ fill:var(--p-icon-on-primary); }\n\n.Polaris-Button--primary.Polaris-Button--disabled{ background:var(--p-action-primary-disabled); color:var(--p-text-disabled); border-color:transparent; box-shadow:none; }\n\n.Polaris-Button--primary.Polaris-Button--disabled svg{ fill:var(--p-icon-disabled); }\n\n.Polaris-Button--destructive{ --p-button-color:var(--p-action-critical); --p-button-text:var(--p-text-on-critical); --p-button-color-hover:var(--p-action-critical-hovered); --p-button-color-active:var(--p-action-critical-pressed); --p-button-color-depressed:var(--p-action-critical-depressed); position:relative; background:var(--p-button-color); border-width:0; border-color:transparent; box-shadow:var(--p-button-drop-shadow), var(--p-button-inner-shadow); color:var(--p-button-text); }\n\n.Polaris-Button--destructive::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Button--destructive:hover{ background:var(--p-button-color-hover); border-color:transparent; color:var(--p-button-text); }\n\n.Polaris-Button--destructive:focus{ border-color:transparent; box-shadow:var(--p-button-drop-shadow), var(--p-button-inner-shadow); }\n\n.Polaris-Button--destructive:active{ background:var(--p-button-color-active); border-color:transparent; box-shadow:var(--p-button-drop-shadow), var(--p-button-inner-shadow); }\n\n.Polaris-Button--destructive.Polaris-Button--pressed{ color:var(--p-button-text); background:var(--p-button-color-depressed); border-color:transparent; box-shadow:var(--p-button-drop-shadow), var(--p-button-inner-shadow); }\n\n.Polaris-Button--destructive.Polaris-Button--pressed:hover, .Polaris-Button--destructive.Polaris-Button--pressed:focus{ background:var(--p-button-color-depressed); box-shadow:var(--p-button-drop-shadow), var(--p-button-inner-shadow); }\n\n.Polaris-Button--destructive svg{ fill:var(--p-icon-on-critical); }\n\n.Polaris-Button--destructive.Polaris-Button--disabled{ background:var(--p-action-critical-disabled); color:var(--p-text-disabled); box-shadow:none; border-color:transparent; }\n\n.Polaris-Button--destructive.Polaris-Button--disabled svg{ fill:var(--p-icon-disabled); }\n\n.Polaris-Button--outline{ background:transparent; border:0.1rem solid var(--p-border); box-shadow:none; color:var(--p-text); position:relative; }\n\n.Polaris-Button--outline::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Button--outline:hover{ border:0.1rem solid var(--p-border); box-shadow:none; background:var(--p-surface-hovered); }\n\n.Polaris-Button--outline:focus{ border:0.1rem solid var(--p-border); box-shadow:none; }\n\n.Polaris-Button--outline:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Button--outline:active{ border:0.1rem solid var(--p-border); box-shadow:none; background:var(--p-surface-pressed); }\n\n.Polaris-Button--outline:active::after{ box-shadow:none; }\n\n.Polaris-Button--outline.Polaris-Button--pressed{ background:var(--p-action-secondary-pressed); border:0.1rem solid var(--p-border); box-shadow:none; color:var(--p-button-text); }\n\n.Polaris-Button--outline.Polaris-Button--disabled{ border:0.1rem solid var(--p-border-disabled); box-shadow:none; background:transparent; color:var(--p-text-disabled); }\n\n.Polaris-Button--outline.Polaris-Button--destructive{ background:transparent; border:0.1rem solid var(--p-border-critical); box-shadow:none; color:var(--p-interactive-critical); }\n\n.Polaris-Button--outline.Polaris-Button--destructive svg{ fill:var(--p-icon-critical); }\n\n.Polaris-Button--outline.Polaris-Button--destructive:hover{ border:0.1rem solid var(--p-border-critical); background:var(--p-surface-critical-subdued); }\n\n.Polaris-Button--outline.Polaris-Button--destructive:focus{ border:0.1rem solid var(--p-border-critical); }\n\n.Polaris-Button--outline.Polaris-Button--destructive:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Button--outline.Polaris-Button--destructive:active{ border:0.1rem solid var(--p-border-critical); background:var(--p-surface-critical-subdued); }\n\n.Polaris-Button--outline.Polaris-Button--destructive.Polaris-Button--disabled{ border:0.1rem solid var(--p-border-critical-disabled); background:transparent; color:var(--p-interactive-critical-disabled); }\n\n.Polaris-Button--outline.Polaris-Button--destructive.Polaris-Button--pressed{ background:var(--p-surface-critical-subdued); box-shadow:0.1rem solid var(--p-border-critical); color:var(--p-interactive-critical); }\n\n.Polaris-Button--outline.Polaris-Button--disabled{ background:transparent; box-shadow:none; }\n\n.Polaris-Button--destructive.Polaris-Button--outline{ background:transparent; border:0.1rem solid var(--p-border); box-shadow:none; color:var(--p-text); position:relative; }\n\n.Polaris-Button--destructive.Polaris-Button--outline::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Button--destructive.Polaris-Button--outline:hover{ border:0.1rem solid var(--p-border); box-shadow:none; background:var(--p-surface-hovered); }\n\n.Polaris-Button--destructive.Polaris-Button--outline:focus{ border:0.1rem solid var(--p-border); box-shadow:none; }\n\n.Polaris-Button--destructive.Polaris-Button--outline:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Button--destructive.Polaris-Button--outline:active{ border:0.1rem solid var(--p-border); box-shadow:none; background:var(--p-surface-pressed); }\n\n.Polaris-Button--destructive.Polaris-Button--outline:active::after{ box-shadow:none; }\n\n.Polaris-Button--destructive.Polaris-Button--outline.Polaris-Button--pressed{ background:var(--p-action-secondary-pressed); border:0.1rem solid var(--p-border); box-shadow:none; color:var(--p-button-text); }\n\n.Polaris-Button--destructive.Polaris-Button--outline.Polaris-Button--disabled{ border:0.1rem solid var(--p-border-disabled); box-shadow:none; background:transparent; color:var(--p-text-disabled); }\n\n.Polaris-Button--destructive.Polaris-Button--outline.Polaris-Button--destructive{ background:transparent; border:0.1rem solid var(--p-border-critical); box-shadow:none; color:var(--p-interactive-critical); }\n\n.Polaris-Button--destructive.Polaris-Button--outline.Polaris-Button--destructive svg{ fill:var(--p-icon-critical); }\n\n.Polaris-Button--destructive.Polaris-Button--outline.Polaris-Button--destructive:hover{ border:0.1rem solid var(--p-border-critical); background:var(--p-surface-critical-subdued); }\n\n.Polaris-Button--destructive.Polaris-Button--outline.Polaris-Button--destructive:focus{ border:0.1rem solid var(--p-border-critical); }\n\n.Polaris-Button--destructive.Polaris-Button--outline.Polaris-Button--destructive:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Button--destructive.Polaris-Button--outline.Polaris-Button--destructive:active{ border:0.1rem solid var(--p-border-critical); background:var(--p-surface-critical-subdued); }\n\n.Polaris-Button--destructive.Polaris-Button--outline.Polaris-Button--destructive.Polaris-Button--disabled{ border:0.1rem solid var(--p-border-critical-disabled); background:transparent; color:var(--p-interactive-critical-disabled); }\n\n.Polaris-Button--destructive.Polaris-Button--outline.Polaris-Button--destructive.Polaris-Button--pressed{ background:var(--p-surface-critical-subdued); box-shadow:0.1rem solid var(--p-border-critical); color:var(--p-interactive-critical); }\n\n.Polaris-Button--disabled{ cursor:default; pointer-events:none; }\n\n@keyframes Polaris-Button--loading{ to{ transform:rotate(360deg); } }\n\n.Polaris-Button--loading{ position:relative; }\n\n.Polaris-Button--loading, .Polaris-Button--loading:hover, .Polaris-Button--loading.Polaris-Button--disabled{ color:transparent; }\n\n.Polaris-Button--loading.Polaris-Button--disabled svg{ fill:var(--p-icon-subdued); }\n\n.Polaris-Button--plain{ margin:-0.7rem -0.8rem; padding-left:0.8rem; padding-right:0.8rem; background:transparent; border:0; box-shadow:none; color:var(--p-interactive); }\n\n.Polaris-Button--plain svg{ fill:var(--p-interactive); }\n\n.Polaris-Button--plain > .Polaris-Button__Content{ font-weight:400; position:relative; }\n\n.Polaris-Button--plain > .Polaris-Button__Content::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Button--plain:hover, .Polaris-Button--plain:focus{ color:var(--p-interactive-hovered); background:transparent; box-shadow:none; }\n\n.Polaris-Button--plain:hover svg, .Polaris-Button--plain:focus svg{ fill:var(--p-interactive-hovered); }\n\n.Polaris-Button--plain:hover:not(.Polaris-Button--removeUnderline), .Polaris-Button--plain:focus:not(.Polaris-Button--removeUnderline){ text-decoration:underline; }\n\n.Polaris-Button--plain.Polaris-Button--pressed, .Polaris-Button--plain:active{ color:var(--p-interactive-pressed); background:transparent; box-shadow:none; }\n\n.Polaris-Button--plain.Polaris-Button--pressed svg, .Polaris-Button--plain:active svg{ fill:var(--p-interactive-pressed); }\n\n@media (-ms-high-contrast: active){ .Polaris-Button--plain.Polaris-Button--pressed, .Polaris-Button--plain:active{ outline:none; } }\n\n.Polaris-Button--plain:focus::after{ content:none; }\n\n@media (-ms-high-contrast: active){ .Polaris-Button--plain:focus{ outline:none; } }\n\n@media (-ms-high-contrast: active){ .Polaris-Button--plain:focus > .Polaris-Button__Content{ outline:2px dotted; } }\n\n.Polaris-Button--plain:focus:not(:active) > .Polaris-Button__Content::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Button--plain:active:not(.Polaris-Button--iconOnly) > .Polaris-Button__Content, .Polaris-Button--plain.Polaris-Button--pressed:not(.Polaris-Button--iconOnly) > .Polaris-Button__Content{ padding:2px 5px; margin:-2px -5px; background:var(--p-action-secondary-hovered); border-radius:3px; }\n\n.Polaris-Button--plain.Polaris-Button--fullWidth{ margin-left:0; margin-right:0; }\n\n.Polaris-Button--plain.Polaris-Button--disabled{ color:var(--p-text-disabled); background:none; }\n\n.Polaris-Button--plain.Polaris-Button--disabled.Polaris-Button--loading{ color:transparent; }\n\n.Polaris-Button--plain.Polaris-Button--destructive{ color:var(--p-interactive-critical); }\n\n.Polaris-Button--plain.Polaris-Button--destructive svg{ fill:var(--p-interactive-critical); }\n\n.Polaris-Button--plain.Polaris-Button--destructive:hover{ color:var(--p-interactive-critical-hovered); }\n\n.Polaris-Button--plain.Polaris-Button--destructive:active, .Polaris-Button--plain.Polaris-Button--destructive.Polaris-Button--pressed{ color:var(--p-interactive-critical-pressed); }\n\n.Polaris-Button--plain.Polaris-Button--destructive.Polaris-Button--disabled{ color:var(--p-interactive-critical-disabled); }\n\n.Polaris-Button--plain.Polaris-Button--sizeSlim{ margin-top:-0.3rem; margin-bottom:-0.3rem; }\n\n.Polaris-Button--plain.Polaris-Button--sizeLarge{ margin:-1.1rem -2rem; }\n\n.Polaris-Button--plain.Polaris-Button--iconOnly{ margin:-0.8rem; }\n\n.Polaris-Button--plain.Polaris-Button--iconOnly svg{ fill:var(--p-icon); }\n\n.Polaris-Button--plain.Polaris-Button--iconOnly:hover svg{ fill:var(--p-icon-hovered); }\n\n.Polaris-Button--plain.Polaris-Button--iconOnly:active svg, .Polaris-Button--plain.Polaris-Button--iconOnly.Polaris-Button--pressed svg{ fill:var(--p-icon-pressed); }\n\n.Polaris-Button--plain.Polaris-Button--iconOnly.Polaris-Button--disabled svg{ fill:var(--p-icon-disabled); }\n\n.Polaris-Button--plain.Polaris-Button--destructive.Polaris-Button--iconOnly svg{ fill:var(--p-action-critical); }\n\n.Polaris-Button--plain.Polaris-Button--destructive.Polaris-Button--iconOnly:hover svg{ fill:var(--p-action-critical-hovered); }\n\n.Polaris-Button--plain.Polaris-Button--destructive.Polaris-Button--iconOnly:active svg, .Polaris-Button--plain.Polaris-Button--destructive.Polaris-Button--iconOnly.Polaris-Button--pressed svg{ fill:var(--p-action-critical-pressed); }\n\n.Polaris-Button--plain.Polaris-Button--destructive.Polaris-Button--iconOnly.Polaris-Button--disabled svg{ fill:var(--p-action-critical-disabled); }\n\n.Polaris-Button--plain .Polaris-Button__Icon{ margin-left:0; margin-right:0; }\n\n.Polaris-Button--fullWidth{ display:flex; width:100%; }\n\n.Polaris-Button--iconOnly{ padding-left:0.8rem; padding-right:0.8rem; }\n\n.Polaris-Button--iconOnly.Polaris-Button--sizeLarge{ padding-left:1.2rem; padding-right:1.2rem; }\n\n.Polaris-Button--iconOnly .Polaris-Button__Icon:first-child{ margin-left:0; }\n\n.Polaris-Button--iconOnly .Polaris-Button__Icon:last-child{ margin-right:-0.4rem; }\n\n.Polaris-Button--iconOnly .Polaris-Button__Icon:only-child{ margin-right:0; }\n\n.Polaris-Button--sizeSlim{ min-height:2.8rem; padding:0.3rem 1.2rem; }\n\n.Polaris-Button--sizeLarge{ min-height:4.4rem; min-width:4.4rem; padding:1.1rem 2.4rem; }\n\n.Polaris-Button--sizeLarge .Polaris-Button__Content{ font-size:1.7rem; font-weight:var(--p-button-font-weight, 400); line-height:2rem; text-transform:initial; letter-spacing:initial; }\n\n@media (min-width: 40em){ .Polaris-Button--sizeLarge .Polaris-Button__Content{ font-size:1.6rem; } }\n\n.Polaris-Button--monochrome.Polaris-Button--outline, .Polaris-Button--monochrome.Polaris-Button--plain{ color:currentColor; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline svg, .Polaris-Button--monochrome.Polaris-Button--plain svg{ fill:currentColor; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline:hover, .Polaris-Button--monochrome.Polaris-Button--outline:focus, .Polaris-Button--monochrome.Polaris-Button--outline:active, .Polaris-Button--monochrome.Polaris-Button--plain:hover, .Polaris-Button--monochrome.Polaris-Button--plain:focus, .Polaris-Button--monochrome.Polaris-Button--plain:active{ color:currentColor; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline:hover svg, .Polaris-Button--monochrome.Polaris-Button--outline:focus svg, .Polaris-Button--monochrome.Polaris-Button--outline:active svg, .Polaris-Button--monochrome.Polaris-Button--plain:hover svg, .Polaris-Button--monochrome.Polaris-Button--plain:focus svg, .Polaris-Button--monochrome.Polaris-Button--plain:active svg{ fill:currentColor; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline.Polaris-Button--disabled, .Polaris-Button--monochrome.Polaris-Button--plain.Polaris-Button--disabled{ color:currentColor; opacity:0.4; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline.Polaris-Button--disabled svg, .Polaris-Button--monochrome.Polaris-Button--plain.Polaris-Button--disabled svg{ fill:currentColor; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline.Polaris-Button--iconOnly svg, .Polaris-Button--monochrome.Polaris-Button--plain.Polaris-Button--iconOnly svg{ fill:currentColor; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline.Polaris-Button--iconOnly:focus svg, .Polaris-Button--monochrome.Polaris-Button--outline.Polaris-Button--iconOnly:active svg, .Polaris-Button--monochrome.Polaris-Button--plain.Polaris-Button--iconOnly:focus svg, .Polaris-Button--monochrome.Polaris-Button--plain.Polaris-Button--iconOnly:active svg{ fill:currentColor; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline.Polaris-Button--iconOnly.Polaris-Button--disabled svg, .Polaris-Button--monochrome.Polaris-Button--plain.Polaris-Button--iconOnly.Polaris-Button--disabled svg{ fill:currentColor; }\n\n.Polaris-Button--monochrome.Polaris-Button--plain .Polaris-Button__Text:not(.Polaris-Button--removeUnderline){ text-decoration:underline; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline{ position:relative; border-color:currentColor; box-shadow:0 0 0 0.1rem currentColor; position:relative; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.3rem; right:-0.3rem; bottom:-0.3rem; left:-0.3rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.3rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Button--monochrome.Polaris-Button--outline::before{ content:''; position:absolute; top:0; right:0; bottom:0; left:0; background-color:currentColor; opacity:0; z-index:0; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline.Polaris-Button--pressed{ background:transparent; box-shadow:none; color:currentColor; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline.Polaris-Button--pressed::before{ opacity:0.2; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline:hover, .Polaris-Button--monochrome.Polaris-Button--outline:focus, .Polaris-Button--monochrome.Polaris-Button--outline:active{ background-color:transparent; border-color:currentColor; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline:hover::before, .Polaris-Button--monochrome.Polaris-Button--outline:focus::before, .Polaris-Button--monochrome.Polaris-Button--outline:active::before{ opacity:0.07; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline:focus{ box-shadow:0 0 0 1px currentColor; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline:active::after{ box-shadow:none; }\n\n.Polaris-Button--monochrome.Polaris-Button--outline:hover::before, .Polaris-Button--monochrome.Polaris-Button--outline:active::before{ opacity:0.05; }\n\n.Polaris-Button__ConnectedDisclosureWrapper{ display:flex; }\n\n.Polaris-Button__ConnectedDisclosure{ z-index:10; margin-left:-0.1rem; border-top-left-radius:0; border-bottom-left-radius:0; height:100%; }\n\n.Polaris-Button__ConnectedDisclosure.Polaris-Button--outline:not(:focus){ border-left-color:rgba(99, 115, 129, 0); }\n\n.Polaris-Button__ConnectedDisclosure:focus, .Polaris-Button__ConnectedDisclosure:active{ z-index:20; }\n\n.Polaris-Button__ConnectedDisclosure.Polaris-Button--primary, .Polaris-Button__ConnectedDisclosure.Polaris-Button--destructive{ margin-left:0.1rem; }\n\n.Polaris-Button__ConnectedDisclosure.Polaris-Button--primary.Polaris-Button--outline, .Polaris-Button__ConnectedDisclosure.Polaris-Button--destructive.Polaris-Button--outline{ margin-left:0; border-left:0; }\n\n.Polaris-Button__ConnectedDisclosure::after{ border-top-left-radius:0; border-bottom-left-radius:0; }\n\n[data-buttongroup-segmented='true'] .Polaris-Button, [data-buttongroup-segmented='true'] .Polaris-Button::after{ border-radius:0; }\n\n[data-buttongroup-segmented='true'] > :first-child .Polaris-Button, [data-buttongroup-segmented='true'] > :first-child .Polaris-Button::after{ border-radius:0; border-top-left-radius:var(--p-border-radius-base, 3px); border-bottom-left-radius:var(--p-border-radius-base, 3px); }\n\n[data-buttongroup-segmented='true'] > :last-child .Polaris-Button, [data-buttongroup-segmented='true'] > :last-child .Polaris-Button::after{ border-radius:0; border-top-right-radius:var(--p-border-radius-base, 3px); border-bottom-right-radius:var(--p-border-radius-base, 3px); }\n\n[data-buttongroup-segmented='true'] > :last-child:first-child .Polaris-Button, [data-buttongroup-segmented='true'] > :last-child:first-child .Polaris-Button::after{ border-radius:var(--p-border-radius-base, 3px); }\n\n[data-buttongroup-connected-top='true'] > :first-child .Polaris-Button, [data-buttongroup-connected-top='true'] > :first-child .Polaris-Button::after{ border-top-left-radius:0; }\n\n[data-buttongroup-connected-top='true'] > :last-child .Polaris-Button, [data-buttongroup-connected-top='true'] > :last-child .Polaris-Button::after{ border-top-right-radius:0; }\n\n[data-buttongroup-full-width='true'] .Polaris-Button{ display:flex; width:100%; }\n\n\n.Polaris-ButtonGroup{ display:flex; flex-wrap:wrap; align-items:center; margin-top:-0.8rem; margin-left:-0.8rem; }\n\n.Polaris-ButtonGroup__Item{ margin-top:0.8rem; margin-left:0.8rem; }\n\n.Polaris-ButtonGroup__Item--plain:not(:first-child){ margin-left:1.6rem; }\n\n.Polaris-ButtonGroup__Item--plain:not(:last-child){ margin-right:0.8rem; }\n\n.Polaris-ButtonGroup--segmented{ display:flex; flex-wrap:nowrap; margin-top:0; margin-left:0; }\n\n.Polaris-ButtonGroup--segmented .Polaris-ButtonGroup__Item{ position:relative; z-index:10; margin-top:0; margin-left:0; }\n\n.Polaris-ButtonGroup--segmented .Polaris-ButtonGroup__Item:not(:first-child){ margin-left:-0.1rem; }\n\n.Polaris-ButtonGroup--segmented .Polaris-ButtonGroup__Item--focused{ z-index:20; }\n\n.Polaris-ButtonGroup--fullWidth .Polaris-ButtonGroup__Item{ flex:1 1 auto; }\n\n.Polaris-ButtonGroup--extraTight{ margin-top:-0.4rem; margin-left:-0.4rem; }\n\n.Polaris-ButtonGroup--extraTight .Polaris-ButtonGroup__Item{ margin-top:0.4rem; margin-left:0.4rem; }\n\n.Polaris-ButtonGroup--tight{ margin-top:-0.8rem; margin-left:-0.8rem; }\n\n.Polaris-ButtonGroup--tight .Polaris-ButtonGroup__Item{ margin-top:0.8rem; margin-left:0.8rem; }\n\n.Polaris-ButtonGroup--loose{ margin-top:-2rem; margin-left:-2rem; }\n\n.Polaris-ButtonGroup--loose .Polaris-ButtonGroup__Item{ margin-top:2rem; margin-left:2rem; }\n\n\n.Polaris-Stack{ margin-top:-1.6rem; margin-left:-1.6rem; display:flex; flex-wrap:wrap; align-items:stretch; }\n\n.Polaris-Stack > .Polaris-Stack__Item{ margin-top:1.6rem; margin-left:1.6rem; max-width:100%; }\n\n.Polaris-Stack--noWrap{ flex-wrap:nowrap; }\n\n.Polaris-Stack--spacingNone{ margin-top:0; margin-left:0; }\n\n.Polaris-Stack--spacingNone > .Polaris-Stack__Item{ margin-top:0; margin-left:0; max-width:100%; }\n\n.Polaris-Stack--spacingExtraTight{ margin-top:-0.4rem; margin-left:-0.4rem; }\n\n.Polaris-Stack--spacingExtraTight > .Polaris-Stack__Item{ margin-top:0.4rem; margin-left:0.4rem; max-width:100%; }\n\n.Polaris-Stack--spacingTight{ margin-top:-0.8rem; margin-left:-0.8rem; }\n\n.Polaris-Stack--spacingTight > .Polaris-Stack__Item{ margin-top:0.8rem; margin-left:0.8rem; max-width:100%; }\n\n.Polaris-Stack--spacingLoose{ margin-top:-2rem; margin-left:-2rem; }\n\n.Polaris-Stack--spacingLoose > .Polaris-Stack__Item{ margin-top:2rem; margin-left:2rem; max-width:100%; }\n\n.Polaris-Stack--spacingExtraLoose{ margin-top:-3.2rem; margin-left:-3.2rem; }\n\n.Polaris-Stack--spacingExtraLoose > .Polaris-Stack__Item{ margin-top:3.2rem; margin-left:3.2rem; max-width:100%; }\n\n.Polaris-Stack--distributionLeading{ justify-content:flex-start; }\n\n.Polaris-Stack--distributionTrailing{ justify-content:flex-end; }\n\n.Polaris-Stack--distributionCenter{ justify-content:center; }\n\n.Polaris-Stack--distributionEqualSpacing{ justify-content:space-between; }\n\n.Polaris-Stack--distributionFill > .Polaris-Stack__Item{ flex:1 1 auto; }\n\n.Polaris-Stack--distributionFillEvenly > .Polaris-Stack__Item{ flex:1 1 auto; }\n\n@supports ((min-width: -webkit-fit-content) or (min-width: -moz-fit-content) or (min-width: fit-content)){ .Polaris-Stack--distributionFillEvenly > .Polaris-Stack__Item{ flex:1 0; min-width:-webkit-fit-content; min-width:-moz-fit-content; min-width:fit-content; } }\n\n.Polaris-Stack--alignmentLeading{ align-items:flex-start; }\n\n.Polaris-Stack--alignmentTrailing{ align-items:flex-end; }\n\n.Polaris-Stack--alignmentCenter{ align-items:center; }\n\n.Polaris-Stack--alignmentFill{ align-items:stretch; }\n\n.Polaris-Stack--alignmentBaseline{ align-items:baseline; }\n\n.Polaris-Stack--vertical{ flex-direction:column; margin-left:0; }\n\n.Polaris-Stack--vertical > .Polaris-Stack__Item{ margin-left:0; }\n\n.Polaris-Stack__Item{ flex:0 0 auto; min-width:0; }\n\n.Polaris-Stack__Item--fill{ flex:1 1 auto; }\n\n\n.Polaris-Heading{ font-size:1.7rem; font-weight:600; line-height:2.4rem; margin:0; }\n\n@media (min-width: 40em){ .Polaris-Heading{ font-size:1.6rem; } }\n\n\n.Polaris-Card{ background-color:var(--p-surface); box-shadow:var(--p-card-shadow, 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15)); outline:0.1rem solid transparent; }\n\n.Polaris-Card + .Polaris-Card{ margin-top:1.6rem; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Card{ border-radius:var(--p-border-radius-wide, 3px); } }\n\n@media (min-width: 30.625em){ .Polaris-Card{ border-radius:var(--p-border-radius-wide, 3px); } }\n\n.Polaris-Card--subdued{ background-color:var(--p-surface-subdued); }\n\n@media print{ .Polaris-Card__Section--hideOnPrint, .Polaris-Card--hideOnPrint{ display:none !important; } }\n\n.Polaris-Card__Header{ padding:1.6rem 1.6rem 0; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Card__Header{ padding:2rem 2rem 0; } }\n\n@media (min-width: 30.625em){ .Polaris-Card__Header{ padding:2rem 2rem 0; } }\n\n.Polaris-Card__Section{ padding:1.6rem; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Card__Section{ padding:2rem; } }\n\n@media (min-width: 30.625em){ .Polaris-Card__Section{ padding:2rem; } }\n\n.Polaris-Card__Section + .Polaris-Card__Section{ border-top:0.1rem solid var(--p-divider); }\n\n.Polaris-Card__Section:first-child{ border-top-left-radius:var(--p-border-radius-wide, 3px); border-top-right-radius:var(--p-border-radius-wide, 3px); }\n\n.Polaris-Card__Section:last-child{ border-bottom-left-radius:var(--p-border-radius-wide, 3px); border-bottom-right-radius:var(--p-border-radius-wide, 3px); }\n\n.Polaris-Card__Section--fullWidth{ padding:1.6rem 0; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Card__Section--fullWidth{ padding:2rem 0; } }\n\n@media (min-width: 30.625em){ .Polaris-Card__Section--fullWidth{ padding:2rem 0; } }\n\n.Polaris-Card__Section--flush{ padding:0; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Card__Section--flush{ padding:0; } }\n\n@media (min-width: 30.625em){ .Polaris-Card__Section--flush{ padding:0; } }\n\n.Polaris-Card__Section--subdued{ background-color:var(--p-surface-subdued); }\n\n@media (-ms-high-contrast: active){ .Polaris-Card__Section--subdued{ background-color:transparent; } }\n\n.Polaris-Card__Header + .Polaris-Card__Section--subdued{ border-top:0.1rem solid var(--p-divider); margin-top:2rem; }\n\n.Polaris-Card__SectionHeader{ padding-bottom:0.8rem; }\n\n.Polaris-Card__Section--fullWidth .Polaris-Card__SectionHeader{ padding-left:1.6rem; padding-right:1.6rem; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Card__Section--fullWidth .Polaris-Card__SectionHeader{ padding-left:2rem; padding-right:2rem; } }\n\n@media (min-width: 30.625em){ .Polaris-Card__Section--fullWidth .Polaris-Card__SectionHeader{ padding-left:2rem; padding-right:2rem; } }\n\n.Polaris-Card__Subsection + .Polaris-Card__Subsection{ margin-top:1.6rem; padding-top:1.6rem; border-top:0.1rem solid var(--p-divider); }\n\n.Polaris-Card__Footer{ display:flex; justify-content:flex-end; padding:0 1.6rem 1.6rem; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Card__Footer{ padding:0 2rem 2rem; } }\n\n@media (min-width: 30.625em){ .Polaris-Card__Footer{ padding:0 2rem 2rem; } }\n\n.Polaris-Card__Footer.Polaris-Card__LeftJustified{ justify-content:flex-start; }\n\n.Polaris-Card__Section--subdued + .Polaris-Card__Footer{ border-top:0.1rem solid var(--p-divider); padding:2rem; }\n\n\n.Polaris-Subheading{ font-size:1.3rem; font-weight:600; line-height:1.6rem; text-transform:uppercase; margin:0; }\n\n@media (min-width: 40em){ .Polaris-Subheading{ font-size:1.2rem; } }\n\n\n.Polaris-SettingAction{ display:flex; flex-wrap:wrap; align-items:center; margin-top:-1.6rem; margin-left:-1.6rem; }\n\n.Polaris-SettingAction__Setting, .Polaris-SettingAction__Action{ flex:0 0 auto; margin-top:1.6rem; margin-left:1.6rem; max-width:calc(100% - 1.6rem); min-width:0; }\n\n.Polaris-SettingAction__Setting{ flex:1 0 35rem; }\n\n\n.Polaris-AccountConnection__TermsOfService{ margin-top:2rem; }\n\n.Polaris-AccountConnection__Content > * + *{ margin-top:0.8rem; }\n\n\n.Polaris-ActionMenu-SecondaryAction a, .Polaris-ActionMenu-SecondaryAction button{ position:relative; background:transparent !important; box-shadow:none !important; border-radius:var(--p-border-radius-base) !important; padding-left:1.2rem; padding-right:1.2rem; }\n\n.Polaris-ActionMenu-SecondaryAction a::after, .Polaris-ActionMenu-SecondaryAction button::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-ActionMenu-SecondaryAction a:hover, .Polaris-ActionMenu-SecondaryAction button:hover{ background:var(--p-background-hovered) !important; }\n\n.Polaris-ActionMenu-SecondaryAction a:active, .Polaris-ActionMenu-SecondaryAction button:active{ background:var(--p-background-pressed) !important; }\n\n@media (min-width: 48em){ .Polaris-ActionMenu-SecondaryAction a, .Polaris-ActionMenu-SecondaryAction button{ border:none !important; position:relative; }\n  .Polaris-ActionMenu-SecondaryAction a::after, .Polaris-ActionMenu-SecondaryAction button::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); } }\n\n\n.Polaris-ActionMenu-MenuGroup__Details{ margin-top:-1.6rem; padding:1.6rem; }\n\n\n.Polaris-ActionMenu-Actions__ActionsLayout{ display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; flex:1 1 auto; }\n\n.Polaris-ActionMenu-Actions__ActionsLayout > *{ flex:0 0 auto; }\n\n\n.Polaris-ActionMenu-RollupActions__RollupActivator{ text-align:right; }\n\n.Polaris-ActionMenu-RollupActions__RollupActivator button[type='button']{ margin:0; border:1px solid var(--p-border-neutral-subdued); }\n\n.Polaris-ActionMenu-RollupActions__RollupActivator button[type='button']:hover, .Polaris-ActionMenu-RollupActions__RollupActivator button[type='button']:active, .Polaris-ActionMenu-RollupActions__RollupActivator button[type='button']:focus{ border:1px solid var(--p-border-neutral-subdued); }\n\n\n.Polaris-ActionMenu{ width:100%; display:flex; justify-content:flex-end; }\n\n@media print{ .Polaris-ActionMenu{ display:none !important; } }\n\n.Polaris-ActionMenu:not(.Polaris-ActionMenu--rollup){ margin-left:var(--p-override-zero, -1.2rem); }\n\n\n.Polaris-OptionList-Checkbox{ position:relative; width:100%; margin:var(--p-choice-margin); }\n\n.Polaris-OptionList-Checkbox.Polaris-OptionList-Checkbox--active .Polaris-OptionList-Checkbox__Backdrop::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-OptionList-Checkbox__Input{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n.Polaris-OptionList-Checkbox__Input.Polaris-OptionList-Checkbox--keyFocused + .Polaris-OptionList-Checkbox__Backdrop::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-OptionList-Checkbox__Input:active:not(:disabled) + .Polaris-OptionList-Checkbox__Backdrop, .Polaris-OptionList-Checkbox__Input:checked + .Polaris-OptionList-Checkbox__Backdrop, .Polaris-OptionList-Checkbox__Input.Polaris-OptionList-Checkbox__Input--indeterminate + .Polaris-OptionList-Checkbox__Backdrop{ border-color:var(--p-interactive); }\n\n.Polaris-OptionList-Checkbox__Input:active:not(:disabled) + .Polaris-OptionList-Checkbox__Backdrop::before, .Polaris-OptionList-Checkbox__Input:checked + .Polaris-OptionList-Checkbox__Backdrop::before, .Polaris-OptionList-Checkbox__Input.Polaris-OptionList-Checkbox__Input--indeterminate + .Polaris-OptionList-Checkbox__Backdrop::before{ opacity:1; transform:scale(1); }\n\n@media (-ms-high-contrast: active){ .Polaris-OptionList-Checkbox__Input:active:not(:disabled) + .Polaris-OptionList-Checkbox__Backdrop::before, .Polaris-OptionList-Checkbox__Input:checked + .Polaris-OptionList-Checkbox__Backdrop::before, .Polaris-OptionList-Checkbox__Input.Polaris-OptionList-Checkbox__Input--indeterminate + .Polaris-OptionList-Checkbox__Backdrop::before{ border:2px solid windowText; } }\n\n.Polaris-OptionList-Checkbox__Input:active:not(:disabled) ~ .Polaris-OptionList-Checkbox__Icon, .Polaris-OptionList-Checkbox__Input:checked ~ .Polaris-OptionList-Checkbox__Icon, .Polaris-OptionList-Checkbox__Input.Polaris-OptionList-Checkbox__Input--indeterminate ~ .Polaris-OptionList-Checkbox__Icon{ transform:translate(-50%, -50%) scale(1); opacity:1; transition:opacity var(--p-duration-1-5-0) var(--p-ease), transform var(--p-duration-1-5-0) var(--p-ease); }\n\n.Polaris-OptionList-Checkbox__Input:disabled + .Polaris-OptionList-Checkbox__Backdrop{ border-color:var(--p-border-disabled); }\n\n.Polaris-OptionList-Checkbox__Input:disabled + .Polaris-OptionList-Checkbox__Backdrop::before{ background-color:var(--p-action-secondary-disabled); }\n\n.Polaris-OptionList-Checkbox__Input:disabled + .Polaris-OptionList-Checkbox__Backdrop:hover{ cursor:default; }\n\n.Polaris-OptionList-Checkbox__Input:disabled:checked + .Polaris-OptionList-Checkbox__Backdrop, .Polaris-OptionList-Checkbox__Input:disabled:checked + .Polaris-OptionList-Checkbox__Backdrop::before{ background:var(--p-border-disabled); }\n\n.Polaris-OptionList-Checkbox__Backdrop{ position:relative; border:var(--p-control-border-width) solid var(--p-border); background-color:var(--p-surface); border-radius:var(--p-border-radius-base); position:relative; display:block; width:100%; height:100%; position:relative; }\n\n.Polaris-OptionList-Checkbox__Backdrop::before{ content:''; position:absolute; top:calc(-1*var(--p-control-border-width)); right:calc(-1*var(--p-control-border-width)); bottom:calc(-1*var(--p-control-border-width)); left:calc(-1*var(--p-control-border-width)); border-radius:var(--p-border-radius-base); background-color:var(--p-interactive); opacity:0; transform:scale(0.25); transition:opacity var(--p-duration-1-0-0) var(--p-ease), transform var(--p-duration-1-0-0) var(--p-ease); }\n\n.Polaris-OptionList-Checkbox__Backdrop.Polaris-OptionList-Checkbox--hover, .Polaris-OptionList-Checkbox__Backdrop:hover{ cursor:pointer; border-color:var(--p-border-hovered); }\n\n.Polaris-OptionList-Checkbox__Backdrop::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:calc(-1*(var(--p-control-border-width) + 0.1rem)); right:calc(-1*(var(--p-control-border-width) + 0.1rem)); bottom:calc(-1*(var(--p-control-border-width) + 0.1rem)); left:calc(-1*(var(--p-control-border-width) + 0.1rem)); display:block; pointer-events:none; box-shadow:0 0 0 calc(-1*(var(--p-control-border-width) + 0.1rem)) var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-OptionList-Checkbox__Icon{ position:absolute; top:50%; left:50%; transform-origin:50% 50%; pointer-events:none; transform:translate(-50%, -50%) scale(0.25); opacity:0; transition:opacity var(--p-duration-1-0-0) var(--p-ease), transform var(--p-duration-1-0-0) var(--p-ease); }\n\n.Polaris-OptionList-Checkbox__Icon svg{ fill:var(--p-icon-on-interactive); }\n\n@media (-ms-high-contrast: active){ .Polaris-OptionList-Checkbox__Icon{ fill:windowText; } }\n\n\n.Polaris-OptionList-Option{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; color:inherit; text-decoration:none; width:100%; min-height:3.6rem; text-align:left; border-radius:var(--p-border-radius-base); margin-top:0.4rem; }\n\n.Polaris-OptionList-Option:focus{ outline:none; }\n\n.Polaris-OptionList-Option:visited{ color:inherit; }\n\n.Polaris-OptionList-Option__SingleSelectOption{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; text-align:left; position:relative; }\n\n.Polaris-OptionList-Option__SingleSelectOption:focus{ outline:none; }\n\n.Polaris-OptionList-Option__SingleSelectOption::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--focused:not(:active)::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--active{ background:var(--p-surface-selected); }\n\n.Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--active::before, .Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--select::before{ content:''; background-color:var(--p-interactive); position:absolute; top:0; left:-0.8rem; height:100%; display:block; width:0.3rem; border-top-right-radius:var(--p-border-radius-base); border-bottom-right-radius:var(--p-border-radius-base); }\n\n.Polaris-OptionList-Option__SingleSelectOption:not(.Polaris-OptionList-Option--disabled){ color:inherit; }\n\n.Polaris-OptionList-Option__SingleSelectOption .Polaris-OptionList-Option__Media{ padding:0 0.8rem 0 0; }\n\n.Polaris-OptionList-Option__Label, .Polaris-OptionList-Option__SingleSelectOption{ display:flex; align-items:flex-start; width:100%; cursor:pointer; border-radius:var(--p-border-radius-base); padding:0.8rem; }\n\n.Polaris-OptionList-Option__Label:hover:not(.Polaris-OptionList-Option--disabled), .Polaris-OptionList-Option__SingleSelectOption:hover:not(.Polaris-OptionList-Option--disabled){ background:var(--p-surface-hovered); outline:0.1rem solid transparent; }\n\n.Polaris-OptionList-Option__Label.Polaris-OptionList-Option--select, .Polaris-OptionList-Option__Label.Polaris-OptionList-Option--select:hover:not(.Polaris-OptionList-Option--disabled), .Polaris-OptionList-Option__Label:active:not(.Polaris-OptionList-Option--disabled), .Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--select, .Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--select:hover:not(.Polaris-OptionList-Option--disabled), .Polaris-OptionList-Option__SingleSelectOption:active:not(.Polaris-OptionList-Option--disabled){ background:var(--p-surface-selected); outline:0.1rem solid transparent; }\n\n.Polaris-OptionList-Option__Label.Polaris-OptionList-Option--disabled, .Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--disabled{ background:var(--p-surface-disabled); cursor:default; color:var(--p-text-disabled); }\n\n.Polaris-OptionList-Option__Checkbox{ box-sizing:border-box; display:flex; flex-shrink:0; width:var(--p-choice-size); height:var(--p-choice-size); margin-right:0.8rem; margin-left:calc(-1*var(--p-choice-margin)); }\n\n.Polaris-OptionList-Option--disabled .Polaris-OptionList-Option__Media svg{ fill:var(--p-icon-disabled); }\n\n.Polaris-OptionList-Option__Media{ padding:0 0.8rem; }\n\n.Polaris-OptionList-Option__Media svg{ fill:var(--p-icon); }\n\n\n.Polaris-OptionList{ margin:0; padding:0; list-style:none; padding:0.8rem; }\n\n.Polaris-OptionList__Options{ margin:0; padding:0; list-style:none; }\n\n.Polaris-OptionList__Title{ font-size:1.3rem; font-weight:600; line-height:1.6rem; text-transform:uppercase; padding:0.8rem; color:var(--p-text-subdued); }\n\n@media (min-width: 40em){ .Polaris-OptionList__Title{ font-size:1.2rem; } }\n\n\n.Polaris-Autocomplete-ComboBox__EmptyState{ padding:0.8rem 1.6rem; }\n\n\n.Polaris-Label{ -webkit-tap-highlight-color:transparent; }\n\n.Polaris-Label--hidden{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n.Polaris-Label__Text{ font-size:1.5rem; font-weight:400; line-height:2rem; text-transform:initial; letter-spacing:initial; display:block; flex:1 1 auto; color:currentColor; -webkit-tap-highlight-color:transparent; }\n\n@media (min-width: 40em){ .Polaris-Label__Text{ font-size:1.4rem; } }\n\n\n.Polaris-InlineError{ display:flex; color:var(--p-text-critical); fill:var(--p-icon-critical); }\n\n.Polaris-InlineError__Icon{ fill:currentColor; margin-left:-0.2rem; margin-right:0.6rem; }\n\n\n.Polaris-Labelled--hidden > .Polaris-Labelled__LabelWrapper{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n.Polaris-Labelled__LabelWrapper{ word-wrap:break-word; word-break:break-word; overflow-wrap:break-word; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem; }\n\n.Polaris-Labelled__HelpText{ font-size:1.5rem; font-weight:400; line-height:2rem; text-transform:initial; letter-spacing:initial; color:var(--p-text-subdued); word-wrap:break-word; word-break:break-word; overflow-wrap:break-word; margin-top:0.4rem; }\n\n@media (min-width: 40em){ .Polaris-Labelled__HelpText{ font-size:1.4rem; } }\n\n.Polaris-Labelled__Error{ word-wrap:break-word; word-break:break-word; overflow-wrap:break-word; margin-top:0.4rem; }\n\n.Polaris-Labelled__Action{ flex:0 0 auto; }\n\n\n.Polaris-Connected{ position:relative; display:flex; }\n\n.Polaris-Connected__Item{ position:relative; z-index:10; flex:0 0 auto; }\n\n.Polaris-Connected__Item:not(:first-child){ margin-left:0.4rem; }\n\n.Polaris-Connected__Item--primary{ z-index:20; flex:1 1 auto; }\n\n.Polaris-Connected__Item--focused{ z-index:30; }\n\n\n.Polaris-TextField{ font-size:1.6rem; font-weight:400; line-height:2.4rem; border:none; text-transform:initial; letter-spacing:initial; position:relative; display:flex; align-items:center; color:var(--p-text); cursor:text; }\n\n@media (min-width: 40em){ .Polaris-TextField{ font-size:1.4rem; } }\n\n.Polaris-TextField svg{ fill:var(--p-icon); }\n\n.Polaris-TextField--multiline{ padding:0; flex-wrap:wrap; }\n\n.Polaris-TextField--multiline > .Polaris-TextField__Input{ overflow:auto; padding-left:1.2rem; padding-right:1.2rem; resize:none; }\n\n.Polaris-TextField--hasValue{ color:var(--p-text); }\n\n.Polaris-TextField--focus > .Polaris-TextField__Input, .Polaris-TextField__Input:focus{ outline:none; }\n\n.Polaris-TextField--focus > .Polaris-TextField__Input ~ .Polaris-TextField__Backdrop::after, .Polaris-TextField__Input:focus ~ .Polaris-TextField__Backdrop::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-TextField--error .Polaris-TextField__Input::-webkit-input-placeholder{ color:#9c9798; }\n\n.Polaris-TextField--error .Polaris-TextField__Input::placeholder{ color:#9c9798; }\n\n.Polaris-TextField--error > .Polaris-TextField__Input ~ .Polaris-TextField__Backdrop{ background-color:var(--p-surface-critical-subdued); border-color:var(--p-border-critical); }\n\n.Polaris-TextField--error > .Polaris-TextField__Input ~ .Polaris-TextField__Backdrop::after{ border-color:var(--p-focused); }\n\n.Polaris-TextField--readOnly > .Polaris-TextField__Backdrop{ background-color:var(--p-action-secondary-disabled); }\n\n.Polaris-TextField--disabled{ color:var(--p-text-disabled); cursor:initial; }\n\n.Polaris-TextField--disabled > .Polaris-TextField__Backdrop{ background-color:var(--p-surface-disabled); border-top-color:var(--p-border-disabled); }\n\n.Polaris-TextField--disabled svg{ fill:var(--p-icon-disabled); }\n\n.Polaris-TextField__Input{ font-size:1.6rem; font-weight:400; line-height:2.4rem; border:none; text-transform:initial; letter-spacing:initial; position:relative; z-index:20; display:block; flex:1 1; width:100%; min-width:0; min-height:3.6rem; margin:0; padding:0.5rem 1.2rem; background:none; border:0.1rem solid transparent; font-family:inherit; font-size:inherit; font-weight:inherit; -webkit-appearance:none; appearance:none; caret-color:var(--p-text); color:var(--p-text); }\n\n@media (min-width: 40em){ .Polaris-TextField__Input{ font-size:1.4rem; } }\n\n.Polaris-TextField__Prefix + .Polaris-TextField__Input{ padding-left:0; }\n\n.Polaris-TextField__Input:disabled{ background:none; color:currentColor; opacity:1; -webkit-text-fill-color:currentColor; }\n\n.Polaris-TextField__Input:invalid{ box-shadow:none; }\n\n.Polaris-TextField__Input::-webkit-input-placeholder{ color:var(--p-text-subdued); }\n\n.Polaris-TextField__Input::placeholder{ color:var(--p-text-subdued); }\n\n.Polaris-TextField__Input[type='number']{ -webkit-appearance:textfield; appearance:textfield; }\n\n.Polaris-TextField__Input[type='number']::-webkit-outer-spin-button, .Polaris-TextField__Input[type='number']::-webkit-inner-spin-button{ -webkit-appearance:none; appearance:none; margin:0; }\n\n.Polaris-TextField__Input:-webkit-autofill{ border-radius:var(--p-border-radius-base); }\n\n.Polaris-TextField__Input--hasClearButton[type='search']::-webkit-search-cancel-button{ -webkit-appearance:none; appearance:none; }\n\n.Polaris-TextField__Input--suffixed{ padding-right:0; }\n\n.Polaris-TextField__Input--alignRight{ text-align:right; }\n\n.Polaris-TextField__Input--alignLeft{ text-align:left; }\n\n.Polaris-TextField__Input--alignCenter{ text-align:center; }\n\n.Polaris-TextField__Backdrop{ position:relative; position:absolute; z-index:10; top:0; right:0; bottom:0; left:0; background-color:var(--p-surface); border:1px solid var(--p-border-subdued); border-top-color:var(--p-border-shadow); border-radius:var(--p-border-radius-base); pointer-events:none; }\n\n.Polaris-TextField__Backdrop::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-TextField__Prefix, .Polaris-TextField__Suffix{ position:relative; z-index:20; flex:0 0 auto; color:var(--p-text-subdued); -webkit-user-select:none; user-select:none; }\n\n.Polaris-TextField__Prefix{ margin-left:1.2rem; margin-right:0.8rem; }\n\n.Polaris-TextField__Suffix{ margin-left:0.25em; margin-right:1.2rem; }\n\n.Polaris-TextField__CharacterCount{ color:var(--p-text-subdued); z-index:20; margin:0 1.2rem 0 0.25em; pointer-events:none; text-align:right; }\n\n.Polaris-TextField__AlignFieldBottom{ align-self:flex-end; width:100%; padding-bottom:0.8rem; }\n\n.Polaris-TextField__ClearButton{ position:relative; -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; z-index:20; margin:0 1.2rem 0 0.25em; }\n\n.Polaris-TextField__ClearButton::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-TextField__ClearButton:focus{ outline:none; }\n\n.Polaris-TextField__ClearButton:focus:enabled::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-TextField__ClearButton:disabled{ cursor:default; }\n\n.Polaris-TextField__ClearButton.Polaris-TextField__ClearButton--hidden{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n.Polaris-TextField__Spinner{ --p-text-field-spinner-offset-large:calc(var(--p-text-field-spinner-offset) + 0.1rem); z-index:20; margin:var(--p-text-field-spinner-offset-large); color:var(--p-icon); display:flex; align-self:stretch; flex-direction:column; width:2.2rem; cursor:pointer; }\n\n.Polaris-TextField__SpinnerIcon{ height:1.2rem; width:1.2rem; }\n\n.Polaris-TextField__Resizer{ position:absolute; bottom:0; left:0; right:0; height:0; visibility:hidden; overflow:hidden; }\n\n.Polaris-TextField__DummyInput{ font-size:1.6rem; font-weight:400; line-height:2.4rem; border:none; text-transform:initial; letter-spacing:initial; padding:0.5rem 1.2rem; word-wrap:break-word; word-break:break-word; overflow-wrap:break-word; white-space:pre-wrap; }\n\n@media (min-width: 40em){ .Polaris-TextField__DummyInput{ font-size:1.4rem; } }\n\n.Polaris-TextField__Segment{ --p-text-field-spinner-border-radius:calc(var(--p-border-radius-base) - var(--p-text-field-spinner-offset)); background:var(--p-surface-neutral); border-radius:var(--p-text-field-spinner-border-radius); display:flex; flex:1 1; justify-content:center; align-items:center; -webkit-appearance:none; appearance:none; border:none; }\n\n.Polaris-TextField__Segment:focus{ outline:none; }\n\n.Polaris-TextField__Segment:active{ background:var(--p-surface-neutral-pressed); }\n\n.Polaris-TextField__Segment:first-child{ border-top-right-radius:var(--p-text-field-spinner-border-radius); margin-bottom:var(--p-text-field-spinner-offset); }\n\n.Polaris-TextField__Segment:last-child{ border-bottom-right-radius:var(--p-text-field-spinner-border-radius); }\n\n.Polaris-TextField__Segment:not(:first-child){ margin-top:0; }\n\n\n.Polaris-Autocomplete__Loading{ display:flex; justify-content:center; align-items:center; width:100%; padding:0.8rem 1.6rem; }\n\n\n[data-lock-scrolling]{ overflow-y:scroll; margin:0; }\n\n[data-lock-scrolling] [data-lock-scrolling-wrapper]{ overflow:hidden; height:100%; }\n\n\n.Polaris-Backdrop{ position:fixed; z-index:518; top:0; right:0; bottom:0; left:0; display:block; background-color:var(--p-backdrop, rgba(33, 43, 54, 0.4)); animation:Polaris-Backdrop__fade--in 200ms 1 forwards; opacity:1; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:opacity; }\n\n.Polaris-Backdrop--transparent{ background-color:transparent; }\n\n.Polaris-Backdrop--belowNavigation{ z-index:515; }\n\n@keyframes Polaris-Backdrop__fade--in{ 0%{ opacity:0; }\n  100%{ opacity:1; } }\n\n\n.Polaris-Banner{ --p-rgb-text:33, 43, 54; position:relative; display:flex; }\n\n.Polaris-Banner.Polaris-Banner--statusCritical .Polaris-Banner__PrimaryAction .Polaris-Banner__Button{ border-color:var(--p-border-critical-subdued); background:var(--p-surface-critical-subdued); }\n\n.Polaris-Banner.Polaris-Banner--statusCritical .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:hover{ border-color:var(--p-border-critical-subdued); background:var(--p-surface-critical-subdued-hovered); }\n\n.Polaris-Banner.Polaris-Banner--statusCritical .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:active{ border-color:var(--p-border-critical-subdued); background:var(--p-surface-critical-subdued-pressed); }\n\n.Polaris-Banner.Polaris-Banner--statusCritical .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:focus:not(:active){ border-color:var(--p-border-critical-subdued); background:var(--p-surface-critical-subdued); }\n\n.Polaris-Banner.Polaris-Banner--statusWarning .Polaris-Banner__PrimaryAction .Polaris-Banner__Button{ border-color:var(--p-border-warning-subdued); background:var(--p-surface-warning-subdued); }\n\n.Polaris-Banner.Polaris-Banner--statusWarning .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:hover{ border-color:var(--p-border-warning-subdued); background:var(--p-surface-warning-subdued-hovered); }\n\n.Polaris-Banner.Polaris-Banner--statusWarning .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:active{ border-color:var(--p-border-warning-subdued); background:var(--p-surface-warning-subdued-pressed); }\n\n.Polaris-Banner.Polaris-Banner--statusWarning .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:focus:not(:active){ border-color:var(--p-border-warning-subdued); background:var(--p-surface-warning-subdued); }\n\n.Polaris-Banner.Polaris-Banner--statusInfo .Polaris-Banner__PrimaryAction .Polaris-Banner__Button{ border-color:var(--p-border-highlight-subdued); background:var(--p-surface-highlight-subdued); }\n\n.Polaris-Banner.Polaris-Banner--statusInfo .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:hover{ border-color:var(--p-border-highlight-subdued); background:var(--p-surface-highlight-subdued-hovered); }\n\n.Polaris-Banner.Polaris-Banner--statusInfo .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:active{ border-color:var(--p-border-highlight-subdued); background:var(--p-surface-highlight-subdued-pressed); }\n\n.Polaris-Banner.Polaris-Banner--statusInfo .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:focus:not(:active){ border-color:var(--p-border-highlight-subdued); background:var(--p-surface-highlight-subdued); }\n\n.Polaris-Banner.Polaris-Banner--statusSuccess .Polaris-Banner__PrimaryAction .Polaris-Banner__Button{ border-color:var(--p-border-success-subdued); background:var(--p-surface-success-subdued); }\n\n.Polaris-Banner.Polaris-Banner--statusSuccess .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:hover{ border-color:var(--p-border-success-subdued); background:var(--p-surface-success-subdued-hovered); }\n\n.Polaris-Banner.Polaris-Banner--statusSuccess .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:active{ border-color:var(--p-border-success-subdued); background:var(--p-surface-success-subdued-pressed); }\n\n.Polaris-Banner.Polaris-Banner--statusSuccess .Polaris-Banner__PrimaryAction .Polaris-Banner__Button:focus:not(:active){ border-color:var(--p-border-success-subdued); background:var(--p-surface-success-subdued); }\n\n.Polaris-Banner__ContentWrapper{ flex:1 1 auto; }\n\n.Polaris-Banner--withinContentContainer{ padding:1.6rem 1.6rem 1.4rem; --p-banner-background:var(--p-background); --p-banner-border:var(--p-banner-border-default); transition:box-shadow 200ms cubic-bezier(0.64, 0, 0.35, 1); transition-delay:100ms; box-shadow:var(--p-banner-border); position:relative; border-radius:var(--p-border-radius-base); background-color:var(--p-banner-background); outline:0.1rem solid transparent; }\n\n.Polaris-Banner--withinContentContainer .Polaris-Banner__ContentWrapper{ margin-top:-0.2rem; }\n\n.Polaris-Banner--withinContentContainer .Polaris-Banner__Dismiss{ top:1.6rem; right:1.2rem; position:absolute; }\n\n.Polaris-Banner--withinContentContainer .Polaris-Banner__Ribbon{ padding-right:1.6rem; }\n\n.Polaris-Banner--withinContentContainer::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Banner--withinContentContainer:focus{ outline:none; }\n\n.Polaris-Banner--withinContentContainer.Polaris-Banner--keyFocused{ box-shadow:var(--p-banner-border); }\n\n.Polaris-Banner--withinContentContainer.Polaris-Banner--keyFocused::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Banner--withinContentContainer.Polaris-Banner--statusSuccess{ --p-banner-background:var(--p-surface-success-subdued); --p-banner-border:var(--p-banner-border-success); }\n\n.Polaris-Banner--withinContentContainer.Polaris-Banner--statusInfo{ --p-banner-background:var(--p-surface-highlight-subdued); --p-banner-border:var(--p-banner-border-highlight); }\n\n.Polaris-Banner--withinContentContainer.Polaris-Banner--statusWarning{ --p-banner-background:var(--p-surface-warning-subdued); --p-banner-border:var(--p-banner-border-warning); }\n\n.Polaris-Banner--withinContentContainer.Polaris-Banner--statusCritical{ --p-banner-background:var(--p-surface-critical-subdued); --p-banner-border:var(--p-banner-border-critical); }\n\n.Polaris-Banner--withinContentContainer + .Polaris-Banner{ margin-top:0.8rem; }\n\n.Polaris-Banner--withinContentContainer .Polaris-Banner__Actions{ padding:1.2rem 0 0.4rem 0; }\n\n.Polaris-Banner--withinPage{ border-radius:0 0 3px 3px; padding:2rem 2rem 1.8rem; --p-banner-background:var(--p-background); --p-banner-border:var(--p-banner-border-default); transition:box-shadow 200ms cubic-bezier(0.64, 0, 0.35, 1); transition-delay:100ms; box-shadow:var(--p-banner-border); position:relative; border-radius:var(--p-border-radius-wide); background-color:var(--p-banner-background); outline:0.1rem solid transparent; }\n\n.Polaris-Banner--withinPage .Polaris-Banner__ContentWrapper{ margin-top:-0.2rem; }\n\n.Polaris-Banner--withinPage::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-wide) + 0.1rem); }\n\n.Polaris-Banner--withinPage:focus{ outline:none; }\n\n.Polaris-Banner--withinPage.Polaris-Banner--keyFocused{ box-shadow:var(--p-banner-border); }\n\n.Polaris-Banner--withinPage.Polaris-Banner--keyFocused::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Banner--withinPage.Polaris-Banner--statusSuccess{ --p-banner-background:var(--p-surface-success-subdued); --p-banner-border:var(--p-banner-border-success); }\n\n.Polaris-Banner--withinPage.Polaris-Banner--statusInfo{ --p-banner-background:var(--p-surface-highlight-subdued); --p-banner-border:var(--p-banner-border-highlight); }\n\n.Polaris-Banner--withinPage.Polaris-Banner--statusWarning{ --p-banner-background:var(--p-surface-warning-subdued); --p-banner-border:var(--p-banner-border-warning); }\n\n.Polaris-Banner--withinPage.Polaris-Banner--statusCritical{ --p-banner-background:var(--p-surface-critical-subdued); --p-banner-border:var(--p-banner-border-critical); }\n\n.Polaris-Banner--withinPage + .Polaris-Banner{ margin-top:2rem; }\n\n.Polaris-Banner--withinPage .Polaris-Banner__Ribbon{ padding-right:1.6rem; }\n\n.Polaris-Banner--withinPage .Polaris-Banner__Actions{ padding-top:1.6rem; }\n\n.Polaris-Banner--withinPage .Polaris-Banner__Dismiss{ right:1.6rem; top:2rem; position:absolute; }\n\n.Polaris-Banner--hasDismiss{ padding-right:calc(3.2rem + var(--p-icon-size)); }\n\n.Polaris-Banner__Heading{ padding-top:var(--p-override-none, 0.2rem); word-break:break-word; }\n\n.Polaris-Banner__Content{ word-wrap:break-word; word-break:break-word; overflow-wrap:break-word; padding:0.2rem 0; }\n\n.Polaris-Banner__Ribbon{ flex:0 0 3.2rem; }\n\n.Polaris-Banner__PrimaryAction{ margin-right:0.6rem; }\n\n.Polaris-Banner__SecondaryAction{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; color:inherit; text-decoration:none; display:inline-block; text-align:left; margin:-0.8rem -0.6rem; padding:0.8rem 1.2rem; color:var(--p-text); padding-left:0.6rem; }\n\n.Polaris-Banner__SecondaryAction:focus{ outline:none; }\n\n.Polaris-Banner__SecondaryAction:visited{ color:inherit; }\n\n.Polaris-Banner__SecondaryAction:hover > .Polaris-Banner__Text{ box-shadow:0 -2px 0 0 rgba(var(--p-rgb-text), 0.75) inset; }\n\n.Polaris-Banner__SecondaryAction:active > .Polaris-Banner__Text{ box-shadow:0 -2px 0 0 rgba(var(--p-rgb-text), 0) inset; }\n\n.Polaris-Banner__SecondaryAction:focus > .Polaris-Banner__Text{ padding:2px 5px; margin:-2px -5px; background:var(--p-action-secondary-hovered); border-radius:3px; box-shadow:none; }\n\n@media (-ms-high-contrast: active){ .Polaris-Banner__SecondaryAction:focus > .Polaris-Banner__Text{ outline:2px dotted; } }\n\n.Polaris-Banner__Text{ box-shadow:0 -2px 0 0 rgba(var(--p-rgb-text), 0.25) inset; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:box-shadow; transition:box-shadow 200ms cubic-bezier(0.64, 0, 0.35, 1); }\n\n.Polaris-Banner__Button{ position:relative; position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:3.6rem; min-width:3.6rem; margin:0; padding:0.7rem 1.6rem; background:var(--p-surface); box-shadow:var(--p-button-drop-shadow); border-radius:var(--p-border-radius-base); color:var(--p-text); border:1px solid var(--p-border-neutral-subdued); border-top-color:var(--p-border-subdued); border-bottom-color:var(--p-border-shadow-subdued); line-height:1; text-align:center; cursor:pointer; -webkit-user-select:none; user-select:none; text-decoration:none; -webkit-tap-highlight-color:transparent; font-size:1.5rem; font-weight:var(--p-button-font-weight, 400); line-height:1.6rem; text-transform:initial; letter-spacing:initial; position:relative; color:var(--p-text); }\n\n.Polaris-Banner__Button svg{ fill:var(--p-icon); }\n\n.Polaris-Banner__Button::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Banner__Button:hover{ background:var(--p-action-secondary-hovered); outline:0.1rem solid transparent; }\n\n.Polaris-Banner__Button:focus{ box-shadow:var(--p-button-drop-shadow); outline:0; }\n\n.Polaris-Banner__Button:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Banner__Button:active{ background:var(--p-action-secondary-pressed); box-shadow:var(--p-button-drop-shadow); }\n\n.Polaris-Banner__Button:active::after{ border:none; box-shadow:none; }\n\n.Polaris-Banner__Button.Polaris-Banner--pressed{ background:var(--p-action-secondary-depressed); box-shadow:var(--p-button-pressed-inner-shadow); color:var(--p-text-on-primary); border-color:var(--p-border-depressed); }\n\n.Polaris-Banner__Button.Polaris-Banner--pressed svg{ fill:currentColor; }\n\n@media (-ms-high-contrast: active){ .Polaris-Banner__Button{ border:1px solid windowText; } }\n\n@media (min-width: 40em){ .Polaris-Banner__Button{ font-size:1.4rem; } }\n\n.Polaris-Banner__Button::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.3rem; right:-0.3rem; bottom:-0.3rem; left:-0.3rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.3rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Banner__Button:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n\n.Polaris-Breadcrumbs__Breadcrumb{ font-size:1.5rem; font-weight:400; line-height:2rem; text-transform:initial; letter-spacing:initial; color:var(--p-text-subdued); -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; position:relative; display:flex; align-items:center; min-height:3.6rem; color:var(--p-text-subdued); text-decoration:none; margin:0; padding:0.2rem; border-radius:var(--p-border-radius-base); border:1px solid var(--p-border-neutral-subdued); position:relative; }\n\n@media (min-width: 40em){ .Polaris-Breadcrumbs__Breadcrumb{ font-size:1.4rem; } }\n\n.Polaris-Breadcrumbs__Breadcrumb:focus{ outline:none; }\n\n.Polaris-Breadcrumbs__Breadcrumb::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Breadcrumbs__Breadcrumb:hover{ background-color:var(--p-surface-hovered); }\n\n.Polaris-Breadcrumbs__Breadcrumb:active{ background-color:var(--p-surface-pressed); }\n\n.Polaris-Breadcrumbs__Breadcrumb:active .Polaris-Breadcrumbs__ContentWrapper{ background:var(--p-override-transparent); }\n\n.Polaris-Breadcrumbs__Breadcrumb:hover, .Polaris-Breadcrumbs__Breadcrumb:active{ color:var(--p-text); text-decoration:none; }\n\n.Polaris-Breadcrumbs__Breadcrumb:hover .Polaris-Breadcrumbs__Icon svg, .Polaris-Breadcrumbs__Breadcrumb:active .Polaris-Breadcrumbs__Icon svg{ fill:var(--p-icon-pressed); }\n\n.Polaris-Breadcrumbs__Breadcrumb:focus{ outline:none; }\n\n.Polaris-Breadcrumbs__Breadcrumb:focus .Polaris-Breadcrumbs__ContentWrapper{ background:var(--p-override-transparent); }\n\n.Polaris-Breadcrumbs__Breadcrumb:focus:not(:active)::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Breadcrumbs__ContentWrapper{ position:relative; display:flex; align-items:center; justify-content:center; padding:0; margin-left:0; background:transparent; height:2.8rem; width:2.8rem; border-radius:var(--p-border-radius-wide); -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:background; transition:background 200ms cubic-bezier(0.64, 0, 0.35, 1); }\n\n.Polaris-Breadcrumbs__Content{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis; position:relative; }\n\n.Polaris-Breadcrumbs__Icon{ width:2rem; height:2rem; margin:-1rem 0 -1rem -0.8rem; margin:0; }\n\n.Polaris-Breadcrumbs__Icon svg{ fill:var(--p-icon); }\n\n\n.Polaris-Choice{ display:inline-flex; justify-content:flex-start; padding:0.4rem 0; cursor:pointer; }\n\n.Polaris-Choice--labelHidden{ padding:0; }\n\n.Polaris-Choice--labelHidden > .Polaris-Choice__Label{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n.Polaris-Choice--labelHidden .Polaris-Choice__Control{ margin-top:0; margin-right:0; }\n\n.Polaris-Choice--disabled{ cursor:default; }\n\n.Polaris-Choice--disabled > .Polaris-Choice__Label{ color:var(--p-text-disabled); }\n\n.Polaris-Choice--disabled > .Polaris-Choice__Label:hover{ cursor:default; }\n\n@media (-ms-high-contrast: active){ .Polaris-Choice--disabled > .Polaris-Choice__Label{ color:grayText; } }\n\n.Polaris-Choice__Control{ display:flex; flex:0 0 auto; align-items:stretch; width:var(--p-choice-size, 1.6rem); height:var(--p-choice-size, 1.6rem); margin-top:var(--p-override-none, 0.2rem); margin-right:0.8rem; }\n\n.Polaris-Choice__Control > *{ width:100%; }\n\n.Polaris-Choice__Label{ font-size:1.5rem; font-weight:400; line-height:2rem; text-transform:initial; letter-spacing:initial; -webkit-tap-highlight-color:transparent; }\n\n@media (min-width: 40em){ .Polaris-Choice__Label{ font-size:1.4rem; } }\n\n.Polaris-Choice__Label:hover{ cursor:pointer; }\n\n.Polaris-Choice__Descriptions{ padding-left:calc(0.8rem + var(--p-choice-size, 1.6rem)); }\n\n.Polaris-Choice__HelpText{ font-size:1.5rem; font-weight:400; line-height:2rem; text-transform:initial; letter-spacing:initial; color:var(--p-text-subdued); margin-bottom:0.4rem; }\n\n@media (min-width: 40em){ .Polaris-Choice__HelpText{ font-size:1.4rem; } }\n\n\n.Polaris-Checkbox{ position:relative; margin:var(--p-choice-margin, 0); }\n\n.Polaris-Checkbox__Input{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n.Polaris-Checkbox__Input.Polaris-Checkbox--keyFocused + .Polaris-Checkbox__Backdrop::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Checkbox__Input:active:not(:disabled) + .Polaris-Checkbox__Backdrop, .Polaris-Checkbox__Input:checked + .Polaris-Checkbox__Backdrop, .Polaris-Checkbox__Input.Polaris-Checkbox__Input--indeterminate + .Polaris-Checkbox__Backdrop{ border-color:var(--p-interactive); }\n\n.Polaris-Checkbox__Input:active:not(:disabled) + .Polaris-Checkbox__Backdrop::before, .Polaris-Checkbox__Input:checked + .Polaris-Checkbox__Backdrop::before, .Polaris-Checkbox__Input.Polaris-Checkbox__Input--indeterminate + .Polaris-Checkbox__Backdrop::before{ opacity:1; transform:scale(1); }\n\n@media (-ms-high-contrast: active){ .Polaris-Checkbox__Input:active:not(:disabled) + .Polaris-Checkbox__Backdrop::before, .Polaris-Checkbox__Input:checked + .Polaris-Checkbox__Backdrop::before, .Polaris-Checkbox__Input.Polaris-Checkbox__Input--indeterminate + .Polaris-Checkbox__Backdrop::before{ border:2px solid windowText; } }\n\n.Polaris-Checkbox__Input:active:not(:disabled) ~ .Polaris-Checkbox__Icon, .Polaris-Checkbox__Input:checked ~ .Polaris-Checkbox__Icon, .Polaris-Checkbox__Input.Polaris-Checkbox__Input--indeterminate ~ .Polaris-Checkbox__Icon{ transition:opacity var(--p-duration-1-5-0) var(--p-ease), transform var(--p-duration-1-5-0) var(--p-ease); transform:translate(-50%, -50%) scale(1); opacity:1; }\n\n.Polaris-Checkbox__Input:disabled + .Polaris-Checkbox__Backdrop{ border-color:var(--p-border-disabled); }\n\n.Polaris-Checkbox__Input:disabled + .Polaris-Checkbox__Backdrop::before{ background-color:var(--p-action-secondary-disabled); }\n\n.Polaris-Checkbox__Input:disabled + .Polaris-Checkbox__Backdrop:hover{ cursor:default; }\n\n.Polaris-Checkbox__Input:disabled:checked + .Polaris-Checkbox__Backdrop{ background:var(--p-border-disabled); }\n\n.Polaris-Checkbox__Input:disabled:checked + .Polaris-Checkbox__Backdrop::before{ background:var(--p-border-disabled); }\n\n.Polaris-Checkbox__Backdrop{ position:relative; border:var(--p-control-border-width) solid var(--p-border); background-color:var(--p-surface); border-radius:var(--p-border-radius-base); position:relative; display:block; width:100%; height:100%; position:relative; }\n\n.Polaris-Checkbox__Backdrop::before{ content:''; position:absolute; top:calc(-1*var(--p-control-border-width)); right:calc(-1*var(--p-control-border-width)); bottom:calc(-1*var(--p-control-border-width)); left:calc(-1*var(--p-control-border-width)); border-radius:var(--p-border-radius-base); background-color:var(--p-interactive); opacity:0; transform:scale(0.25); transition:opacity var(--p-duration-1-0-0) var(--p-ease), transform var(--p-duration-1-0-0) var(--p-ease); }\n\n.Polaris-Checkbox__Backdrop.Polaris-Checkbox--hover, .Polaris-Checkbox__Backdrop:hover{ cursor:pointer; border-color:var(--p-border-hovered); }\n\n.Polaris-Checkbox__Backdrop::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:calc(-1*(var(--p-control-border-width) + 0.1rem)); right:calc(-1*(var(--p-control-border-width) + 0.1rem)); bottom:calc(-1*(var(--p-control-border-width) + 0.1rem)); left:calc(-1*(var(--p-control-border-width) + 0.1rem)); display:block; pointer-events:none; box-shadow:0 0 0 calc(-1*(var(--p-control-border-width) + 0.1rem)) var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Checkbox__Icon{ position:absolute; top:50%; left:50%; transform-origin:50% 50%; pointer-events:none; transform:translate(-50%, -50%) scale(0.25); opacity:0; transition:opacity var(--p-duration-1-0-0) var(--p-ease), transform var(--p-duration-1-0-0) var(--p-ease); }\n\n.Polaris-Checkbox__Icon svg{ fill:var(--p-icon-on-interactive); }\n\n@media (-ms-high-contrast: active){ .Polaris-Checkbox__Icon{ fill:windowText; } }\n\n.Polaris-Checkbox--error .Polaris-Checkbox__Icon svg{ fill:var(--p-icon-on-critical); }\n\n.Polaris-Checkbox--error .Polaris-Checkbox__Backdrop{ border-color:var(--p-border-critical); background-color:var(--p-surface-critical); }\n\n.Polaris-Checkbox--error .Polaris-Checkbox__Backdrop.Polaris-Checkbox--hover, .Polaris-Checkbox--error .Polaris-Checkbox__Backdrop:hover{ border-color:var(--p-border-critical); }\n\n.Polaris-Checkbox--error .Polaris-Checkbox__Backdrop::before{ background-color:var(--p-border-critical); }\n\n.Polaris-Checkbox--error .Polaris-Checkbox__Input:checked + .Polaris-Checkbox__Backdrop::before, .Polaris-Checkbox--error .Polaris-Checkbox__Input:active + .Polaris-Checkbox__Backdrop::before, .Polaris-Checkbox--error .Polaris-Checkbox__Input.Polaris-Checkbox__Input--indeterminate + .Polaris-Checkbox__Backdrop::before{ background-color:var(--p-border-critical); }\n\n\n.Polaris-CheckableButton{ font-size:1.5rem; font-weight:var(--p-button-font-weight, 400); line-height:1.6rem; text-transform:initial; letter-spacing:initial; display:flex; align-items:center; min-height:3.6rem; min-width:3.6rem; margin:0; padding:0.7rem 1.6rem; line-height:1; cursor:pointer; -webkit-user-select:none; user-select:none; text-decoration:none; text-align:left; border-radius:var(--p-border-radius-base, 3px); width:100%; background:var(--p-surface); box-shadow:var(--p-button-drop-shadow); border:1px solid var(--p-border-neutral-subdued); border-top-color:var(--p-border-subdued); border-bottom-color:var(--p-border-shadow-subdued); }\n\n@media (min-width: 40em){ .Polaris-CheckableButton{ font-size:1.4rem; } }\n\n.Polaris-CheckableButton svg{ fill:var(--p-icon-on-interactive); }\n\n[data-buttongroup-segmented='true'] .Polaris-CheckableButton{ border-top-right-radius:0; border-bottom-right-radius:0; }\n\n.Polaris-CheckableButton:hover{ background:var(--p-action-secondary-hovered); }\n\n.Polaris-CheckableButton:active{ background:var(--p-action-secondary-pressed); }\n\n.Polaris-CheckableButton.Polaris-CheckableButton__CheckableButton--measuring{ font-size:1.5rem; font-weight:700; }\n\n.Polaris-CheckableButton.Polaris-CheckableButton__CheckableButton--measuring::before{ content:''; display:inline-block; width:1.5rem; }\n\n@media (min-width: 28.625em){ .Polaris-CheckableButton{ flex:0 1 auto; } }\n\n.Polaris-CheckableButton:focus{ outline:none; }\n\n.Polaris-CheckableButton.Polaris-CheckableButton__CheckableButton--plain{ border-radius:3px; box-shadow:none; background:transparent; border:none; }\n\n.Polaris-CheckableButton.Polaris-CheckableButton__CheckableButton--plain:hover{ background:transparent; }\n\n.Polaris-CheckableButton.Polaris-CheckableButton__CheckableButton--selectMode{ color:var(--p-text-subdued); font-weight:500; }\n\n.Polaris-CheckableButton.Polaris-CheckableButton__CheckableButton--selected{ color:var(--p-text); }\n\n.Polaris-CheckableButton__Checkbox{ pointer-events:none; height:var(--p-choice-size); width:var(--p-choice-size); margin-left:calc(-0.9rem - var(--p-control-border-width)); }\n\n.Polaris-CheckableButton__Label{ flex:1 1; white-space:nowrap; overflow:hidden; max-width:100%; text-overflow:ellipsis; padding:0.1rem 0; margin-left:calc(2rem - var(--p-control-border-width)); }\n\n\n.Polaris-Indicator::before, .Polaris-Indicator::after{ content:''; position:absolute; background-color:var(--p-border-highlight, #47c1bf); right:-0.4rem; top:-0.4rem; width:1rem; height:1rem; border-radius:100%; border:0.5rem solid transparent; }\n\n.Polaris-Indicator--pulseIndicator::before{ z-index:1; animation:Polaris-Indicator--bounce 5s ease infinite; }\n\n.Polaris-Indicator--pulseIndicator::after{ right:-0.4rem; top:-0.4rem; animation:Polaris-Indicator--pulse 5s ease infinite; }\n\n@keyframes Polaris-Indicator--bounce{ from, 65%, 85%{ transform:scale(1); }\n  75%{ transform:scale(0.85); }\n  82.5%{ transform:scale(1.05); } }\n\n@keyframes Polaris-Indicator--pulse{ from, 75%{ transform:scale(0.85);\n    opacity:1; }\n  to{ transform:scale(2.5);\n    opacity:0; } }\n\n\n.Polaris-BulkActions__Group{ font-size:1.6rem; font-weight:400; line-height:2.4rem; border:none; text-transform:initial; letter-spacing:initial; width:100%; display:none; align-items:center; flex-wrap:wrap; opacity:0; }\n\n@media (min-width: 40em){ .Polaris-BulkActions__Group{ font-size:1.4rem; } }\n\n.Polaris-BulkActions__Group.Polaris-BulkActions__Group--measuring{ transition:none; display:flex; opacity:0; }\n\n.Polaris-BulkActions__Group--entering, .Polaris-BulkActions__Group--exiting{ opacity:0; display:flex; }\n\n.Polaris-BulkActions__Group--entered{ opacity:1; display:flex; }\n\n.Polaris-BulkActions__Group--exited{ opacity:0; display:none; }\n\n@media (min-width: 28.625em){ .Polaris-BulkActions__Group--smallScreen{ display:none; } }\n\n.Polaris-BulkActions__Group--largeScreen{ display:none; }\n\n@media (min-width: 28.625em){ .Polaris-BulkActions__Group--largeScreen{ display:flex; }\n  .Polaris-BulkActions__Group--largeScreen.Polaris-BulkActions__Group--exiting{ transition:none; }\n  .Polaris-BulkActions__Group--largeScreen.Polaris-BulkActions__Group--exited{ opacity:0; display:none; } }\n\n.Polaris-BulkActions__ButtonGroupWrapper{ width:100%; max-width:100%; }\n\n@media (max-width: 28.625em){ .Polaris-BulkActions__ButtonGroupWrapper > div > div:first-child{ flex:1 1 auto; } }\n\n@media (min-width: 28.625em){ .Polaris-BulkActions__ButtonGroupWrapper{ width:auto; justify-content:flex-start; margin-right:0.8rem; } }\n\n.Polaris-BulkActions__Group--measuring .Polaris-BulkActions__ButtonGroupWrapper{ position:absolute; width:auto; }\n\n.Polaris-BulkActions__BulkActionButton{ white-space:nowrap; }\n\n.Polaris-BulkActions__CheckableContainer{ flex:1 1; }\n\n.Polaris-BulkActions--disabled{ transition:none; box-shadow:none; border-color:var(--p-border-disabled); background:var(--p-surface-disabled); color:var(--p-text-disabled); cursor:default; pointer-events:none; }\n\n.Polaris-BulkActions--disabled svg{ fill:var(--p-icon-disabled); }\n\n.Polaris-BulkActions__PaginatedSelectAll{ padding:0.4rem 0; }\n\n.Polaris-BulkActions__Slide{ -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:transform; transform:translateY(0); transition:transform cubic-bezier(0.64, 0, 0.35, 1) 200ms; }\n\n.Polaris-BulkActions__Slide--appear, .Polaris-BulkActions__Slide--enter, .Polaris-BulkActions__Slide--exit{ transform:translateX(-4rem); }\n\n.Polaris-BulkActions__Slide--appearing, .Polaris-BulkActions__Slide--entering{ transform:translateY(0); }\n\n\n.Polaris-TextContainer > *:not(:first-child){ margin-top:1.6rem; }\n\n.Polaris-TextContainer--spacingTight > *:not(:first-child){ margin-top:0.8rem; }\n\n.Polaris-TextContainer--spacingLoose > *:not(:first-child){ margin-top:2rem; }\n\n\n.Polaris-CalloutCard{ display:flex; align-items:center; }\n\n.Polaris-CalloutCard__Image{ display:none; flex:0 0 auto; width:10rem; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-CalloutCard__Image{ display:block; margin-left:2rem; } }\n\n@media (min-width: 30.625em){ .Polaris-CalloutCard__Image{ display:block; margin-left:2rem; } }\n\n.Polaris-CalloutCard__DismissImage{ margin-right:2rem; }\n\n.Polaris-CalloutCard__Content{ flex:1 1 auto; }\n\n.Polaris-CalloutCard__Title{ margin-bottom:2rem; }\n\n.Polaris-CalloutCard__Buttons{ margin-top:2rem; }\n\n.Polaris-CalloutCard__Container{ position:relative; }\n\n.Polaris-CalloutCard__Dismiss{ right:1.6rem; top:1.6rem; position:absolute; }\n\n\n.Polaris-Caption{ font-size:1.3rem; font-weight:400; line-height:2rem; margin:0; }\n\n@media (min-width: 40em){ .Polaris-Caption{ font-size:1.2rem; line-height:1.6rem; } }\n\n\n.Polaris-RadioButton{ position:relative; margin:var(--p-choice-margin, 0); }\n\n.Polaris-RadioButton__Input{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n.Polaris-RadioButton__Input.Polaris-RadioButton--keyFocused + .Polaris-RadioButton__Backdrop::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-RadioButton__Input.Polaris-RadioButton--keyFocused + .Polaris-RadioButton__Backdrop::after{ border-radius:50%; }\n\n.Polaris-RadioButton__Input:checked + .Polaris-RadioButton__Backdrop{ border-color:var(--p-interactive); }\n\n.Polaris-RadioButton__Input:checked + .Polaris-RadioButton__Backdrop::before{ transition:opacity var(--p-duration-1-5-0) var(--p-ease), transform var(--p-duration-1-5-0) var(--p-ease); opacity:1; transform:translate(-50%, -50%) scale(1); }\n\n.Polaris-RadioButton__Input:disabled + .Polaris-RadioButton__Backdrop{ border-color:var(--p-border-disabled); cursor:default; }\n\n.Polaris-RadioButton__Input:disabled + .Polaris-RadioButton__Backdrop::before{ background-color:var(--p-border-disabled); }\n\n.Polaris-RadioButton__Backdrop{ position:relative; top:0; left:0; display:block; width:100%; height:100%; border:var(--p-control-border-width) solid var(--p-border); border-radius:50%; background-color:var(--p-surface); transition:border-color var(--p-duration-1-0-0) var(--p-ease); position:relative; }\n\n.Polaris-RadioButton__Backdrop::before{ content:''; position:absolute; top:50%; left:50%; opacity:0; transform:translate(-50%, -50%) scale(0.1); transform-origin:50% 50%; height:var(--p-icon-size); width:var(--p-icon-size); background-color:var(--p-interactive); border-radius:50%; transition:opacity var(--p-duration-1-0-0) var(--p-ease), transform var(--p-duration-1-0-0) var(--p-ease); }\n\n@media (forced-colors: active){ .Polaris-RadioButton__Backdrop::before{ border:0.5rem solid transparent; } }\n\n.Polaris-RadioButton__Backdrop::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:calc(-1*(var(--p-control-border-width) + 0.1rem)); right:calc(-1*(var(--p-control-border-width) + 0.1rem)); bottom:calc(-1*(var(--p-control-border-width) + 0.1rem)); left:calc(-1*(var(--p-control-border-width) + 0.1rem)); display:block; pointer-events:none; box-shadow:0 0 0 calc(-1*(var(--p-control-border-width) + 0.1rem)) var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-RadioButton__Backdrop::after{ border-radius:50%; }\n\n.Polaris-RadioButton__Backdrop.Polaris-RadioButton--hover, .Polaris-RadioButton__Backdrop:hover{ cursor:pointer; border-color:var(--p-border-hovered); }\n\n\n.Polaris-ChoiceList{ margin:0; padding:0; border:none; }\n\n.Polaris-ChoiceList--titleHidden > .Polaris-ChoiceList__Title{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n.Polaris-ChoiceList__Choices{ margin:0; padding:0; list-style:none; }\n\n.Polaris-ChoiceList__ChoiceChildren{ margin-bottom:0.8rem; padding-left:calc(0.8rem + var(--p-choice-size, 1.6rem)); }\n\n.Polaris-ChoiceList__ChoiceError{ margin-top:0.4rem; margin-bottom:0.8rem; }\n\n.Polaris-ChoiceList__Title{ font-size:1.5rem; font-weight:400; line-height:2rem; text-transform:initial; letter-spacing:initial; display:block; margin:0 0 0.4rem; padding:0; }\n\n@media (min-width: 40em){ .Polaris-ChoiceList__Title{ font-size:1.4rem; } }\n\n\n.Polaris-Collapsible{ padding-top:0; padding-bottom:0; max-height:0; overflow:hidden; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:max-height; transition-property:max-height; transition-duration:100ms; transition-timing-function:cubic-bezier(0, 0, 0.42, 1); }\n\n.Polaris-Collapsible--isFullyClosed{ display:none; }\n\n@media print{ .Polaris-Collapsible--expandOnPrint{ max-height:none !important; overflow:visible; display:block; } }\n\n\n.Polaris-ColorPicker{ -webkit-user-select:none; user-select:none; display:flex; }\n\n.Polaris-ColorPicker__MainColor{ background:repeating-conic-gradient(var(--p-surface) 0% 25%, var(--p-surface-neutral-subdued) 0% 50%) 50% / 1.6rem 1.6rem; position:relative; overflow:hidden; height:16rem; width:16rem; border-radius:var(--p-border-radius-base); cursor:pointer; }\n\n.Polaris-ColorPicker__MainColor .Polaris-ColorPicker__Dragger{ right:0.9rem; margin:0; }\n\n.Polaris-ColorPicker__MainColor .Polaris-ColorPicker__ColorLayer{ border-radius:var(--p-border-radius-base); }\n\n.Polaris-ColorPicker__MainColor::after, .Polaris-ColorPicker__MainColor::before{ content:''; position:absolute; z-index:20; top:0; left:0; display:block; height:100%; width:100%; pointer-events:none; border-radius:var(--p-border-radius-base, 3px); }\n\n.Polaris-ColorPicker__MainColor::before{ background:linear-gradient(to right, white, transparent); }\n\n.Polaris-ColorPicker__MainColor::after{ background-image:linear-gradient(to top, black, transparent); }\n\n.Polaris-ColorPicker__Dragger{ position:relative; z-index:30; bottom:0.9rem; transform:none; height:1.8rem; width:1.8rem; margin:0 auto; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:transform; background:transparent; border:var(--p-border-radius-base) solid var(--p-surface); border-radius:50%; pointer-events:none; }\n\n.Polaris-ColorPicker__HuePicker, .Polaris-ColorPicker__AlphaPicker{ position:relative; overflow:hidden; height:16rem; width:2.4rem; margin-left:0.8rem; border-width:var(--p-border-radius-base); border-radius:8rem; }\n\n.Polaris-ColorPicker__HuePicker{ background-image:linear-gradient(to bottom, red 1.8rem, yellow, lime, cyan, blue, magenta, red 14.2rem); }\n\n.Polaris-ColorPicker__AlphaPicker{ background:repeating-conic-gradient(var(--p-surface) 0% 25%, var(--p-surface-neutral-subdued) 0% 50%) 50% / 1.6rem 1.6rem; }\n\n.Polaris-ColorPicker__ColorLayer{ position:absolute; z-index:10; top:0; left:0; height:100%; width:100%; pointer-events:none; }\n\n.Polaris-ColorPicker__Slidable{ height:100%; width:100%; cursor:pointer; }\n\n\n.Polaris-DataTable{ position:relative; max-width:100vw; }\n\n.Polaris-DataTable--condensed .Polaris-DataTable__Navigation{ display:flex; align-items:center; justify-content:center; width:100%; padding:1.6rem 0.8rem; }\n\n@media (min-width: 48em){ .Polaris-DataTable--condensed .Polaris-DataTable__Navigation{ justify-content:flex-end; } }\n\n.Polaris-DataTable__Navigation{ display:none; }\n\n.Polaris-DataTable__Pip{ height:0.6rem; width:0.6rem; background:var(--p-text-subdued); border-radius:var(--p-border-radius-base); }\n\n.Polaris-DataTable__Pip:not(:last-of-type){ margin-right:0.4rem; }\n\n.Polaris-DataTable__Pip--visible{ background:var(--p-text); }\n\n.Polaris-DataTable__ScrollContainer{ overflow-x:auto; -webkit-overflow-scrolling:touch; }\n\n.Polaris-DataTable__Table{ width:100%; border-spacing:0; }\n\n@media (min-width: 48em){ .Polaris-DataTable__TableRow:hover .Polaris-DataTable__Cell{ background:var(--p-surface-hovered); } }\n\n.Polaris-DataTable__TableRow + .Polaris-DataTable__TableRow .Polaris-DataTable__Cell{ border-top:0.1rem solid var(--p-divider); }\n\n.Polaris-DataTable__Cell{ padding:1.6rem; white-space:nowrap; text-align:left; transition:background-color 0.2s ease-in-out; }\n\n.Polaris-DataTable__Cell--firstColumn{ font-weight:400; color:var(--p-text); text-align:left; white-space:normal; }\n\n.Polaris-DataTable__Cell--numeric{ text-align:right; }\n\n.Polaris-DataTable__Cell--truncated{ white-space:nowrap; overflow-x:hidden; text-overflow:ellipsis; max-width:14.5rem; }\n\n.Polaris-DataTable__Cell--header{ font-weight:400; color:var(--p-text); border-bottom:0.1rem solid var(--p-border); border-top:0; }\n\n.Polaris-DataTable__Cell--sortable{ padding:0; }\n\n.Polaris-DataTable__Cell--verticalAlignTop{ vertical-align:top; }\n\n.Polaris-DataTable__Cell--verticalAlignBottom{ vertical-align:bottom; }\n\n.Polaris-DataTable__Cell--verticalAlignMiddle{ vertical-align:middle; }\n\n.Polaris-DataTable__Cell--verticalAlignBaseline{ vertical-align:baseline; }\n\n.Polaris-DataTable__Icon{ display:flex; align-self:flex-end; opacity:0; transition:opacity 200ms cubic-bezier(0.64, 0, 0.35, 1), fill 200ms cubic-bezier(0.64, 0, 0.35, 1); }\n\n.Polaris-DataTable__Heading{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; position:relative; position:relative; display:inline-flex; justify-content:flex-end; align-items:baseline; color:var(--p-text); transition:color 200ms cubic-bezier(0.64, 0, 0.35, 1); cursor:pointer; padding:0.8rem; margin:0.8rem; }\n\n.Polaris-DataTable__Heading:focus{ outline:none; }\n\n.Polaris-DataTable__Heading::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-DataTable__Heading svg{ fill:var(--p-icon); }\n\n.Polaris-DataTable__Heading:hover{ color:var(--p-interactive-hovered); }\n\n.Polaris-DataTable__Heading:hover svg{ fill:var(--p-interactive-hovered); }\n\n.Polaris-DataTable__Heading:hover .Polaris-DataTable__Icon{ opacity:1; }\n\n.Polaris-DataTable__Heading:focus:not(:active)::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-DataTable__Heading--left{ justify-content:flex-start; flex-direction:row-reverse; }\n\n.Polaris-DataTable__Cell--sorted .Polaris-DataTable__Icon{ opacity:1; }\n\n.Polaris-DataTable__Cell--total{ font-weight:600; background:var(--p-surface-subdued); border-bottom:0.1rem solid var(--p-border-subdued); }\n\n.Polaris-DataTable--cellTotalFooter{ border-top:0.1rem solid var(--p-divider); border-bottom:none; border-bottom-left-radius:var(--p-border-radius-base); border-bottom-right-radius:var(--p-border-radius-base); }\n\n.Polaris-DataTable__Footer{ padding:1.6rem; background:var(--p-surface-subdued); color:var(--p-text-subdued); text-align:center; border-top:0.1rem solid var(--p-divider); border-bottom-left-radius:var(--p-border-radius-base); border-bottom-right-radius:var(--p-border-radius-base); }\n\n\n.Polaris-DatePicker{ position:relative; }\n\n.Polaris-DatePicker__MonthLayout{ display:flex; flex-wrap:wrap; margin-top:-1.6rem; margin-left:-1.6rem; }\n\n.Polaris-DatePicker__MonthContainer{ flex:1 1 23rem; margin-top:1.6rem; margin-left:1.6rem; max-width:calc(100% - 1.6rem); min-width:23rem; }\n\n.Polaris-DatePicker__Month{ width:100%; table-layout:fixed; border-collapse:collapse; border:none; border-spacing:0; }\n\n.Polaris-DatePicker__Month--current{ font-weight:700; }\n\n.Polaris-DatePicker__DayCell{ width:14.28571%; background:transparent; margin:0; padding:0; border-radius:var(--p-border-radius-base); }\n\n.Polaris-DatePicker__DayCell--inRange{ border-radius:0; }\n\n.Polaris-DatePicker__Day{ display:block; height:100%; width:100%; margin:0; padding:0.8rem; background:transparent; border:none; border-radius:var(--p-border-radius-base); outline:none; font-size:1.2rem; text-align:center; color:var(--p-text); cursor:pointer; position:relative; }\n\n.Polaris-DatePicker__Day:hover{ background:var(--p-interactive-hovered); color:var(--p-text-on-interactive); outline:0.1rem solid transparent; }\n\n.Polaris-DatePicker__Day::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-DatePicker__Day:focus:not(:active)::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-DatePicker__Day--today{ font-weight:700; }\n\n.Polaris-DatePicker__Day--inRange{ background:var(--p-surface-selected); border-radius:0; }\n\n@media (-ms-high-contrast: active){ .Polaris-DatePicker__Day--inRange{ -ms-high-contrast-adjust:none; background-color:Highlight; color:HighlightText; }\n  .Polaris-DatePicker__Day--inRange:hover{ background-color:HighlightText; color:Highlight; outline:2px solid Highlight; } }\n\n.Polaris-DatePicker__Day--selected{ background:var(--p-interactive); color:var(--p-text-on-interactive); }\n\n@media (-ms-high-contrast: active){ .Polaris-DatePicker__Day--selected{ -ms-high-contrast-adjust:none; background-color:Highlight; color:HighlightText; }\n  .Polaris-DatePicker__Day--selected:hover{ background-color:HighlightText; color:Highlight; outline:2px solid Highlight; } }\n\n.Polaris-DatePicker__Day--disabled{ background-color:transparent; color:var(--p-text-disabled); }\n\n.Polaris-DatePicker__Day--disabled:hover{ background-color:transparent; color:var(--p-text-disabled); }\n\n@media (-ms-high-contrast){ .Polaris-DatePicker__Day--disabled{ -ms-high-contrast-adjust:none; color:grayText; }\n  .Polaris-DatePicker__Day--disabled:hover{ color:grayText; outline:none; } }\n\n.Polaris-DatePicker__Day--disabled:focus::after{ content:none; }\n\n.Polaris-DatePicker__EmptyDayCell{ width:14.28571%; margin:0; padding:0; }\n\n.Polaris-DatePicker__Weekday{ padding:0.8rem; background:transparent; font-size:1.2rem; font-weight:400; color:var(--p-text-subdued); text-align:center; }\n\n.Polaris-DatePicker__Weekday--current{ font-weight:700; color:var(--p-text); }\n\n.Polaris-DatePicker__Header{ position:absolute; top:1.6rem; display:flex; justify-content:space-between; width:100%; }\n\n.Polaris-DatePicker__Title{ flex:1 1 auto; margin-top:0.2rem; padding-bottom:0.4rem; text-align:center; }\n\n.Polaris-DatePicker__Day--firstInRange{ border-radius:var(--p-border-radius-base); }\n\n.Polaris-DatePicker__Day--firstInRange.Polaris-DatePicker__Day--hasRange, .Polaris-DatePicker__Day--firstInRange.Polaris-DatePicker__Day--hoverRight{ border-radius:3rem 0 0 3rem; }\n\n.Polaris-DatePicker__Day--firstInRange.Polaris-DatePicker__Day--hasRange::after, .Polaris-DatePicker__Day--firstInRange.Polaris-DatePicker__Day--hoverRight::after{ border-radius:3rem 0 0 3rem; }\n\n.Polaris-DatePicker__Day--lastInRange{ border-radius:0 3rem 3rem 0; }\n\n.Polaris-DatePicker__Day--lastInRange::after{ border-radius:0 3rem 3rem 0; }\n\n.Polaris-DatePicker__Week{ margin-bottom:0.2rem; }\n\n.Polaris-DatePicker__Week > .Polaris-DatePicker__Day--inRange:first-child:not(.Polaris-DatePicker__Day--firstInRange):not(.Polaris-DatePicker__Day--lastInRange){ border-radius:var(--p-border-radius-base) 0 0 var(--p-border-radius-base); }\n\n.Polaris-DatePicker__Week > .Polaris-DatePicker__Day--inRange:last-child:not(.Polaris-DatePicker__Day--firstInRange):not(.Polaris-DatePicker__Day--lastInRange){ border-radius:0 var(--p-border-radius-base) var(--p-border-radius-base) 0; }\n\n.Polaris-DatePicker__Day--inRange::after, .Polaris-DatePicker__Day--inRange:not(:hover) + .Polaris-DatePicker__Day::after{ border-radius:0 3rem 3rem 0; }\n\n\n.Polaris-DescriptionList{ margin:0; padding:0; word-break:break-word; }\n\n@media (max-width: 48.0625em) and (min-width: 36.875em), (min-width: 51.875em){ [data-has-navigation] .Polaris-DescriptionList{ display:flex; flex-wrap:wrap; align-items:flex-start; } }\n\n@media (min-width: 36.875em){ .Polaris-DescriptionList{ display:flex; flex-wrap:wrap; align-items:flex-start; } }\n\n.Polaris-DescriptionList__Term{ font-weight:600; padding:1.6rem 0 0.8rem; }\n\n.Polaris-DescriptionList--spacingTight .Polaris-DescriptionList__Term{ padding:0.8rem 0 0.4rem; }\n\n@media (max-width: 48.0625em) and (min-width: 36.875em), (min-width: 51.875em){ [data-has-navigation] .Polaris-DescriptionList__Term{ flex:0 1 25%; padding:1.6rem 1.6rem 1.6rem 0; }\n  .Polaris-DescriptionList--spacingTight [data-has-navigation] .Polaris-DescriptionList__Term{ padding:0.8rem 0.8rem 0.8rem 0; }\n  .Polaris-DescriptionList__Description + [data-has-navigation] .Polaris-DescriptionList__Term + .Polaris-DescriptionList__Description{ border-top:0.1rem solid var(--p-divider); } }\n\n@media (min-width: 36.875em){ .Polaris-DescriptionList__Term{ flex:0 1 25%; padding:1.6rem 1.6rem 1.6rem 0; }\n  .Polaris-DescriptionList--spacingTight .Polaris-DescriptionList__Term{ padding:0.8rem 0.8rem 0.8rem 0; }\n  .Polaris-DescriptionList__Description + .Polaris-DescriptionList__Term + .Polaris-DescriptionList__Description{ border-top:0.1rem solid var(--p-divider); } }\n\n.Polaris-DescriptionList__Description{ margin-left:0; padding:0 0 1.6rem; }\n\n.Polaris-DescriptionList--spacingTight .Polaris-DescriptionList__Description{ padding:0 0 0.8rem; }\n\n.Polaris-DescriptionList__Description + .Polaris-DescriptionList__Term{ border-top:0.1rem solid var(--p-divider); }\n\n@media (max-width: 48.0625em) and (min-width: 36.875em), (min-width: 51.875em){ [data-has-navigation] .Polaris-DescriptionList__Description{ flex:1 1 51%; padding:1.6rem 0; }\n  .Polaris-DescriptionList--spacingTight [data-has-navigation] .Polaris-DescriptionList__Description{ padding:0.8rem 0; }\n  [data-has-navigation] .Polaris-DescriptionList__Description + .Polaris-DescriptionList__Term + .Polaris-DescriptionList__Description{ border-top:0.1rem solid var(--p-divider); } }\n\n@media (min-width: 36.875em){ .Polaris-DescriptionList__Description{ flex:1 1 51%; padding:1.6rem 0; }\n  .Polaris-DescriptionList--spacingTight .Polaris-DescriptionList__Description{ padding:0.8rem 0; }\n  .Polaris-DescriptionList__Description + .Polaris-DescriptionList__Term + .Polaris-DescriptionList__Description{ border-top:0.1rem solid var(--p-divider); } }\n\n\n.Polaris-DisplayText{ margin:0; }\n\n.Polaris-DisplayText--sizeSmall{ font-size:1.6rem; font-weight:400; line-height:2.4rem; }\n\n@media (min-width: 40em){ .Polaris-DisplayText--sizeSmall{ font-size:2rem; line-height:2.8rem; } }\n\n.Polaris-DisplayText--sizeMedium{ font-size:2.1rem; font-weight:400; line-height:2.8rem; }\n\n@media (min-width: 40em){ .Polaris-DisplayText--sizeMedium{ font-size:2.6rem; line-height:3.2rem; } }\n\n.Polaris-DisplayText--sizeLarge{ font-size:2.4rem; font-weight:600; line-height:2.8rem; }\n\n@media (min-width: 40em){ .Polaris-DisplayText--sizeLarge{ font-size:2.8rem; line-height:3.2rem; } }\n\n.Polaris-DisplayText--sizeExtraLarge{ font-size:2.7rem; font-weight:600; line-height:3.6rem; }\n\n@media (min-width: 40em){ .Polaris-DisplayText--sizeExtraLarge{ font-size:4.2rem; line-height:4.4rem; } }\n\n\n.Polaris-DropZone-FileUpload{ padding:1.5rem; text-align:center; display:flex; align-items:center; justify-content:center; height:100%; }\n\n.Polaris-DropZone-FileUpload__FileUploadSmallView{ padding:1.25rem; }\n\n.Polaris-DropZone-FileUpload img{ vertical-align:bottom; }\n\n.Polaris-DropZone-FileUpload__Button{ position:relative; position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:3.6rem; min-width:3.6rem; margin:0; padding:0.7rem 1.6rem; background:var(--p-surface); box-shadow:var(--p-button-drop-shadow); border-radius:var(--p-border-radius-base); color:var(--p-text); border:1px solid var(--p-border-neutral-subdued); border-top-color:var(--p-border-subdued); border-bottom-color:var(--p-border-shadow-subdued); line-height:1; text-align:center; cursor:pointer; -webkit-user-select:none; user-select:none; text-decoration:none; -webkit-tap-highlight-color:transparent; position:relative; }\n\n.Polaris-DropZone-FileUpload__Button svg{ fill:var(--p-icon); }\n\n.Polaris-DropZone-FileUpload__Button::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-DropZone-FileUpload__Button:hover{ background:var(--p-action-secondary-hovered); outline:0.1rem solid transparent; }\n\n.Polaris-DropZone-FileUpload__Button:focus{ box-shadow:var(--p-button-drop-shadow); outline:0; }\n\n.Polaris-DropZone-FileUpload__Button:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-DropZone-FileUpload__Button:active{ background:var(--p-action-secondary-pressed); box-shadow:var(--p-button-drop-shadow); }\n\n.Polaris-DropZone-FileUpload__Button:active::after{ border:none; box-shadow:none; }\n\n.Polaris-DropZone-FileUpload__Button.Polaris-DropZone-FileUpload--pressed{ background:var(--p-action-secondary-depressed); box-shadow:var(--p-button-pressed-inner-shadow); color:var(--p-text-on-primary); border-color:var(--p-border-depressed); }\n\n.Polaris-DropZone-FileUpload__Button.Polaris-DropZone-FileUpload--pressed svg{ fill:currentColor; }\n\n@media (-ms-high-contrast: active){ .Polaris-DropZone-FileUpload__Button{ border:1px solid windowText; } }\n\n.Polaris-DropZone-FileUpload__Button::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-DropZone-FileUpload__Button.Polaris-DropZone-FileUpload--disabled{ transition:none; box-shadow:none; border-color:var(--p-border-disabled); background:var(--p-surface-disabled); color:var(--p-text-disabled); cursor:not-allowed; box-shadow:none; }\n\n.Polaris-DropZone-FileUpload__Button.Polaris-DropZone-FileUpload--disabled svg{ fill:var(--p-icon-disabled); }\n\n.Polaris-DropZone-FileUpload__Button.Polaris-DropZone-FileUpload--focused{ outline:0; box-shadow:none; }\n\n.Polaris-DropZone-FileUpload__Button.Polaris-DropZone-FileUpload--focused::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n@media (-ms-high-contrast: active){ .Polaris-DropZone-FileUpload__Button.Polaris-DropZone-FileUpload--focused{ outline:2px dotted; } }\n\n.Polaris-DropZone-FileUpload__Button .Polaris-DropZone-FileUpload--sizeSlim{ min-height:3rem; padding:0.4rem 1.2rem; }\n\n.Polaris-DropZone-FileUpload__ActionTitle{ color:var(--p-interactive); text-decoration:none; }\n\n.Polaris-DropZone-FileUpload__ActionTitle:not(.Polaris-DropZone-FileUpload__ActionTitle--disabled){ cursor:pointer; }\n\n.Polaris-DropZone-FileUpload__ActionTitle:not(.Polaris-DropZone-FileUpload__ActionTitle--disabled):hover, .Polaris-DropZone-FileUpload__ActionTitle:not(.Polaris-DropZone-FileUpload__ActionTitle--disabled):active{ color:var(--p-interactive-pressed); text-decoration:underline; }\n\n.Polaris-DropZone-FileUpload__ActionTitle--focused{ text-decoration:underline; }\n\n.Polaris-DropZone-FileUpload__ActionTitle--disabled{ color:var(--p-interactive-disabled); }\n\n\n.Polaris-DropZone{ position:relative; display:flex; justify-content:center; background-color:var(--p-surface); border-radius:var(--p-border-radius-base); }\n\n.Polaris-DropZone::after{ content:''; position:absolute; z-index:29; top:0; right:0; bottom:0; left:0; border:0.2rem dashed transparent; border-radius:var(--p-border-radius-base); pointer-events:none; }\n\n.Polaris-DropZone:not(.Polaris-DropZone--focused)::after{ top:0; left:0; right:0; bottom:0; opacity:1; transform:scale(1); border:0.2rem dashed transparent; }\n\n.Polaris-DropZone:hover{ outline:0.1rem solid transparent; }\n\n.Polaris-DropZone--hasOutline{ padding:0.2rem; }\n\n.Polaris-DropZone--hasOutline::after{ border-color:var(--p-border); }\n\n.Polaris-DropZone--hasOutline:not(.Polaris-DropZone--isDisabled):hover{ cursor:pointer; background-color:var(--p-surface-hovered); }\n\n.Polaris-DropZone--hasOutline:not(.Polaris-DropZone--focused)::after{ top:0; left:0; right:0; bottom:0; opacity:1; transform:scale(1); border:0.2rem dashed transparent; border-color:var(--p-border); }\n\n.Polaris-DropZone--isDragging:not(.Polaris-DropZone--isDisabled){ background-color:var(--p-surface-hovered); }\n\n.Polaris-DropZone--isDisabled{ cursor:not-allowed; }\n\n.Polaris-DropZone--isDisabled::after{ border-color:var(--p-border-disabled); }\n\n.Polaris-DropZone--sizeExtraLarge{ min-height:20.5rem; }\n\n.Polaris-DropZone--sizeLarge{ min-height:16rem; }\n\n.Polaris-DropZone--sizeMedium{ min-height:10rem; align-items:center; }\n\n.Polaris-DropZone--sizeSmall{ padding:0; align-items:center; min-height:5rem; }\n\n.Polaris-DropZone--measuring{ visibility:hidden; min-height:0; }\n\n.Polaris-DropZone__Container{ position:relative; flex:1 1; }\n\n.Polaris-DropZone__Container::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.3rem; right:-0.3rem; bottom:-0.3rem; left:-0.3rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.3rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-DropZone__Overlay{ position:absolute; z-index:30; top:0; right:0; bottom:0; left:0; display:flex; justify-content:center; align-items:center; padding:1.5rem; border:0.2rem dashed var(--p-border); border-radius:calc(var(--p-border-radius-base) + 0.3rem); text-align:center; color:var(--p-text); background-color:var(--p-surface-hovered); }\n\n.Polaris-DropZone--hasError .Polaris-DropZone__Overlay{ border-color:var(--p-border-critical); color:var(--p-text-critical); background-color:var(--p-surface-critical-subdued); }\n\n.Polaris-DropZone--sizeSmall .Polaris-DropZone__Overlay{ padding:0; }\n\n.Polaris-DropZone--focused:not(.Polaris-DropZone--isDisabled) .Polaris-DropZone__Container::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n\n.Polaris-EmptyState{ display:flex; flex-direction:column; align-items:center; width:100%; margin:0 auto; padding:2rem 0; padding-top:2rem; padding-bottom:6rem; max-width:99.8rem; }\n\n.Polaris-EmptyState__Section{ display:flex; flex-direction:column-reverse; flex:1 1 auto; width:100%; align-items:center; justify-content:center; }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-EmptyState__Section{ left:2rem; } }\n\n@media (min-width: 46.5em){ .Polaris-EmptyState__Section{ left:2rem; } }\n\n.Polaris-EmptyState__Details{ display:flex; text-align:center; flex-direction:column; align-items:center; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-EmptyState__Details{ max-width:40rem; } }\n\n@media (min-width: 30.625em){ .Polaris-EmptyState__Details{ max-width:40rem; } }\n\n.Polaris-EmptyState__Image{ margin:0; width:initial; }\n\n.Polaris-EmptyState__ImageContainer, .Polaris-EmptyState__DetailsContainer{ flex:1 1 auto; padding:0; margin:0; }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-EmptyState__ImageContainer, [data-has-navigation] .Polaris-EmptyState__DetailsContainer{ flex-basis:50%; } }\n\n@media (min-width: 46.5em){ .Polaris-EmptyState__ImageContainer, .Polaris-EmptyState__DetailsContainer{ flex-basis:50%; } }\n\n@media (max-width: 30.625em), (min-width: 48.0625em) and (max-width: 47.125em){ [data-has-navigation] .Polaris-EmptyState__ImageContainer, [data-has-navigation] .Polaris-EmptyState__DetailsContainer{ overflow-x:hidden; } }\n\n@media (max-width: 30.625em){ .Polaris-EmptyState__ImageContainer, .Polaris-EmptyState__DetailsContainer{ overflow-x:hidden; } }\n\n.Polaris-EmptyState--withinContentContainer{ margin:0 auto; padding-top:2rem; padding-bottom:6rem; }\n\n.Polaris-EmptyState--withinContentContainer .Polaris-EmptyState__Section{ position:unset; flex-direction:column-reverse; align-items:center; justify-content:center; }\n\n.Polaris-EmptyState--withinContentContainer .Polaris-EmptyState__Details{ display:flex; text-align:center; flex-direction:column; align-items:center; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-EmptyState--withinContentContainer .Polaris-EmptyState__Details{ max-width:40rem; } }\n\n@media (min-width: 30.625em){ .Polaris-EmptyState--withinContentContainer .Polaris-EmptyState__Details{ max-width:40rem; } }\n\n.Polaris-EmptyState--withinContentContainer .Polaris-EmptyState__Image{ margin:0; width:initial; }\n\n.Polaris-EmptyState--withinContentContainer .Polaris-EmptyState__Content{ font-size:1.5rem; font-weight:400; line-height:2rem; text-transform:initial; letter-spacing:initial; padding-bottom:0.8rem; }\n\n@media (min-width: 40em){ .Polaris-EmptyState--withinContentContainer .Polaris-EmptyState__Content{ font-size:1.4rem; } }\n\n.Polaris-EmptyState--withinPage .Polaris-EmptyState__Details{ position:relative; z-index:10; padding:0 1.6rem; width:33.6rem; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-EmptyState--withinPage .Polaris-EmptyState__Details{ padding:0; } }\n\n@media (min-width: 30.625em){ .Polaris-EmptyState--withinPage .Polaris-EmptyState__Details{ padding:0; } }\n\n.Polaris-EmptyState--withinPage .Polaris-EmptyState__Image{ position:relative; z-index:0; margin-top:-2rem; margin-left:-70%; width:190%; max-width:none; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-EmptyState--withinPage .Polaris-EmptyState__Image{ margin-left:0; width:100%; } }\n\n@media (min-width: 30.625em){ .Polaris-EmptyState--withinPage .Polaris-EmptyState__Image{ margin-left:0; width:100%; } }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-EmptyState--withinPage .Polaris-EmptyState__Image{ margin-top:0; margin-left:-70%; width:170%; } }\n\n@media (min-width: 46.5em){ .Polaris-EmptyState--withinPage .Polaris-EmptyState__Image{ margin-top:0; margin-left:-70%; width:170%; } }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-EmptyState--imageContained .Polaris-EmptyState__Image{ position:initial; width:100%; } }\n\n@media (min-width: 46.5em){ .Polaris-EmptyState--imageContained .Polaris-EmptyState__Image{ position:initial; width:100%; } }\n\n.Polaris-EmptyState--fullWidth .Polaris-EmptyState__Details{ max-width:100%; }\n\n.Polaris-EmptyState__Content{ font-size:1.5rem; font-weight:400; line-height:2rem; text-transform:initial; letter-spacing:initial; color:var(--p-text-subdued); padding-bottom:0.8rem; }\n\n@media (min-width: 40em){ .Polaris-EmptyState__Content{ font-size:1.4rem; } }\n\n.Polaris-EmptyState__Actions{ margin-top:1.6rem; }\n\n.Polaris-EmptyState__FooterContent{ color:var(--p-text-subdued); margin-top:1.6rem; }\n\n\n.Polaris-Truncate{ display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }\n\n\n.Polaris-ExceptionList{ margin:0; padding:0; list-style:none; }\n\n.Polaris-ExceptionList__Item{ position:relative; padding-left:2.4rem; color:var(--p-text-subdued); }\n\n.Polaris-ExceptionList__Item + .Polaris-ExceptionList__Item{ margin-top:0.4rem; }\n\n.Polaris-ExceptionList__Icon{ position:absolute; top:0; left:0; display:flex; align-items:center; justify-content:center; min-width:2rem; height:2rem; margin-right:0.4rem; }\n\n.Polaris-ExceptionList__Icon svg{ fill:var(--p-icon-subdued); }\n\n.Polaris-ExceptionList--statusWarning .Polaris-ExceptionList__Icon svg{ fill:var(--p-icon-warning); }\n\n.Polaris-ExceptionList--statusCritical .Polaris-ExceptionList__Icon svg{ fill:var(--p-icon-critical); }\n\n.Polaris-ExceptionList__Bullet{ width:0.6rem; height:0.6rem; border-radius:100%; background-color:var(--p-icon-subdued); }\n\n.Polaris-ExceptionList--statusWarning .Polaris-ExceptionList__Bullet{ background-color:var(--p-icon-warning); }\n\n.Polaris-ExceptionList--statusCritical .Polaris-ExceptionList__Bullet{ background-color:var(--p-icon-critical); }\n\n.Polaris-ExceptionList__Title + .Polaris-ExceptionList__Description::before{ content:'–'; margin:0 0.4rem; }\n\n.Polaris-ExceptionList--statusWarning .Polaris-ExceptionList__Title, .Polaris-ExceptionList--statusCritical .Polaris-ExceptionList__Title{ font-weight:500; }\n\n.Polaris-ExceptionList--statusWarning .Polaris-ExceptionList__Title{ color:var(--p-text-warning); }\n\n.Polaris-ExceptionList--statusCritical .Polaris-ExceptionList__Title{ color:var(--p-text-critical); }\n\n\n.Polaris-Tag{ display:inline-flex; max-width:100%; align-items:center; min-height:2.8rem; padding:0 0.8rem; background-color:var(--p-surface-neutral); border-radius:var(--p-border-radius-base); color:var(--p-text); outline:0.1rem solid transparent; }\n\n.Polaris-Tag.Polaris-Tag--disabled{ transition:none; background:var(--p-surface-neutral-disabled); color:var(--p-text-disabled); }\n\n.Polaris-Tag.Polaris-Tag--disabled svg{ fill:var(--p-icon-disabled); }\n\n.Polaris-Tag.Polaris-Tag--removable{ padding-right:0; }\n\n.Polaris-Tag.Polaris-Tag--clickable{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; cursor:pointer; padding:0 0.8rem; background-color:var(--p-surface-neutral); position:relative; }\n\n.Polaris-Tag.Polaris-Tag--clickable:focus{ outline:none; }\n\n.Polaris-Tag.Polaris-Tag--clickable:hover{ background:var(--p-surface-neutral-hovered); }\n\n.Polaris-Tag.Polaris-Tag--clickable::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Tag.Polaris-Tag--clickable:focus:not(:active)::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Tag.Polaris-Tag--clickable:active{ background:var(--p-surface-neutral-pressed); }\n\n.Polaris-Tag.Polaris-Tag--clickable:disabled{ background:var(--p-surface-neutral-disabled); cursor:default; pointer-events:none; }\n\n.Polaris-Tag__TagText{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; vertical-align:middle; }\n\n.Polaris-Tag__Button{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; display:block; height:2.8rem; width:2.8rem; margin-left:0.4rem; border-radius:0 3px 3px 0; position:relative; }\n\n.Polaris-Tag__Button svg{ fill:var(--p-icon); }\n\n.Polaris-Tag__Button:focus{ outline:none; }\n\n.Polaris-Tag__Button:hover{ background:var(--p-surface-neutral-hovered); outline:0.1rem solid transparent; }\n\n.Polaris-Tag__Button:focus{ background-color:transparent; }\n\n.Polaris-Tag__Button::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Tag__Button:focus:not(:active)::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Tag__Button:active{ background:var(--p-surface-neutral-pressed); }\n\n.Polaris-Tag__Button:disabled{ cursor:default; pointer-events:none; }\n\n.Polaris-Tag__Button:disabled svg{ fill:var(--p-icon-disabled); }\n\n\n.Polaris-Sheet{ position:fixed; bottom:0; width:100%; height:100%; background-color:var(--p-surface); box-shadow:var(--p-modal-shadow); }\n\n@media screen and (-ms-high-contrast: active){ .Polaris-Sheet{ border-left:0.1rem solid var(--p-border-subdued); } }\n\n@media (min-width: 48.0625em){ .Polaris-Sheet{ right:0; width:38rem; } }\n\n.Polaris-Sheet:focus{ outline:0; }\n\n.Polaris-Sheet__Container{ position:fixed; z-index:519; top:0; right:0; bottom:0; left:0; }\n\n@media (min-width: 48.0625em){ .Polaris-Sheet__Container{ left:auto; width:38rem; } }\n\n.Polaris-Sheet__Bottom{ -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:transform; transition:transform 300ms cubic-bezier(0.64, 0, 0.35, 1); transform-origin:bottom; }\n\n.Polaris-Sheet--enterBottom{ transform:translateY(100%); }\n\n.Polaris-Sheet--enterBottomActive{ transform:translateY(0%); }\n\n.Polaris-Sheet--exitBottom{ transform:translateY(0%); }\n\n.Polaris-Sheet--exitBottomActive{ transform:translateY(100%); }\n\n.Polaris-Sheet__Right{ -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:transform; transition:transform 300ms cubic-bezier(0.64, 0, 0.35, 1); transform-origin:right; }\n\n.Polaris-Sheet--enterRight{ transform:translateX(100%); }\n\n.Polaris-Sheet--enterRightActive{ transform:translateX(0%); }\n\n.Polaris-Sheet--exitRight{ transform:translateX(0%); }\n\n.Polaris-Sheet--exitRightActive{ transform:translateX(100%); }\n\n\n.Polaris-Filters-ConnectedFilterControl__Item{ position:relative; z-index:10; }\n\n.Polaris-Filters-ConnectedFilterControl__Item--focused{ z-index:20; }\n\n.Polaris-Filters-ConnectedFilterControl__ProxyButtonContainer{ position:absolute; top:-100rem; left:-100rem; display:flex; width:100%; height:0; visibility:hidden; overflow:hidden; }\n\n.Polaris-Filters-ConnectedFilterControl__ProxyButtonContainer > *{ flex-shrink:0; }\n\n.Polaris-Filters-ConnectedFilterControl{ display:flex; flex-grow:1; }\n\n.Polaris-Filters-ConnectedFilterControl .Polaris-Filters-ConnectedFilterControl__CenterContainer{ flex:1 1 auto; min-width:10rem; }\n\n.Polaris-Filters-ConnectedFilterControl.Polaris-Filters-ConnectedFilterControl--right .Polaris-Filters-ConnectedFilterControl__CenterContainer *{ border-top-right-radius:var(--p-border-radius-base); border-bottom-right-radius:var(--p-border-radius-base); }\n\n.Polaris-Filters-ConnectedFilterControl__CenterContainer + .Polaris-Filters-ConnectedFilterControl__RightContainer, .Polaris-Filters-ConnectedFilterControl__CenterContainer + .Polaris-Filters-ConnectedFilterControl__MoreFiltersButtonContainer{ margin-left:0.8rem; }\n\n.Polaris-Filters-ConnectedFilterControl__RightContainer{ display:flex; }\n\n.Polaris-Filters-ConnectedFilterControl__RightContainer .Polaris-Filters-ConnectedFilterControl__Item > div > button{ margin-right:var(--p-button-group-item-spacing); border-radius:0; }\n\n.Polaris-Filters-ConnectedFilterControl__RightContainer .Polaris-Filters-ConnectedFilterControl__Item{ flex-shrink:0; }\n\n.Polaris-Filters-ConnectedFilterControl__RightContainer .Polaris-Filters-ConnectedFilterControl__Item:first-of-type > div > button{ border-top-left-radius:var(--p-border-radius-base); border-bottom-left-radius:var(--p-border-radius-base); }\n\n.Polaris-Filters-ConnectedFilterControl__RightContainer.Polaris-Filters-ConnectedFilterControl--queryFieldHidden .Polaris-Filters-ConnectedFilterControl__Item:first-of-type > div > button{ border-top-left-radius:var(--p-border-radius-base); border-bottom-left-radius:var(--p-border-radius-base); }\n\n.Polaris-Filters-ConnectedFilterControl__RightContainerWithoutMoreFilters .Polaris-Filters-ConnectedFilterControl__Item:last-child > div > button{ border-top-right-radius:var(--p-border-radius-base); border-bottom-right-radius:var(--p-border-radius-base); }\n\n.Polaris-Filters-ConnectedFilterControl__MoreFiltersButtonContainer > div{ margin-left:var(--p-override-none); }\n\n.Polaris-Filters-ConnectedFilterControl__MoreFiltersButtonContainer .Polaris-Filters-ConnectedFilterControl__Item > div > button{ white-space:nowrap; border-top-left-radius:0; border-bottom-left-radius:0; }\n\n.Polaris-Filters-ConnectedFilterControl__MoreFiltersButtonContainer.Polaris-Filters-ConnectedFilterControl--onlyButtonVisible .Polaris-Filters-ConnectedFilterControl__Item > div > button{ border-radius:var(--p-border-radius-base); }\n\n.Polaris-Filters-ConnectedFilterControl__Wrapper{ display:flex; }\n\n.Polaris-Filters-ConnectedFilterControl__AuxiliaryContainer{ flex-grow:0; }\n\n\n.Polaris-Filters{ position:relative; }\n\n.Polaris-Filters__FiltersContainer{ position:relative; height:100%; width:100%; display:flex; flex-direction:column; }\n\n.Polaris-Filters__FiltersContainerHeader{ top:0; width:100%; padding:1.6rem 2rem; border-bottom:0.1rem solid var(--p-divider); height:5.6rem; box-sizing:border-box; display:flex; align-items:center; justify-content:space-between; }\n\n.Polaris-Filters__FiltersDesktopContainerContent{ width:100%; height:calc(100% - 12.6rem); padding:0.8rem; }\n\n.Polaris-Filters__FiltersMobileContainerContent{ width:100%; height:calc(100% - 5.6rem); padding:0.8rem; }\n\n.Polaris-Filters__FiltersContainerFooter{ position:absolute; bottom:0; width:100%; padding:1.4rem 2rem; border-top:0.1rem solid var(--p-divider); height:7rem; box-sizing:border-box; display:flex; align-items:center; justify-content:space-between; }\n\n.Polaris-Filters__FiltersMobileContainerFooter{ width:100%; padding:1.4rem 1.6rem; height:7rem; box-sizing:border-box; display:flex; align-items:center; justify-content:space-between; }\n\n.Polaris-Filters__EmptyFooterState{ border-top:0.1rem solid var(--p-divider); padding-top:1.4rem; width:100%; display:flex; justify-content:center; }\n\n.Polaris-Filters__FilterTriggerContainer{ position:relative; }\n\n.Polaris-Filters__FilterTrigger{ width:100%; margin:0; padding:1.4rem 2rem; color:var(--p-text); border-radius:var(--p-border-radius-base); background:none; border:none; outline:none; position:relative; }\n\n.Polaris-Filters__FilterTrigger::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Filters__FilterTrigger:focus{ box-shadow:none; }\n\n.Polaris-Filters__FilterTrigger:hover{ cursor:pointer; background-color:var(--p-surface-hovered); outline:0.1rem solid transparent; }\n\n.Polaris-Filters__FilterTrigger:focus:not(:active)::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Filters__FilterTriggerTitle{ font-size:1.5rem; font-weight:600; }\n\n.Polaris-Filters__AppliedFilterBadgeContainer{ padding-top:0.4rem; display:flex; }\n\n.Polaris-Filters--open .Polaris-Filters__AppliedFilterBadgeContainer{ display:none; }\n\n.Polaris-Filters__FilterTriggerLabelContainer{ display:flex; align-items:center; justify-content:space-between; }\n\n.Polaris-Filters--open::before, .Polaris-Filters--open::after{ content:''; position:relative; left:1.6rem; width:calc(100% - 3.2rem); height:0.1rem; background-color:var(--p-surface-subdued); display:block; }\n\n.Polaris-Filters--open::before{ top:0; }\n\n.Polaris-Filters--open::after{ bottom:0; }\n\n.Polaris-Filters--open.Polaris-Filters--first::after{ content:''; bottom:0; position:relative; left:1.6rem; width:calc(100% - 3.2rem); height:0.1rem; background-color:var(--p-surface-subdued); display:block; }\n\n.Polaris-Filters--open.Polaris-Filters--first::before{ display:none; }\n\n.Polaris-Filters--open ~ .Polaris-Filters--open::before{ display:none; }\n\n.Polaris-Filters--open.Polaris-Filters--last::before{ content:''; top:0; position:relative; left:1.6rem; width:calc(100% - 3.2rem); height:0.1rem; background-color:var(--p-surface-subdued); display:block; }\n\n.Polaris-Filters--open.Polaris-Filters--last::after{ display:none; }\n\n.Polaris-Filters--open + .Polaris-Filters--last::before{ display:none; }\n\n.Polaris-Filters__FilterNodeContainer{ padding:0.8rem 2rem 2rem 2rem; }\n\n.Polaris-Filters__SearchIcon{ fill:currentColor; }\n\n.Polaris-Filters__Backdrop{ position:fixed; z-index:518; top:0; right:0; bottom:0; left:0; display:block; opacity:0; }\n\n.Polaris-Filters__HelpText{ margin-top:10px; }\n\n.Polaris-Filters__TagsContainer{ display:flex; padding-top:0.8rem; flex-wrap:wrap; }\n\n.Polaris-Filters__TagsContainer > *{ margin-right:0.8rem; margin-bottom:0.8rem; }\n\n\n.Polaris-FooterHelp{ display:flex; justify-content:center; margin:2rem 0; width:100%; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-FooterHelp{ margin:2rem; width:auto; } }\n\n@media (min-width: 30.625em){ .Polaris-FooterHelp{ margin:2rem; width:auto; } }\n\n.Polaris-FooterHelp__Content{ display:inline-flex; align-items:center; padding:2rem 2rem 2rem 1.6rem; border-top:var(--p-override-none, 0.1rem solid var(--p-border-subdued)); border-bottom:var(--p-override-none, 0.1rem solid var(--p-border-subdued)); width:100%; justify-content:center; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-FooterHelp__Content{ width:auto; border:var(--p-override-none, 0.1rem solid var(--p-border-subdued)); border-radius:var(--p-override-none, 999px); } }\n\n@media (min-width: 30.625em){ .Polaris-FooterHelp__Content{ width:auto; border:var(--p-override-none, 0.1rem solid var(--p-border-subdued)); border-radius:var(--p-override-none, 999px); } }\n\n.Polaris-FooterHelp__Icon{ margin-right:0.8rem; }\n\n.Polaris-FooterHelp__Text{ font-size:1.6rem; font-weight:400; line-height:2.4rem; border:none; text-transform:initial; letter-spacing:initial; }\n\n@media (min-width: 40em){ .Polaris-FooterHelp__Text{ font-size:1.4rem; } }\n\n\n.Polaris-FormLayout{ margin-top:-1.6rem; margin-left:-2rem; }\n\n.Polaris-FormLayout__Title{ margin-bottom:-0.8rem; padding:1.6rem 2rem 0; }\n\n.Polaris-FormLayout__Items{ display:flex; flex-wrap:wrap; }\n\n.Polaris-FormLayout__HelpText{ color:var(--p-text-subdued); padding:0.8rem 2rem 0; }\n\n.Polaris-FormLayout__Item{ flex:1 1 22rem; margin-top:1.6rem; margin-left:2rem; max-width:calc(100% - 2rem); }\n\n.Polaris-FormLayout--grouped .Polaris-FormLayout__Item{ min-width:22rem; }\n\n.Polaris-FormLayout--condensed .Polaris-FormLayout__Item{ flex-basis:11rem; min-width:11rem; }\n\n\n.Polaris-Frame-Toast{ font-size:1.6rem; font-weight:400; line-height:2.4rem; display:inline-flex; max-width:50rem; padding:0.8rem 1.6rem; border-radius:var(--p-border-radius-wide); background:var(--p-surface); box-shadow:var(--p-override-none); color:var(--p-text); margin-bottom:2rem; }\n\n@media (min-width: 40em){ .Polaris-Frame-Toast{ font-size:2rem; line-height:2.8rem; } }\n\n@media (min-width: 40em){ .Polaris-Frame-Toast{ padding:1.6rem; } }\n\n@media (forced-colors: active){ .Polaris-Frame-Toast{ border:0.2rem solid transparent; } }\n\n.Polaris-Frame-Toast__Action{ margin-left:3.2rem; margin-right:1.6rem; }\n\n.Polaris-Frame-Toast--error{ background:var(--p-action-critical); color:var(--p-text-on-critical); }\n\n.Polaris-Frame-Toast--error .Polaris-Frame-Toast__CloseButton{ fill:var(--p-icon-on-critical); }\n\n.Polaris-Frame-Toast__CloseButton{ display:flex; align-self:center; flex-direction:column; justify-content:flex-start; margin-right:-1.6rem; padding:0 1.6rem; border:none; -webkit-appearance:none; appearance:none; background:transparent; color:currentColor; cursor:pointer; }\n\n.Polaris-Frame-Toast__CloseButton svg{ fill:currentColor; }\n\n@media (min-width: 40em){ .Polaris-Frame-Toast__CloseButton{ align-self:flex-start; margin:-0.8rem -1.6rem -0.8rem 0; padding:1.2rem 1.6rem 0.8rem; } }\n\n.Polaris-Frame-Toast__CloseButton:focus{ outline:none; }\n\n\n:root{ --toast-translate-y-out:15rem; --toast-translate-y-in:0; }\n\n.Polaris-Frame-ToastManager{ position:fixed; z-index:520; right:0; left:0; text-align:center; bottom:var(--global-ribbon-height); display:flex; flex-direction:column; align-items:center; }\n\n.Polaris-Frame-ToastManager__ToastWrapper{ position:absolute; display:inline-flex; opacity:0; transition:transform 400ms ease, opacity 400ms ease; transform:translateY(var(--toast-translate-y-out)); }\n\n.Polaris-Frame-ToastManager__ToastWrapper--enter, .Polaris-Frame-ToastManager__ToastWrapper--exit{ transform:translateY(var(--toast-translate-y-out)); opacity:0; }\n\n.Polaris-Frame-ToastManager--toastWrapperEnterDone{ transform:translateY(var(--toast-translate-y-in)); opacity:1; }\n\n\n.Polaris-Frame-Loading{ overflow:hidden; height:0.3rem; background-color:var(--p-surface); opacity:1; }\n\n.Polaris-Frame-Loading__Level{ width:100%; height:100%; transform-origin:0; background-color:var(--p-icon-success); transition:transform 500ms linear; }\n\n@media screen and (-ms-high-contrast: active){ .Polaris-Frame-Loading__Level{ background-color:highlight; } }\n\n\n.Polaris-Modal-Dialog__Container{ position:fixed; z-index:519; top:0; right:0; bottom:0; left:0; display:flex; flex-direction:column; justify-content:flex-end; }\n\n@media (min-width: 48.0625em){ .Polaris-Modal-Dialog__Container{ justify-content:center; } }\n\n.Polaris-Modal-Dialog:focus{ outline:0; }\n\n.Polaris-Modal-Dialog__Modal{ position:fixed; right:0; bottom:0; left:0; display:flex; flex-direction:column; width:100%; max-height:calc(100vh - 60px); background:var(--p-surface); box-shadow:var(--p-modal-shadow); }\n\n@media (forced-colors: active){ .Polaris-Modal-Dialog__Modal{ border:0.1rem solid transparent; } }\n\n@media (max-width: 48.0525em){ .Polaris-Modal-Dialog__Modal{ bottom:0; max-height:100%; } }\n\n@media (min-width: 48.0625em){ .Polaris-Modal-Dialog__Modal{ position:relative; max-width:62rem; margin:0 auto; border-radius:var(--p-border-radius-wide); } }\n\n@media (min-width: 48.0625em) and (min-height: 660px){ .Polaris-Modal-Dialog__Modal.Polaris-Modal-Dialog--limitHeight{ max-height:600px; } }\n\n@media (min-width: 48.0625em){ .Polaris-Modal-Dialog__Modal.Polaris-Modal-Dialog--sizeLarge{ max-width:calc(100% - 6.4rem); } }\n\n@media (min-width: 65.25em){ .Polaris-Modal-Dialog__Modal.Polaris-Modal-Dialog--sizeLarge{ max-width:98rem; } }\n\n.Polaris-Modal-Dialog--animateFadeUp{ -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:transform, opacity; opacity:1; transform:translateY(0); transition:transform cubic-bezier(0.64, 0, 0.35, 1) 200ms, opacity cubic-bezier(0.64, 0, 0.35, 1) 200ms; }\n\n.Polaris-Modal-Dialog--animateFadeUp.Polaris-Modal-Dialog--entering, .Polaris-Modal-Dialog--animateFadeUp.Polaris-Modal-Dialog--exiting, .Polaris-Modal-Dialog--animateFadeUp.Polaris-Modal-Dialog--exited{ opacity:0; transform:translateY(20rem); }\n\n.Polaris-Modal-Dialog--animateFadeUp.Polaris-Modal-Dialog--entered{ opacity:1; transform:translateY(0); }\n\n\n.Polaris-Modal-Footer{ display:flex; align-self:flex-end; align-items:center; width:100%; min-height:6.4rem; padding:1.6rem; border-top:0.1rem solid var(--p-divider); }\n\n.Polaris-Modal-Footer__FooterContent{ width:100%; }\n\n\n.Polaris-Modal-CloseButton{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; position:relative; margin-left:2rem; margin-right:-0.8rem; padding:0.8rem; border-radius:6px; }\n\n.Polaris-Modal-CloseButton:focus{ outline:none; }\n\n.Polaris-Modal-CloseButton::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Modal-CloseButton:hover{ background:var(--p-surface-hovered); }\n\n.Polaris-Modal-CloseButton:hover svg{ fill:var(--p-icon-hovered); }\n\n.Polaris-Modal-CloseButton:focus{ background:var(--p-override-transparent); }\n\n.Polaris-Modal-CloseButton:active{ background:var(--p-surface-pressed); }\n\n.Polaris-Modal-CloseButton:focus:not(:active)::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n\n.Polaris-Modal-Header{ display:flex; align-items:flex-start; flex-shrink:0; padding:1.6rem 2rem; border-bottom:0.1rem solid var(--p-divider); }\n\n.Polaris-Modal-Header--titleHidden{ position:absolute; right:0.8rem; z-index:1; }\n\n.Polaris-Modal-Header--titleHidden .Polaris-Modal-Header__Title{ display:none; }\n\n.Polaris-Modal-Header__Title{ word-wrap:break-word; word-break:break-word; overflow-wrap:break-word; flex:1 1; margin-top:0.4rem; }\n\n\n.Polaris-Modal-Section{ flex:0 0 auto; padding:2rem; }\n\n.Polaris-Modal-Section:not(:last-of-type){ border-bottom:0.1rem solid var(--p-divider); }\n\n.Polaris-Modal-Section.Polaris-Modal-Section--subdued{ background:var(--p-surface-subdued); }\n\n.Polaris-Modal-Section.Polaris-Modal-Section--flush{ padding:0; }\n\n\n.Polaris-Modal__BodyWrapper{ display:flex; flex-grow:1; overflow-x:hidden; -webkit-overflow-scrolling:touch; }\n\n.Polaris-Modal__Body{ width:100%; }\n\n.Polaris-Modal__IFrame{ display:block; width:62rem; max-width:100vw; border:none; }\n\n@media (min-width: 48.0625em){ .Polaris-Modal__IFrame{ max-width:62rem; } }\n\n.Polaris-Modal__Spinner{ margin:1.6rem; text-align:center; }\n\n\n.Polaris-Frame-ContextualSaveBar{ display:flex; height:5.6rem; background:var(--p-surface); box-shadow:0 2px 4px rgba(0, 0, 0, 0.1); }\n\n.Polaris-Frame-ContextualSaveBar .Polaris-Frame-ContextualSaveBar__LogoContainer{ border-right:none; }\n\n.Polaris-Frame-ContextualSaveBar .Polaris-Frame-ContextualSaveBar__ContextControl{ opacity:0.3; pointer-events:none; }\n\n.Polaris-Frame-ContextualSaveBar .Polaris-Frame-ContextualSaveBar__Message{ color:var(--p-text); }\n\n@media (forced-colors: active){ .Polaris-Frame-ContextualSaveBar{ border:0.1rem solid transparent; } }\n\n.Polaris-Frame-ContextualSaveBar__LogoContainer{ display:none; }\n\n@media (min-width: 48.0625em){ .Polaris-Frame-ContextualSaveBar__LogoContainer{ display:flex; flex:0 0 24rem; align-items:center; height:100%; padding:0 1.6rem; background-color:transparent; } }\n\n.Polaris-Frame-ContextualSaveBar__Contents{ display:flex; flex:1 1 auto; align-items:center; justify-content:space-between; min-width:1px; max-width:99.8rem; height:100%; margin:0 auto; padding:0 1.6rem; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Frame-ContextualSaveBar__Contents{ padding:0 2rem; } }\n\n@media (min-width: 30.625em){ .Polaris-Frame-ContextualSaveBar__Contents{ padding:0 2rem; } }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-Frame-ContextualSaveBar__Contents{ padding:0 3.2rem; } }\n\n@media (min-width: 46.5em){ .Polaris-Frame-ContextualSaveBar__Contents{ padding:0 3.2rem; } }\n\n.Polaris-Frame-ContextualSaveBar--fullWidth{ max-width:none; padding:0 1.6rem; }\n\n.Polaris-Frame-ContextualSaveBar__Message{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:1.7rem; font-weight:600; line-height:2.4rem; color:var(--p-text-subdued); }\n\n@media (min-width: 40em){ .Polaris-Frame-ContextualSaveBar__Message{ font-size:1.6rem; } }\n\n.Polaris-Frame-ContextualSaveBar__ActionContainer{ flex-shrink:0; }\n\n.Polaris-Frame-ContextualSaveBar__Action{ margin-left:0.8rem; }\n\n.Polaris-Frame-ContextualSaveBar__ContextControl{ display:none; }\n\n@media (min-width: 48.0625em){ .Polaris-Frame-ContextualSaveBar__ContextControl{ display:block; width:24rem; } }\n\n\n.Polaris-Frame-CSSAnimation--startFade{ opacity:0; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:opacity; transition:opacity 300ms cubic-bezier(0, 0, 0.42, 1); pointer-events:none; }\n\n.Polaris-Frame-CSSAnimation--endFade{ opacity:1; pointer-events:auto; }\n\n\n.Polaris-Frame{ width:100%; min-height:100vh; display:flex; background-color:var(--p-background); }\n\n@media print{ .Polaris-Frame{ background-color:transparent; } }\n\n@media (min-width: 48.0625em){ .Polaris-Frame{ width:calc(100% - var(--p-frame-offset)); margin-left:var(--p-frame-offset); } }\n\n.Polaris-Frame__Navigation{ position:fixed; z-index:516; top:0; left:0; display:none; flex:0 0 auto; align-items:stretch; height:100%; outline:none; transform:translateX(0%); }\n\n@media print{ .Polaris-Frame__Navigation{ display:none !important; } }\n\n@media (min-width: 48.0625em){ .Polaris-Frame__Navigation{ z-index:1; left:var(--p-frame-offset); display:flex; }\n  .Polaris-Frame--hasTopBar .Polaris-Frame__Navigation{ top:5.6rem; height:calc(100% - 5.6rem); } }\n\n.Polaris-Frame__Navigation:focus{ outline:none; }\n\n.Polaris-Frame__Navigation--enter, .Polaris-Frame__Navigation--enterActive, .Polaris-Frame__Navigation--exit, .Polaris-Frame__Navigation--exitActive{ display:flex; }\n\n.Polaris-Frame__Navigation--enter{ transform:translateX(-100%); }\n\n.Polaris-Frame__Navigation--enterActive{ transform:translateX(0%); transition:transform 300ms cubic-bezier(0, 0, 0.42, 1); }\n\n.Polaris-Frame__Navigation--exit{ transform:translateX(0%); }\n\n.Polaris-Frame__Navigation--exitActive{ transform:translateX(-100%); transition:transform 300ms cubic-bezier(0, 0, 0.42, 1); }\n\n.Polaris-Frame__NavigationDismiss{ position:relative; position:absolute; top:0; left:100%; width:3.2rem; height:3.2rem; margin:1.6rem; padding:0; border:none; border-radius:50%; background:none; opacity:0; pointer-events:none; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:opacity; cursor:pointer; transition:opacity 100ms cubic-bezier(0.64, 0, 0.35, 1); }\n\n@media print{ .Polaris-Frame__NavigationDismiss{ display:none !important; } }\n\n.Polaris-Frame__NavigationDismiss svg{ fill:var(--p-surface); }\n\n.Polaris-Frame__NavigationDismiss::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Frame__Navigation--visible .Polaris-Frame__NavigationDismiss{ pointer-events:all; opacity:1; }\n\n.Polaris-Frame__NavigationDismiss:focus{ position:absolute; border-radius:3px; background-color:var(--p-override-transparent, rgba(255, 255, 255, 0.16)); outline:none; }\n\n.Polaris-Frame__NavigationDismiss:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n@media (min-width: 48.0625em){ .Polaris-Frame__NavigationDismiss{ display:none; } }\n\n.Polaris-Frame__NavigationDismiss:hover{ background-color:var(--p-overlay); }\n\n.Polaris-Frame__NavigationDismiss:active{ background-color:var(--p-overlay); }\n\n.Polaris-Frame__TopBar{ position:fixed; z-index:512; top:0; left:0; width:100%; height:5.6rem; }\n\n@media print{ .Polaris-Frame__TopBar{ display:none !important; } }\n\n@media (min-width: 48.0625em){ .Polaris-Frame__TopBar{ left:var(--p-frame-offset); width:calc(100% - var(--p-frame-offset)); } }\n\n.Polaris-Frame__ContextualSaveBar{ position:fixed; z-index:513; top:0; left:0; width:100%; }\n\n@media (min-width: 48.0625em){ .Polaris-Frame__ContextualSaveBar{ left:var(--p-frame-offset); width:calc(100% - var(--p-frame-offset)); } }\n\n.Polaris-Frame__Main{ flex:1 1; display:flex; align-items:stretch; min-width:0; max-width:100%; padding-right:0px; padding-right:calc(0px + constant(safe-area-inset-right)); padding-right:calc(0px + env(safe-area-inset-right)); padding-left:0px; padding-left:calc(0px + constant(safe-area-inset-left)); padding-left:calc(0px + env(safe-area-inset-left)); padding-bottom:0px; padding-bottom:calc(0px + constant(safe-area-inset-bottom)); padding-bottom:calc(0px + env(safe-area-inset-bottom)); }\n\n@media (min-width: 48.0625em){ .Polaris-Frame--hasNav .Polaris-Frame__Main{ padding-left:24rem; padding-left:24rem; padding-left:calc(24rem + constant(safe-area-inset-left)); padding-left:calc(24rem + env(safe-area-inset-left)); } }\n\n@media print and (min-width: 48.0625em){ .Polaris-Frame--hasNav .Polaris-Frame__Main{ padding-left:0; } }\n\n.Polaris-Frame--hasTopBar .Polaris-Frame__Main{ padding-top:5.6rem; }\n\n@media print{ .Polaris-Frame--hasTopBar .Polaris-Frame__Main{ padding-top:0; } }\n\n.Polaris-Frame__Content{ position:relative; padding-bottom:var(--global-ribbon-height, 0); flex:1 1; min-width:0; max-width:100%; }\n\n.Polaris-Frame__GlobalRibbonContainer{ position:fixed; z-index:510; bottom:0; width:100%; }\n\n@media (min-width: 48.0625em){ .Polaris-Frame__GlobalRibbonContainer{ left:var(--p-frame-offset); }\n  .Polaris-Frame--hasNav .Polaris-Frame__GlobalRibbonContainer{ left:calc(24rem + var(--p-frame-offset)); left:calc(24rem + var(--p-frame-offset)); left:calc(24rem + var(--p-frame-offset) + constant(safe-area-inset-left)); left:calc(24rem + var(--p-frame-offset) + env(safe-area-inset-left)); width:calc(100% - 24rem - var(--p-frame-offset)); } }\n\n.Polaris-Frame__LoadingBar{ position:fixed; z-index:514; top:0; right:0; left:0; }\n\n@media print{ .Polaris-Frame__LoadingBar{ display:none !important; } }\n\n@media (min-width: 48.0625em){ .Polaris-Frame--hasNav .Polaris-Frame__LoadingBar{ left:var(--p-frame-offset); }\n  .Polaris-Frame--hasTopBar .Polaris-Frame__LoadingBar{ top:var(--p-override-zero, 5.6rem); z-index:var(--p-override-loading-z-index, 511); } }\n\n.Polaris-Frame__Skip{ position:fixed; z-index:517; top:1rem; left:calc(0.8rem + var(--p-frame-offset)); opacity:0; pointer-events:none; }\n\n.Polaris-Frame__Skip.Polaris-Frame--focused{ pointer-events:all; opacity:1; }\n\n.Polaris-Frame__Skip.Polaris-Frame--focused > a::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Frame__Skip > a{ position:relative; position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:3.6rem; min-width:3.6rem; margin:0; padding:0.7rem 1.6rem; background:var(--p-surface); box-shadow:var(--p-button-drop-shadow); border-radius:var(--p-border-radius-base); color:var(--p-text); border:1px solid var(--p-border-neutral-subdued); border-top-color:var(--p-border-subdued); border-bottom-color:var(--p-border-shadow-subdued); line-height:1; text-align:center; cursor:pointer; -webkit-user-select:none; user-select:none; text-decoration:none; -webkit-tap-highlight-color:transparent; font-size:1.5rem; font-weight:var(--p-button-font-weight, 400); line-height:1.6rem; text-transform:initial; letter-spacing:initial; position:relative; color:var(--p-text); }\n\n.Polaris-Frame__Skip > a svg{ fill:var(--p-icon); }\n\n.Polaris-Frame__Skip > a::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Frame__Skip > a:hover{ background:var(--p-action-secondary-hovered); outline:0.1rem solid transparent; }\n\n.Polaris-Frame__Skip > a:focus{ box-shadow:var(--p-button-drop-shadow); outline:0; }\n\n.Polaris-Frame__Skip > a:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Frame__Skip > a:active{ background:var(--p-action-secondary-pressed); box-shadow:var(--p-button-drop-shadow); }\n\n.Polaris-Frame__Skip > a:active::after{ border:none; box-shadow:none; }\n\n.Polaris-Frame__Skip > a.Polaris-Frame--pressed{ background:var(--p-action-secondary-depressed); box-shadow:var(--p-button-pressed-inner-shadow); color:var(--p-text-on-primary); border-color:var(--p-border-depressed); }\n\n.Polaris-Frame__Skip > a.Polaris-Frame--pressed svg{ fill:currentColor; }\n\n@media (-ms-high-contrast: active){ .Polaris-Frame__Skip > a{ border:1px solid windowText; } }\n\n@media (min-width: 40em){ .Polaris-Frame__Skip > a{ font-size:1.4rem; } }\n\n.Polaris-Frame__Skip > a::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Frame__Skip > a:focus{ border-color:none; box-shadow:none; }\n\n\n.Polaris-IndexTable{ position:relative; overflow:hidden; }\n\n.Polaris-IndexTable__LoadingContainer--enter{ opacity:0; transform:translateY(-100%); }\n\n.Polaris-IndexTable--loadingContainerEnterActive{ opacity:1; transition:opacity 100ms ease-out, transform 100ms ease-out; transform:translateY(0); }\n\n.Polaris-IndexTable__LoadingContainer--exit{ opacity:1; transform:translateY(0); }\n\n.Polaris-IndexTable--loadingContainerExitActive{ opacity:0; transform:translateY(-100%); transition:opacity 100ms ease-in, transform 100ms ease-in; }\n\n.Polaris-IndexTable__LoadingPanel{ position:absolute; z-index:37; top:0; left:0; display:flex; width:100%; justify-content:center; align-items:center; background:var(--p-surface, white); padding:0.8rem 1.6rem; box-shadow:0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15); }\n\n.Polaris-IndexTable__LoadingPanel .Polaris-IndexTable__LoadingPanelRow{ display:flex; flex-wrap:nowrap; width:100%; background:var(--p-surface-highlight-subdued, #e0f5f5); padding:0.8rem; padding-bottom:0.4rem; border-radius:var(--p-border-radius-base, 3px); }\n\n.Polaris-IndexTable__LoadingPanelText{ margin-left:1.2rem; color:var(--p-text, #003135); }\n\n.Polaris-IndexTable__Table{ width:100%; min-width:100%; border-collapse:collapse; }\n\n.Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableCell--first, .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell, .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableHeading--first, .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableHeading--second{ visibility:visible; background-color:var(--p-surface, white); }\n\n.Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableCell--first, .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableHeading--first{ box-shadow:0.1rem -0.1rem 0 0 var(--p-divider, #dfe3e8); }\n\n@media (min-width: 28.625em){ .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableCell--first, .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableHeading--first{ box-shadow:0 -0.1rem 0 0 var(--p-divider, #dfe3e8); } }\n\n@media (min-width: 28.625em){ .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell, .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableHeading--second{ box-shadow:0.1rem -0.1rem 0 0 var(--p-divider, #dfe3e8); } }\n\n.Polaris-IndexTable__TableRow{ background-color:var(--p-surface, white); cursor:pointer; }\n\n.Polaris-IndexTable__TableRow--hovered{ background-color:var(--p-surface-selected-hovered, #f9fafb); }\n\n.Polaris-IndexTable__SubTableRow{ background-color:var(--p-surface-subdued, #f9fafb); }\n\n.Polaris-IndexTable__SubTableRow .Polaris-IndexTable__TableCell--first, .Polaris-IndexTable__SubTableRow .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell{ background-color:var(--p-surface-subdued, #f9fafb); }\n\n.Polaris-IndexTable__TableRow--selected{ background-color:var(--p-surface-selected, #f4f5fa); }\n\n.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableHeading--first, .Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableHeading--second, .Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableCell--first, .Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell{ background-color:var(--p-surface-selected, #f4f5fa); }\n\n.Polaris-IndexTable__TableRow--subdued{ color:var(--p-text-subdued, #637381); }\n\n.Polaris-IndexTable__TableHeading{ padding:1.6rem; text-align:left; font-weight:500; white-space:nowrap; border:0; }\n\n.Polaris-IndexTable__TableHeading--first{ position:-webkit-sticky; position:sticky; left:0; padding-left:1.4rem; padding-right:1.8rem; }\n\n.Polaris-IndexTable__ColumnHeaderCheckboxWrapper{ display:flex; }\n\n.Polaris-IndexTable__StickyColumnHeaderCheckbox{ margin-left:-0.2rem; padding-right:0.2rem; }\n\n.Polaris-IndexTable__TableHeading--second{ padding-left:0; }\n\n@media (min-width: 28.625em){ .Polaris-IndexTable__TableHeading--second{ position:-webkit-sticky; position:sticky; } }\n\n.Polaris-IndexTable__TableHeading--last{ position:-webkit-sticky; position:sticky; right:0; }\n\n.Polaris-IndexTable__TableCell{ z-index:1; text-align:left; padding:0.8rem 1.6rem; white-space:nowrap; box-shadow:0 -0.1rem 0 0 var(--p-divider, #dfe3e8); }\n\n.Polaris-IndexTable__TableCell--flush{ padding:0; }\n\n.Polaris-IndexTable__TableCell--first{ position:-webkit-sticky; position:sticky; left:0; z-index:30; padding:0; }\n\n.Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell{ left:var(--p-checkbox-offset); padding-left:0; }\n\n@media (min-width: 28.625em){ .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell{ position:-webkit-sticky; position:sticky; z-index:30; padding:0; } }\n\n.Polaris-IndexTable__StickyTable{ position:relative; top:0; left:0; right:0; visibility:hidden; z-index:37; }\n\n.Polaris-IndexTable__StickyTableHeader{ position:absolute; display:flex; width:100%; }\n\n.Polaris-IndexTable__StickyTableHeader:not(.Polaris-IndexTable__StickyTableHeader--isSticky){ top:-100rem; left:-100rem; }\n\n.Polaris-IndexTable__StickyTableColumnHeader{ flex:0 0 auto; }\n\n.Polaris-IndexTable__StickyTableColumnHeader--isScrolling{ box-shadow:1px 1px 0 0 var(--p-divider, #dfe3e8), 1px 0 1px 1px rgba(63, 63, 68, 0.05), 1px 0 3px 0 rgba(63, 63, 68, 0.15); }\n\n.Polaris-IndexTable__StickyTableHeadings{ overflow:hidden; flex:1 1 auto; display:flex; }\n\n.Polaris-IndexTable__StickyTableHeading--second{ padding-left:0; }\n\n@media (min-width: 28.625em){ .Polaris-IndexTable__StickyTableHeading--second{ display:none; } }\n\n.Polaris-IndexTable--stickyTableHeadingSecondScrolling{ padding:0 0.06rem 0 1.6rem; display:none; }\n\n@media (min-width: 28.625em){ .Polaris-IndexTable--stickyTableHeadingSecondScrolling{ display:block; } }\n\n.Polaris-IndexTable__StickyTableHeader--isSticky{ visibility:visible; background-color:var(--p-surface, white); box-shadow:0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15); }\n\n.Polaris-IndexTable:hover .Polaris-IndexTable__ScrollLeft{ display:block; }\n\n.Polaris-IndexTable:hover .Polaris-IndexTable__ScrollRight{ display:block; }\n\n.Polaris-IndexTable .Polaris-IndexTable__ScrollRight--onboarding{ display:block; }\n\n.Polaris-IndexTable__BulkActionsWrapper{ visibility:visible; position:relative; z-index:36; top:0; left:0; right:0; padding:0.8rem; background:var(--p-surface, white); }\n\n.Polaris-IndexTable__ScrollBarContainer{ position:-webkit-sticky; position:sticky; z-index:35; bottom:0; padding:0.2rem; border-top:0.1rem solid var(--p-divider); background-color:var(--p-surface, white); border-bottom-right-radius:var(--p-border-radius-base, 3px); border-bottom-left-radius:var(--p-border-radius-base, 3px); }\n\n.Polaris-IndexTable--scrollBarContainerCondensed{ visibility:hidden; pointer-events:none; }\n\n.Polaris-IndexTable__ScrollBar{ overflow-x:scroll; width:100%; margin:0; padding:0; }\n\n.Polaris-IndexTable__ScrollBar::-webkit-scrollbar-track{ border-radius:0.4rem; background-color:transparent; }\n\n.Polaris-IndexTable__ScrollBar::-webkit-scrollbar{ -webkit-appearance:none; appearance:none; height:0.8rem; width:0.8rem; background-color:transparent; }\n\n.Polaris-IndexTable__ScrollBar::-webkit-scrollbar-thumb{ border-radius:0.4rem; background-color:var(--p-border-neutral-subdued, rgba(69, 79, 91, 0.3)); -webkit-transition:background-color 100ms ease-out; transition:background-color 100ms ease-out; }\n\n.Polaris-IndexTable__ScrollBar:hover::-webkit-scrollbar-thumb{ background-color:var(--p-border-depressed, rgba(69, 79, 91, 0.7)); }\n\n.Polaris-IndexTable--disableTextSelection{ -webkit-user-select:none; user-select:none; }\n\n.Polaris-IndexTable--selectMode{ transform:translateY(-5.2rem); margin-bottom:-5.2rem; }\n\n.Polaris-IndexTable__EmptySearchResultWrapper{ padding:1.6rem; }\n\n.Polaris-IndexTable--condensedRow{ width:calc(100% + 3.4rem); transform:translateX(-3.4rem); transition:transform cubic-bezier(0.64, 0, 0.35, 1) 200ms; display:flex; border-top:0.1rem solid var(--p-divider); }\n\n[data-selectmode='true'] .Polaris-IndexTable--condensedRow{ transform:none; }\n\n.Polaris-IndexTable__CondensedList{ list-style-type:none; margin:0; padding:0; overflow:hidden; }\n\n.Polaris-IndexTable__HeaderWrapper{ position:relative; display:flex; align-items:flex-start; width:100%; min-height:5.6rem; padding:1rem 1.6rem; background-color:var(--p-surface, white); box-shadow:0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15); }\n\n.Polaris-IndexTable__StickyTable--condensed{ visibility:visible; }\n\n.Polaris-IndexTable__StickyTableHeader--condensed{ padding:1.6rem 1.6rem 0.8rem; }\n\n.Polaris-IndexTable__ScrollBarContent{ height:1px; width:var(--p-scroll-bar-content-width); }\n\n\n.Polaris-IndexTable-Checkbox__TableCellContentContainer{ display:flex; align-items:center; }\n\n.Polaris-IndexTable-Checkbox__Wrapper{ display:flex; justify-content:center; align-items:center; }\n\n.Polaris-IndexTable-Checkbox--expanded{ width:3.2rem; height:3.2rem; padding-left:1.6rem; }\n\n.Polaris-IndexTable-Checkbox--condensed{ min-width:5rem; min-height:4.4rem; margin-right:-1.6rem; }\n\n\n.Polaris-IndexTable-ScrollContainer{ overflow-x:auto; overscroll-behavior-x:contain; -ms-overflow-style:none; scrollbar-width:none; }\n\n.Polaris-IndexTable-ScrollContainer::-webkit-scrollbar{ display:none; }\n\n\n.Polaris-KeyboardKey{ display:inline-block; height:2.4rem; margin:0 0.2rem 2px; padding:0 0.4rem; background-color:var(--p-surface); box-shadow:0 0 0 1px var(--p-border-subdued), 0 2px 0 0 var(--p-surface), 0 2px 0 1px var(--p-border-subdued); border-radius:var(--p-border-radius-base); font-family:-apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif; font-size:1.2rem; font-weight:500; line-height:2.4rem; color:var(--p-text-subdued); text-align:center; min-width:2.4rem; -webkit-user-select:none; user-select:none; }\n\n\n.Polaris-Layout{ display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; margin-top:-1.6rem; margin-left:-2rem; }\n\n.Polaris-Layout__Section{ flex:2 2 48rem; min-width:51%; }\n\n.Polaris-Layout__Section--secondary{ flex:1 1 24rem; min-width:0; }\n\n.Polaris-Layout__Section--fullWidth{ flex:1 1 100%; }\n\n.Polaris-Layout__Section--oneHalf{ flex:1 1 45rem; min-width:0; }\n\n.Polaris-Layout__Section--oneThird{ flex:1 1 24rem; min-width:0; }\n\n.Polaris-Layout__AnnotatedSection{ min-width:0; flex:1 1 100%; }\n\n.Polaris-Layout__Section, .Polaris-Layout__AnnotatedSection{ max-width:calc(100% - 2rem); margin-top:1.6rem; margin-left:2rem; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Layout__Section + .Polaris-Layout__AnnotatedSection, [data-has-navigation] .Polaris-Layout__AnnotatedSection + .Polaris-Layout__AnnotatedSection{ padding-top:1.6rem; border-top:0.1rem solid var(--p-divider); } }\n\n@media (min-width: 30.625em){ .Polaris-Layout__Section + .Polaris-Layout__AnnotatedSection, .Polaris-Layout__AnnotatedSection + .Polaris-Layout__AnnotatedSection{ padding-top:1.6rem; border-top:0.1rem solid var(--p-divider); } }\n\n.Polaris-Layout__AnnotationWrapper{ display:flex; flex-wrap:wrap; margin-top:-1.6rem; margin-left:-2rem; }\n\n.Polaris-Layout__AnnotationContent{ flex:2 2 48rem; }\n\n.Polaris-Layout__Annotation{ flex:1 1 24rem; padding:1.6rem 2rem 0; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Layout__Annotation{ padding:1.6rem 0 0; } }\n\n@media (min-width: 30.625em){ .Polaris-Layout__Annotation{ padding:1.6rem 0 0; } }\n\n@media (max-width: 48.0625em) and (min-width: 50em), (min-width: 65em){ [data-has-navigation] .Polaris-Layout__Annotation{ padding:2rem 2rem 2rem 0; } }\n\n@media (min-width: 50em){ .Polaris-Layout__Annotation{ padding:2rem 2rem 2rem 0; } }\n\n.Polaris-Layout__Annotation, .Polaris-Layout__AnnotationContent{ min-width:0; max-width:calc(100% - 2rem); margin-top:1.6rem; margin-left:2rem; }\n\n.Polaris-Layout__AnnotationDescription{ color:var(--p-text-subdued); }\n\n\n.Polaris-Link{ -webkit-appearance:none; appearance:none; display:inline; text-align:inherit; padding:0; background:none; border:0; font-size:inherit; color:var(--p-interactive); text-decoration:underline; cursor:pointer; }\n\n.Polaris-Link:hover{ color:var(--p-interactive-hovered); text-decoration:none; }\n\n.Polaris-Link:focus{ outline:var(--p-override-none); }\n\n.Polaris-Link:focus:not(:active){ outline:var(--p-focused) auto 1px; }\n\n.Polaris-Link:active{ position:relative; color:var(--p-interactive-pressed); }\n\n.Polaris-Link:active::before{ content:''; position:absolute; z-index:-1; top:-0.2rem; right:-0.5rem; bottom:-0.2rem; left:-0.5rem; display:block; border-radius:3px; }\n\n@media print{ .Polaris-Link{ -webkit-text-decoration-color:var(--p-border-neutral-subdued); text-decoration-color:var(--p-border-neutral-subdued); } }\n\n.Polaris-Link__IconLockup{ display:inline; white-space:nowrap; }\n\n.Polaris-Link__IconLockup svg{ fill:currentColor; }\n\n.Polaris-Link__IconLockup::before{ content:'\\2060'; }\n\n.Polaris-Link__IconLayout{ display:inline-flex; }\n\n.Polaris-Link__IconLayout::before{ content:'\\2060'; }\n\n.Polaris-Link--monochrome{ color:inherit; }\n\n.Polaris-Link--monochrome:hover, .Polaris-Link--monochrome:focus, .Polaris-Link--monochrome:active{ color:inherit; }\n\n.Polaris-Link--removeUnderline{ text-decoration:none; }\n\n\n.Polaris-List{ padding-left:2rem; margin-top:0; margin-bottom:0; list-style:disc outside none; }\n\n.Polaris-List + .Polaris-List{ margin-top:1.6rem; }\n\n.Polaris-List--typeNumber{ padding-left:3.2rem; list-style:decimal outside none; }\n\n.Polaris-List__Item{ margin-bottom:0.8rem; }\n\n.Polaris-List__Item:last-child{ margin-bottom:0; }\n\n.Polaris-List__Item .Polaris-List:first-child{ margin-top:0.8rem; }\n\n\n.Polaris-MediaCard{ height:100%; width:100%; display:flex; flex-flow:row wrap; }\n\n.Polaris-MediaCard.Polaris-MediaCard--portrait{ flex-flow:column nowrap; }\n\n@media (max-width: 50.25em){ .Polaris-MediaCard{ flex-flow:column nowrap; } }\n\n.Polaris-MediaCard__MediaContainer{ overflow:hidden; border-top-left-radius:var(--p-border-radius-wide); border-top-right-radius:var(--p-border-radius-wide); }\n\n.Polaris-MediaCard__MediaContainer:not(.Polaris-MediaCard--portrait){ flex-basis:40%; }\n\n.Polaris-MediaCard__MediaContainer:not(.Polaris-MediaCard--portrait).Polaris-MediaCard--sizeSmall{ flex-basis:33%; }\n\n@media (min-width: 50.25em){ .Polaris-MediaCard__MediaContainer:not(.Polaris-MediaCard--portrait){ border-top-right-radius:0; border-top-left-radius:var(--p-border-radius-wide); border-bottom-left-radius:var(--p-border-radius-wide); } }\n\n.Polaris-MediaCard__InfoContainer{ position:relative; }\n\n.Polaris-MediaCard__InfoContainer:not(.Polaris-MediaCard--portrait){ flex-basis:60%; }\n\n.Polaris-MediaCard__InfoContainer:not(.Polaris-MediaCard--portrait).Polaris-MediaCard--sizeSmall{ flex-basis:67%; }\n\n.Polaris-MediaCard__Popover{ position:absolute; z-index:400; top:1.6rem; right:1.6rem; }\n\n.Polaris-MediaCard__Heading{ margin-right:3.2rem; }\n\n.Polaris-MediaCard__PrimaryAction{ margin-right:0.8rem; }\n\n.Polaris-MediaCard__SecondaryAction{ margin-left:-spacing(tight); }\n\n.Polaris-MediaCard__ActionContainer{ padding-top:0.8rem; }\n\n.Polaris-MediaCard__ActionContainer.Polaris-MediaCard--portrait{ padding-top:3.2rem; }\n\n@media (max-width: 50.25em){ .Polaris-MediaCard__ActionContainer{ padding-top:3.2rem; } }\n\n\n@keyframes Polaris-Navigation__fade--in{ 0%{ opacity:0; }\n  100%{ opacity:1; } }\n\n.Polaris-Navigation{ display:flex; flex-direction:column; align-items:stretch; width:calc(100vw - 6.4rem); min-width:24rem; max-width:36rem; height:100%; min-height:100%; background-color:var(--p-background); -webkit-overflow-scrolling:touch; border-right:0.1rem solid var(--p-divider); padding-bottom:0px; padding-bottom:calc(0px + constant(safe-area-inset-bottom)); padding-bottom:calc(0px + env(safe-area-inset-bottom)); }\n\n.Polaris-Navigation:focus{ outline:none; }\n\n@media (min-width: 48.0625em){ .Polaris-Navigation{ max-width:24rem; max-width:24rem; max-width:calc(24rem + constant(safe-area-inset-left)); max-width:calc(24rem + env(safe-area-inset-left)); } }\n\n.Polaris-Navigation__UserMenu{ flex:0 0 auto; }\n\n.Polaris-Navigation__ContextControl{ min-height:5.6rem; }\n\n@media (min-width: 48.0625em){ .Polaris-Navigation__ContextControl{ display:none; } }\n\n.Polaris-Navigation__PrimaryNavigation{ display:flex; overflow:auto; flex:1 1 auto; flex-direction:column; align-items:stretch; max-width:100%; }\n\n.Polaris-Navigation__PrimaryNavigation:focus{ outline:none; }\n\n@media (min-width: 48.0625em){ .Polaris-Navigation__PrimaryNavigation{ padding-top:1.2rem; } }\n\n.Polaris-Navigation__LogoContainer{ display:none; }\n\n@media (max-width: 48.0625em){ .Polaris-Navigation__LogoContainer{ display:flex; flex:0 0 5.6rem; align-items:center; height:5.6rem; padding:0 0.8rem 0 1.6rem; flex-basis:5.6rem; flex-basis:calc(5.6rem + constant(safe-area-inset-left)); flex-basis:calc(5.6rem + env(safe-area-inset-left)); padding-left:1.6rem; padding-left:calc(1.6rem + constant(safe-area-inset-left)); padding-left:calc(1.6rem + env(safe-area-inset-left)); } }\n\n.Polaris-Navigation__Logo, .Polaris-Navigation__LogoLink{ display:block; }\n\n.Polaris-Navigation__Item{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; font-size:1.6rem; font-weight:600; line-height:3.6rem; display:flex; flex-grow:1; align-items:flex-start; max-width:100%; padding:0 0.8rem; margin:0 0.8rem; border-radius:var(--p-border-radius-base); color:var(--p-text); text-decoration:none; text-align:left; padding-left:1.2rem; padding-right:0.4rem; position:relative; position:relative; }\n\n.Polaris-Navigation__Item:focus{ outline:none; }\n\n.Polaris-Navigation__Item:hover{ background:var(--p-background-hovered); color:var(--p-text); text-decoration:none; }\n\n.Polaris-Navigation__Item::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Navigation__Item.Polaris-Navigation--keyFocused{ background:var(--p-background-hovered); color:var(--p-text); text-decoration:none; }\n\n.Polaris-Navigation__Item.Polaris-Navigation--keyFocused::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Navigation__Item:active, .Polaris-Navigation__Item:active:hover{ color:var(--p-text); background-color:var(--p-background-pressed); }\n\n.Polaris-Navigation__Item:active::after, .Polaris-Navigation__Item:active:hover::after{ content:none; }\n\n@media (min-width: 48.0625em){ .Polaris-Navigation__Item{ font-size:1.6rem; font-weight:600; line-height:3.2rem; } }\n\n.Polaris-Navigation__Item::-moz-focus-inner{ border:0; }\n\n.Polaris-Navigation__Item--selected{ font-weight:600; color:var(--p-text-primary); background-color:var(--p-background-selected); outline:0.1rem solid transparent; position:relative; }\n\n.Polaris-Navigation__Item--selected::before{ content:''; position:absolute; top:0; bottom:0; left:-0.8rem; height:100%; width:0.3rem; background-color:var(--p-action-primary); border-top-right-radius:var(--p-border-radius-base); border-bottom-right-radius:var(--p-border-radius-base); }\n\n.Polaris-Navigation__Item--selected::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Navigation__Item--selected:hover, .Polaris-Navigation__Item--selected.Polaris-Navigation--keyFocused{ background-color:var(--p-background-hovered); color:var(--p-text-primary-hovered); }\n\n.Polaris-Navigation__Item--selected .Polaris-Navigation--keyFocused::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Navigation__Item--selected:active, .Polaris-Navigation__Item--selected:active:hover{ color:var(--p-text-primary); background-color:var(--p-background-pressed); }\n\n.Polaris-Navigation__Item--selected:active::after, .Polaris-Navigation__Item--selected:active:hover::after{ content:none; }\n\n.Polaris-Navigation__Item--disabled{ color:var(--p-text-disabled); pointer-events:none; opacity:0.6; }\n\n.Polaris-Navigation__Item--disabled .Polaris-Navigation__Icon{ opacity:0.6; }\n\n.Polaris-Navigation__Badge{ margin-left:0.8rem; display:inline-flex; margin-top:0.8rem; }\n\n@media (min-width: 48.0625em){ .Polaris-Navigation__Badge{ margin-top:0.4rem; } }\n\n.Polaris-Navigation__Icon{ flex-shrink:0; align-self:flex-start; width:2rem; height:2rem; margin-top:1rem; margin-right:1.6rem; margin-bottom:1rem; }\n\n.Polaris-Navigation__Icon svg{ fill:var(--p-icon); color:transparent; }\n\n.Polaris-Navigation__Icon img{ filter:brightness(0) saturate(100%) invert(36%) sepia(13%) saturate(137%) hue-rotate(169deg) brightness(95%) contrast(87%); }\n\n@media (min-width: 48.0625em){ .Polaris-Navigation__Icon{ margin-top:0.6rem; margin-right:1.6rem; margin-bottom:0.6rem; } }\n\n.Polaris-Navigation__Item:hover .Polaris-Navigation__Icon svg, .Polaris-Navigation__Item.Polaris-Navigation--keyFocused .Polaris-Navigation__Icon svg{ fill:var(--p-icon); color:transparent; }\n\n.Polaris-Navigation__Item:hover .Polaris-Navigation__Icon img, .Polaris-Navigation__Item.Polaris-Navigation--keyFocused .Polaris-Navigation__Icon img{ filter:brightness(0) saturate(100%) invert(36%) sepia(13%) saturate(137%) hue-rotate(169deg) brightness(95%) contrast(87%); }\n\n.Polaris-Navigation__Item--selected .Polaris-Navigation__Icon svg, .Polaris-Navigation__Item--selected:hover .Polaris-Navigation__Icon svg, .Polaris-Navigation--subNavigationActive .Polaris-Navigation__Icon svg, .Polaris-Navigation--subNavigationActive:hover .Polaris-Navigation__Icon svg, .Polaris-Navigation__Item--selected.Polaris-Navigation--keyFocused .Polaris-Navigation__Icon svg{ fill:var(--p-action-primary); color:transparent; }\n\n.Polaris-Navigation__Item--selected .Polaris-Navigation__Icon img, .Polaris-Navigation__Item--selected:hover .Polaris-Navigation__Icon img, .Polaris-Navigation--subNavigationActive .Polaris-Navigation__Icon img, .Polaris-Navigation--subNavigationActive:hover .Polaris-Navigation__Icon img, .Polaris-Navigation__Item--selected.Polaris-Navigation--keyFocused .Polaris-Navigation__Icon img{ filter:brightness(0) saturate(100%) invert(20%) sepia(59%) saturate(5557%) hue-rotate(162deg) brightness(95%) contrast(101%); }\n\n.Polaris-Navigation__Icon svg{ display:block; }\n\n.Polaris-Navigation__ListItem{ position:relative; display:flex; flex-wrap:wrap; }\n\n.Polaris-Navigation__RollupSection .Polaris-Navigation__ListItem, .Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__ListItem{ opacity:1; }\n\n.Polaris-Navigation__ListItem:nth-child(1){ animation-delay:0ms; }\n\n.Polaris-Navigation__ListItem:nth-child(2){ animation-delay:50ms; }\n\n.Polaris-Navigation__ListItem:nth-child(3){ animation-delay:100ms; }\n\n.Polaris-Navigation__ListItem:nth-child(4){ animation-delay:150ms; }\n\n.Polaris-Navigation__ListItem:nth-child(5){ animation-delay:200ms; }\n\n.Polaris-Navigation__ListItem:nth-child(6){ animation-delay:250ms; }\n\n.Polaris-Navigation__ListItem:nth-child(7){ animation-delay:300ms; }\n\n.Polaris-Navigation__ListItem:nth-child(8){ animation-delay:350ms; }\n\n.Polaris-Navigation__ListItem:nth-child(9){ animation-delay:400ms; }\n\n.Polaris-Navigation__ListItem:nth-child(10){ animation-delay:450ms; }\n\n.Polaris-Navigation__ListItem:nth-child(11){ animation-delay:500ms; }\n\n.Polaris-Navigation__ListItem:nth-child(12){ animation-delay:550ms; }\n\n.Polaris-Navigation__ListItem:not(:first-child) .Polaris-Navigation__Item{ border-top:1px solid var(--p-background); }\n\n.Polaris-Navigation__ListItem--hasAction .Polaris-Navigation__Item{ max-width:calc(100% - 5.6rem); }\n\n.Polaris-Navigation__ItemWrapper{ display:flex; flex-wrap:nowrap; width:100%; }\n\n.Polaris-Navigation__Text{ flex:1 1 auto; margin-top:1rem; margin-bottom:1rem; line-height:2rem; font-size:1.4rem; }\n\n@media (min-width: 48.0625em){ .Polaris-Navigation__Text{ margin-top:0.6rem; margin-bottom:0.6rem; } }\n\n@media (max-width: 48.0625em){ .Polaris-Navigation__Text{ font-size:1.5rem; line-height:1.9rem; } }\n\n.Polaris-Navigation__SecondaryAction{ display:flex; align-items:center; height:4rem; margin-right:0.4rem; padding:0.4rem 1.6rem; border-radius:var(--p-border-radius-base); position:relative; }\n\n.Polaris-Navigation__SecondaryAction svg{ fill:var(--p-icon); }\n\n@media (min-width: 48.0625em){ .Polaris-Navigation__SecondaryAction{ height:3.2rem; } }\n\n.Polaris-Navigation__SecondaryAction:hover, .Polaris-Navigation__SecondaryAction:focus, .Polaris-Navigation__SecondaryAction:active{ background:var(--p-background-hovered); }\n\n.Polaris-Navigation__SecondaryAction:hover svg, .Polaris-Navigation__SecondaryAction:focus svg, .Polaris-Navigation__SecondaryAction:active svg{ fill:var(--p-icon-hovered); color:var(--p-override-transparent); }\n\n.Polaris-Navigation__SecondaryAction:hover img, .Polaris-Navigation__SecondaryAction:focus img, .Polaris-Navigation__SecondaryAction:active img{ filter:brightness(0) saturate(100%) invert(20%) sepia(59%) saturate(5557%) hue-rotate(162deg) brightness(95%) contrast(101%); }\n\n@media (-ms-high-contrast: active){ .Polaris-Navigation__SecondaryAction:hover svg, .Polaris-Navigation__SecondaryAction:focus svg, .Polaris-Navigation__SecondaryAction:active svg{ fill:white; }\n  .Polaris-Navigation__SecondaryAction:hover img, .Polaris-Navigation__SecondaryAction:focus img, .Polaris-Navigation__SecondaryAction:active img{ filter:brightness(0) saturate(100%) invert(100%); } }\n\n.Polaris-Navigation__SecondaryAction::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Navigation__SecondaryAction:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Navigation__SecondaryAction:active{ background:var(--p-background-pressed); }\n\n.Polaris-Navigation__SecondaryAction:active::after{ content:none; }\n\n.Polaris-Navigation__SecondaryAction:active svg{ fill:var(--p-icon-pressed); }\n\n.Polaris-Navigation__SecondaryAction:focus, .Polaris-Navigation__SecondaryAction:active{ outline:none; }\n\n.Polaris-Navigation__SecondaryNavigation{ flex-basis:100%; margin-left:0; overflow-x:visible; }\n\n.Polaris-Navigation__SecondaryNavigation.Polaris-Navigation--isExpanded{ margin-bottom:0.8rem; }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__List{ margin:0; padding:0; list-style:none; }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item{ font-size:1.5rem; font-weight:500; line-height:4rem; color:var(--p-text-subdued); padding-left:4.8rem; }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item:hover{ color:var(--p-text-subdued); }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item.Polaris-Navigation--keyFocused{ color:var(--p-text); }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item.Polaris-Navigation--keyFocused::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item:active::after, .Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item:active:hover::after{ content:none; }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item:active{ color:var(--p-text-primary); }\n\n@media (min-width: 48.0625em){ .Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item{ font-size:1.4rem; line-height:2.8rem; } }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Text{ margin-top:0.6rem; margin-bottom:0.6rem; line-height:2rem; }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item--selected{ color:var(--p-text-primary); position:relative; }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item--selected::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item--selected:hover{ color:var(--p-text-primary-hovered); }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item--selected.Polaris-Navigation--keyFocused{ color:var(--p-text-primary); }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item--selected:active{ color:var(--p-text-primary); }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item--selected:active::after{ content:none; }\n\n.Polaris-Navigation__SecondaryNavigation .Polaris-Navigation__Item--disabled{ font-weight:500; color:var(--p-text-disabled); }\n\n.Polaris-Navigation__SecondaryNavigation--noIcon{ margin-left:1.6rem; }\n\n.Polaris-Navigation__Section{ margin:0; padding:0; list-style:none; flex:0 0 auto; padding:1.6rem 0; padding-top:0; padding-left:0px; padding-left:calc(0px + constant(safe-area-inset-left)); padding-left:calc(0px + env(safe-area-inset-left)); }\n\n.Polaris-Navigation__Section + .Polaris-Navigation__Section{ padding-top:0.4rem; padding-bottom:1.6rem; }\n\n.Polaris-Navigation__Section--fill{ flex:1 0 auto; }\n\n.Polaris-Navigation__Section--withSeparator{ border-top:0.1rem solid var(--p-divider); }\n\n.Polaris-Navigation__SectionHeading{ font-size:1.3rem; font-weight:600; line-height:1.6rem; text-transform:uppercase; display:flex; align-items:center; padding-left:1.6rem; }\n\n@media (min-width: 40em){ .Polaris-Navigation__SectionHeading{ font-size:1.2rem; } }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Text{ font-size:1.3rem; color:var(--p-text-subdued); }\n\n@media (min-width: 40em){ .Polaris-Navigation__SectionHeading .Polaris-Navigation__Text{ font-size:1.2rem; } }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; display:flex; align-items:center; margin-right:0.4rem; padding:0.4rem 1.6rem; border-radius:var(--p-border-radius-base); position:relative; }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:focus{ outline:none; }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action svg{ fill:var(--p-icon); }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:hover, .Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:focus{ background:var(--p-background-hovered); }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:hover svg, .Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:focus svg{ fill:var(--p-icon-hovered); color:var(--p-override-transparent); }\n\n@media (-ms-high-contrast: active){ .Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:hover svg, .Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:focus svg{ fill:white; }\n  .Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:hover img, .Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:focus img{ filter:brightness(0) saturate(100%) invert(100%); } }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:hover img{ filter:brightness(0) saturate(100%) invert(20%) sepia(59%) saturate(5557%) hue-rotate(162deg) brightness(95%) contrast(101%); }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:focus:hover svg{ fill:var(--p-icon-hovered); }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:active, .Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:active:hover{ background:var(--p-background-pressed); }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:active svg, .Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:active:hover svg{ fill:var(--p-icon-pressed); }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:active::after, .Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:active:hover::after{ content:none; }\n\n.Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:focus, .Polaris-Navigation__SectionHeading .Polaris-Navigation__Action:active{ outline:none; }\n\n.Polaris-Navigation__RollupToggle{ font-weight:400; color:var(--p-text); color:var(--p-text-subdued); }\n\n.Polaris-Navigation__RollupToggle:hover{ color:var(--p-text-primary); }\n\n.Polaris-Navigation__RollupToggle:hover svg{ fill:var(--p-action-primary); }\n\n.Polaris-Navigation__RollupToggle:hover img{ filter:brightness(0) saturate(100%) invert(20%) sepia(59%) saturate(5557%) hue-rotate(162deg) brightness(95%) contrast(101%); }\n\n.Polaris-Navigation__RollupToggle:focus{ outline:none; }\n\n.Polaris-Navigation__RollupToggle:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Navigation__List{ margin:0; padding:0; list-style:none; }\n\n.Polaris-Navigation__Indicator{ position:relative; display:inline-block; height:1rem; width:1rem; }\n\n.Polaris-Navigation__SecondaryNavigation--noIcon .Polaris-Navigation__Item{ padding-left:1.2rem; }\n\n\n.Polaris-Tooltip-TooltipOverlay{ margin:0.4rem 1.6rem 1.6rem; opacity:1; box-shadow:var(--p-popover-shadow); border-radius:var(--p-border-radius-base); pointer-events:none; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:opacity, left, top; transition:opacity 200ms cubic-bezier(0.36, 0, 1, 1) 100ms; }\n\n@media screen and (-ms-high-contrast: active){ .Polaris-Tooltip-TooltipOverlay{ border:0.2rem solid windowText; } }\n\n.Polaris-Tooltip-TooltipOverlay--measuring{ opacity:0; }\n\n.Polaris-Tooltip-TooltipOverlay--positionedAbove{ margin:1.6rem 1.6rem 0.4rem; }\n\n.Polaris-Tooltip-TooltipOverlay__Content{ position:relative; border-radius:3px; background-color:var(--p-surface); color:var(--p-text); max-width:20rem; padding:0.4rem 0.8rem; word-break:break-word; }\n\n[data-polaris-tooltip-activator]{ outline:0; position:relative; }\n\n[data-polaris-tooltip-activator]::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n[data-polaris-tooltip-activator]:focus-visible::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n[data-polaris-tooltip-activator][data-focus-visible-added]::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n\n.Polaris-Header-Title{ word-wrap:break-word; word-break:break-word; overflow-wrap:break-word; font-weight:600; font-size:2.4rem; line-height:2.8rem; }\n\n@media (min-width: 40em){ .Polaris-Header-Title{ font-size:2rem; } }\n\n.Polaris-Header-Title__SubTitle{ margin-top:0.8rem; color:var(--p-text-subdued); }\n\n.Polaris-Header-Title--hasThumbnail{ display:grid; grid-gap:1.6rem; grid-template-columns:auto 1fr; }\n\n.Polaris-Header-Title--hasThumbnail .Polaris-Header-Title__TitleAndSubtitleWrapper{ display:flex; flex-direction:column; justify-content:center; }\n\n.Polaris-Header-Title__TitleWithMetadataWrapper{ display:flex; flex-wrap:wrap; align-items:center; }\n\n.Polaris-Header-Title__TitleWithMetadataWrapper .Polaris-Header-Title{ display:inline; margin-right:0.8rem; }\n\n.Polaris-Header-Title__TitleWithMetadataWrapper .Polaris-Header-Title > *{ display:inline; }\n\n.Polaris-Header-Title__TitleWithMetadataWrapper .Polaris-Header-Title__TitleMetadata{ margin-top:0; vertical-align:bottom; }\n\n\n.Polaris-Page-Header{ padding:1.6rem 1.6rem 0; position:relative; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Page-Header{ padding-left:0; padding-right:0; } }\n\n@media (min-width: 30.625em){ .Polaris-Page-Header{ padding-left:0; padding-right:0; } }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-Page-Header{ padding-top:1.6rem; } }\n\n@media (min-width: 46.5em){ .Polaris-Page-Header{ padding-top:1.6rem; } }\n\n.Polaris-Page-Header--titleHidden{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n.Polaris-Page-Header__TitleWrapper{ grid-area:title; margin-top:0.4rem; align-self:center; flex:1 1 auto; }\n\n@media (min-width: 29.25em){ .Polaris-Page-Header__TitleWrapper{ margin-top:0; } }\n\n.Polaris-Page-Header__Navigation{ display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem; }\n\n.Polaris-Page-Header--hasActionMenu.Polaris-Page-Header--mobileView .Polaris-Page-Header__Navigation{ padding-right:4rem; }\n\n@media print{ .Polaris-Page-Header__Navigation{ display:none !important; } }\n\n.Polaris-Page-Header__BreadcrumbWrapper{ flex:0 0 auto; grid-area:breadcrumbs; max-width:100%; margin-right:1.6rem; }\n\n@media print{ .Polaris-Page-Header__BreadcrumbWrapper{ display:none !important; } }\n\n.Polaris-Page-Header__PaginationWrapper{ flex:0 0 auto; display:flex; justify-content:flex-end; margin-left:0.4rem; line-height:1; }\n\n.Polaris-Page-Header__PaginationWrapper button{ border:1px solid var(--p-border-neutral-subdued) !important; box-shadow:none !important; }\n\n.Polaris-Page-Header__PaginationWrapper button:hover, .Polaris-Page-Header__PaginationWrapper button:active, .Polaris-Page-Header__PaginationWrapper button:focus{ border:1px solid var(--p-border-neutral-subdued) !important; }\n\n@media print{ .Polaris-Page-Header__PaginationWrapper{ display:none !important; } }\n\n.Polaris-Page-Header__AdditionalNavigationWrapper{ display:flex; flex:1 0 auto; justify-content:flex-end; }\n\n@media print{ .Polaris-Page-Header__AdditionalNavigationWrapper{ display:none !important; } }\n\n.Polaris-Page-Header:not(.Polaris-Page-Header--mobileView) .Polaris-Page-Header__MainContent{ display:flex; align-items:center; }\n\n.Polaris-Page-Header__TitleActionMenuWrapper{ flex:1 1 auto; }\n\n.Polaris-Page-Header:not(.Polaris-Page-Header--mobileView) .Polaris-Page-Header__TitleActionMenuWrapper{ padding-right:2rem; }\n\n.Polaris-Page-Header--hasActionMenu.Polaris-Page-Header--mobileView:not(.Polaris-Page-Header--hasNavigation) .Polaris-Page-Header__TitleActionMenuWrapper{ padding-right:4rem; }\n\n.Polaris-Page-Header__PrimaryActionWrapper{ flex:0 0 auto; margin-top:0; margin-left:0.4rem; }\n\n@media (min-width: 48em){ .Polaris-Page-Header__PrimaryActionWrapper{ margin-left:1.6rem; } }\n\n@media print{ .Polaris-Page-Header__PrimaryActionWrapper{ display:none !important; } }\n\n.Polaris-Page-Header__ActionMenuWrapper{ margin-top:0; }\n\n.Polaris-Page-Header--mobileView .Polaris-Page-Header__ActionMenuWrapper{ position:absolute; top:2.9rem; right:2rem; margin-top:0; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Page-Header--mobileView .Polaris-Page-Header__ActionMenuWrapper{ right:-0.8rem; } }\n\n@media (min-width: 30.625em){ .Polaris-Page-Header--mobileView .Polaris-Page-Header__ActionMenuWrapper{ right:-0.8rem; } }\n\n.Polaris-Page-Header--mobileView.Polaris-Page-Header--hasNavigation .Polaris-Page-Header__ActionMenuWrapper{ top:1.8rem; }\n\n@media print{ .Polaris-Page-Header__ActionMenuWrapper{ display:none !important; } }\n\n.Polaris-Page-Header__Row{ display:flex; justify-content:space-between; }\n\n.Polaris-Page-Header__Row + .Polaris-Page-Header__Row{ margin-top:0.4rem; }\n\n.Polaris-Page-Header--mobileView .Polaris-Page-Header__Row + .Polaris-Page-Header__Row{ margin-top:0.8rem; }\n\n.Polaris-Page-Header__Row + .Polaris-Page-Header__Row .Polaris-Page-Header__RightAlign{ margin-left:0; }\n\n.Polaris-Page-Header__LeftAlign{ display:flex; align-content:flex-start; align-items:center; }\n\n.Polaris-Page-Header__RightAlign{ grid-area:actions; display:flex; align-content:flex-end; flex:1 1 auto; align-items:flex-start; justify-content:flex-end; margin-left:1.6rem; white-space:nowrap; }\n\n@media (max-width: 29.25em){ .Polaris-Page-Header--noBreadcrumbs .Polaris-Page-Header__RightAlign{ margin-left:0; } }\n\n@media (min-width: 29.25em){ .Polaris-Page-Header__AdditionalMetaData{ margin-left:5.2rem; } }\n\n.Polaris-Page-Header--noBreadcrumbs .Polaris-Page-Header__AdditionalMetaData{ margin-left:0; }\n\n@media print{ .Polaris-Page-Header__AdditionalMetaData{ margin-left:0 !important; } }\n\n.Polaris-Page-Header__Actions{ width:100%; display:flex; align-items:center; justify-content:flex-end; text-align:right; }\n\n@media (max-width: 67.5em){ .Polaris-Page-Header--longTitle .Polaris-Page-Header__AdditionalMetaData{ margin-left:0; }\n  .Polaris-Page-Header--longTitle .Polaris-Page-Header__Row{ display:grid; gap:0.8rem 1.6rem; grid-template-columns:auto 1fr; grid-template-areas:'breadcrumbs actions' 'title title'; }\n  .Polaris-Page-Header--longTitle .Polaris-Page-Header__Row + .Polaris-Page-Header__Row{ gap:0; } }\n\n@media (max-width: 53.75em){ .Polaris-Page-Header--mediumTitle:not(.Polaris-Page-Header--noBreadcrumbs) .Polaris-Page-Header__AdditionalMetaData{ margin-left:0; }\n  .Polaris-Page-Header--mediumTitle:not(.Polaris-Page-Header--noBreadcrumbs) .Polaris-Page-Header__Row{ display:grid; gap:0.8rem 1.6rem; grid-template-columns:auto 1fr; grid-template-areas:'breadcrumbs actions' 'title title'; }\n  .Polaris-Page-Header--mediumTitle:not(.Polaris-Page-Header--noBreadcrumbs) .Polaris-Page-Header__Row + .Polaris-Page-Header__Row{ gap:0; } }\n\n.Polaris-Page-Header--mediumTitle.Polaris-Page-Header--noBreadcrumbs .Polaris-Page-Header__TitleWrapper{ margin-top:0; }\n\n.Polaris-Page-Header--mediumTitle.Polaris-Page-Header--noBreadcrumbs .Polaris-Page-Header__RightAlign{ margin-bottom:0.4rem; }\n\n.Polaris-Page-Header--mediumTitle.Polaris-Page-Header--noBreadcrumbs .Polaris-Page-Header__Row{ flex-wrap:wrap-reverse; }\n\n@media (min-width: 48.0625em){ .Polaris-Page-Header--mediumTitle.Polaris-Page-Header--noBreadcrumbs .Polaris-Page-Header__Row{ flex-wrap:nowrap; } }\n\n.Polaris-Page-Header--isSingleRow .Polaris-Page-Header__Row{ gap:0; }\n\n\nhtml, body{ min-height:100%; height:100%; }\n\n.Polaris-Page{ margin:0 auto; padding:0; max-width:99.8rem; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-Page{ padding:0 2rem; } }\n\n@media (min-width: 30.625em){ .Polaris-Page{ padding:0 2rem; } }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-Page{ padding:0 3.2rem; } }\n\n@media (min-width: 46.5em){ .Polaris-Page{ padding:0 3.2rem; } }\n\n.Polaris-Page::after{ content:''; display:table; }\n\n.Polaris-Page--fullWidth{ max-width:none; }\n\n.Polaris-Page--narrowWidth{ max-width:66.2rem; }\n\n.Polaris-Page__Content{ margin:1.6rem 0; }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-Page__Content{ margin-top:1.6rem; } }\n\n@media (min-width: 46.5em){ .Polaris-Page__Content{ margin-top:1.6rem; } }\n\n\n.Polaris-PageActions{ margin:0 auto; padding:2rem; border-top:0.1rem solid var(--p-divider); }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-PageActions{ padding:2rem 0; } }\n\n@media (min-width: 30.625em){ .Polaris-PageActions{ padding:2rem 0; } }\n\n\n@keyframes Polaris-ProgressBar--fillup{ 0%{ width:0; } }\n\n.Polaris-ProgressBar{ overflow:hidden; width:100%; background-color:var(--p-surface-neutral); border-radius:var(--p-border-radius-base); }\n\n@media (forced-colors: active){ .Polaris-ProgressBar{ border:0.1rem solid transparent; } }\n\n.Polaris-ProgressBar--sizeSmall{ height:0.8rem; }\n\n.Polaris-ProgressBar--sizeMedium{ height:1.6rem; }\n\n.Polaris-ProgressBar--sizeLarge{ height:3.2rem; }\n\n.Polaris-ProgressBar__Indicator{ height:inherit; width:0; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:width; background-color:var(--p-border-highlight); animation:Polaris-ProgressBar--fillup 500ms cubic-bezier(0.64, 0, 0.35, 1); transition:width 500ms cubic-bezier(0.64, 0, 0.35, 1); }\n\n@media screen and (-ms-high-contrast: active){ .Polaris-ProgressBar__Indicator{ border:1.6rem solid highlight; } }\n\n.Polaris-ProgressBar__Progress, .Polaris-ProgressBar__Label{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n\n\n.Polaris-RangeSlider-DualThumb__Wrapper{ position:relative; width:100%; display:flex; align-items:center; }\n\n.Polaris-RangeSlider-DualThumb__TrackWrapper{ position:relative; display:flex; align-items:center; width:100%; min-height:2.8rem; cursor:pointer; }\n\n.Polaris-RangeSlider-DualThumb__TrackWrapper.Polaris-RangeSlider-DualThumb--disabled{ opacity:0.8; cursor:not-allowed; }\n\n.Polaris-RangeSlider-DualThumb__Track{ position:absolute; z-index:1; width:100%; height:0.4rem; border-radius:var(--p-range-slider-thumb-size-base); --unselected-range:var(--p-override-transparent); --selected-range:var(--p-interactive); --gradient-colors:var(--unselected-range) 0%,\n    var(--unselected-range) var(--Polaris-RangeSlider-progress-lower),\n    var(--selected-range) var(--Polaris-RangeSlider-progress-lower),\n    var(--selected-range) var(--Polaris-RangeSlider-progress-upper),\n    var(--unselected-range) var(--Polaris-RangeSlider-progress-upper),\n    var(--unselected-range) 100%; background-image:linear-gradient(to right, var(--gradient-colors)); }\n\n.Polaris-RangeSlider-DualThumb--error .Polaris-RangeSlider-DualThumb__Track{ --selected-range:var(--p-action-critical); --gradient-colors:var(--unselected-range) 0%,\n      var(--unselected-range) var(--Polaris-RangeSlider-progress-lower),\n      var(--selected-range) var(--Polaris-RangeSlider-progress-lower),\n      var(--selected-range) var(--Polaris-RangeSlider-progress-upper),\n      var(--unselected-range) var(--Polaris-RangeSlider-progress-upper),\n      var(--unselected-range) 100%; background-image:linear-gradient(to right, var(--gradient-colors)); }\n\n.Polaris-RangeSlider-DualThumb--disabled .Polaris-RangeSlider-DualThumb__Track{ background:var(--p-border-disabled) none; }\n\n.Polaris-RangeSlider-DualThumb--trackDashed{ content:''; position:absolute; height:0.4rem; width:100%; background-image:linear-gradient(to right, var(--p-border), var(--p-border) 50%, transparent 50%, transparent 100%); background-size:0.4rem 0.4rem; border-radius:var(--p-border-radius-base); border-right:var(--p-border-radius-base) var(--p-border) solid; }\n\n.Polaris-RangeSlider-DualThumb__Thumbs{ position:relative; position:absolute; z-index:10; padding:0; width:var(--p-range-slider-thumb-size-base); height:var(--p-range-slider-thumb-size-base); border-radius:50%; border:0.1rem solid var(--p-interactive); background:linear-gradient(var(--p-interactive), var(--p-interactive)); -webkit-tap-highlight-color:transparent; cursor:-webkit-grab; transition:transform var(--p-duration-1-5-0) var(--p-ease); }\n\n.Polaris-RangeSlider-DualThumb__Thumbs::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-wide) + 0.1rem); }\n\n.Polaris-RangeSlider-DualThumb__Thumbs.Polaris-RangeSlider-DualThumb--disabled{ cursor:not-allowed; border-color:var(--p-border-disabled); background:var(--p-border-disabled); }\n\n.Polaris-RangeSlider-DualThumb__Thumbs:active{ transform:scale(var(--p-range-slider-thumb-scale)); }\n\n.Polaris-RangeSlider-DualThumb__Thumbs:focus{ outline:0; }\n\n.Polaris-RangeSlider-DualThumb__Thumbs:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-RangeSlider-DualThumb--error .Polaris-RangeSlider-DualThumb__Thumbs{ border-color:var(--p-action-critical); background:linear-gradient(var(--p-action-critical), var(--p-action-critical)); }\n\n.Polaris-RangeSlider-DualThumb__Prefix{ flex:0 0 auto; margin-right:0.8rem; }\n\n.Polaris-RangeSlider-DualThumb__Suffix{ flex:0 0 auto; margin-left:0.8rem; }\n\n.Polaris-RangeSlider-DualThumb__Output{ position:absolute; z-index:20; bottom:var(--p-range-slider-thumb-size-active); opacity:0; visibility:hidden; pointer-events:none; transition-property:opacity, visibility, bottom; transition-duration:var(--p-duration-1-5-0); transition-timing-function:var(--p-ease); transform:translateX(calc(-50% + var(--p-range-slider-thumb-size-base)/2)); }\n\n.Polaris-RangeSlider-DualThumb__Thumbs:hover + .Polaris-RangeSlider-DualThumb__Output, .Polaris-RangeSlider-DualThumb__Thumbs:focus + .Polaris-RangeSlider-DualThumb__Output{ opacity:var(--p-override-zero); }\n\n.Polaris-RangeSlider-DualThumb__Thumbs:active + .Polaris-RangeSlider-DualThumb__Output{ opacity:1; visibility:visible; bottom:calc(var(--p-range-slider-thumb-size-active) + var(--p-range-slider-thumb-size-active) - var(--p-range-slider-thumb-size-base)); }\n\n.Polaris-RangeSlider-DualThumb__OutputBubble{ position:relative; display:flex; padding:0 0.8rem; min-width:3.2rem; height:3.2rem; background-color:var(--p-surface); box-shadow:var(--p-popover-shadow); border-radius:3px; transition-property:transform; transition-duration:var(--p-duration-1-5-0); transition-timing-function:var(--p-ease); }\n\n.Polaris-RangeSlider-DualThumb__Thumbs:hover + .Polaris-RangeSlider-DualThumb__Output .Polaris-RangeSlider-DualThumb__OutputBubble, .Polaris-RangeSlider-DualThumb__Thumbs:active + .Polaris-RangeSlider-DualThumb__Output .Polaris-RangeSlider-DualThumb__OutputBubble, .Polaris-RangeSlider-DualThumb__Thumbs:focus + .Polaris-RangeSlider-DualThumb__Output .Polaris-RangeSlider-DualThumb__OutputBubble{ transform:translateY(-1.6rem); }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-RangeSlider-DualThumb__Thumbs:hover + .Polaris-RangeSlider-DualThumb__Output .Polaris-RangeSlider-DualThumb__OutputBubble, [data-has-navigation] .Polaris-RangeSlider-DualThumb__Thumbs:active + .Polaris-RangeSlider-DualThumb__Output .Polaris-RangeSlider-DualThumb__OutputBubble, [data-has-navigation] .Polaris-RangeSlider-DualThumb__Thumbs:focus + .Polaris-RangeSlider-DualThumb__Output .Polaris-RangeSlider-DualThumb__OutputBubble{ transform:translateY(-0.8rem); } }\n\n@media (min-width: 46.5em){ .Polaris-RangeSlider-DualThumb__Thumbs:hover + .Polaris-RangeSlider-DualThumb__Output .Polaris-RangeSlider-DualThumb__OutputBubble, .Polaris-RangeSlider-DualThumb__Thumbs:active + .Polaris-RangeSlider-DualThumb__Output .Polaris-RangeSlider-DualThumb__OutputBubble, .Polaris-RangeSlider-DualThumb__Thumbs:focus + .Polaris-RangeSlider-DualThumb__Output .Polaris-RangeSlider-DualThumb__OutputBubble{ transform:translateY(-0.8rem); } }\n\n.Polaris-RangeSlider-DualThumb__OutputText{ font-size:1.3rem; font-weight:600; line-height:1.6rem; text-transform:uppercase; display:block; flex:1 1 auto; margin:auto; text-align:center; color:var(--p-text); }\n\n@media (min-width: 40em){ .Polaris-RangeSlider-DualThumb__OutputText{ font-size:1.2rem; } }\n\n\n.Polaris-RangeSlider-SingleThumb{ display:flex; align-items:center; }\n\n.Polaris-RangeSlider-SingleThumb.Polaris-RangeSlider-SingleThumb--disabled{ opacity:0.8; }\n\n.Polaris-RangeSlider-SingleThumb__InputWrapper{ position:relative; display:flex; align-items:center; flex:1 1 auto; height:var(--p-range-slider-thumb-size-base); }\n\n.Polaris-RangeSlider-SingleThumb__InputWrapper input{ padding:1.2rem 0; background-color:transparent; cursor:pointer; }\n\n.Polaris-RangeSlider-SingleThumb__InputWrapper::after{ content:''; position:absolute; height:0.4rem; width:100%; background-image:linear-gradient(to right, var(--p-border), var(--p-border) 50%, transparent 50%, transparent 100%); background-size:0.4rem 0.4rem; border-radius:var(--p-border-radius-base); border-right:var(--p-border-radius-base) var(--p-border) solid; }\n\n.Polaris-RangeSlider-SingleThumb--disabled input{ cursor:not-allowed; }\n\n.Polaris-RangeSlider-SingleThumb__Prefix{ flex:0 0 auto; margin-right:0.8rem; }\n\n.Polaris-RangeSlider-SingleThumb__Suffix{ flex:0 0 auto; margin-left:0.8rem; }\n\n.Polaris-RangeSlider-SingleThumb__Input{ --progress-lower:var(--p-interactive); --progress-upper:var(--p-override-transparent); --gradient-colors:var(--progress-lower, transparent) 0%,\n    var(--progress-lower, transparent) var(--Polaris-RangeSlider-progress, 0%),\n    var(--progress-upper, transparent) var(--Polaris-RangeSlider-progress, 100%),\n    var(--progress-upper, transparent) 100%; margin:0; padding:0; width:100%; background-color:transparent; -webkit-appearance:none; appearance:none; position:relative; z-index:10; flex:1 1 auto; }\n\n.Polaris-RangeSlider-SingleThumb__Input::-ms-tooltip{ display:none; }\n\n.Polaris-RangeSlider-SingleThumb__Input:focus{ outline:0; }\n\n.Polaris-RangeSlider-SingleThumb__Input::-moz-focus-outer{ border:0; }\n\n.Polaris-RangeSlider-SingleThumb__Input::-ms-track{ outline:0.1rem solid transparent; cursor:pointer; width:100%; height:0.4rem; background-image:linear-gradient(to right, var(--gradient-colors)); border:none; border-radius:0.4rem; }\n\n.Polaris-RangeSlider-SingleThumb__Input::-moz-range-track{ cursor:pointer; width:100%; height:0.4rem; background-image:linear-gradient(to right, var(--gradient-colors)); border:none; border-radius:0.4rem; }\n\n.Polaris-RangeSlider-SingleThumb__Input::-webkit-slider-runnable-track{ cursor:pointer; width:100%; height:0.4rem; background-image:linear-gradient(to right, var(--gradient-colors)); border:none; border-radius:0.4rem; }\n\n.Polaris-RangeSlider-SingleThumb__Input::-ms-thumb{ cursor:-webkit-grab; width:var(--p-range-slider-thumb-size-base); height:var(--p-range-slider-thumb-size-base); border:1px solid transparent; border-radius:50%; background:linear-gradient(var(--p-interactive), var(--p-interactive)); box-shadow:0 0 0 0 var(--p-focused); appearance:none; -ms-transition:box-shadow 100ms var(--p-ease); transition:box-shadow 100ms var(--p-ease); -ms-transition-property:border-color, box-shadow, transform; transition-property:border-color, box-shadow, transform; transition-duration:200ms; transition-timing-function:cubic-bezier(0.64, 0, 0.35, 1); margin-top:calc(-1*(var(--p-range-slider-thumb-size-base) - 0.4rem)/2); }\n\n.Polaris-RangeSlider-SingleThumb__Input::-ms-thumb:hover{ background:linear-gradient(var(--p-interactive), var(--p-interactive)); }\n\n.Polaris-RangeSlider-SingleThumb__Input::-moz-range-thumb{ cursor:-webkit-grab; width:var(--p-range-slider-thumb-size-base); height:var(--p-range-slider-thumb-size-base); border:1px solid transparent; border-radius:50%; background:linear-gradient(var(--p-interactive), var(--p-interactive)); box-shadow:0 0 0 0 var(--p-focused); appearance:none; -moz-transition:box-shadow 100ms var(--p-ease); transition:box-shadow 100ms var(--p-ease); -moz-transition-property:border-color, box-shadow, transform; transition-property:border-color, box-shadow, transform; transition-duration:200ms; transition-timing-function:cubic-bezier(0.64, 0, 0.35, 1); margin-top:calc(-1*(var(--p-range-slider-thumb-size-base) - 0.4rem)/2); }\n\n.Polaris-RangeSlider-SingleThumb__Input::-moz-range-thumb:hover{ background:linear-gradient(var(--p-interactive), var(--p-interactive)); }\n\n.Polaris-RangeSlider-SingleThumb__Input::-webkit-slider-thumb{ cursor:-webkit-grab; width:var(--p-range-slider-thumb-size-base); height:var(--p-range-slider-thumb-size-base); border:1px solid transparent; border-radius:50%; background:linear-gradient(var(--p-interactive), var(--p-interactive)); box-shadow:0 0 0 0 var(--p-focused); -webkit-appearance:none; appearance:none; -webkit-transition:box-shadow 100ms var(--p-ease); transition:box-shadow 100ms var(--p-ease); -webkit-transition-property:border-color, box-shadow, transform; transition-property:border-color, box-shadow, transform; transition-duration:200ms; transition-timing-function:cubic-bezier(0.64, 0, 0.35, 1); margin-top:calc(-1*(var(--p-range-slider-thumb-size-base) - 0.4rem)/2); }\n\n.Polaris-RangeSlider-SingleThumb__Input::-webkit-slider-thumb:hover{ background:linear-gradient(var(--p-interactive), var(--p-interactive)); }\n\n.Polaris-RangeSlider-SingleThumb__Input::-ms-thumb{ margin-top:0; transform:translateY(var(--p-range-slider-thumb-size-base)/5) scale(0.4); }\n\n.Polaris-RangeSlider-SingleThumb__Input::-webkit-slider-thumb{ margin-top:-var(--p-range-slider-thumb-size-base)-0.4rem/2; }\n\n.Polaris-RangeSlider-SingleThumb__Input:active::-ms-thumb{ transform:scale(var(--p-range-slider-thumb-scale)); }\n\n.Polaris-RangeSlider-SingleThumb__Input:active::-moz-range-thumb{ transform:scale(var(--p-range-slider-thumb-scale)); }\n\n.Polaris-RangeSlider-SingleThumb__Input:active::-webkit-slider-thumb{ transform:scale(var(--p-range-slider-thumb-scale)); }\n\n.Polaris-RangeSlider-SingleThumb__Input:focus{ outline:0.1rem solid transparent; }\n\n.Polaris-RangeSlider-SingleThumb__Input:focus::-ms-thumb{ border-color:var(--p-surface); box-shadow:0 0 0 0.2rem var(--p-focused); }\n\n.Polaris-RangeSlider-SingleThumb__Input:focus::-moz-range-thumb{ border-color:var(--p-surface); box-shadow:0 0 0 0.2rem var(--p-focused); }\n\n.Polaris-RangeSlider-SingleThumb__Input:focus::-webkit-slider-thumb{ border-color:var(--p-surface); box-shadow:0 0 0 0.2rem var(--p-focused); }\n\n.Polaris-RangeSlider-SingleThumb--error .Polaris-RangeSlider-SingleThumb__Input{ --progress-lower:var(--p-action-critical); }\n\n.Polaris-RangeSlider-SingleThumb--error .Polaris-RangeSlider-SingleThumb__Input::-ms-track{ outline:0.1rem solid transparent; background-color:var(--p-override-none); }\n\n.Polaris-RangeSlider-SingleThumb--error .Polaris-RangeSlider-SingleThumb__Input::-moz-range-track{ background-color:var(--p-override-none); }\n\n.Polaris-RangeSlider-SingleThumb--error .Polaris-RangeSlider-SingleThumb__Input::-webkit-slider-runnable-track{ background-color:var(--p-override-none); }\n\n.Polaris-RangeSlider-SingleThumb--error .Polaris-RangeSlider-SingleThumb__Input::-ms-thumb{ border-color:var(--p-action-critical); background:var(--p-action-critical); }\n\n.Polaris-RangeSlider-SingleThumb--error .Polaris-RangeSlider-SingleThumb__Input::-moz-range-thumb{ border-color:var(--p-action-critical); background:var(--p-action-critical); }\n\n.Polaris-RangeSlider-SingleThumb--error .Polaris-RangeSlider-SingleThumb__Input::-webkit-slider-thumb{ border-color:var(--p-action-critical); background:var(--p-action-critical); }\n\n.Polaris-RangeSlider-SingleThumb--disabled .Polaris-RangeSlider-SingleThumb__Input::-ms-track{ outline:0.1rem solid transparent; cursor:auto; background-image:none; background-color:var(--p-border-disabled); }\n\n.Polaris-RangeSlider-SingleThumb--disabled .Polaris-RangeSlider-SingleThumb__Input::-moz-range-track{ cursor:auto; background-image:none; background-color:var(--p-border-disabled); }\n\n.Polaris-RangeSlider-SingleThumb--disabled .Polaris-RangeSlider-SingleThumb__Input::-webkit-slider-runnable-track{ cursor:auto; background-image:none; background-color:var(--p-border-disabled); }\n\n.Polaris-RangeSlider-SingleThumb--disabled .Polaris-RangeSlider-SingleThumb__Input::-ms-thumb{ cursor:not-allowed; border-color:var(--p-border-disabled); background:var(--p-border-disabled); }\n\n.Polaris-RangeSlider-SingleThumb--disabled .Polaris-RangeSlider-SingleThumb__Input::-moz-range-thumb{ cursor:not-allowed; border-color:var(--p-border-disabled); background:var(--p-border-disabled); }\n\n.Polaris-RangeSlider-SingleThumb--disabled .Polaris-RangeSlider-SingleThumb__Input::-webkit-slider-thumb{ cursor:not-allowed; border-color:var(--p-border-disabled); background:var(--p-border-disabled); }\n\n.Polaris-RangeSlider-SingleThumb__Output{ position:absolute; z-index:20; bottom:var(--p-range-slider-thumb-size-base); left:var(--Polaris-RangeSlider-progress); transform:translateX(calc(-50% + var(--Polaris-RangeSlider-output-factor)*var(--p-range-slider-thumb-size-base))); opacity:0; visibility:hidden; pointer-events:none; transition-property:opacity, visibility, bottom; transition-duration:200ms; transition-timing-function:cubic-bezier(0.64, 0, 0.35, 1); }\n\n.Polaris-RangeSlider-SingleThumb__Input:hover + .Polaris-RangeSlider-SingleThumb__Output, .Polaris-RangeSlider-SingleThumb__Input:focus + .Polaris-RangeSlider-SingleThumb__Output{ opacity:var(--p-override-zero); }\n\n.Polaris-RangeSlider-SingleThumb__Input:active + .Polaris-RangeSlider-SingleThumb__Output{ opacity:1; visibility:visible; bottom:calc(var(--p-range-slider-thumb-size-base) + var(--p-range-slider-thumb-size-active) - var(--p-range-slider-thumb-size-base)); }\n\n.Polaris-RangeSlider-SingleThumb__OutputBubble{ position:relative; display:flex; box-shadow:var(--p-popover-shadow); padding:0 0.8rem; min-width:3.2rem; height:3.2rem; background-color:var(--p-surface); border-radius:3px; transition-property:transform; transition-duration:200ms; transition-timing-function:cubic-bezier(0.64, 0, 0.35, 1); outline:0.1rem solid transparent; }\n\n.Polaris-RangeSlider-SingleThumb__Input:hover + .Polaris-RangeSlider-SingleThumb__Output .Polaris-RangeSlider-SingleThumb__OutputBubble, .Polaris-RangeSlider-SingleThumb__Input:active + .Polaris-RangeSlider-SingleThumb__Output .Polaris-RangeSlider-SingleThumb__OutputBubble, .Polaris-RangeSlider-SingleThumb__Input:focus + .Polaris-RangeSlider-SingleThumb__Output .Polaris-RangeSlider-SingleThumb__OutputBubble{ transform:translateY(-1.6rem); }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-RangeSlider-SingleThumb__Input:hover + .Polaris-RangeSlider-SingleThumb__Output .Polaris-RangeSlider-SingleThumb__OutputBubble, [data-has-navigation] .Polaris-RangeSlider-SingleThumb__Input:active + .Polaris-RangeSlider-SingleThumb__Output .Polaris-RangeSlider-SingleThumb__OutputBubble, [data-has-navigation] .Polaris-RangeSlider-SingleThumb__Input:focus + .Polaris-RangeSlider-SingleThumb__Output .Polaris-RangeSlider-SingleThumb__OutputBubble{ transform:translateY(-0.8rem); } }\n\n@media (min-width: 46.5em){ .Polaris-RangeSlider-SingleThumb__Input:hover + .Polaris-RangeSlider-SingleThumb__Output .Polaris-RangeSlider-SingleThumb__OutputBubble, .Polaris-RangeSlider-SingleThumb__Input:active + .Polaris-RangeSlider-SingleThumb__Output .Polaris-RangeSlider-SingleThumb__OutputBubble, .Polaris-RangeSlider-SingleThumb__Input:focus + .Polaris-RangeSlider-SingleThumb__Output .Polaris-RangeSlider-SingleThumb__OutputBubble{ transform:translateY(-0.8rem); } }\n\n.Polaris-RangeSlider-SingleThumb__OutputText{ font-size:1.3rem; font-weight:600; line-height:1.6rem; text-transform:uppercase; display:block; flex:1 1 auto; margin:auto; text-align:center; color:var(--p-text); }\n\n@media (min-width: 40em){ .Polaris-RangeSlider-SingleThumb__OutputText{ font-size:1.2rem; } }\n\n\n.Polaris-ResourceItem__CheckboxWrapper{ display:flex; }\n\n.Polaris-ResourceItem{ position:relative; outline:none; cursor:pointer; }\n\n.Polaris-ResourceItem:not(.Polaris-ResourceItem--persistActions) .Polaris-ResourceItem__Actions{ right:1.6rem; }\n\n.Polaris-ResourceItem:hover{ background-color:var(--p-surface-hovered); }\n\n.Polaris-ResourceItem:hover:not(.Polaris-ResourceItem--persistActions) .Polaris-ResourceItem__Actions{ clip:auto; overflow:visible; height:100%; }\n\n@media (max-width: 45em), (min-width: 48.0625em) and (max-width: 61.5em){ [data-has-navigation] .Polaris-ResourceItem:hover:not(.Polaris-ResourceItem--persistActions) .Polaris-ResourceItem__Actions{ display:none; } }\n\n@media (max-width: 46.5em){ .Polaris-ResourceItem:hover:not(.Polaris-ResourceItem--persistActions) .Polaris-ResourceItem__Actions{ display:none; } }\n\n.Polaris-ResourceItem:active{ background-color:var(--p-surface-pressed); }\n\n.Polaris-ResourceItem__ItemWrapper{ overflow:hidden; max-width:100%; }\n\n.Polaris-ResourceItem--focusedInner, .Polaris-ResourceItem--focusedInner.Polaris-ResourceItem--focused, .Polaris-ResourceItem--focusedInner.Polaris-ResourceItem--focused.Polaris-ResourceItem--selected{ box-shadow:none; }\n\n.Polaris-ResourceItem__Link, .Polaris-ResourceItem__Button{ position:absolute; z-index:1; top:0; left:0; height:100%; width:100%; opacity:0; }\n\n.Polaris-ResourceItem__Button{ padding:0; border:none; }\n\n.Polaris-ResourceItem__Container{ position:relative; z-index:2; padding:1.2rem 1.6rem; min-height:4.4rem; display:flex; align-items:flex-start; }\n\n@media (min-width: 28.625em){ .Polaris-ResourceItem__Container{ padding:1.2rem 2rem; } }\n\n.Polaris-ResourceItem--alignmentLeading{ align-items:flex-start; }\n\n.Polaris-ResourceItem--alignmentTrailing{ align-items:flex-end; }\n\n.Polaris-ResourceItem--alignmentCenter{ align-items:center; }\n\n.Polaris-ResourceItem--alignmentFill{ align-items:stretch; }\n\n.Polaris-ResourceItem--alignmentBaseline{ align-items:baseline; }\n\n.Polaris-ResourceItem__Owned{ display:flex; }\n\n.Polaris-ResourceItem__OwnedNoMedia{ padding-top:0.4rem; }\n\n.Polaris-ResourceItem__Handle{ width:4.8rem; min-height:4.4rem; justify-content:center; align-items:center; margin:-1.2rem 0.4rem -1.2rem -1.2rem; display:flex; }\n\n@media (max-width: 28.615em){ .Polaris-ResourceItem__Handle{ visibility:hidden; }\n  .Polaris-ResourceItem--selectMode .Polaris-ResourceItem__Handle{ visibility:visible; } }\n\n.Polaris-ResourceItem--selectable{ width:calc(100% + 4rem); transform:translateX(-4rem); transition:transform cubic-bezier(0.64, 0, 0.35, 1) 200ms; margin-right:-4rem; }\n\n.Polaris-ResourceItem--selectable.Polaris-ResourceItem--selectMode{ transform:translateX(0); }\n\n@media (min-width: 28.625em){ .Polaris-ResourceItem--selectable{ width:100%; transform:translateX(0); margin-right:0; } }\n\n.Polaris-ResourceItem__Media{ flex:0 0 auto; margin-right:2rem; color:inherit; text-decoration:none; }\n\n.Polaris-ResourceItem__Content{ min-width:0; max-width:100%; flex:1 1 auto; }\n\n.Polaris-ResourceItem__Actions{ position:absolute; top:0; display:flex; pointer-events:initial; height:100%; max-height:5.6rem; clip:rect(1px, 1px, 1px, 1px); overflow:hidden; height:1px; }\n\n.Polaris-ResourceItem--focused .Polaris-ResourceItem__Actions{ clip:auto; overflow:visible; height:100%; }\n\n@media (max-width: 45em), (min-width: 48.0625em) and (max-width: 61.5em){ [data-has-navigation] .Polaris-ResourceItem__Actions{ display:none; } }\n\n@media (max-width: 46.5em){ .Polaris-ResourceItem__Actions{ display:none; } }\n\n.Polaris-ResourceItem--persistActions .Polaris-ResourceItem__Actions{ position:relative; display:flex; flex:0 0 auto; flex-basis:auto; align-items:center; margin-top:0; margin-left:1.6rem; pointer-events:initial; height:100%; }\n\n@media (max-width: 45em), (min-width: 48.0625em) and (max-width: 61.5em){ [data-has-navigation] .Polaris-ResourceItem--persistActions .Polaris-ResourceItem__Actions{ display:none; } }\n\n@media (max-width: 46.5em){ .Polaris-ResourceItem--persistActions .Polaris-ResourceItem__Actions{ display:none; } }\n\n.Polaris-ResourceItem__Disclosure{ position:relative; top:-1.2rem; right:-1.6rem; display:none; width:4.8rem; min-height:4.4rem; pointer-events:initial; }\n\n.Polaris-ResourceItem--selectMode .Polaris-ResourceItem__Disclosure{ display:none; }\n\n@media (max-width: 45em), (min-width: 48.0625em) and (max-width: 61.5em){ [data-has-navigation] .Polaris-ResourceItem__Disclosure{ display:flex; flex:0 0 4.8rem; justify-content:center; align-items:center; } }\n\n@media (max-width: 46.5em){ .Polaris-ResourceItem__Disclosure{ display:flex; flex:0 0 4.8rem; justify-content:center; align-items:center; } }\n\n.Polaris-ResourceItem--selected{ background-color:var(--p-surface-selected); }\n\n.Polaris-ResourceItem--selected:hover{ background-color:var(--p-surface-selected-hovered); }\n\n.Polaris-ResourceItem--selected:active{ background-color:var(--p-surface-selected-pressed); }\n\n.Polaris-ResourceItem__ListItem{ position:relative; position:relative; }\n\n.Polaris-ResourceItem__ListItem::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:0rem; right:0rem; bottom:0rem; left:0rem; display:block; pointer-events:none; box-shadow:0 0 0 0rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-ResourceItem__ListItem + .Polaris-ResourceItem__ListItem{ border-top:0.1rem solid var(--p-divider); }\n\n.Polaris-ResourceItem__ListItem::after{ border-radius:0.2rem; }\n\n.Polaris-ResourceItem__ListItem:last-of-type{ border-bottom-left-radius:var(--p-border-radius-wide); border-bottom-right-radius:var(--p-border-radius-wide); }\n\n.Polaris-ResourceItem__ListItem:last-of-type .Polaris-ResourceItem__ItemWrapper{ border-bottom-left-radius:var(--p-border-radius-wide); border-bottom-right-radius:var(--p-border-radius-wide); }\n\n.Polaris-ResourceItem__ListItem:last-of-type.Polaris-ResourceItem--focused::after{ border-bottom-left-radius:var(--p-border-radius-wide); border-bottom-right-radius:var(--p-border-radius-wide); }\n\n.Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused{ z-index:1; }\n\n.Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n* + ul > .Polaris-ResourceItem__ListItem:first-of-type.Polaris-ResourceItem--focused::after{ top:0.1rem; }\n\n\n.Polaris-Select{ position:relative; }\n\n.Polaris-Select select::-ms-expand{ display:none; }\n\n.Polaris-Select--disabled .Polaris-Select__Content{ color:var(--p-text-disabled); }\n\n.Polaris-Select--disabled .Polaris-Select__InlineLabel{ color:inherit; }\n\n.Polaris-Select--disabled .Polaris-Select__Icon svg{ fill:var(--p-icon-disabled); }\n\n.Polaris-Select--disabled .Polaris-Select__Backdrop{ border-color:var(--p-border-disabled); }\n\n.Polaris-Select--disabled .Polaris-Select__Backdrop::before{ background-color:var(--p-action-secondary-disabled); }\n\n.Polaris-Select--disabled .Polaris-Select__Backdrop:hover{ cursor:default; }\n\n.Polaris-Select--placeholder.Polaris-Select--error .Polaris-Select__Input{ color:#9c9798; }\n\n.Polaris-Select--placeholder.Polaris-Select--error .Polaris-Select__Input:-moz-focusring{ color:transparent; text-shadow:var(--p-override-none); }\n\n.Polaris-Select__Content{ font-size:1.6rem; font-weight:400; line-height:2.4rem; border:none; text-transform:initial; letter-spacing:initial; position:relative; z-index:20; display:flex; align-items:center; width:100%; min-height:3.6rem; padding:0.5rem 0.8rem 0.5rem 1.2rem; }\n\n@media (min-width: 40em){ .Polaris-Select__Content{ font-size:1.4rem; } }\n\n.Polaris-Select__InlineLabel{ color:var(--p-text-subdued); margin-right:0.4rem; white-space:nowrap; overflow:hidden; }\n\n.Polaris-Select__SelectedOption{ flex:1 1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }\n\n.Polaris-Select__Prefix{ padding-right:0.8rem; }\n\n.Polaris-Select__Icon svg{ fill:var(--p-icon); }\n\n.Polaris-Select__Input{ font-size:1.6rem; font-weight:400; line-height:2.4rem; border:none; text-transform:initial; letter-spacing:initial; position:absolute; text-rendering:auto; top:0; left:0; z-index:30; width:100%; height:100%; margin:0; opacity:0.001; -webkit-appearance:none; appearance:none; }\n\n@media (min-width: 40em){ .Polaris-Select__Input{ font-size:1.4rem; } }\n\n.Polaris-Select__Backdrop{ z-index:10; top:0; right:0; bottom:0; left:0; border:0.1rem solid var(--p-border-subdued); border-bottom-color:var(--p-border-shadow-subdued); border-radius:var(--p-border-radius-base); background-color:var(--p-surface); box-shadow:var(--p-button-drop-shadow); position:relative; position:absolute; }\n\n.Polaris-Select__Backdrop::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.2rem; right:-0.2rem; bottom:-0.2rem; left:-0.2rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.2rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Select--error .Polaris-Select__Backdrop{ border-color:var(--p-border-critical); background-color:var(--p-surface-critical-subdued); }\n\n.Polaris-Select--error .Polaris-Select__Backdrop.Polaris-Select--hover, .Polaris-Select--error .Polaris-Select__Backdrop:hover{ border-color:var(--p-border-critical); }\n\n.Polaris-Select--error .Polaris-Select__Input:focus ~ .Polaris-Select__Backdrop::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Select__Input:focus ~ .Polaris-Select__Backdrop::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n@media (-ms-high-contrast: active){ .Polaris-Select__Content{ color:windowText; -ms-high-contrast-adjust:none; }\n  .Polaris-Select__InlineLabel{ color:inherit; }\n  .Polaris-Select__InlineLabel::after{ content:':'; }\n  .Polaris-Select__SelectedOption{ color:inherit; }\n  .Polaris-Select__Icon svg{ fill:buttonText; }\n  .Polaris-Select__Backdrop::after{ display:none; }\n  .Polaris-Select__Input:focus ~ .Polaris-Select__Content{ color:highlightText; }\n  .Polaris-Select__Input:focus ~ .Polaris-Select__Backdrop{ background-color:highlight; }\n  .Polaris-Select--disabled .Polaris-Select__Content{ color:grayText; }\n  .Polaris-Select--disabled .Polaris-Select__Icon{ opacity:1; }\n  .Polaris-Select--disabled .Polaris-Select__Icon svg{ fill:grayText; } }\n\n\n.Polaris-ResourceList__FiltersWrapper{ padding:1.2rem 1.2rem 1.6rem; }\n\n@media (min-width: 28.625em){ .Polaris-ResourceList__FiltersWrapper{ padding:1.6rem; } }\n\n.Polaris-ResourceList__FiltersWrapper + .Polaris-ResourceList{ border-top:0.1rem solid var(--p-divider); }\n\n.Polaris-ResourceList__HeaderOuterWrapper{ position:relative; background-color:var(--p-surface); z-index:2; }\n\n.Polaris-ResourceList__HeaderOuterWrapper + .Polaris-ResourceList{ border-top:0.1rem solid var(--p-divider); }\n\n.Polaris-ResourceList__HeaderWrapper--disabled{ pointer-events:none; }\n\n.Polaris-ResourceList__HeaderWrapper--overlay{ position:absolute; top:0; right:0; bottom:0; left:0; z-index:4; background-color:var(--p-overlay); }\n\n.Polaris-ResourceList__FiltersWrapper + .Polaris-ResourceList__HeaderOuterWrapper{ margin-top:-1.6rem; }\n\n.Polaris-ResourceList__HeaderWrapper{ position:relative; display:flex; align-items:flex-start; width:100%; min-height:5.6rem; padding:1rem 1.2rem; background-color:var(--p-surface); }\n\n@media (min-width: 28.625em){ .Polaris-ResourceList__HeaderWrapper{ flex-direction:row; padding:1rem 1.6rem; } }\n\n.Polaris-ResourceList__HeaderWrapper--isSticky{ box-shadow:0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15); }\n\n.Polaris-ResourceList__HeaderContentWrapper{ position:absolute; z-index:1; right:1.2rem; left:1.2rem; display:flex; min-height:3.6rem; opacity:1; transition:opacity cubic-bezier(0.64, 0, 0.35, 1) 200ms; }\n\n.Polaris-ResourceList__HeaderWrapper--inSelectMode .Polaris-ResourceList__HeaderContentWrapper{ opacity:0; }\n\n@media (min-width: 28.625em){ .Polaris-ResourceList__HeaderContentWrapper{ right:1.6rem; left:1.6rem; align-self:flex-start; } }\n\n.Polaris-ResourceList__SortWrapper, .Polaris-ResourceList__AlternateToolWrapper{ position:relative; display:flex; flex:1 1; align-items:center; }\n\n.Polaris-ResourceList__HeaderWrapper--hasSelect .Polaris-ResourceList__SortWrapper, .Polaris-ResourceList__HeaderWrapper--hasSelect .Polaris-ResourceList__AlternateToolWrapper{ padding-right:0.8rem; }\n\n@media (min-width: 28.625em){ .Polaris-ResourceList__SortWrapper, .Polaris-ResourceList__AlternateToolWrapper{ position:relative; left:auto; flex:0 1 auto; margin-left:1.6rem; }\n  .Polaris-ResourceList__HeaderWrapper--hasAlternateTool.Polaris-ResourceList__HeaderWrapper--hasSelect .Polaris-ResourceList__SortWrapper, .Polaris-ResourceList__HeaderWrapper--hasSort.Polaris-ResourceList__HeaderWrapper--hasSelect .Polaris-ResourceList__SortWrapper, .Polaris-ResourceList__HeaderWrapper--hasAlternateTool.Polaris-ResourceList__HeaderWrapper--hasSelect .Polaris-ResourceList__AlternateToolWrapper, .Polaris-ResourceList__HeaderWrapper--hasSort.Polaris-ResourceList__HeaderWrapper--hasSelect .Polaris-ResourceList__AlternateToolWrapper{ padding-right:0; } }\n\n.Polaris-ResourceList__SortWrapper{ min-width:0; max-width:100%; }\n\n.Polaris-ResourceList__SortWrapper > *{ max-width:100%; }\n\n.Polaris-ResourceList__HeaderTitleWrapper{ white-space:nowrap; text-overflow:ellipsis; flex:1 1; padding-left:0.4rem; align-self:center; }\n\n.Polaris-ResourceList__HeaderWrapper--hasAlternateTool .Polaris-ResourceList__HeaderTitleWrapper, .Polaris-ResourceList__HeaderWrapper--hasSort .Polaris-ResourceList__HeaderTitleWrapper{ display:none; }\n\n@media (min-width: 28.625em){ .Polaris-ResourceList__HeaderWrapper--hasSelect .Polaris-ResourceList__HeaderTitleWrapper, .Polaris-ResourceList__HeaderWrapper--hasAlternateTool.Polaris-ResourceList__HeaderWrapper--hasSelect .Polaris-ResourceList__HeaderTitleWrapper, .Polaris-ResourceList__HeaderWrapper--hasSort.Polaris-ResourceList__HeaderWrapper--hasSelect .Polaris-ResourceList__HeaderTitleWrapper{ display:none; }\n  .Polaris-ResourceList__HeaderWrapper--hasAlternateTool .Polaris-ResourceList__HeaderTitleWrapper, .Polaris-ResourceList__HeaderWrapper--hasSort .Polaris-ResourceList__HeaderTitleWrapper{ display:block; } }\n\n.Polaris-ResourceList__BulkActionsWrapper{ position:relative; z-index:2; width:100%; }\n\n@media (min-width: 28.625em){ .Polaris-ResourceList__BulkActionsWrapper{ flex:0 1 auto; align-self:flex-start; } }\n\n.Polaris-ResourceList__CheckableButtonWrapper{ display:none; }\n\n@media (min-width: 28.625em){ .Polaris-ResourceList__CheckableButtonWrapper{ flex:1 1; display:block; } }\n\n.Polaris-ResourceList__SelectButtonWrapper{ position:relative; flex:none; }\n\n@media (min-width: 28.625em){ .Polaris-ResourceList__SelectButtonWrapper{ display:none; } }\n\n.Polaris-ResourceList__EmptySearchResultWrapper{ padding-top:3.2rem; padding-bottom:3.2rem; }\n\n@media (min-height: 37.5em){ .Polaris-ResourceList__EmptySearchResultWrapper{ padding-top:6.4rem; padding-bottom:6.4rem; } }\n\n.Polaris-ResourceList__ResourceListWrapper{ position:relative; }\n\n.Polaris-ResourceList{ position:relative; z-index:1; margin:0; padding:0; list-style:none; }\n\n.Polaris-ResourceList__ItemWrapper{ position:relative; z-index:1; overflow:hidden; max-width:100%; }\n\n.Polaris-ResourceList__ItemWrapper + .Polaris-ResourceList__ItemWrapper{ border-top:0.1rem solid var(--p-divider); }\n\n.Polaris-ResourceList__ItemWrapper--isLoading{ min-height:6.4rem; }\n\n.Polaris-ResourceList__SpinnerContainer{ position:absolute; top:0; right:0; bottom:0; left:0; z-index:3; display:flex; justify-content:center; }\n\n.Polaris-ResourceList__LoadingOverlay{ position:absolute; top:0; right:0; bottom:0; left:0; z-index:2; display:flex; justify-content:center; background-color:var(--p-overlay); }\n\n.Polaris-ResourceList__DisabledPointerEvents{ pointer-events:none; }\n\n.Polaris-ResourceList--disableTextSelection{ -webkit-user-select:none; user-select:none; }\n\n\n.Polaris-FilterControl-DateSelector__DateTextField{ margin-top:0.8rem; }\n\n.Polaris-FilterControl-DateSelector__DatePicker{ margin-top:1.6rem; }\n\n\n.Polaris-ResourceList-FilterControl__AppliedFilters{ list-style-type:none; padding:0; margin:0; display:flex; flex-wrap:nowrap; margin-top:-1.2rem; margin-left:-1.2rem; margin-right:-1.2rem; overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; }\n\n.Polaris-ResourceList-FilterControl__AppliedFilters::after{ content:''; flex:0 0 1.2rem; }\n\n@media (min-width: 28.625em){ .Polaris-ResourceList-FilterControl__AppliedFilters{ flex-wrap:wrap; margin-right:0; margin-left:-0.8rem; margin-top:-1.6rem; }\n  .Polaris-ResourceList-FilterControl__AppliedFilters::after{ content:none; flex:none; } }\n\n@media (max-width: 28.625em){ .Polaris-ResourceList-FilterControl__AppliedFilters{ padding-bottom:0.8rem; } }\n\n.Polaris-ResourceList-FilterControl__AppliedFilter{ flex:1 0 auto; margin-top:0.8rem; margin-left:1.2rem; max-width:calc(100% - 0.8rem); }\n\n@media (min-width: 28.625em){ .Polaris-ResourceList-FilterControl__AppliedFilter{ flex:0 1 auto; margin-left:0.8rem; } }\n\n\n.Polaris-SkeletonBodyText__SkeletonBodyTextContainer{ animation:var(--polaris-animation-skeleton-shimmer) 800ms linear infinite alternate; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:opacity; }\n\n.Polaris-SkeletonBodyText{ height:0.8rem; position:relative; }\n\n.Polaris-SkeletonBodyText::after{ content:''; position:absolute; top:0; right:0; bottom:0; left:0; display:block; background-color:var(--p-surface-neutral); border-radius:3px; }\n\n@media screen and (-ms-high-contrast: active){ .Polaris-SkeletonBodyText::after{ background-color:grayText; } }\n\n.Polaris-SkeletonBodyText:last-child:not(:first-child){ width:80%; }\n\n.Polaris-SkeletonBodyText + .Polaris-SkeletonBodyText{ margin-top:1.2rem; }\n\n\n.Polaris-SkeletonDisplayText__DisplayText{ max-width:12rem; animation:var(--polaris-animation-skeleton-shimmer) 800ms linear infinite alternate; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:opacity; position:relative; }\n\n.Polaris-SkeletonDisplayText__DisplayText::after{ content:''; position:absolute; top:0; right:0; bottom:0; left:0; display:block; background-color:var(--p-surface-neutral); border-radius:3px; }\n\n@media screen and (-ms-high-contrast: active){ .Polaris-SkeletonDisplayText__DisplayText::after{ background-color:grayText; } }\n\n.Polaris-SkeletonDisplayText--sizeSmall{ height:2.4rem; }\n\n@media (min-width: 40em){ .Polaris-SkeletonDisplayText--sizeSmall{ height:2.8rem; } }\n\n.Polaris-SkeletonDisplayText--sizeMedium{ height:2.8rem; }\n\n@media (min-width: 40em){ .Polaris-SkeletonDisplayText--sizeMedium{ height:3.2rem; } }\n\n.Polaris-SkeletonDisplayText--sizeLarge{ height:2.8rem; }\n\n@media (min-width: 40em){ .Polaris-SkeletonDisplayText--sizeLarge{ height:3.2rem; } }\n\n.Polaris-SkeletonDisplayText--sizeExtraLarge{ height:3.6rem; }\n\n@media (min-width: 40em){ .Polaris-SkeletonDisplayText--sizeExtraLarge{ height:4.4rem; } }\n\n\n.Polaris-SkeletonPage__Page{ margin:0 auto; padding:0; max-width:99.8rem; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-SkeletonPage__Page{ padding:0 2rem; } }\n\n@media (min-width: 30.625em){ .Polaris-SkeletonPage__Page{ padding:0 2rem; } }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-SkeletonPage__Page{ padding:0 3.2rem; } }\n\n@media (min-width: 46.5em){ .Polaris-SkeletonPage__Page{ padding:0 3.2rem; } }\n\n.Polaris-SkeletonPage--fullWidth{ max-width:none; }\n\n.Polaris-SkeletonPage--narrowWidth{ max-width:66.2rem; }\n\n.Polaris-SkeletonPage__Content{ margin:1.6rem 0; }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-SkeletonPage__Content{ margin-top:1.6rem; } }\n\n@media (min-width: 46.5em){ .Polaris-SkeletonPage__Content{ margin-top:1.6rem; } }\n\n.Polaris-SkeletonPage__Header{ padding:1.6rem 1.6rem 0; padding-bottom:0.8rem; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-SkeletonPage__Header{ padding-left:0; padding-right:0; } }\n\n@media (min-width: 30.625em){ .Polaris-SkeletonPage__Header{ padding-left:0; padding-right:0; } }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-SkeletonPage__Header{ padding-top:1.6rem; } }\n\n@media (min-width: 46.5em){ .Polaris-SkeletonPage__Header{ padding-top:1.6rem; } }\n\n.Polaris-SkeletonPage__BreadcrumbAction{ padding-top:1.6rem; padding-bottom:1.6rem; margin-top:-0.4rem; margin-bottom:-0.4rem; }\n\n.Polaris-SkeletonPage__TitleAndPrimaryAction{ display:flex; }\n\n@media (max-width: 45em), (min-width: 48.0625em) and (max-width: 61.5em){ [data-has-navigation] .Polaris-SkeletonPage__TitleAndPrimaryAction{ display:block; } }\n\n@media (max-width: 46.5em){ .Polaris-SkeletonPage__TitleAndPrimaryAction{ display:block; } }\n\n.Polaris-SkeletonPage__TitleWrapper{ flex:1 1; }\n\n.Polaris-SkeletonPage__Title{ font-weight:600; font-size:2.4rem; line-height:2.8rem; }\n\n@media (min-width: 40em){ .Polaris-SkeletonPage__Title{ font-size:2rem; } }\n\n.Polaris-SkeletonPage__SkeletonTitle{ animation:var(--polaris-animation-skeleton-shimmer) 800ms linear infinite alternate; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:opacity; position:relative; max-width:12rem; height:2.8rem; }\n\n.Polaris-SkeletonPage__SkeletonTitle::after{ content:''; position:absolute; top:0; right:0; bottom:0; left:0; display:block; background-color:var(--p-surface-neutral); border-radius:3px; }\n\n@media screen and (-ms-high-contrast: active){ .Polaris-SkeletonPage__SkeletonTitle::after{ background-color:grayText; } }\n\n.Polaris-SkeletonPage__PrimaryAction{ align-self:stretch; }\n\n.Polaris-SkeletonPage__PrimaryAction > *{ height:3.6rem; min-width:10rem; }\n\n@media (max-width: 48.0625em), (min-width: 48.0625em) and (max-width: 65em){ [data-has-navigation] .Polaris-SkeletonPage__PrimaryAction{ margin-top:1.6rem; margin-bottom:-0.8rem; } }\n\n@media (max-width: 50em){ .Polaris-SkeletonPage__PrimaryAction{ margin-top:1.6rem; margin-bottom:-0.8rem; } }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-SkeletonPage__PrimaryAction{ margin-top:0.8rem; margin-bottom:-0.8rem; } }\n\n@media (min-width: 30.625em){ .Polaris-SkeletonPage__PrimaryAction{ margin-top:0.8rem; margin-bottom:-0.8rem; } }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-SkeletonPage__PrimaryAction{ margin-top:0; } }\n\n@media (min-width: 46.5em){ .Polaris-SkeletonPage__PrimaryAction{ margin-top:0; } }\n\n@media (max-width: 48.0625em) and (min-width: 50em), (min-width: 65em){ [data-has-navigation] .Polaris-SkeletonPage__PrimaryAction{ margin-top:0; } }\n\n@media (min-width: 50em){ .Polaris-SkeletonPage__PrimaryAction{ margin-top:0; } }\n\n.Polaris-SkeletonPage__Actions{ margin-top:0.8rem; display:flex; flex-direction:row-reverse; justify-content:flex-end; align-items:center; }\n\n.Polaris-SkeletonPage__Action{ display:flex; flex-direction:column; justify-content:center; min-height:2.8rem; padding-right:2.4rem; margin-top:-0.4rem; margin-bottom:-0.4rem; padding-top:1.6rem; }\n\n.Polaris-SkeletonPage__Action:first-child{ padding-right:0; }\n\n@media (max-width: 45em), (min-width: 48.0625em) and (max-width: 61.5em){ [data-has-navigation] .Polaris-SkeletonPage__Action:not(:last-child){ display:none; } }\n\n@media (max-width: 46.5em){ .Polaris-SkeletonPage__Action:not(:last-child){ display:none; } }\n\n\n.Polaris-SkeletonThumbnail{ animation:var(--polaris-animation-skeleton-shimmer) 800ms linear infinite alternate; -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:opacity; position:relative; }\n\n.Polaris-SkeletonThumbnail::after{ content:''; position:absolute; top:0; right:0; bottom:0; left:0; display:block; background-color:var(--p-surface-neutral); border-radius:3px; }\n\n@media screen and (-ms-high-contrast: active){ .Polaris-SkeletonThumbnail::after{ background-color:grayText; } }\n\n.Polaris-SkeletonThumbnail--sizeSmall{ height:4rem; width:4rem; }\n\n.Polaris-SkeletonThumbnail--sizeMedium{ height:6rem; width:6rem; }\n\n.Polaris-SkeletonThumbnail--sizeLarge{ height:8rem; width:8rem; }\n\n\n.Polaris-Tabs{ display:flex; flex-wrap:wrap; margin:0; padding:0; list-style:none; }\n\n.Polaris-Tabs__Wrapper{ border-bottom:0.1rem solid var(--p-divider); padding:0 0.8rem; }\n\n.Polaris-Tabs--fitted{ flex-wrap:nowrap; }\n\n.Polaris-Tabs--fitted .Polaris-Tabs__TabContainer{ flex:1 1 100%; }\n\n.Polaris-Tabs--fitted .Polaris-Tabs__Title{ width:100%; padding:0.8rem 1.6rem; }\n\n.Polaris-Tabs--fillSpace .Polaris-Tabs__TabContainer{ flex:1 1 auto; }\n\n.Polaris-Tabs__TabContainer{ display:flex; margin:0; padding:0; }\n\n.Polaris-Tabs__Tab{ color:inherit; text-decoration:none; -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; font-size:1.5rem; font-weight:400; line-height:2rem; text-transform:initial; letter-spacing:initial; color:var(--p-text-subdued); color:var(--p-text); position:relative; justify-content:center; width:100%; min-width:100%; margin-top:1px; margin-bottom:-1px; padding:0.8rem 0.4rem; outline:none; text-align:center; white-space:nowrap; text-decoration:none; cursor:pointer; }\n\n.Polaris-Tabs__Tab:visited{ color:inherit; }\n\n.Polaris-Tabs__Tab:focus{ outline:none; }\n\n@media (min-width: 40em){ .Polaris-Tabs__Tab{ font-size:1.4rem; } }\n\n.Polaris-Tabs__Tab:hover{ text-decoration:none; }\n\n.Polaris-Tabs__Tab:hover .Polaris-Tabs__Title{ font-weight:400; color:var(--p-text); background-color:transparent; }\n\n.Polaris-Tabs__Tab:hover .Polaris-Tabs__Title::before{ background-color:var(--p-border-hovered); }\n\n.Polaris-Tabs__Tab:active .Polaris-Tabs__Title{ background-color:transparent; }\n\n.Polaris-Tabs__Tab:active .Polaris-Tabs__Title::before{ background:var(--p-surface-primary-selected-pressed); }\n\n.Polaris-Tabs__Tab:focus .Polaris-Tabs__Title{ font-weight:400; color:var(--p-text); }\n\n.Polaris-Tabs__Tab:focus:not(:active) .Polaris-Tabs__Title::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Tabs__Tab--selected{ font-weight:400; color:var(--p-text); }\n\n.Polaris-Tabs__Tab--selected:focus .Polaris-Tabs__Title{ outline:0.3rem solid transparent; }\n\n.Polaris-Tabs__Tab--selected:focus .Polaris-Tabs__Title::before{ background:var(--p-action-primary); }\n\n.Polaris-Tabs__Tab--selected .Polaris-Tabs__Title{ outline:0.3rem solid transparent; color:var(--p-text); }\n\n.Polaris-Tabs__Tab--selected .Polaris-Tabs__Title::before{ background:var(--p-action-primary); }\n\n.Polaris-Tabs__Title{ position:relative; border-radius:var(--p-border-radius-base); display:block; padding:0.8rem 1.6rem; min-width:5rem; color:var(--p-text-subdued); }\n\n.Polaris-Tabs__Title::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Tabs__Title::before{ content:''; position:absolute; bottom:-0.8rem; left:0; right:0; height:0.3rem; border-top-left-radius:var(--p-border-radius-base); border-top-right-radius:var(--p-border-radius-base); }\n\n.Polaris-Tabs--titleWithIcon{ display:flex; }\n\n.Polaris-Tabs__Panel{ display:block; }\n\n.Polaris-Tabs__Panel:focus{ outline:none; }\n\n.Polaris-Tabs__Panel--hidden{ display:none; }\n\n.Polaris-Tabs__List{ list-style:none; margin:0; padding:0.8rem; }\n\n.Polaris-Tabs__Item{ color:inherit; text-decoration:none; -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; position:relative; display:block; width:100%; min-height:1.6rem; padding:0.8rem 1.6rem; text-align:left; cursor:pointer; border-radius:var(--p-border-radius-base); }\n\n.Polaris-Tabs__Item:visited{ color:inherit; }\n\n.Polaris-Tabs__Item:focus{ outline:none; }\n\n.Polaris-Tabs__Item::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Tabs__Item::-moz-focus-inner{ border:none; }\n\n.Polaris-Tabs__Item:hover{ background-color:var(--p-surface-hovered); }\n\n.Polaris-Tabs__Item:active{ background-color:var(--p-surface-primary-selected-pressed); }\n\n.Polaris-Tabs__Item:focus:not(:active)::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Tabs__DisclosureTab{ display:none; }\n\n.Polaris-Tabs__DisclosureTab--visible{ display:flex; }\n\n.Polaris-Tabs__DisclosureActivator{ position:relative; height:100%; background-color:transparent; cursor:pointer; border:none; outline:none; margin:1px 1px -1px 0; }\n\n.Polaris-Tabs__DisclosureActivator::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-Tabs__DisclosureActivator:hover svg, .Polaris-Tabs__DisclosureActivator:focus svg{ fill:var(--p-icon); }\n\n.Polaris-Tabs__DisclosureActivator:focus .Polaris-Tabs__Title::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-Tabs__DisclosureActivator:hover .Polaris-Tabs__Title::before{ background-color:var(--p-border-hovered); }\n\n.Polaris-Tabs__TabMeasurer{ display:flex; visibility:hidden; height:0; }\n\n\n.Polaris-Thumbnail{ position:relative; display:block; overflow:hidden; background:var(--p-surface); min-width:4rem; max-width:100%; border-radius:var(--p-border-radius-base); border:0.1rem solid var(--p-divider); }\n\n.Polaris-Thumbnail::after{ content:''; display:block; padding-bottom:100%; }\n\n.Polaris-Thumbnail--sizeSmall{ width:4rem; }\n\n.Polaris-Thumbnail--sizeMedium{ width:6rem; }\n\n.Polaris-Thumbnail--sizeLarge{ width:8rem; }\n\n.Polaris-Thumbnail > *{ position:absolute; top:0; right:0; bottom:0; left:0; margin:auto; max-width:100%; max-height:100%; color:var(--p-icon-subdued, #637381); }\n\n.Polaris-Thumbnail > * svg{ fill:currentColor; }\n\n\n.Polaris-TopBar-SearchDismissOverlay{ position:fixed; top:0; left:0; right:0; z-index:515; height:100%; }\n\n.Polaris-TopBar-SearchDismissOverlay--visible{ background-color:transparent; animation:none; }\n\n@keyframes Polaris-TopBar-SearchDismissOverlay__fade--in{ 0%{ opacity:0; }\n  100%{ opacity:1; } }\n\n\n.Polaris-TopBar-Search{ position:fixed; visibility:hidden; z-index:516; pointer-events:none; top:5.6rem; left:0; right:0; box-shadow:var(--p-modal-shadow); overflow:hidden; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-TopBar-Search{ position:absolute; top:100%; max-width:58rem; margin:0.4rem 2rem 0; border-radius:var(--p-border-radius-wide); } }\n\n@media (min-width: 30.625em){ .Polaris-TopBar-Search{ position:absolute; top:100%; max-width:58rem; margin:0.4rem 2rem 0; border-radius:var(--p-border-radius-wide); } }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-TopBar-Search{ margin:0.4rem 3.2rem 0; } }\n\n@media (min-width: 46.5em){ .Polaris-TopBar-Search{ margin:0.4rem 3.2rem 0; } }\n\n.Polaris-TopBar-Search__SearchContent{ background-color:var(--p-surface); }\n\n.Polaris-TopBar-Search--visible{ visibility:initial; pointer-events:all; }\n\n.Polaris-TopBar-Search__Results{ position:relative; display:flex; flex-direction:column; max-height:calc(100vh - 5.6rem); margin:0; }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-TopBar-Search__Results{ max-height:60vh; } }\n\n@media (min-width: 30.625em){ .Polaris-TopBar-Search__Results{ max-height:60vh; } }\n\n\n.Polaris-TopBar-SearchField{ z-index:519; position:relative; display:flex; flex:1 1 auto; align-items:center; border:1px solid transparent; width:100%; max-width:58rem; }\n\n.Polaris-TopBar-SearchField--focused .Polaris-TopBar-SearchField__Input, .Polaris-TopBar-SearchField__Input:focus{ border:none; color:var(--p-text); }\n\n.Polaris-TopBar-SearchField--focused .Polaris-TopBar-SearchField__Input::-webkit-input-placeholder, .Polaris-TopBar-SearchField__Input:focus::-webkit-input-placeholder{ color:var(--p-text-subdued); }\n\n.Polaris-TopBar-SearchField--focused .Polaris-TopBar-SearchField__Input::placeholder, .Polaris-TopBar-SearchField__Input:focus::placeholder{ color:var(--p-text-subdued); }\n\n.Polaris-TopBar-SearchField__Input:focus ~ .Polaris-TopBar-SearchField__Backdrop{ background-color:var(--p-surface-search-field); }\n\n.Polaris-TopBar-SearchField__Input:focus ~ .Polaris-TopBar-SearchField__Backdrop::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-TopBar-SearchField__Input:focus ~ .Polaris-TopBar-SearchField__BackdropShowFocusBorder{ border:1px solid var(--top-bar-border); }\n\n.Polaris-TopBar-SearchField__Input:focus ~ .Polaris-TopBar-SearchField__Icon svg{ fill:var(--p-icon); }\n\n.Polaris-TopBar-SearchField--focused .Polaris-TopBar-SearchField__Backdrop{ background-color:var(--p-surface-search-field); }\n\n.Polaris-TopBar-SearchField--focused .Polaris-TopBar-SearchField__BackdropShowFocusBorder{ border:1px solid var(--top-bar-border); }\n\n.Polaris-TopBar-SearchField--focused .Polaris-TopBar-SearchField__Icon svg{ fill:var(--p-icon); }\n\n.Polaris-TopBar-SearchField__Input{ font-size:1.6rem; font-weight:400; line-height:2.4rem; border:none; text-transform:initial; letter-spacing:initial; z-index:2; height:3.6rem; width:100%; padding:0 0 0 3.6rem; border:none; background-color:transparent; outline:none; color:var(--p-text); -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:fill, color; transition:fill 200ms cubic-bezier(0.64, 0, 0.35, 1), color 200ms cubic-bezier(0.64, 0, 0.35, 1); -webkit-appearance:textfield; appearance:textfield; }\n\n@media (min-width: 40em){ .Polaris-TopBar-SearchField__Input{ font-size:1.4rem; } }\n\n.Polaris-TopBar-SearchField__Input::-webkit-input-placeholder{ color:var(--p-text); -webkit-transition:167ms color cubic-bezier(0.64, 0, 0.35, 1) 33ms; transition:167ms color cubic-bezier(0.64, 0, 0.35, 1) 33ms; }\n\n.Polaris-TopBar-SearchField__Input::placeholder{ color:var(--p-text); transition:167ms color cubic-bezier(0.64, 0, 0.35, 1) 33ms; }\n\n.Polaris-TopBar-SearchField__Input::-webkit-search-decoration, .Polaris-TopBar-SearchField__Input::-webkit-search-cancel-button{ -webkit-appearance:none; appearance:none; }\n\n.Polaris-TopBar-SearchField__Icon{ position:absolute; z-index:3; top:50%; left:0.8rem; display:flex; height:2rem; pointer-events:none; transform:translateY(-50%); }\n\n.Polaris-TopBar-SearchField__Icon svg{ fill:var(--p-icon); }\n\n.Polaris-TopBar-SearchField__Icon svg{ transition:167ms fill cubic-bezier(0.64, 0, 0.35, 1) 33ms; }\n\n.Polaris-TopBar-SearchField__Clear{ position:relative; position:relative; z-index:3; border:none; -webkit-appearance:none; appearance:none; background:transparent; padding:0.8rem; }\n\n.Polaris-TopBar-SearchField__Clear svg{ fill:var(--p-icon); }\n\n.Polaris-TopBar-SearchField__Clear::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-wide) + 0.1rem); }\n\n.Polaris-TopBar-SearchField__Clear:focus, .Polaris-TopBar-SearchField__Clear:hover{ outline:none; }\n\n.Polaris-TopBar-SearchField__Clear:focus svg, .Polaris-TopBar-SearchField__Clear:hover svg{ fill:var(--p-icon-hovered); }\n\n.Polaris-TopBar-SearchField__Clear:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-TopBar-SearchField__Clear:active svg{ fill:var(--p-icon-pressed); }\n\n.Polaris-TopBar-SearchField__Clear:active::after{ border:none; }\n\n.Polaris-TopBar-SearchField__Backdrop{ position:relative; position:absolute; z-index:1; top:0; right:0; bottom:0; left:0; background-color:var(--p-surface-search-field, var(--top-bar-background-lighter)); -webkit-backface-visibility:hidden; backface-visibility:hidden; will-change:background-color; transition:background-color 200ms cubic-bezier(0.64, 0, 0.35, 1); border-radius:var(--p-border-radius-base, 3px); animation:Polaris-TopBar-SearchField--toLightBackground 0.01ms; }\n\n.Polaris-TopBar-SearchField__Backdrop::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n@keyframes Polaris-TopBar-SearchField--toLightBackground{ to{ background-color:var(--p-surface-neutral, var(--top-bar-background-lighter)); } }\n\n\n.Polaris-MessageIndicator__MessageIndicatorWrapper{ position:relative; }\n\n.Polaris-MessageIndicator{ position:absolute; z-index:1; top:-0.3rem; right:-0.3rem; width:1.2rem; height:1.2rem; border-radius:100%; background-color:var(--p-icon-highlight, #47c1bf); border:solid 0.2rem var(--p-background, var(--top-bar-background)); }\n\n\n.Polaris-Menu-Message__Section{ max-width:32.5rem; margin-top:0.8rem; padding-top:0.8rem; border-top:0.1rem solid var(--p-divider); }\n\n\n.Polaris-TopBar-Menu__ActivatorWrapper{ height:5.6rem; display:flex; align-items:center; }\n\n.Polaris-TopBar-Menu__Activator{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; position:relative; color:var(--p-text, var(--top-bar-color)); position:relative; display:flex; justify-content:center; align-items:center; min-width:3.6rem; padding:0.6rem 0.8rem; border:0; cursor:pointer; transition:background-color 0.1s; margin-right:0.8rem; border-radius:3px; }\n\n.Polaris-TopBar-Menu__Activator:focus{ outline:none; }\n\n.Polaris-TopBar-Menu__Activator::after{ content:var(--p-non-null-content, none); position:absolute; z-index:1; top:-0.1rem; right:-0.1rem; bottom:-0.1rem; left:-0.1rem; display:block; pointer-events:none; box-shadow:0 0 0 -0.1rem var(--p-focused); transition:box-shadow 100ms var(--p-ease); border-radius:calc(var(--p-border-radius-base) + 0.1rem); }\n\n.Polaris-TopBar-Menu__Activator:focus{ background-color:var(--top-bar-background-lighter, var(--p-override-transparent)); outline:none; }\n\n.Polaris-TopBar-Menu__Activator:focus::after{ box-shadow:0 0 0 0.2rem var(--p-focused); outline:0.1rem solid transparent; }\n\n.Polaris-TopBar-Menu__Activator:hover{ background-color:var(--top-bar-background-lighter, var(--p-surface-hovered)); }\n\n.Polaris-TopBar-Menu__Activator:active, .Polaris-TopBar-Menu__Activator[aria-expanded='true']{ background-color:var(--top-bar-background-darker, var(--p-surface-pressed)); outline:none; transition:none; }\n\n.Polaris-TopBar-Menu__Activator:active::after, .Polaris-TopBar-Menu__Activator[aria-expanded='true']::after{ border:none; }\n\n@media (max-width: 48.0525em){ .Polaris-TopBar-Menu__Activator{ margin:0; }\n  .Polaris-TopBar-Menu__Activator:focus, .Polaris-TopBar-Menu__Activator:hover, .Polaris-TopBar-Menu__Activator:active, .Polaris-TopBar-Menu__Activator[aria-expanded='true']{ background-color:transparent; opacity:0.85; } }\n\n.Polaris-TopBar-Menu__Section{ margin-top:0.8rem; padding-top:0.8rem; border-top:0.1rem solid var(--p-divider); }\n\n\n.Polaris-TopBar-UserMenu__Details{ max-width:16rem; margin-left:0.8rem; }\n\n@media (max-width: 48.0525em){ .Polaris-TopBar-UserMenu__Details{ display:none; } }\n\n.Polaris-TopBar-UserMenu__Name{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:1.5rem; font-weight:400; line-height:2rem; text-transform:initial; letter-spacing:initial; font-weight:500; line-height:1.6rem; color:var(--p-text, var(--top-bar-color)); text-align:left; }\n\n@media (min-width: 40em){ .Polaris-TopBar-UserMenu__Name{ font-size:1.4rem; } }\n\n.Polaris-TopBar-UserMenu__Detail{ font-size:1.3rem; font-weight:400; line-height:2rem; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; opacity:0.7; color:var(--p-text, var(--top-bar-color)); text-align:left; }\n\n@media (min-width: 40em){ .Polaris-TopBar-UserMenu__Detail{ font-size:1.2rem; line-height:1.6rem; } }\n\n.Polaris-TopBar-UserMenu__Name, .Polaris-TopBar-UserMenu__Detail{ transition:167ms color cubic-bezier(0.64, 0, 0.35, 1) 33ms; }\n\n\n.Polaris-TopBar{ position:relative; display:flex; height:5.6rem; box-shadow:var(--p-top-bar-shadow); background-color:var(--p-surface, var(--top-bar-background)); transition:200ms background-color ease-in-out; }\n\n.Polaris-TopBar::after{ content:''; position:absolute; bottom:0; width:100%; border-bottom:1px solid transparent; }\n\n.Polaris-TopBar__LogoDisplayControl{ display:none; }\n\n@media (min-width: 48.0625em){ .Polaris-TopBar__LogoDisplayControl{ display:flex; } }\n\n.Polaris-TopBar__LogoDisplayContainer{ display:flex; }\n\n.Polaris-TopBar__LogoContainer{ flex:0 0 24rem; align-items:center; height:100%; padding:0 0.8rem 0 1.6rem; flex-basis:24rem; flex-basis:calc(24rem + constant(safe-area-inset-left)); flex-basis:calc(24rem + env(safe-area-inset-left)); padding-left:1.6rem; padding-left:calc(1.6rem + constant(safe-area-inset-left)); padding-left:calc(1.6rem + env(safe-area-inset-left)); }\n\n.Polaris-TopBar__Logo, .Polaris-TopBar__LogoLink{ display:block; }\n\n.Polaris-TopBar__ContextControl{ display:none; }\n\n@media (min-width: 48.0625em){ .Polaris-TopBar__ContextControl{ width:24rem; display:block; } }\n\n@media (min-width: 87.5em){ .Polaris-TopBar__ContextControl{ width:24rem; } }\n\n.Polaris-TopBar__NavigationIcon{ -webkit-appearance:none; appearance:none; margin:0; padding:0; background:none; border:none; font-size:inherit; line-height:inherit; color:inherit; cursor:pointer; position:relative; align-self:center; margin-left:1rem; margin-right:0.8rem; padding:0.8rem; border-radius:3px; fill:var(--p-icon, var(--top-bar-color)); transition:167ms fill cubic-bezier(0.64, 0, 0.35, 1) 33ms; }\n\n.Polaris-TopBar__NavigationIcon:focus{ outline:none; }\n\n.Polaris-TopBar__NavigationIcon.Polaris-TopBar--focused{ background-color:var(--p-override-transparent); }\n\n.Polaris-TopBar__NavigationIcon.Polaris-TopBar--focused:active{ background-color:var(--p-surface-pressed); }\n\n.Polaris-TopBar__NavigationIcon:hover{ background-color:var(--p-surface-hovered); }\n\n.Polaris-TopBar__NavigationIcon::after{ content:''; position:absolute; top:-0.8rem; left:-0.8rem; width:calc(100% + 2rem); height:calc(100% + 2rem); }\n\n@media (min-width: 48.0625em){ .Polaris-TopBar__NavigationIcon{ display:none; } }\n\n.Polaris-TopBar__Contents{ z-index:10; display:flex; flex:1 1 auto; align-items:center; justify-content:flex-end; height:100%; }\n\n@media (min-width: 42.5em){ .Polaris-TopBar__Contents{ position:relative; } }\n\n.Polaris-TopBar__SearchField{ margin:0 auto; padding:0; max-width:99.8rem; position:relative; width:100%; margin:0; max-width:none; margin-left:calc((100% - 99.8rem)/2); }\n\n@media (max-width: 48.0625em) and (min-width: 30.625em), (min-width: 45.625em){ [data-has-navigation] .Polaris-TopBar__SearchField{ padding:0 2rem; } }\n\n@media (min-width: 30.625em){ .Polaris-TopBar__SearchField{ padding:0 2rem; } }\n\n@media (max-width: 48.0625em) and (min-width: 46.5em), (min-width: 61.5em){ [data-has-navigation] .Polaris-TopBar__SearchField{ padding:0 3.2rem; } }\n\n@media (min-width: 46.5em){ .Polaris-TopBar__SearchField{ padding:0 3.2rem; } }\n\n@media (max-width: 1238px){ .Polaris-TopBar__SearchField{ margin-left:0; margin-right:0.4rem; } }\n\n.Polaris-TopBar__SecondaryMenu svg{ fill:var(--p-icon, var(--top-bar-color)); color:transparent; }\n\n\n.Polaris-VideoThumbnail__Thumbnail{ position:relative; padding-bottom:56.25%; background-size:cover; background-position:center center; background-repeat:no-repeat; width:100%; height:100%; }\n\n.Polaris-VideoThumbnail__Thumbnail.Polaris-VideoThumbnail__WithPlayer{ position:absolute; z-index:1; top:0; left:0; width:100%; height:100%; padding-bottom:auto; }\n\n.Polaris-VideoThumbnail__PlayButton{ position:absolute; top:0; left:0; width:100%; height:100%; padding:0; border:none; background:transparent; opacity:0.8; transition:opacity 0.2s ease-in; cursor:pointer; }\n\n.Polaris-VideoThumbnail__PlayButton:hover, .Polaris-VideoThumbnail__PlayButton:focus{ opacity:1; }\n\n.Polaris-VideoThumbnail__PlayButton:focus{ outline:none; box-shadow:inset 0.2rem 0 0 var(--p-focused); background-image:linear-gradient(rgba(223, 227, 232, 0.3), rgba(223, 227, 232, 0.3)); }\n\n.Polaris-VideoThumbnail__PlayIcon{ position:absolute; top:50%; left:50%; width:6rem; height:6rem; margin-top:-3rem; margin-left:-3rem; }\n\n.Polaris-VideoThumbnail__Timestamp{ position:absolute; bottom:0; padding:0 0.4rem; margin-bottom:0.8rem; margin-left:0.8rem; border-radius:var(--p-border-radius-base); color:var(--p-text); background-color:var(--p-surface); opacity:0.8; text-align:center; }\n\n.Polaris-VideoThumbnail--withProgress{ margin-bottom:1.2rem; }\n\n.Polaris-VideoThumbnail__Progress{ position:absolute; bottom:0; width:100%; background-color:var(--p-surface); height:0.6rem; overflow:hidden; }\n\n.Polaris-VideoThumbnail__Indicator{ height:inherit; width:100%; transform-origin:left; transform:scaleX(0); background-color:var(--p-border-highlight); transition:transform 500ms cubic-bezier(0.64, 0, 0.35, 1); }\n\n.Polaris-VideoThumbnail__ProgressBar, .Polaris-VideoThumbnail__Label{ position:absolute !important; top:0; clip:rect(1px, 1px, 1px, 1px) !important; overflow:hidden !important; height:1px !important; width:1px !important; padding:0 !important; border:0 !important; }\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/Application/Form/form.css":
-/*!**********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/Application/Form/form.css ***!
-  \**********************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".form__block{\n    background-color: #dddddd;\n    min-height: calc(100vh - 135px);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.form__wrap{\n    border: 3px solid gray;\n    display: flex;\n    flex-direction: column;\n    border-radius: 5px;\n    padding: 10px;\n}\n.form__input{\n    margin-bottom: 5px;\n    width: 300px;\n    height: 50px;\n    padding: 5px    ;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -63587,1256 +64906,6 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./node_modules/react-hook-form/dist/react-hook-form.es.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/react-hook-form/dist/react-hook-form.es.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-var react__WEBPACK_IMPORTED_MODULE_0___namespace_cache;
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "FormContext": () => (/* binding */ FormContext),
-/* harmony export */   "useFormContext": () => (/* binding */ useFormContext)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-
-
-const VALIDATION_MODE = {
-    onBlur: 'onBlur',
-    onChange: 'onChange',
-    onSubmit: 'onSubmit',
-};
-const RADIO_INPUT = 'radio';
-const UNDEFINED = 'undefined';
-const EVENTS = {
-    BLUR: 'blur',
-    CHANGE: 'change',
-    INPUT: 'input',
-};
-const INPUT_VALIDATION_RULES = {
-    max: 'max',
-    min: 'min',
-    maxLength: 'maxLength',
-    minLength: 'minLength',
-    pattern: 'pattern',
-    required: 'required',
-    validate: 'validate',
-};
-
-function attachEventListeners({ field, handleChange, isRadioOrCheckbox, }) {
-    const { ref } = field;
-    if (!ref.addEventListener) {
-        return;
-    }
-    ref.addEventListener(isRadioOrCheckbox ? EVENTS.CHANGE : EVENTS.INPUT, handleChange);
-    ref.addEventListener(EVENTS.BLUR, handleChange);
-}
-
-var isUndefined = (val) => val === undefined;
-
-var isNullOrUndefined = (value) => value === null || isUndefined(value);
-
-var isArray = (value) => Array.isArray(value);
-
-const isObjectType = (value) => typeof value === 'object';
-var isObject = (value) => !isNullOrUndefined(value) && !isArray(value) && isObjectType(value);
-
-const reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/;
-const reIsPlainProp = /^\w*$/;
-const rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
-const reEscapeChar = /\\(\\)?/g;
-const reIsUint = /^(?:0|[1-9]\d*)$/;
-function isIndex(value) {
-    return reIsUint.test(value) && value > -1;
-}
-function isKey(value) {
-    if (isArray(value)) {
-        return false;
-    }
-    return reIsPlainProp.test(value) || !reIsDeepProp.test(value);
-}
-const stringToPath = (string) => {
-    const result = [];
-    string.replace(rePropName, (match, number, quote, string) => {
-        result.push(quote ? string.replace(reEscapeChar, '$1') : number || match);
-    });
-    return result;
-};
-function set(object, path, value) {
-    let index = -1;
-    const tempPath = isKey(path) ? [path] : stringToPath(path);
-    const length = tempPath.length;
-    const lastIndex = length - 1;
-    while (++index < length) {
-        const key = tempPath[index];
-        let newValue = value;
-        if (index !== lastIndex) {
-            const objValue = object[key];
-            newValue =
-                isObject(objValue) || isArray(objValue)
-                    ? objValue
-                    : isIndex(tempPath[index + 1])
-                        ? []
-                        : {};
-        }
-        object[key] = newValue;
-        object = object[key];
-    }
-    return object;
-}
-
-var combineFieldValues = (data) => Object.entries(data).reduce((previous, [key, value]) => {
-    if (!!key.match(/\[.+\]/gi) || key.indexOf('.') > 0) {
-        set(previous, key, value);
-        return previous;
-    }
-    return Object.assign(Object.assign({}, previous), { [key]: value });
-}, {});
-
-var removeAllEventListeners = (ref, validateWithStateUpdate) => {
-    if (!ref.removeEventListener) {
-        return;
-    }
-    ref.removeEventListener(EVENTS.INPUT, validateWithStateUpdate);
-    ref.removeEventListener(EVENTS.CHANGE, validateWithStateUpdate);
-    ref.removeEventListener(EVENTS.BLUR, validateWithStateUpdate);
-};
-
-var isRadioInput = (type) => type === RADIO_INPUT;
-
-var isCheckBoxInput = (type) => type === 'checkbox';
-
-function isDetached(element) {
-    if (!element) {
-        return true;
-    }
-    if (!(element instanceof HTMLElement) ||
-        element.nodeType === Node.DOCUMENT_NODE) {
-        return false;
-    }
-    return isDetached(element.parentNode);
-}
-
-function findRemovedFieldAndRemoveListener(fields, handleChange, field, forceDelete) {
-    if (!field) {
-        return;
-    }
-    const { ref, mutationWatcher } = field;
-    if (!ref.type || !fields[ref.name]) {
-        return;
-    }
-    const { name, type } = ref;
-    const fieldValue = fields[name];
-    if ((isRadioInput(type) || isCheckBoxInput(type)) && fieldValue) {
-        const { options } = fieldValue;
-        if (isArray(options) && options.length) {
-            options.forEach(({ ref }, index) => {
-                const option = options[index];
-                if ((option && isDetached(ref)) || forceDelete) {
-                    const mutationWatcher = option.mutationWatcher;
-                    removeAllEventListeners(option, handleChange);
-                    if (mutationWatcher) {
-                        mutationWatcher.disconnect();
-                    }
-                    options.splice(index, 1);
-                }
-            });
-            if (options && !options.length) {
-                delete fields[name];
-            }
-        }
-        else {
-            delete fields[name];
-        }
-    }
-    else if (isDetached(ref) || forceDelete) {
-        removeAllEventListeners(ref, handleChange);
-        if (mutationWatcher) {
-            mutationWatcher.disconnect();
-        }
-        delete fields[name];
-    }
-}
-
-const defaultReturn = {
-    isValid: false,
-    value: '',
-};
-var getRadioValue = (options) => isArray(options)
-    ? options.reduce((previous, { ref: { checked, value } }) => checked
-        ? {
-            isValid: true,
-            value,
-        }
-        : previous, defaultReturn)
-    : defaultReturn;
-
-var getMultipleSelectValue = (options) => [...options]
-    .filter(({ selected }) => selected)
-    .map(({ value }) => value);
-
-var isMultipleSelect = (type) => type === 'select-multiple';
-
-var isEmptyString = (value) => value === '';
-
-const defaultResult = {
-    value: false,
-    isValid: false,
-};
-const validResult = { value: true, isValid: true };
-var getCheckboxValue = (options) => {
-    if (isArray(options)) {
-        if (options.length > 1) {
-            const values = options
-                .filter(({ ref: { checked } }) => checked)
-                .map(({ ref: { value } }) => value);
-            return { value: values, isValid: !!values.length };
-        }
-        const { checked, value, attributes } = options[0].ref;
-        return checked
-            ? attributes && !isUndefined(attributes.value)
-                ? isUndefined(value) || isEmptyString(value)
-                    ? validResult
-                    : { value: value, isValid: true }
-                : validResult
-            : defaultResult;
-    }
-    return defaultResult;
-};
-
-function getFieldValue(fields, ref) {
-    const { type, name, options, value, files } = ref;
-    const field = fields[name];
-    if (type === 'file') {
-        return files;
-    }
-    if (isRadioInput(type)) {
-        return field ? getRadioValue(field.options).value : '';
-    }
-    if (isMultipleSelect(type)) {
-        return getMultipleSelectValue(options);
-    }
-    if (isCheckBoxInput(type)) {
-        return field ? getCheckboxValue(field.options).value : false;
-    }
-    return value;
-}
-
-var getFieldsValues = (fields) => Object.values(fields).reduce((previous, { ref, ref: { name } }) => (Object.assign(Object.assign({}, previous), { [name]: getFieldValue(fields, ref) })), {});
-
-var isEmptyObject = (value) => isObject(value) && !Object.keys(value).length;
-
-var isSameError = (error, type, message) => isObject(error) && error.type === type && error.message === message;
-
-function shouldUpdateWithError({ errors, name, error, validFields, fieldsWithValidation, }) {
-    const isFieldValid = isEmptyObject(error);
-    const isFormValid = isEmptyObject(errors);
-    const currentFieldError = error[name];
-    const existFieldError = errors[name];
-    if ((isFieldValid && validFields.has(name)) ||
-        (existFieldError && existFieldError.isManual)) {
-        return false;
-    }
-    if (isFormValid !== isFieldValid ||
-        (!isFormValid && !existFieldError) ||
-        (isFieldValid && fieldsWithValidation.has(name) && !validFields.has(name))) {
-        return true;
-    }
-    return (currentFieldError &&
-        !isSameError(existFieldError, currentFieldError.type, currentFieldError.message));
-}
-
-var isRegex = (value) => value instanceof RegExp;
-
-var getValueAndMessage = (validationData) => {
-    const isPureObject = isObject(validationData) && !isRegex(validationData);
-    return {
-        value: isPureObject
-            ? validationData.value
-            : validationData,
-        message: isPureObject
-            ? validationData.message
-            : '',
-    };
-};
-
-var isString = (value) => typeof value === 'string';
-
-var displayNativeError = (nativeValidation, ref, message) => {
-    if (nativeValidation && isString(message)) {
-        ref.setCustomValidity(message);
-    }
-};
-
-var isFunction = (value) => typeof value === 'function';
-
-var isBoolean = (value) => typeof value === 'boolean';
-
-function getValidateError(result, ref, nativeError, type = 'validate') {
-    const isStringValue = isString(result);
-    if (isStringValue || (isBoolean(result) && !result)) {
-        const message = isStringValue ? result : '';
-        const error = {
-            type,
-            message,
-            ref,
-        };
-        nativeError(message);
-        return error;
-    }
-}
-
-var appendErrors = (name, validateAllFieldCriteria, errors, type, message) => {
-    if (!validateAllFieldCriteria) {
-        return {};
-    }
-    const error = errors[name];
-    return Object.assign(Object.assign({}, error), { types: Object.assign(Object.assign({}, (error && error.types ? error.types : {})), { [type]: message || true }) });
-};
-
-var validateField = async (fieldsRef, nativeValidation, validateAllFieldCriteria, { ref, ref: { type, value, name, valueAsNumber, valueAsDate }, options, required, maxLength, minLength, min, max, pattern, validate, }) => {
-    const fields = fieldsRef.current;
-    const error = {};
-    const isRadio = isRadioInput(type);
-    const isCheckBox = isCheckBoxInput(type);
-    const isRadioOrCheckbox = isRadio || isCheckBox;
-    const isEmpty = isEmptyString(value);
-    const nativeError = displayNativeError.bind(null, nativeValidation, ref);
-    const appendErrorsCurry = appendErrors.bind(null, name, validateAllFieldCriteria, error);
-    if (required &&
-        ((!isRadio && !isCheckBox && (isEmpty || isNullOrUndefined(value))) ||
-            (isBoolean(value) && !value) ||
-            (isCheckBox && !getCheckboxValue(options).isValid) ||
-            (isRadio && !getRadioValue(options).isValid))) {
-        const message = isString(required)
-            ? required
-            : getValueAndMessage(required).message;
-        error[name] = Object.assign({ type: INPUT_VALIDATION_RULES.required, message, ref: isRadioOrCheckbox ? fields[name].options[0].ref : ref }, appendErrorsCurry(INPUT_VALIDATION_RULES.required, message));
-        nativeError(message);
-        if (!validateAllFieldCriteria) {
-            return error;
-        }
-    }
-    if (!isNullOrUndefined(min) || !isNullOrUndefined(max)) {
-        let exceedMax;
-        let exceedMin;
-        const { value: maxValue, message: maxMessage } = getValueAndMessage(max);
-        const { value: minValue, message: minMessage } = getValueAndMessage(min);
-        if (type === 'number') {
-            const valueNumber = valueAsNumber || parseFloat(value);
-            if (!isNullOrUndefined(maxValue)) {
-                exceedMax = valueNumber > maxValue;
-            }
-            if (!isNullOrUndefined(minValue)) {
-                exceedMin = valueNumber < minValue;
-            }
-        }
-        else {
-            const valueDate = valueAsDate || new Date(value);
-            if (isString(maxValue)) {
-                exceedMax = valueDate > new Date(maxValue);
-            }
-            if (isString(minValue)) {
-                exceedMin = valueDate < new Date(minValue);
-            }
-        }
-        if (exceedMax || exceedMin) {
-            const message = exceedMax ? maxMessage : minMessage;
-            error[name] = Object.assign({ type: exceedMax
-                    ? INPUT_VALIDATION_RULES.max
-                    : INPUT_VALIDATION_RULES.min, message,
-                ref }, (exceedMax
-                ? appendErrorsCurry(INPUT_VALIDATION_RULES.max, message)
-                : appendErrorsCurry(INPUT_VALIDATION_RULES.min, message)));
-            nativeError(message);
-            if (!validateAllFieldCriteria) {
-                return error;
-            }
-        }
-    }
-    if (isString(value) && !isEmpty && (maxLength || minLength)) {
-        const { value: maxLengthValue, message: maxLengthMessage, } = getValueAndMessage(maxLength);
-        const { value: minLengthValue, message: minLengthMessage, } = getValueAndMessage(minLength);
-        const inputLength = value.toString().length;
-        const exceedMax = maxLength && inputLength > maxLengthValue;
-        const exceedMin = minLength && inputLength < minLengthValue;
-        if (exceedMax || exceedMin) {
-            const message = exceedMax ? maxLengthMessage : minLengthMessage;
-            error[name] = Object.assign({ type: exceedMax
-                    ? INPUT_VALIDATION_RULES.maxLength
-                    : INPUT_VALIDATION_RULES.minLength, message,
-                ref }, (exceedMax
-                ? appendErrorsCurry(INPUT_VALIDATION_RULES.maxLength, message)
-                : appendErrorsCurry(INPUT_VALIDATION_RULES.minLength, message)));
-            nativeError(message);
-            if (!validateAllFieldCriteria) {
-                return error;
-            }
-        }
-    }
-    if (pattern && !isEmpty) {
-        const { value: patternValue, message: patternMessage } = getValueAndMessage(pattern);
-        if (isRegex(patternValue) && !patternValue.test(value)) {
-            error[name] = Object.assign({ type: INPUT_VALIDATION_RULES.pattern, message: patternMessage, ref }, appendErrorsCurry(INPUT_VALIDATION_RULES.pattern, patternMessage));
-            nativeError(patternMessage);
-            if (!validateAllFieldCriteria) {
-                return error;
-            }
-        }
-    }
-    if (validate) {
-        const fieldValue = getFieldValue(fields, ref);
-        const validateRef = isRadioOrCheckbox && options ? options[0].ref : ref;
-        if (isFunction(validate)) {
-            const result = await validate(fieldValue);
-            const validateError = getValidateError(result, validateRef, nativeError);
-            if (validateError) {
-                error[name] = Object.assign(Object.assign({}, validateError), appendErrorsCurry(INPUT_VALIDATION_RULES.validate, validateError.message));
-                if (!validateAllFieldCriteria) {
-                    return error;
-                }
-            }
-        }
-        else if (isObject(validate)) {
-            const validateFunctions = Object.entries(validate);
-            const validationResult = await new Promise((resolve) => {
-                validateFunctions.reduce(async (previous, [key, validate], index) => {
-                    if ((!isEmptyObject(await previous) && !validateAllFieldCriteria) ||
-                        !isFunction(validate)) {
-                        return resolve(previous);
-                    }
-                    let result;
-                    const validateResult = await validate(fieldValue);
-                    const validateError = getValidateError(validateResult, validateRef, nativeError, key);
-                    if (validateError) {
-                        result = Object.assign(Object.assign({}, validateError), appendErrorsCurry(key, validateError.message));
-                        if (validateAllFieldCriteria) {
-                            error[name] = result;
-                        }
-                    }
-                    else {
-                        result = previous;
-                    }
-                    return validateFunctions.length - 1 === index
-                        ? resolve(result)
-                        : result;
-                }, {});
-            });
-            if (!isEmptyObject(validationResult)) {
-                error[name] = Object.assign({ ref: validateRef }, validationResult);
-                if (!validateAllFieldCriteria) {
-                    return error;
-                }
-            }
-        }
-    }
-    if (nativeValidation) {
-        ref.setCustomValidity('');
-    }
-    return error;
-};
-
-const parseErrorSchema = (error, validateAllFieldCriteria) => isArray(error.inner)
-    ? error.inner.reduce((previous, { path, message, type }) => (Object.assign(Object.assign({}, previous), (previous[path] && validateAllFieldCriteria
-        ? {
-            [path]: appendErrors(path, validateAllFieldCriteria, previous, type, message),
-        }
-        : {
-            [path]: Object.assign({ message,
-                type }, (validateAllFieldCriteria
-                ? {
-                    types: { [type]: message || true },
-                }
-                : {})),
-        }))), {})
-    : {
-        [error.path]: { message: error.message, type: error.type },
-    };
-async function validateWithSchema(validationSchema, validationSchemaOption, validateAllFieldCriteria, data) {
-    try {
-        return {
-            values: await validationSchema.validate(data, validationSchemaOption),
-            errors: {},
-        };
-    }
-    catch (e) {
-        return {
-            values: {},
-            errors: parseErrorSchema(e, validateAllFieldCriteria),
-        };
-    }
-}
-
-function attachNativeValidation(ref, rules) {
-    Object.entries(rules).forEach(([key, ruleValue]) => {
-        const { value } = getValueAndMessage(ruleValue);
-        if (key === INPUT_VALIDATION_RULES.pattern && isRegex(value)) {
-            ref[key] = value.source;
-        }
-        else {
-            ref[key] = key === INPUT_VALIDATION_RULES.pattern || value;
-        }
-    });
-}
-
-var get = (obj, path, defaultValue) => {
-    const result = path
-        .split(/[,[\].]+?/)
-        .filter(Boolean)
-        .reduce((result, key) => (isNullOrUndefined(result) ? result : result[key]), obj);
-    return isUndefined(result) || result === obj ? defaultValue : result;
-};
-
-var getDefaultValue = (defaultValues, name, defaultValue) => isUndefined(defaultValues[name])
-    ? get(defaultValues, name, defaultValue)
-    : defaultValues[name];
-
-function flatArray(list) {
-    return list.reduce((a, b) => a.concat(isArray(b) ? flatArray(b) : b), []);
-}
-
-var isPrimitive = (value) => isNullOrUndefined(value) || !isObjectType(value);
-
-const getPath = (path, values) => isArray(values)
-    ? values.map((item, index) => {
-        const pathWithIndex = `${path}[${index}]`;
-        return isPrimitive(item) ? pathWithIndex : getPath(pathWithIndex, item);
-    })
-    : Object.entries(values).map(([key, objectValue]) => {
-        const pathWithKey = `${path}.${key}`;
-        return isPrimitive(objectValue)
-            ? pathWithKey
-            : getPath(pathWithKey, objectValue);
-    });
-var getPath$1 = (parentPath, value) => flatArray(getPath(parentPath, value));
-
-var assignWatchFields = (fieldValues, fieldName, watchFields, combinedDefaultValues) => {
-    let value;
-    if (isEmptyObject(fieldValues)) {
-        value = undefined;
-    }
-    else if (!isUndefined(fieldValues[fieldName])) {
-        watchFields.add(fieldName);
-        value = fieldValues[fieldName];
-    }
-    else {
-        value = get(combineFieldValues(fieldValues), fieldName);
-        if (!isUndefined(value)) {
-            getPath$1(fieldName, value).forEach(name => watchFields.add(name));
-        }
-    }
-    return isUndefined(value)
-        ? isObject(combinedDefaultValues)
-            ? getDefaultValue(combinedDefaultValues, fieldName)
-            : combinedDefaultValues
-        : value;
-};
-
-var omitValidFields = (errorFields, validFieldNames) => Object.entries(errorFields).reduce((previous, [name, error]) => validFieldNames.some(validFieldName => validFieldName === name)
-    ? previous
-    : Object.assign(Object.assign({}, previous), { [name]: error }), {});
-
-function onDomRemove(element, onDetachCallback) {
-    const observer = new MutationObserver(() => {
-        if (isDetached(element)) {
-            observer.disconnect();
-            onDetachCallback();
-        }
-    });
-    observer.observe(window.document, {
-        childList: true,
-        subtree: true,
-    });
-    return observer;
-}
-
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-}
-
-const omitObject = (obj, key) => {
-    const _a = key, omitted = obj[_a], rest = __rest(obj, [typeof _a === "symbol" ? _a : _a + ""]);
-    return rest;
-};
-
-var modeChecker = (mode) => ({
-    isOnSubmit: !mode || mode === VALIDATION_MODE.onSubmit,
-    isOnBlur: mode === VALIDATION_MODE.onBlur,
-    isOnChange: mode === VALIDATION_MODE.onChange,
-});
-
-const { useRef, useState, useCallback, useEffect } = /*#__PURE__*/ (react__WEBPACK_IMPORTED_MODULE_0___namespace_cache || (react__WEBPACK_IMPORTED_MODULE_0___namespace_cache = __webpack_require__.t(react__WEBPACK_IMPORTED_MODULE_0__, 2)));
-function useForm({ mode = VALIDATION_MODE.onSubmit, reValidateMode = VALIDATION_MODE.onChange, validationSchema, defaultValues = {}, nativeValidation = false, submitFocusError = true, validationSchemaOption = { abortEarly: false }, validateCriteriaMode, } = {}) {
-    const fieldsRef = useRef({});
-    const validateAllFieldCriteria = validateCriteriaMode === 'all';
-    const errorsRef = useRef({});
-    const touchedFieldsRef = useRef(new Set());
-    const watchFieldsRef = useRef(new Set());
-    const dirtyFieldsRef = useRef(new Set());
-    const fieldsWithValidationRef = useRef(new Set());
-    const validFieldsRef = useRef(new Set());
-    const isValidRef = useRef(true);
-    const defaultRenderValuesRef = useRef({});
-    const defaultValuesRef = useRef(defaultValues);
-    const isUnMount = useRef(false);
-    const isWatchAllRef = useRef(false);
-    const isSubmittedRef = useRef(false);
-    const isDirtyRef = useRef(false);
-    const submitCountRef = useRef(0);
-    const isSubmittingRef = useRef(false);
-    const handleChange = useRef();
-    const [, render] = useState();
-    const { isOnBlur, isOnSubmit } = useRef(modeChecker(mode)).current;
-    const isWindowUndefined = typeof window === UNDEFINED;
-    const isWeb = typeof document !== UNDEFINED &&
-        !isWindowUndefined &&
-        !isUndefined(window.HTMLElement);
-    const isProxyEnabled = !isWindowUndefined && 'Proxy' in window;
-    const readFormState = useRef({
-        dirty: !isProxyEnabled,
-        isSubmitted: isOnSubmit,
-        submitCount: !isProxyEnabled,
-        touched: !isProxyEnabled,
-        isSubmitting: !isProxyEnabled,
-        isValid: !isProxyEnabled,
-    });
-    const { isOnBlur: isReValidateOnBlur, isOnSubmit: isReValidateOnSubmit, } = useRef(modeChecker(reValidateMode)).current;
-    const validationSchemaOptionRef = useRef(validationSchemaOption);
-    defaultValuesRef.current = defaultValuesRef.current
-        ? defaultValuesRef.current
-        : defaultValues;
-    const combineErrorsRef = (data) => (Object.assign(Object.assign({}, errorsRef.current), data));
-    const reRender = useCallback(() => {
-        if (!isUnMount.current) {
-            render({});
-        }
-    }, []);
-    const validateFieldCurry = useCallback(validateField.bind(null, fieldsRef, nativeValidation, validateAllFieldCriteria), []);
-    const validateFieldsSchemaCurry = useCallback(validateWithSchema.bind(null, validationSchema, validationSchemaOptionRef.current, validateAllFieldCriteria), [validationSchema]);
-    const renderBaseOnError = useCallback((name, error, shouldRender, skipReRender) => {
-        let shouldReRender = shouldRender ||
-            shouldUpdateWithError({
-                errors: errorsRef.current,
-                error,
-                name,
-                validFields: validFieldsRef.current,
-                fieldsWithValidation: fieldsWithValidationRef.current,
-            });
-        if (isEmptyObject(error)) {
-            if (fieldsWithValidationRef.current.has(name) || validationSchema) {
-                validFieldsRef.current.add(name);
-                shouldReRender = shouldReRender || errorsRef.current[name];
-            }
-            errorsRef.current = omitObject(errorsRef.current, name);
-        }
-        else {
-            validFieldsRef.current.delete(name);
-            shouldReRender = shouldReRender || !errorsRef.current[name];
-        }
-        errorsRef.current = combineErrorsRef(error);
-        if (shouldReRender && !skipReRender) {
-            reRender();
-            return true;
-        }
-    }, [reRender, validationSchema]);
-    const setFieldValue = useCallback((name, rawValue) => {
-        const field = fieldsRef.current[name];
-        if (!field) {
-            return false;
-        }
-        const ref = field.ref;
-        const { type } = ref;
-        const options = field.options;
-        const value = isWeb &&
-            ref instanceof window.HTMLElement &&
-            isNullOrUndefined(rawValue)
-            ? ''
-            : rawValue;
-        if (isRadioInput(type) && options) {
-            options.forEach(({ ref: radioRef }) => (radioRef.checked = radioRef.value === value));
-        }
-        else if (isMultipleSelect(type)) {
-            [...ref.options].forEach(selectRef => (selectRef.selected = value.includes(selectRef.value)));
-        }
-        else if (isCheckBoxInput(type) && options) {
-            options.length > 1
-                ? options.forEach(({ ref: checkboxRef }) => (checkboxRef.checked = value.includes(checkboxRef.value)))
-                : (options[0].ref.checked = !!value);
-        }
-        else {
-            ref.value = value;
-        }
-        return type;
-    }, [isWeb]);
-    const setDirty = (name) => {
-        if (!fieldsRef.current[name]) {
-            return false;
-        }
-        const isDirty = defaultRenderValuesRef.current[name] !==
-            getFieldValue(fieldsRef.current, fieldsRef.current[name].ref);
-        const isDirtyChanged = dirtyFieldsRef.current.has(name) !== isDirty;
-        if (isDirty) {
-            dirtyFieldsRef.current.add(name);
-        }
-        else {
-            dirtyFieldsRef.current.delete(name);
-        }
-        isDirtyRef.current = !!dirtyFieldsRef.current.size;
-        return isDirtyChanged && readFormState.current.dirty;
-    };
-    const setInternalValue = useCallback((name, value) => {
-        setFieldValue(name, value);
-        if (setDirty(name) ||
-            (!touchedFieldsRef.current.has(name) && readFormState.current.touched)) {
-            return !!touchedFieldsRef.current.add(name);
-        }
-    }, [setFieldValue]);
-    const executeValidation = useCallback(async ({ name, value, }, shouldRender, skipReRender) => {
-        const field = fieldsRef.current[name];
-        if (!field) {
-            return false;
-        }
-        if (!isUndefined(value)) {
-            setInternalValue(name, value);
-        }
-        if (shouldRender) {
-            reRender();
-        }
-        const error = await validateField(fieldsRef, nativeValidation, validateAllFieldCriteria, field);
-        renderBaseOnError(name, error, false, skipReRender);
-        return isEmptyObject(error);
-    }, [
-        nativeValidation,
-        reRender,
-        renderBaseOnError,
-        setInternalValue,
-        validateAllFieldCriteria,
-    ]);
-    const executeSchemaValidation = useCallback(async (payload, shouldRender) => {
-        const { errors } = await validateWithSchema(validationSchema, validationSchemaOptionRef.current, validateAllFieldCriteria, combineFieldValues(getFieldsValues(fieldsRef.current)));
-        const isMultipleFields = isArray(payload);
-        const names = isArray(payload)
-            ? payload.map(({ name }) => name)
-            : [payload.name];
-        const validFieldNames = names.filter(name => !errors[name]);
-        const previousFormIsValid = isValidRef.current;
-        isValidRef.current = isEmptyObject(errors);
-        if (isMultipleFields) {
-            errorsRef.current = omitValidFields(combineErrorsRef(Object.entries(errors)
-                .filter(([key]) => names.includes(key))
-                .reduce((previous, [name, error]) => (Object.assign(Object.assign({}, previous), { [name]: error })), {})), validFieldNames);
-            reRender();
-        }
-        else {
-            const fieldName = names[0];
-            renderBaseOnError(fieldName, errors[fieldName]
-                ? { [fieldName]: errors[fieldName] }
-                : {}, shouldRender || previousFormIsValid !== isValidRef.current);
-        }
-        return isEmptyObject(errorsRef.current);
-    }, [reRender, renderBaseOnError, validateAllFieldCriteria, validationSchema]);
-    const triggerValidation = useCallback(async (payload, shouldRender) => {
-        const fields = payload || Object.keys(fieldsRef.current).map(name => ({ name }));
-        if (validationSchema) {
-            return executeSchemaValidation(fields, shouldRender);
-        }
-        if (isArray(fields)) {
-            const result = await Promise.all(fields.map(async (data) => await executeValidation(data, false, true)));
-            reRender();
-            return result.every(Boolean);
-        }
-        return await executeValidation(fields, shouldRender);
-    }, [executeSchemaValidation, executeValidation, reRender, validationSchema]);
-    const setValue = useCallback((name, value, shouldValidate) => {
-        const shouldRender = setInternalValue(name, value) ||
-            isWatchAllRef.current ||
-            watchFieldsRef.current.has(name);
-        if (shouldValidate) {
-            return triggerValidation({ name }, shouldRender);
-        }
-        if (shouldRender) {
-            reRender();
-        }
-        return;
-    }, [reRender, setInternalValue, triggerValidation]);
-    handleChange.current = handleChange.current
-        ? handleChange.current
-        : async ({ type, target }) => {
-            const name = target ? target.name : '';
-            const fields = fieldsRef.current;
-            const errors = errorsRef.current;
-            const field = fields[name];
-            const currentError = errors[name];
-            let error;
-            if (!field) {
-                return;
-            }
-            const isBlurEvent = type === EVENTS.BLUR;
-            const shouldSkipValidation = (isOnSubmit && isReValidateOnSubmit) ||
-                (isOnSubmit && !isSubmittedRef.current) ||
-                (isOnBlur && !isBlurEvent && !currentError) ||
-                (isReValidateOnBlur && !isBlurEvent && currentError) ||
-                (isReValidateOnSubmit && currentError);
-            const shouldUpdateDirty = setDirty(name);
-            let shouldUpdateState = isWatchAllRef.current ||
-                watchFieldsRef.current.has(name) ||
-                shouldUpdateDirty;
-            if (isBlurEvent &&
-                !touchedFieldsRef.current.has(name) &&
-                readFormState.current.touched) {
-                touchedFieldsRef.current.add(name);
-                shouldUpdateState = true;
-            }
-            if (shouldSkipValidation) {
-                return shouldUpdateState && reRender();
-            }
-            if (validationSchema) {
-                const { errors } = await validateWithSchema(validationSchema, validationSchemaOptionRef.current, validateAllFieldCriteria, combineFieldValues(getFieldsValues(fields)));
-                const validForm = isEmptyObject(errors);
-                error = (errors[name] ? { [name]: errors[name] } : {});
-                if (isValidRef.current !== validForm) {
-                    shouldUpdateState = true;
-                }
-                isValidRef.current = validForm;
-            }
-            else {
-                error = await validateField(fieldsRef, nativeValidation, validateAllFieldCriteria, field);
-            }
-            if (!renderBaseOnError(name, error) && shouldUpdateState) {
-                reRender();
-            }
-        };
-    const validateSchemaIsValid = useCallback(() => {
-        const fieldValues = isEmptyObject(defaultValuesRef.current)
-            ? getFieldsValues(fieldsRef.current)
-            : defaultValuesRef.current;
-        validateFieldsSchemaCurry(combineFieldValues(fieldValues)).then(({ errors }) => {
-            const previousFormIsValid = isValidRef.current;
-            isValidRef.current = isEmptyObject(errors);
-            if (previousFormIsValid && previousFormIsValid !== isValidRef.current) {
-                reRender();
-            }
-        });
-    }, [reRender, validateFieldsSchemaCurry]);
-    const resetFieldRef = useCallback((name) => {
-        errorsRef.current = omitObject(errorsRef.current, name);
-        fieldsRef.current = omitObject(fieldsRef.current, name);
-        defaultRenderValuesRef.current = omitObject(defaultRenderValuesRef.current, name);
-        [
-            touchedFieldsRef,
-            dirtyFieldsRef,
-            fieldsWithValidationRef,
-            validFieldsRef,
-            watchFieldsRef,
-        ].forEach(data => data.current.delete(name));
-        if (readFormState.current.isValid || readFormState.current.touched) {
-            reRender();
-        }
-        if (validationSchema) {
-            validateSchemaIsValid();
-        }
-    }, [reRender]);
-    const removeEventListenerAndRef = useCallback((field, forceDelete) => {
-        if (!field) {
-            return;
-        }
-        if (!isUndefined(handleChange.current)) {
-            findRemovedFieldAndRemoveListener(fieldsRef.current, handleChange.current, field, forceDelete);
-        }
-        resetFieldRef(field.ref.name);
-    }, [resetFieldRef]);
-    function clearError(name) {
-        if (isUndefined(name)) {
-            errorsRef.current = {};
-        }
-        else {
-            (isArray(name) ? name : [name]).forEach(fieldName => (errorsRef.current = omitObject(errorsRef.current, fieldName)));
-        }
-        reRender();
-    }
-    const setInternalError = ({ name, type, types, message, preventRender, }) => {
-        const errors = errorsRef.current;
-        const field = fieldsRef.current[name];
-        if (!isSameError(errors[name], type, message)) {
-            errors[name] = {
-                type,
-                types,
-                message,
-                ref: field ? field.ref : {},
-                isManual: true,
-            };
-            if (!preventRender) {
-                reRender();
-            }
-        }
-    };
-    function setError(name, type = '', message) {
-        if (isString(name)) {
-            setInternalError(Object.assign({ name }, (isObject(type)
-                ? {
-                    types: type,
-                    type: '',
-                }
-                : {
-                    type,
-                    message,
-                })));
-        }
-        else if (isArray(name)) {
-            name.forEach(error => setInternalError(Object.assign(Object.assign({}, error), { preventRender: true })));
-            reRender();
-        }
-    }
-    function watch(fieldNames, defaultValue) {
-        const combinedDefaultValues = isUndefined(defaultValue)
-            ? isUndefined(defaultValues)
-                ? {}
-                : defaultValues
-            : defaultValue;
-        const fieldValues = getFieldsValues(fieldsRef.current);
-        const watchFields = watchFieldsRef.current;
-        if (isProxyEnabled) {
-            readFormState.current.dirty = true;
-        }
-        if (isString(fieldNames)) {
-            return assignWatchFields(fieldValues, fieldNames, watchFields, combinedDefaultValues);
-        }
-        if (isArray(fieldNames)) {
-            return fieldNames.reduce((previous, name) => {
-                let value;
-                if (isEmptyObject(fieldsRef.current) &&
-                    isObject(combinedDefaultValues)) {
-                    value = getDefaultValue(combinedDefaultValues, name);
-                }
-                else {
-                    value = assignWatchFields(fieldValues, name, watchFields, combinedDefaultValues);
-                }
-                return Object.assign(Object.assign({}, previous), { [name]: value });
-            }, {});
-        }
-        isWatchAllRef.current = true;
-        return ((!isEmptyObject(fieldValues) && fieldValues) ||
-            defaultValue ||
-            defaultValues);
-    }
-    function unregister(names) {
-        if (!isEmptyObject(fieldsRef.current)) {
-            (isArray(names) ? names : [names]).forEach(fieldName => removeEventListenerAndRef(fieldsRef.current[fieldName], true));
-        }
-    }
-    function registerFieldsRef(ref, validateOptions = {}) {
-        if (!ref.name) {
-            return console.warn('Missing name @', ref);
-        }
-        const { name, type, value } = ref;
-        const fieldAttributes = Object.assign({ ref }, validateOptions);
-        const fields = fieldsRef.current;
-        const isRadioOrCheckbox = isRadioInput(type) || isCheckBoxInput(type);
-        let currentField = fields[name];
-        if (isRadioOrCheckbox
-            ? currentField &&
-                isArray(currentField.options) &&
-                currentField.options.find(({ ref }) => value === ref.value)
-            : currentField) {
-            fields[name] = Object.assign(Object.assign({}, currentField), validateOptions);
-            return;
-        }
-        if (type) {
-            const mutationWatcher = onDomRemove(ref, () => removeEventListenerAndRef(fieldAttributes));
-            if (isRadioOrCheckbox) {
-                currentField = Object.assign({ options: [
-                        ...((currentField && currentField.options) || []),
-                        {
-                            ref,
-                            mutationWatcher,
-                        },
-                    ], ref: { type, name } }, validateOptions);
-            }
-            else {
-                currentField = Object.assign(Object.assign({}, fieldAttributes), { mutationWatcher });
-            }
-        }
-        else {
-            currentField = fieldAttributes;
-        }
-        fields[name] = currentField;
-        if (!isEmptyObject(defaultValuesRef.current)) {
-            const defaultValue = getDefaultValue(defaultValuesRef.current, name);
-            if (!isUndefined(defaultValue)) {
-                setFieldValue(name, defaultValue);
-            }
-        }
-        if (validationSchema) {
-            validateSchemaIsValid();
-        }
-        else if (!isEmptyObject(validateOptions)) {
-            fieldsWithValidationRef.current.add(name);
-            if (!isOnSubmit && readFormState.current.isValid) {
-                validateFieldCurry(currentField).then(error => {
-                    const previousFormIsValid = isValidRef.current;
-                    if (isEmptyObject(error)) {
-                        validFieldsRef.current.add(name);
-                    }
-                    else {
-                        isValidRef.current = false;
-                    }
-                    if (previousFormIsValid !== isValidRef.current) {
-                        reRender();
-                    }
-                });
-            }
-        }
-        if (!defaultRenderValuesRef.current[name]) {
-            defaultRenderValuesRef.current[name] = getFieldValue(fields, currentField.ref);
-        }
-        if (!type) {
-            return;
-        }
-        const fieldToAttachListener = isRadioOrCheckbox && currentField.options
-            ? currentField.options[currentField.options.length - 1]
-            : currentField;
-        if (nativeValidation && validateOptions) {
-            attachNativeValidation(ref, validateOptions);
-        }
-        else {
-            attachEventListeners({
-                field: fieldToAttachListener,
-                isRadioOrCheckbox,
-                handleChange: handleChange.current,
-            });
-        }
-    }
-    function register(refOrValidateRule, validationOptions) {
-        if (isWindowUndefined || !refOrValidateRule) {
-            return;
-        }
-        if (validationOptions && isString(validationOptions.name)) {
-            registerFieldsRef({ name: validationOptions.name }, validationOptions);
-            return;
-        }
-        if (isObject(refOrValidateRule) && 'name' in refOrValidateRule) {
-            registerFieldsRef(refOrValidateRule, validationOptions);
-            return;
-        }
-        return (ref) => ref && registerFieldsRef(ref, refOrValidateRule);
-    }
-    const handleSubmit = useCallback((callback) => async (e) => {
-        if (e) {
-            e.preventDefault();
-            e.persist();
-        }
-        let fieldErrors;
-        let fieldValues;
-        const fields = fieldsRef.current;
-        if (readFormState.current.isSubmitting) {
-            isSubmittingRef.current = true;
-            reRender();
-        }
-        try {
-            if (validationSchema) {
-                fieldValues = getFieldsValues(fields);
-                const { errors, values } = await validateFieldsSchemaCurry(combineFieldValues(fieldValues));
-                errorsRef.current = errors;
-                fieldErrors = errors;
-                fieldValues = values;
-            }
-            else {
-                const { errors, values, } = await Object.values(fields).reduce(async (previous, field) => {
-                    if (!field) {
-                        return previous;
-                    }
-                    const resolvedPrevious = await previous;
-                    const { ref, ref: { name }, } = field;
-                    if (!fields[name]) {
-                        return Promise.resolve(resolvedPrevious);
-                    }
-                    const fieldError = await validateFieldCurry(field);
-                    if (fieldError[name]) {
-                        resolvedPrevious.errors = Object.assign(Object.assign({}, resolvedPrevious.errors), fieldError);
-                        validFieldsRef.current.delete(name);
-                        return Promise.resolve(resolvedPrevious);
-                    }
-                    if (fieldsWithValidationRef.current.has(name)) {
-                        validFieldsRef.current.add(name);
-                    }
-                    resolvedPrevious.values[name] = getFieldValue(fields, ref);
-                    return Promise.resolve(resolvedPrevious);
-                }, Promise.resolve({
-                    errors: {},
-                    values: {},
-                }));
-                fieldErrors = errors;
-                fieldValues = values;
-            }
-            if (isEmptyObject(fieldErrors)) {
-                errorsRef.current = {};
-                await callback(combineFieldValues(fieldValues), e);
-            }
-            else {
-                if (submitFocusError) {
-                    Object.keys(fieldErrors).reduce((previous, current) => {
-                        const field = fields[current];
-                        if (field && previous) {
-                            if (field.ref.focus) {
-                                field.ref.focus();
-                                return false;
-                            }
-                            else if (field.options) {
-                                field.options[0].ref.focus();
-                                return false;
-                            }
-                        }
-                        return previous;
-                    }, true);
-                }
-                errorsRef.current = fieldErrors;
-            }
-        }
-        finally {
-            isSubmittedRef.current = true;
-            isSubmittingRef.current = false;
-            submitCountRef.current = submitCountRef.current + 1;
-            reRender();
-        }
-    }, [
-        reRender,
-        submitFocusError,
-        validateFieldCurry,
-        validateFieldsSchemaCurry,
-        validationSchema,
-    ]);
-    const resetRefs = () => {
-        errorsRef.current = {};
-        fieldsRef.current = {};
-        validFieldsRef.current = new Set();
-        fieldsWithValidationRef.current = new Set();
-        defaultRenderValuesRef.current = {};
-        touchedFieldsRef.current = new Set();
-        watchFieldsRef.current = new Set();
-        dirtyFieldsRef.current = new Set();
-        isWatchAllRef.current = false;
-        isSubmittedRef.current = false;
-        isDirtyRef.current = false;
-        isValidRef.current = true;
-        submitCountRef.current = 0;
-    };
-    const reset = useCallback((values) => {
-        const fieldsKeyValue = Object.entries(fieldsRef.current);
-        for (const [, value] of fieldsKeyValue) {
-            if (value && value.ref && value.ref.closest) {
-                try {
-                    value.ref.closest('form').reset();
-                    break;
-                }
-                catch (_a) { }
-            }
-        }
-        resetRefs();
-        if (values) {
-            defaultValuesRef.current = values;
-        }
-        reRender();
-    }, [reRender]);
-    const getValues = useCallback((payload) => {
-        const fieldValues = getFieldsValues(fieldsRef.current);
-        const outputValues = isEmptyObject(fieldValues)
-            ? defaultValues
-            : fieldValues;
-        return payload && payload.nest
-            ? combineFieldValues(outputValues)
-            : outputValues;
-    }, [defaultValues]);
-    useEffect(() => () => {
-        isUnMount.current = true;
-        fieldsRef.current &&
-            Object.values(fieldsRef.current).forEach((field) => removeEventListenerAndRef(field, true));
-    }, [removeEventListenerAndRef]);
-    if (!validationSchema) {
-        isValidRef.current =
-            validFieldsRef.current.size >= fieldsWithValidationRef.current.size &&
-                isEmptyObject(errorsRef.current);
-    }
-    const formState = {
-        dirty: isDirtyRef.current,
-        isSubmitted: isSubmittedRef.current,
-        submitCount: submitCountRef.current,
-        touched: [...touchedFieldsRef.current],
-        isSubmitting: isSubmittingRef.current,
-        isValid: isOnSubmit
-            ? isSubmittedRef.current && isEmptyObject(errorsRef.current)
-            : isEmptyObject(fieldsRef.current) || isValidRef.current,
-    };
-    return {
-        register: useCallback(register, [
-            defaultRenderValuesRef.current,
-            defaultValuesRef.current,
-        ]),
-        unregister: useCallback(unregister, [removeEventListenerAndRef]),
-        clearError: useCallback(clearError, []),
-        setError: useCallback(setError, []),
-        handleSubmit,
-        watch,
-        reset,
-        setValue,
-        triggerValidation,
-        getValues,
-        errors: errorsRef.current,
-        formState: isProxyEnabled
-            ? new Proxy(formState, {
-                get: (obj, prop) => {
-                    if (prop in obj) {
-                        readFormState.current[prop] = true;
-                        return obj[prop];
-                    }
-                    return {};
-                },
-            })
-            : formState,
-    };
-}
-
-const FormGlobalContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-function useFormContext() {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(FormGlobalContext);
-}
-function FormContext(props) {
-    const { children, formState, errors } = props, restMethods = __rest(props, ["children", "formState", "errors"]);
-    return ((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(FormGlobalContext.Provider, { value: Object.assign(Object.assign({}, restMethods), { formState, errors }) }, children));
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useForm);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -71246,36 +71315,6 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
-/***/ "./resources/js/Application/Form/form.css":
-/*!************************************************!*\
-  !*** ./resources/js/Application/Form/form.css ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_form_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./form.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/Application/Form/form.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_form_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_form_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
@@ -71628,36 +71667,6 @@ module.exports = function (list, options) {
 /******/ 				() => (module);
 /******/ 			__webpack_require__.d(getter, { a: getter });
 /******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/create fake namespace object */
-/******/ 	(() => {
-/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
-/******/ 		var leafPrototypes;
-/******/ 		// create a fake namespace object
-/******/ 		// mode & 1: value is a module id, require it
-/******/ 		// mode & 2: merge all properties of value into the ns
-/******/ 		// mode & 4: return value when already ns object
-/******/ 		// mode & 16: return value when it's Promise-like
-/******/ 		// mode & 8|1: behave like require
-/******/ 		__webpack_require__.t = function(value, mode) {
-/******/ 			if(mode & 1) value = this(value);
-/******/ 			if(mode & 8) return value;
-/******/ 			if(typeof value === 'object' && value) {
-/******/ 				if((mode & 4) && value.__esModule) return value;
-/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
-/******/ 			}
-/******/ 			var ns = Object.create(null);
-/******/ 			__webpack_require__.r(ns);
-/******/ 			var def = {};
-/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
-/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
-/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
-/******/ 			}
-/******/ 			def['default'] = () => (value);
-/******/ 			__webpack_require__.d(ns, def);
-/******/ 			return ns;
 /******/ 		};
 /******/ 	})();
 /******/ 	

@@ -28,7 +28,7 @@ export default function Tab() {
         },
         {
             id: 'register',
-            content: 'Accepts marketing',
+            content: 'Регистрация',
             panelID: 'accepts-marketing-content-1',
         },
     ];

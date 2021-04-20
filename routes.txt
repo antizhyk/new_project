@@ -1,0 +1,43 @@
++--------+----------+------------------------------------+---------------------------------+--------------------------------------------------------------------------------+---------------------+
+| Domain | Method   | URI                                | Name                            | Action                                                                         | Middleware          |
++--------+----------+------------------------------------+---------------------------------+--------------------------------------------------------------------------------+---------------------+
+|        | GET|HEAD | /                                  |                                 | Closure                                                                        | web                 |
+|        | POST     | api/forgot-password                | password.email                  | Laravel\Fortify\Http\Controllers\PasswordResetLinkController@store             | web                 |
+|        |          |                                    |                                 |                                                                                | guest               |
+|        | POST     | api/login                          |                                 | Laravel\Fortify\Http\Controllers\AuthenticatedSessionController@store          | web                 |
+|        |          |                                    |                                 |                                                                                | guest               |
+|        |          |                                    |                                 |                                                                                | throttle:login      |
+|        | POST     | api/logout                         | logout                          | Laravel\Fortify\Http\Controllers\AuthenticatedSessionController@destroy        | web                 |
+|        | POST     | api/register                       |                                 | Laravel\Fortify\Http\Controllers\RegisteredUserController@store                | web                 |
+|        |          |                                    |                                 |                                                                                | guest               |
+|        | POST     | api/reset-password                 | password.update                 | Laravel\Fortify\Http\Controllers\NewPasswordController@store                   | web                 |
+|        |          |                                    |                                 |                                                                                | guest               |
+|        | POST     | api/two-factor-challenge           |                                 | Laravel\Fortify\Http\Controllers\TwoFactorAuthenticatedSessionController@store | web                 |
+|        |          |                                    |                                 |                                                                                | guest               |
+|        |          |                                    |                                 |                                                                                | throttle:two-factor |
+|        | GET|HEAD | api/user                           |                                 | Closure                                                                        | api                 |
+|        |          |                                    |                                 |                                                                                | auth:api            |
+|        | POST     | api/user/confirm-password          |                                 | Laravel\Fortify\Http\Controllers\ConfirmablePasswordController@store           | web                 |
+|        |          |                                    |                                 |                                                                                | auth                |
+|        | GET|HEAD | api/user/confirmed-password-status | password.confirmation           | Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController@show        | web                 |
+|        |          |                                    |                                 |                                                                                | auth                |
+|        | PUT      | api/user/password                  | user-password.update            | Laravel\Fortify\Http\Controllers\PasswordController@update                     | web                 |
+|        |          |                                    |                                 |                                                                                | auth                |
+|        | PUT      | api/user/profile-information       | user-profile-information.update | Laravel\Fortify\Http\Controllers\ProfileInformationController@update           | web                 |
+|        |          |                                    |                                 |                                                                                | auth                |
+|        | POST     | api/user/two-factor-authentication |                                 | Laravel\Fortify\Http\Controllers\TwoFactorAuthenticationController@store       | web                 |
+|        |          |                                    |                                 |                                                                                | auth                |
+|        |          |                                    |                                 |                                                                                | password.confirm    |
+|        | DELETE   | api/user/two-factor-authentication |                                 | Laravel\Fortify\Http\Controllers\TwoFactorAuthenticationController@destroy     | web                 |
+|        |          |                                    |                                 |                                                                                | auth                |
+|        |          |                                    |                                 |                                                                                | password.confirm    |
+|        | GET|HEAD | api/user/two-factor-qr-code        |                                 | Laravel\Fortify\Http\Controllers\TwoFactorQrCodeController@show                | web                 |
+|        |          |                                    |                                 |                                                                                | auth                |
+|        |          |                                    |                                 |                                                                                | password.confirm    |
+|        | GET|HEAD | api/user/two-factor-recovery-codes |                                 | Laravel\Fortify\Http\Controllers\RecoveryCodeController@index                  | web                 |
+|        |          |                                    |                                 |                                                                                | auth                |
+|        |          |                                    |                                 |                                                                                | password.confirm    |
+|        | POST     | api/user/two-factor-recovery-codes |                                 | Laravel\Fortify\Http\Controllers\RecoveryCodeController@store                  | web                 |
+|        |          |                                    |                                 |                                                                                | auth                |
+|        |          |                                    |                                 |                                                                                | password.confirm    |
++--------+----------+------------------------------------+---------------------------------+--------------------------------------------------------------------------------+---------------------+

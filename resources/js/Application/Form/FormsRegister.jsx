@@ -1,27 +1,91 @@
-import React from 'react';
-import useForm from "react-hook-form";
-import "./form.css";
+import React, {useCallback, useState} from 'react';
+import {Button, TextField, Checkbox, Form, FormLayout} from '@shopify/polaris';
 
+export default function FormsRegister() {
+    const [newsletter, setNewsletter] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState(false);
+    const [errorsPassword, setErrorsPassword] = useState(false);
 
-export  default function FormsRegister(){
-    const {register, handleSubmit, errors} = useForm();
+//=============Experment=================
+    const validField = (event) =>{
+        let valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
+        console.log(valueField);
+        if(valueField){
+            setErrors(false);
+        }else{
+            setErrors(true);
+        }
 
-    const onSubmit = (data) =>{
-        console.log(data);
     }
+    const validFieldPass = (event) =>{
+        let valueField = event.target.value.match(/.{6,25}/);
+        console.log(valueField);
+        if(valueField){
+            setErrorsPassword(false);
+        }else{
+            setErrorsPassword(true);
+        }
 
-    return(
-        <div className={'form__block'}>
-            <form className={'form__wrap'} onSubmit={handleSubmit(onSubmit)}>
-                <input className={'form__input'} type="text" placeholder="Email" name="email" ref={register}
-                       ref={register({required: true, pattern: /^\w*@\w{2,7}\.\w{2,7}/, maxLength: 50})}/>
-                <input className={'form__input'} type="password" placeholder="Password" name='password'
-                       ref={register({required: true, minLength: 6, maxLength: 50})}
+    }
+    //====================
+    const handleSubmit = useCallback((_event) => {
+        event.preventDefault();
+        setEmail('');
+        setPassword('');
+        setNewsletter(false);
+    }, []);
+
+    const handleNewsLetterChange = useCallback(
+        (value) => setNewsletter(value),
+        [],
+    );
+
+    const handleEmailChange = useCallback((value) => setEmail(value), []);
+    const handlePasswordChange = useCallback((value) => setPassword(value), []);
+
+    return (
+        <Form
+
+            onSubmit={handleSubmit}
+
+            noValidate={true}>
+            <FormLayout>
+                <TextField
+                    value={email}
+                    onChange={handleEmailChange}
+                    label="Email"
+                    type="email"
+                    error={errors}
+                    onBlur={validField}
+                    helpText={
+                        <span>
+              Введите e-mail
+            </span>
+                    }
                 />
-                {errors.email && <p>Email is invalid</p>}
-                {errors.password && <p>Password is invalid</p>}
-                <input className={'form__input'} type="submit" value={"Зарегистрироваться"}/>
-            </form>
-        </div>
+                <TextField
+                    onBlur={validFieldPass}
+                    value={password}
+                    onChange={handlePasswordChange}
+                    label="Password"
+                    type="password"
+                    minLength={6} maxLength={50}
+                    error={errorsPassword}
+                    helpText={
+                        <span>
+              Введите пароль
+            </span>
+                    }
+                />
+                {errorsPassword &&
+                <span>Длина пароля минимум 6 знаков</span>
+
+                }
+                <Button submit>Регистрация</Button>
+            </FormLayout>
+        </Form>
     );
 }
+
