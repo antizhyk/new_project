@@ -45,7 +45,7 @@ const validField = (event) =>{
                 passValue = data[0].password
             })
             .then(data =>{ if(emailValue == emailValueForm && passValue == passwordValueForm){
-                console.log('exelent');
+                window.location.href = "/warehouse";
         }else{
                 alert('Нет такого пользователя');
             }})
