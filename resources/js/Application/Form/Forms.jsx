@@ -1,46 +1,22 @@
-import React, { useState } from "react";
-import { Button, Card, Form, FormLayout } from "@shopify/polaris";
-import { PolarisFormBuilder } from "@additionapps/polaris-form-builder";
-import { fields } from "./fields";
-
-export default function Forms() {
+import React from 'react';
+import useForm from "react-hook-form";
 
 
-    const [focus, setFocus] = useState(null);
-    const [model, setModel] = useState({
-        username: null,
-        email: null
-    });
-    const [errors, setErrors] = useState({});
-    const onSubmit = () => {
-        setTimeout(() => {
-            setFocus(null);
-            setErrors({
-                username: "This username is already taken"
-            });
-        }, 200);
-    };
+export  default function Forms(){
+    const {register, handleSubmit, errors} = useForm();
 
-    return (
-        <Card>
-            <Card.Section>
-                <Form onSubmit={onSubmit}>
-                    <FormLayout>
-                        <PolarisFormBuilder
-                            model={model}
-                            fields={fields}
-                            errors={errors}
-                            focus={focus}
-                            onModelUpdate={setModel}
-                            onErrorUpdate={setErrors}
-                            onFocusUpdate={setFocus}
-                        />
-                        <Button submit primary>
-                            Войти
-                        </Button>
-                    </FormLayout>
-                </Form>
-            </Card.Section>
-        </Card>
+    const onSubmit = (data) =>{
+        console.log(data);
+    }
+
+    return(
+      <form onSubmit={handleSubmit(onSubmit)}>
+          <input type="text" placeholder="Email" name="email" ref={register}/>
+          <input type="password" placeholder="Password" name='password'
+                 ref={register({required: true, minLength: 2, pattern: /sasha/})}
+              />
+          {errors.password && <p>Password is invalid</p>}
+          <input type="submit"/>
+      </form>
     );
-};
+}

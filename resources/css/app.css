@@ -10,3 +10,6 @@ height: 55px;
 .block__tab{
     min-height: calc(100vh - 55px);
 }
+.form__input{
+    border: 1px solid #dddddd;
+}
