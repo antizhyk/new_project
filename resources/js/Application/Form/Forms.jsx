@@ -21,7 +21,6 @@ const validField = (event) =>{
 }
     const validFieldPass = (event) =>{
         let valueField = event.target.value.match(/.{6,25}/);
-        console.log(valueField);
         if(valueField){
             setErrorsPassword(false);
         }else{
@@ -69,6 +68,7 @@ const validField = (event) =>{
                     onChange={handleEmailChange}
                     label="Email"
                     type="email"
+                    name='email'
                     error={errors}
                     onBlur={validField}
                     id='email'
