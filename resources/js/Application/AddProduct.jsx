@@ -1,6 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import {Button, TextField, Form, FormLayout, Select} from '@shopify/polaris';
 
+
 export default function FormWithoutNativeValidationExample() {
     const [name, setName] = useState('');
     const [selected, setSelected] = useState('tablet');
@@ -32,7 +33,7 @@ export default function FormWithoutNativeValidationExample() {
         return (
             <div className='block__form-wrap'>
                 <div className='block__product'>
-                    <Form noValidate onSubmit={handleSubmit}>
+                    <Form noValidate id="sendProduct" onSubmit={handleSubmit}>
                         <FormLayout>
                             <TextField
                                 value={name}
@@ -75,7 +76,7 @@ export default function FormWithoutNativeValidationExample() {
                                 type="text"
                                 value={color}
                                 onChange={handleColorChange}
-                                name="weight"
+                                name="color"
                                 error={colorVal}
                                 onBlur={handleValidColorChange}
                             />
@@ -90,7 +91,13 @@ export default function FormWithoutNativeValidationExample() {
     //==================================================
     //=======События при отправке=======================
     const handleSubmit = useCallback((_event) => {
-        console.log(arr);
+        _event.preventDefault();
+        const formId = _event.target;
+        console.log(formId);
+        const formData = new FormData(formId);
+        for(let pair of formData.entries()){
+            console.log(pair);
+        }
         arr.forEach(item=>{
             console.log(typeof item)
         })
@@ -111,33 +118,45 @@ export default function FormWithoutNativeValidationExample() {
         if(!value.target.value.match(/^.{1,4}$/)){
             setNameVal("Максимальная длина 50 символов")
             count++;
-        }else{count--;}}, []);
+        }else{
+            setNameVal("");
+            count--;}}, []);
     const handleValidTextFieldChange = useCallback((value) => {
         if(!value.target.value.match(/^.{1,4}$/)){
             setPriceVal("Максимальная длина 10 символов ")
             count++;
-        }else{count--}
+        }else{
+            setPriceVal("")
+            count--}
        },[],);
     const handleValidColorChange = useCallback((value) => {
         if(!value.target.value.match(/^([a-z]|[A-Z]){1,4}$/)){
             setColorVal("Максимальная длина 50 символов")
             count++;
-        }else{count--}},[],);
+        }else{
+            setColorVal("")
+            count--}},[],);
     const handleValidWeightChange = useCallback((value) => {
         if(!value.target.value.match(/^.{1,4}$/)){
             setWeightVal("Максимальная длина 10 символов ")
             count++;
-        }else{count--}},[],);
+        }else{
+            setWeightVal("")
+            count--}},[],);
     const handleValidSimChange = useCallback((value) => {
         if(!value.target.value.match(/^.?$/)){
             setSimVal("Максимальная длина 1 символ ")
             count++;
-        }else{count--}}, []);
+        }else{
+            setSimVal("")
+            count--}}, []);
     const handleValidVideoChange = useCallback((value) => {
         if(!value.target.value.match(/^.{1,4}$/)){
             setVideoVal("Максимальная длина 50 символов")
             count++;
-        }else{count--}
+        }else{
+            setVideoVal("")
+            count--}
     }, []);
     //==================================================
     //=======Сим и видео поля=================

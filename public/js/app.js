@@ -10314,6 +10314,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -10420,6 +10422,7 @@ function FormWithoutNativeValidationExample() {
         className: "block__product",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Form, {
           noValidate: true,
+          id: "sendProduct",
           onSubmit: handleSubmit,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.FormLayout, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
@@ -10459,7 +10462,7 @@ function FormWithoutNativeValidationExample() {
               type: "text",
               value: color,
               onChange: handleColorChange,
-              name: "weight",
+              name: "color",
               error: colorVal,
               onBlur: handleValidColorChange
             }), cont, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Button, {
@@ -10475,7 +10478,26 @@ function FormWithoutNativeValidationExample() {
 
 
   var handleSubmit = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (_event) {
-    console.log(arr);
+    _event.preventDefault();
+
+    var formId = _event.target;
+    console.log(formId);
+    var formData = new FormData(formId);
+
+    var _iterator = _createForOfIteratorHelper(formData.entries()),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var pair = _step.value;
+        console.log(pair);
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+
     arr.forEach(function (item) {
       console.log(_typeof(item));
     });
@@ -10514,6 +10536,7 @@ function FormWithoutNativeValidationExample() {
       setNameVal("Максимальная длина 50 символов");
       count++;
     } else {
+      setNameVal("");
       count--;
     }
   }, []);
@@ -10522,6 +10545,7 @@ function FormWithoutNativeValidationExample() {
       setPriceVal("Максимальная длина 10 символов ");
       count++;
     } else {
+      setPriceVal("");
       count--;
     }
   }, []);
@@ -10530,6 +10554,7 @@ function FormWithoutNativeValidationExample() {
       setColorVal("Максимальная длина 50 символов");
       count++;
     } else {
+      setColorVal("");
       count--;
     }
   }, []);
@@ -10538,6 +10563,7 @@ function FormWithoutNativeValidationExample() {
       setWeightVal("Максимальная длина 10 символов ");
       count++;
     } else {
+      setWeightVal("");
       count--;
     }
   }, []);
@@ -10546,6 +10572,7 @@ function FormWithoutNativeValidationExample() {
       setSimVal("Максимальная длина 1 символ ");
       count++;
     } else {
+      setSimVal("");
       count--;
     }
   }, []);
@@ -10554,6 +10581,7 @@ function FormWithoutNativeValidationExample() {
       setVideoVal("Максимальная длина 50 символов");
       count++;
     } else {
+      setVideoVal("");
       count--;
     }
   }, []); //==================================================
