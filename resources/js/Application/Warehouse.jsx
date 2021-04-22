@@ -39,7 +39,9 @@ export default function Warehouse() {
                         select(tabs[selected].id)
                     }
                 </Card.Section>
+
             </Tabs>
+            <a href="http://0.0.0.0:81/logout" className="block__logout">logout</a>
         </Card>
     );
 }

@@ -55,8 +55,9 @@ export default function Forms() {
     const handlePasswordChange = useCallback((value) => setPassword(value), []);
 
     return (
+        <div className="block__login-wrap">
+        <div className="block__login">
         <Form
-
             onSubmit={handleSubmit}
             name='people'
             id='people'
@@ -97,9 +98,13 @@ export default function Forms() {
                 <span>Длина пароля минимум 6 знаков</span>
 
                 }
+
                 <Button submit>Войти</Button>
             </FormLayout>
+            <a href="http://0.0.0.0:81/register" className="block__link-registration">Регистрация</a>
         </Form>
+        </div>
+        </div>
     );
 }
 

@@ -16312,7 +16312,11 @@ function Forms() {
   var handlePasswordChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     return setPassword(value);
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Form, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "block__login-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "block__login"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Form, {
     onSubmit: handleSubmit,
     name: "people",
     id: "people",
@@ -16341,7 +16345,10 @@ function Forms() {
     helpText: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0430\u0440\u043E\u043B\u044C")
   }), errorsPassword && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F \u043C\u0438\u043D\u0438\u043C\u0443\u043C 6 \u0437\u043D\u0430\u043A\u043E\u0432"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
     submit: true
-  }, "\u0412\u043E\u0439\u0442\u0438")));
+  }, "\u0412\u043E\u0439\u0442\u0438")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "http://0.0.0.0:81/register",
+    className: "block__link-registration"
+  }, "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"))));
 }
 
 /***/ }),
@@ -16364,6 +16371,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -16394,19 +16403,40 @@ function FormsRegister() {
 
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState6 = _slicedToArray(_useState5, 2),
-      password = _useState6[0],
-      setPassword = _useState6[1];
+      name = _useState6[0],
+      setName = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState8 = _slicedToArray(_useState7, 2),
-      errors = _useState8[0],
-      setErrors = _useState8[1];
+      password = _useState8[0],
+      setPassword = _useState8[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState10 = _slicedToArray(_useState9, 2),
-      errorsPassword = _useState10[0],
-      setErrorsPassword = _useState10[1]; //=============Experment=================
+      passwordDouble = _useState10[0],
+      setPasswordDouble = _useState10[1];
 
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      errors = _useState12[0],
+      setErrors = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState14 = _slicedToArray(_useState13, 2),
+      errorsName = _useState14[0],
+      setErrorsName = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState16 = _slicedToArray(_useState15, 2),
+      errorsPassword = _useState16[0],
+      setErrorsPassword = _useState16[1];
+
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState18 = _slicedToArray(_useState17, 2),
+      errorsDoublePassword = _useState18[0],
+      setErrorsDoublePassword = _useState18[1];
+
+  var countValid = 0; //=============Experment=================
 
   var validField = function validField(event) {
     var valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
@@ -16418,6 +16448,16 @@ function FormsRegister() {
     }
   };
 
+  var validFieldName = function validFieldName(event) {
+    var valueField = event.target.value.match(/\w{1,4}/);
+
+    if (valueField) {
+      setErrorsName(false);
+    } else {
+      setErrorsName(true);
+    }
+  };
+
   var validFieldPass = function validFieldPass(event) {
     var valueField = event.target.value.match(/.{6,25}/);
 
@@ -16425,6 +16465,17 @@ function FormsRegister() {
       setErrorsPassword(false);
     } else {
       setErrorsPassword(true);
+    }
+  };
+
+  var validFieldPassDouble = function validFieldPassDouble(event) {
+    var valueField = event.target.value.match(/.{6,25}/);
+    console.log(password);
+
+    if (valueField && event.target.value === password) {
+      setErrorsDoublePassword(false);
+    } else {
+      setErrorsDoublePassword(true);
     }
   }; //====Функция отправки данных==========
   // const ajaxSend = async (formData) => {
@@ -16443,17 +16494,26 @@ function FormsRegister() {
 
     var emailValueForm = _event.target.querySelector('#emailr').getAttribute('value');
 
+    var nameValueForm = _event.target.querySelector('#namelr').getAttribute('value');
+
     var passwordValueForm = _event.target.querySelector('#passwordr').getAttribute('value');
 
-    var formData = new FormData(event.target);
+    var passwordDoubleValueForm = _event.target.querySelector('#passwordrd').getAttribute('value');
 
-    var _iterator = _createForOfIteratorHelper(formData.values()),
+    var formData = new FormData(event.target);
+    var countField = 0;
+
+    var _iterator = _createForOfIteratorHelper(formData.entries()),
         _step;
 
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var value = _step.value;
-        console.log(value);
+        var pair = _step.value;
+        console.log(_typeof(pair[1]));
+
+        if (pair[1] === '') {
+          countField++;
+        }
       }
     } catch (err) {
       _iterator.e(err);
@@ -16461,19 +16521,25 @@ function FormsRegister() {
       _iterator.f();
     }
 
-    axios__WEBPACK_IMPORTED_MODULE_1___default().post('register', {
-      name: "David",
-      email: emailValueForm,
-      password: passwordValueForm,
-      password_confirmation: passwordValueForm
-    }).then(function (response) {
-      return console.log(response);
-    })["catch"](function (error) {
-      return console.log(error);
-    });
-    setEmail('');
-    setPassword('');
-    setNewsletter(false);
+    if (countField > 0) {
+      alert('Заполните все поля');
+    } else {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().post('register', {
+        name: nameValueForm,
+        email: emailValueForm,
+        password: passwordValueForm,
+        password_confirmation: passwordDoubleValueForm
+      }).then(function (response) {
+        return location.href = '/warehouse';
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+      setName('');
+      setEmail('');
+      setPassword('');
+      setPasswordDouble('');
+      setNewsletter(false);
+    }
   }, []);
   var handleNewsLetterChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     return setNewsletter(value);
@@ -16481,15 +16547,35 @@ function FormsRegister() {
   var handleEmailChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     return setEmail(value);
   }, []);
+  var handleNameChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setName(value);
+  }, []);
   var handlePasswordChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     return setPassword(value);
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Form, {
+  var handlePasswordDoubleChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setPasswordDouble(value);
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "block__login-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "block__login"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Form, {
     onSubmit: handleSubmit,
     name: "send",
     id: "send",
     noValidate: true
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.FormLayout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+    value: name,
+    onChange: handleNameChange,
+    label: "Name",
+    id: "namelr",
+    type: "text",
+    name: "name",
+    error: errorsName,
+    onBlur: validFieldName,
+    helpText: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043C\u044F")
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
     value: email,
     onChange: handleEmailChange,
     label: "Email",
@@ -16511,9 +16597,24 @@ function FormsRegister() {
     maxLength: 50,
     error: errorsPassword,
     helpText: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0430\u0440\u043E\u043B\u044C")
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+    onBlur: validFieldPassDouble,
+    value: passwordDouble,
+    name: "passwordDouble",
+    onChange: handlePasswordDoubleChange,
+    label: "Password Double",
+    type: "password",
+    id: "passwordrd",
+    minLength: 6,
+    maxLength: 50,
+    error: errorsDoublePassword,
+    helpText: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u041F\u0430\u0440\u043E\u043B\u0438 \u043D\u0435 \u0441\u043E\u0432\u043F\u0430\u0434\u0430\u044E\u0442")
   }), errorsPassword && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F \u043C\u0438\u043D\u0438\u043C\u0443\u043C 6 \u0437\u043D\u0430\u043A\u043E\u0432"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
     submit: true
-  }, "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F")));
+  }, "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "http://0.0.0.0:81/login",
+    className: "block__link-registration"
+  }, "\u0412\u0445\u043E\u0434")));
 }
 
 /***/ }),
@@ -16625,7 +16726,10 @@ function Warehouse() {
     onSelect: handleTabChange
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Card.Section, {
     title: tabs[selected].content
-  }, select(tabs[selected].id))));
+  }, select(tabs[selected].id))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "http://0.0.0.0:81/logout",
+    className: "block__logout"
+  }, "logout"));
 }
 
 /***/ }),
@@ -16862,55 +16966,43 @@ function FormWithoutNativeValidationExample() {
   var handleValidUrlChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     if (!value.target.value.match(/^.{1,4}$/)) {
       setNameVal("Максимальная длина 50 символов");
-      count++;
     } else {
       setNameVal("");
-      count--;
     }
   }, []);
   var handleValidTextFieldChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     if (!value.target.value.match(/^.{1,4}$/)) {
       setPriceVal("Максимальная длина 10 символов ");
-      count++;
     } else {
       setPriceVal("");
-      count--;
     }
   }, []);
   var handleValidColorChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     if (!value.target.value.match(/^([a-z]|[A-Z]){1,4}$/)) {
       setColorVal("Максимальная длина 50 символов");
-      count++;
     } else {
       setColorVal("");
-      count--;
     }
   }, []);
   var handleValidWeightChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     if (!value.target.value.match(/^.{1,4}$/)) {
       setWeightVal("Максимальная длина 10 символов ");
-      count++;
     } else {
       setWeightVal("");
-      count--;
     }
   }, []);
   var handleValidSimChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     if (!value.target.value.match(/^.?$/)) {
       setSimVal("Максимальная длина 1 символ ");
-      count++;
     } else {
       setSimVal("");
-      count--;
     }
   }, []);
   var handleValidVideoChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     if (!value.target.value.match(/^.{1,4}$/)) {
       setVideoVal("Максимальная длина 50 символов");
-      count++;
     } else {
       setVideoVal("");
-      count--;
     }
   }, []); //==================================================
   //=======Сим и видео поля=================
@@ -17018,6 +17110,7 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

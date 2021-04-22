@@ -118,46 +118,34 @@ export default function FormWithoutNativeValidationExample() {
     const handleValidUrlChange = useCallback((value) => {
         if(!value.target.value.match(/^.{1,4}$/)){
             setNameVal("Максимальная длина 50 символов")
-            count++;
         }else{
-            setNameVal("");
-            count--;}}, []);
+            setNameVal("");}}, []);
     const handleValidTextFieldChange = useCallback((value) => {
         if(!value.target.value.match(/^.{1,4}$/)){
-            setPriceVal("Максимальная длина 10 символов ")
-            count++;
+            setPriceVal("Максимальная длина 10 символов ");
         }else{
-            setPriceVal("")
-            count--}
+            setPriceVal("")}
     },[],);
     const handleValidColorChange = useCallback((value) => {
         if(!value.target.value.match(/^([a-z]|[A-Z]){1,4}$/)){
             setColorVal("Максимальная длина 50 символов")
-            count++;
         }else{
-            setColorVal("")
-            count--}},[],);
+            setColorVal("")}},[],);
     const handleValidWeightChange = useCallback((value) => {
         if(!value.target.value.match(/^.{1,4}$/)){
             setWeightVal("Максимальная длина 10 символов ")
-            count++;
         }else{
-            setWeightVal("")
-            count--}},[],);
+            setWeightVal("")}},[],);
     const handleValidSimChange = useCallback((value) => {
         if(!value.target.value.match(/^.?$/)){
             setSimVal("Максимальная длина 1 символ ")
-            count++;
         }else{
-            setSimVal("")
-            count--}}, []);
+            setSimVal("")}}, []);
     const handleValidVideoChange = useCallback((value) => {
         if(!value.target.value.match(/^.{1,4}$/)){
             setVideoVal("Максимальная длина 50 символов")
-            count++;
         }else{
-            setVideoVal("")
-            count--}
+            setVideoVal("")}
     }, []);
     //==================================================
     //=======Сим и видео поля=================
