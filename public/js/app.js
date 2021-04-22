@@ -10398,10 +10398,8 @@ function FormWithoutNativeValidationExample() {
       _useState26 = _slicedToArray(_useState25, 2),
       simVal = _useState26[0],
       setSimVal = _useState26[1]; //==================================================
+  //========Select-contetnt===========================
 
-
-  var count = 0;
-  var arr; //========Select-contetnt===========================
 
   var options = [{
     label: 'tablet',
@@ -10481,8 +10479,8 @@ function FormWithoutNativeValidationExample() {
     _event.preventDefault();
 
     var formId = _event.target;
-    console.log(formId);
     var formData = new FormData(formId);
+    var countField = 0;
 
     var _iterator = _createForOfIteratorHelper(formData.entries()),
         _step;
@@ -10490,7 +10488,11 @@ function FormWithoutNativeValidationExample() {
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
         var pair = _step.value;
-        console.log(pair);
+        console.log(_typeof(pair[1]));
+
+        if (pair[1] === '') {
+          countField++;
+        }
       }
     } catch (err) {
       _iterator.e(err);
@@ -10498,10 +10500,9 @@ function FormWithoutNativeValidationExample() {
       _iterator.f();
     }
 
-    arr.forEach(function (item) {
-      console.log(_typeof(item));
-    });
-    console.log(count);
+    if (countField > 0) {
+      alert('Заполните все поля');
+    }
   }, []); //==================================================
   //=======События при изменение форм=================
 
@@ -10609,13 +10610,10 @@ function FormWithoutNativeValidationExample() {
 
 
   if (selected === 'tablet') {
-    arr = [name, textFieldValue, color, weight];
     return content();
   } else if (selected === 'laptop') {
-    arr = [name, textFieldValue, color, weight, video];
     return content(contentVideo);
   } else if (selected === 'smartphone') {
-    arr = [name, textFieldValue, color, weight, sim];
     return content(contentSim);
   }
 }

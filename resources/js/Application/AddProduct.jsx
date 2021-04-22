@@ -18,8 +18,6 @@ export default function FormWithoutNativeValidationExample() {
     const [videoVal, setVideoVal] = useState('');
     const [simVal, setSimVal] = useState('');
     //==================================================
-    let count = 0;
-    let arr;
     //========Select-contetnt===========================
     const options = [
         {label: 'tablet', value: 'tablet'},
@@ -93,15 +91,18 @@ export default function FormWithoutNativeValidationExample() {
     const handleSubmit = useCallback((_event) => {
         _event.preventDefault();
         const formId = _event.target;
-        console.log(formId);
         const formData = new FormData(formId);
+        let countField = 0;
         for(let pair of formData.entries()){
-            console.log(pair);
+            console.log(typeof pair[1]);
+            if(pair[1] === ''){
+                countField++;
+            }
         }
-        arr.forEach(item=>{
-            console.log(typeof item)
-        })
-        console.log(count)}, []);
+        if(countField > 0){
+            alert('Заполните все поля')
+        }
+       }, []);
     //==================================================
     //=======События при изменение форм=================
     const handleSelectChange = useCallback((value) => setSelected(value), []);
@@ -180,17 +181,14 @@ export default function FormWithoutNativeValidationExample() {
     />;
     //==================================================
     if(selected === 'tablet'){
-        arr = [name, textFieldValue, color, weight];
         return (
             content()
         );
     }else if(selected === 'laptop'){
-        arr = [name, textFieldValue, color, weight,  video];
         return (
             content(contentVideo)
         );
     }else if(selected === 'smartphone'){
-        arr = [name, textFieldValue, color, weight, sim];
         return (
             content(contentSim)
         );
