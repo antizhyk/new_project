@@ -1,5 +1,6 @@
 <?php
-use App\Http\Controllers\PeopleController;
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::middleware('auth')->get('/me', function (Request $request) {
+    return response()->json(Auth::user());
 });
-Route::post('people', [PeopleController::class, 'index']);
+

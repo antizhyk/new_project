@@ -1,15 +1,3 @@
-.block__big{
-    height: calc(100vh - 255px);
-}
-.block__main{
-height: calc(100vh - 55px);
-}
-.block__header{
-height: 55px;
-}
-.block__tab{
-    min-height: calc(100vh - 55px);
-}
-.form__input{
-    border: 1px solid #dddddd;
-}
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';

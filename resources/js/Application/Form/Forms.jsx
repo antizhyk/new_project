@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {Button, TextField, Checkbox, Form, FormLayout} from '@shopify/polaris';
+import {Button, TextField, Form, FormLayout} from '@shopify/polaris';
+import axios from 'axios';
 
 export default function Forms() {
     const [email, setEmail] = useState('');
@@ -8,50 +9,46 @@ export default function Forms() {
     const [errorsPassword, setErrorsPassword] = useState(false);
 
 
-
 //=============Experment=================
-const validField = (event) =>{
-    let valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
-    if(valueField){
-        setErrors(false);
-    }else{
-        setErrors(true);
-    }
+    const validField = (event) => {
+        let valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
+        if (valueField) {
+            setErrors(false);
+        } else {
+            setErrors(true);
+        }
 
-}
-    const validFieldPass = (event) =>{
+    }
+    const validFieldPass = (event) => {
         let valueField = event.target.value.match(/.{6,25}/);
-        console.log(valueField);
-        if(valueField){
+        if (valueField) {
             setErrorsPassword(false);
-        }else{
+        } else {
             setErrorsPassword(true);
         }
 
     }
+
     //====================
     const handleSubmit = useCallback((_event) => {
-        event.preventDefault();
         let emailValueForm = _event.target.querySelector('#email').getAttribute('value');
         let passwordValueForm = _event.target.querySelector('#password').getAttribute('value');
-        let emailValue;
-        let passValue;
-        fetch(process.env.MIX_APP_URL + 'api/people', {
-            method: 'POST',
+        const formData = new FormData(event.target);
+        console.log(emailValueForm);
+        console.log(passwordValueForm);
+        event.preventDefault();
+        // axios.get('/sanctum/csrf-cookie', {
+        //     headers: { 'Retry-After': 3600 }
+        // }).then(
+
+        axios.post('login', {
+            email: emailValueForm,
+            password: passwordValueForm
         })
-            .then(response => response.json())
-            .then(data =>  {
-                emailValue = data[0].email
-                passValue = data[0].password
-            })
-            .then(data =>{ if(emailValue == emailValueForm && passValue == passwordValueForm){
-                window.location.href = "/warehouse";
-        }else{
-                alert('Нет такого пользователя');
-            }})
-
+            .then(response => location.href = '/warehouse')
+            .catch(error => console.log(error))
+        // );
     }, []);
-
 
 
     const handleEmailChange = useCallback((value) => setEmail(value), []);
@@ -61,7 +58,8 @@ const validField = (event) =>{
         <Form
 
             onSubmit={handleSubmit}
-
+            name='people'
+            id='people'
             noValidate={true}>
             <FormLayout>
                 <TextField
@@ -72,6 +70,7 @@ const validField = (event) =>{
                     error={errors}
                     onBlur={validField}
                     id='email'
+                    name="email"
                     helpText={
                         <span>
               Введите e-mail
@@ -85,6 +84,7 @@ const validField = (event) =>{
                     id="password"
                     label="Password"
                     type="password"
+                    name="password"
                     minLength={6} maxLength={50}
                     error={errorsPassword}
                     helpText={
@@ -94,7 +94,7 @@ const validField = (event) =>{
                     }
                 />
                 {errorsPassword &&
-                        <span>Длина пароля минимум 6 знаков</span>
+                <span>Длина пароля минимум 6 знаков</span>
 
                 }
                 <Button submit>Войти</Button>

@@ -1,13 +1,13 @@
 +--------+----------+------------------------------------+---------------------------------+--------------------------------------------------------------------------------+---------------------+
 | Domain | Method   | URI                                | Name                            | Action                                                                         | Middleware          |
 +--------+----------+------------------------------------+---------------------------------+--------------------------------------------------------------------------------+---------------------+
-|        | GET|HEAD | /                                  |                                 | Closure                                                                        | web                 |
 |        | POST     | api/forgot-password                | password.email                  | Laravel\Fortify\Http\Controllers\PasswordResetLinkController@store             | web                 |
 |        |          |                                    |                                 |                                                                                | guest               |
 |        | POST     | api/login                          |                                 | Laravel\Fortify\Http\Controllers\AuthenticatedSessionController@store          | web                 |
 |        |          |                                    |                                 |                                                                                | guest               |
 |        |          |                                    |                                 |                                                                                | throttle:login      |
 |        | POST     | api/logout                         | logout                          | Laravel\Fortify\Http\Controllers\AuthenticatedSessionController@destroy        | web                 |
+|        | POST     | api/people                         |                                 | App\Http\Controllers\PeopleController@addUser                                  | api                 |
 |        | POST     | api/register                       |                                 | Laravel\Fortify\Http\Controllers\RegisteredUserController@store                | web                 |
 |        |          |                                    |                                 |                                                                                | guest               |
 |        | POST     | api/reset-password                 | password.update                 | Laravel\Fortify\Http\Controllers\NewPasswordController@store                   | web                 |
@@ -40,4 +40,5 @@
 |        | POST     | api/user/two-factor-recovery-codes |                                 | Laravel\Fortify\Http\Controllers\RecoveryCodeController@store                  | web                 |
 |        |          |                                    |                                 |                                                                                | auth                |
 |        |          |                                    |                                 |                                                                                | password.confirm    |
+|        | GET|HEAD | {query}                            |                                 | Closure                                                                        | web                 |
 +--------+----------+------------------------------------+---------------------------------+--------------------------------------------------------------------------------+---------------------+

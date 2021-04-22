@@ -1,13 +1,15 @@
 require('./bootstrap');
+require('alpinejs');
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '@shopify/polaris/dist/styles.css';
 import App from './Application/App'
-ReactDOM.render(
-    <div className={'block__big'}>
-        <App/>
-    </div>
+import { BrowserRouter} from 'react-router-dom';
 
-   ,
-    document.getElementById('root')
+ReactDOM.render(
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>,
+    document.querySelector('#root')
 );

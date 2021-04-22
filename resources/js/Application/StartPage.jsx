@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header/Header';
-import Tab from './Tab/Tab';
 import {AppProvider} from '@shopify/polaris';
 import {BrowserRouter} from "react-router-dom";
 

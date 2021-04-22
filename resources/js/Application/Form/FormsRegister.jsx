@@ -1,5 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import {Button, TextField, Checkbox, Form, FormLayout} from '@shopify/polaris';
+import axios from "axios";
 
 export default function FormsRegister() {
     const [newsletter, setNewsletter] = useState(false);
@@ -11,7 +12,6 @@ export default function FormsRegister() {
 //=============Experment=================
     const validField = (event) =>{
         let valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
-        console.log(valueField);
         if(valueField){
             setErrors(false);
         }else{
@@ -21,7 +21,6 @@ export default function FormsRegister() {
     }
     const validFieldPass = (event) =>{
         let valueField = event.target.value.match(/.{6,25}/);
-        console.log(valueField);
         if(valueField){
             setErrorsPassword(false);
         }else{
@@ -29,9 +28,38 @@ export default function FormsRegister() {
         }
 
     }
+    //====Функция отправки данных==========
+    // const ajaxSend = async (formData) => {
+    //     const fetchResp = await fetch( 'register', {
+    //         method: 'POST',
+    //         body: formData
+    //     });
+    //     return await fetchResp.text();
+    // };
+
+    //===============================
+
     //====================
     const handleSubmit = useCallback((_event) => {
         event.preventDefault();
+        let emailValueForm = _event.target.querySelector('#emailr').getAttribute('value');
+        let passwordValueForm = _event.target.querySelector('#passwordr').getAttribute('value');
+        const formData = new FormData(event.target);
+        for(let value of formData.values()){
+            console.log(value);
+        }
+        axios.post('register', {
+
+                name: "David",
+                email: emailValueForm,
+                password: passwordValueForm,
+            password_confirmation: passwordValueForm
+
+
+        })
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
+
         setEmail('');
         setPassword('');
         setNewsletter(false);
@@ -47,16 +75,18 @@ export default function FormsRegister() {
 
     return (
         <Form
-
             onSubmit={handleSubmit}
-
+            name='send'
+            id='send'
             noValidate={true}>
             <FormLayout>
                 <TextField
                     value={email}
                     onChange={handleEmailChange}
                     label="Email"
+                    id="emailr"
                     type="email"
+                    name="email"
                     error={errors}
                     onBlur={validField}
                     helpText={
@@ -68,9 +98,11 @@ export default function FormsRegister() {
                 <TextField
                     onBlur={validFieldPass}
                     value={password}
+                    name="password"
                     onChange={handlePasswordChange}
                     label="Password"
                     type="password"
+                    id="passwordr"
                     minLength={6} maxLength={50}
                     error={errorsPassword}
                     helpText={
@@ -88,4 +120,3 @@ export default function FormsRegister() {
         </Form>
     );
 }
-

@@ -1,17 +1,12 @@
-import React from 'react';
-import StartPage from './StartPage';
-import Warehouse from './Warehouse'
+import React, {useEffect, useState} from 'react';
 import Routes from "./Routes";
-import {BrowserRouter} from "react-router-dom";
+import {AppProvider} from '@shopify/polaris';
+
 
 export default function App() {
     return(
-        <BrowserRouter>
-            <StartPage/>
-            <Warehouse/>
-            <Routes/>
-        </BrowserRouter>
-
-
+        <AppProvider>
+                <Routes/>
+        </AppProvider>
     );
 }
