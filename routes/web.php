@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\UniversallController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Auth\Events\Logout;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/{query}', function () {
-    return view('welcome');
-});
 
 
 //Route::get('/', function () {
@@ -27,7 +27,13 @@ Route::get('/warehouse', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('welcome');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/login', function () {
+    return view('welcome');
+});
+Route::get('/show', UniversallController::class);
+Route::post('/show', [UniversallController::class, 'create']);
 
 require __DIR__.'/auth.php';
