@@ -1,12 +1,16 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import {Card, DataTable, Page} from '@shopify/polaris';
+import {Card, DataTable, Page, Pagination} from '@shopify/polaris';
 import axios from "axios";
+//import {Pagination} from 'react-laravel-paginex'
 
 export default function DataTableExample() {
     const [products, setProducts] = useState([]);
+    const [count, setCount] = useState(1);
+
     useEffect(() => {
         async function fetch() {
-            const data = await axios.get("/api/products");
+            const data = await axios.get("/api/products/");
+            console.log(data)
             setProducts(data.data);
         }
 
@@ -14,21 +18,15 @@ export default function DataTableExample() {
 
     }, []);
 
-    const rows = [
-        ['Emerald Silk Gown', 'Laptop', '$875.00', 124689, 'red', '-', 'IntelHD 4000'],
-        ['Mauve Cashmere Scarf', 'Tablet', '$230.00', 124533, 'green', '-', '-'],
-        [
-            'Navy Merino Wool Blazer with khaki chinos and yellow belt',
-            'Smartfone',
-            '$445.00',
-            124518,
-            'balck',
-            '2',
-            '-',
-        ],
-    ];
+    //console.log(products.length)
+    const movePage = () => {
+        axios.get('/api/products/?page=' + count)
+            .then(response => setProducts(response.data))
+    }
+
+
+    const rows = [];
     for(let item in products){
-        console.log(products[item]);
         let arr = [products[item].Name,
             products[item].Type.name,
             products[item].Price,
@@ -36,9 +34,11 @@ export default function DataTableExample() {
             products[item].Color,
             products[item].Dualsim,
             products[item].Videocard]
-        console.log(arr);
         rows.push(arr);
     }
+
+    console.log(products);
+
     return (
         <Page title="Products list">
             <Card>
@@ -66,6 +66,28 @@ export default function DataTableExample() {
                     />
                 </div>
             </Card>
+            <div className="block__paginate">
+                <Pagination
+                    hasPrevious
+                    onPrevious={() => {
+                        if(count > 1){
+                            setCount(count - 1)
+                        }
+                        console.log(count)
+                        movePage()
+                        console.log('Previous');
+
+                    }}
+                    hasNext
+                    onNext={() => {
+                        setCount(count + 1)
+                        console.log(count)
+                        movePage()
+                        console.log('Next');
+                    }}
+                />
+            </div>
+
         </Page>
     );
 }

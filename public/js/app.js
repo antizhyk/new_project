@@ -17112,6 +17112,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Page/Page.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/DataTable/DataTable.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Pagination/Pagination.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 
@@ -17134,12 +17135,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+ //import {Pagination} from 'react-laravel-paginex'
 
 function DataTableExample() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       products = _useState2[0],
       setProducts = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
+      _useState4 = _slicedToArray(_useState3, 2),
+      count = _useState4[0],
+      setCount = _useState4[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     function fetch() {
@@ -17154,13 +17161,14 @@ function DataTableExample() {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/products");
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/products/");
 
               case 2:
                 data = _context.sent;
+                console.log(data);
                 setProducts(data.data);
 
-              case 4:
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -17171,16 +17179,22 @@ function DataTableExample() {
     }
 
     fetch();
-  }, []);
-  var rows = [['Emerald Silk Gown', 'Laptop', '$875.00', 124689, 'red', '-', 'IntelHD 4000'], ['Mauve Cashmere Scarf', 'Tablet', '$230.00', 124533, 'green', '-', '-'], ['Navy Merino Wool Blazer with khaki chinos and yellow belt', 'Smartfone', '$445.00', 124518, 'balck', '2', '-']];
+  }, []); //console.log(products.length)
+
+  var movePage = function movePage() {
+    axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/products/?page=' + count).then(function (response) {
+      return setProducts(response.data);
+    });
+  };
+
+  var rows = [];
 
   for (var item in products) {
-    console.log(products[item]);
     var arr = [products[item].Name, products[item].Type.name, products[item].Price, products[item].Weight, products[item].Color, products[item].Dualsim, products[item].Videocard];
-    console.log(arr);
     rows.push(arr);
   }
 
+  console.log(products);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Page, {
     title: "Products list"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
@@ -17189,7 +17203,27 @@ function DataTableExample() {
     columnContentTypes: ['text', 'text', 'numeric', 'numeric', 'text', 'text', 'text'],
     headings: ['Product', 'ProductType', 'Price', 'Weight', 'Color', 'number of sim', 'videocard'],
     rows: rows
-  }))));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+    className: "block__paginate"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Pagination, {
+    hasPrevious: true,
+    onPrevious: function onPrevious() {
+      if (count > 1) {
+        setCount(count - 1);
+      }
+
+      console.log(count);
+      movePage();
+      console.log('Previous');
+    },
+    hasNext: true,
+    onNext: function onNext() {
+      setCount(count + 1);
+      console.log(count);
+      movePage();
+      console.log('Next');
+    }
+  })));
 }
 
 /***/ }),

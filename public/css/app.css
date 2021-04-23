@@ -32121,6 +32121,10 @@ select {
   font-weight: 700;
 }
 
+.block__paginate{
+  margin-top: 15px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
