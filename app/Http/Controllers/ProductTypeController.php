@@ -1,24 +1,29 @@
+
 <?php
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ProductTypeRequest;
+use App\Models\ProductType;
 
 class ProductTypeController extends Controller
 {
-    public function store(Request $request)
+    public function get()
     {
-        $data = $request->all();
-        $data['image'] = $this->imageSaver->upload($request, null, 'product');
-        $product = Product::create($data);
-        return redirect()->route('admin.product.show', ['product' => $product->id])->with('success', 'Новый товар успешно создан');
+        return ProductType::all();
     }
 
+    public function post(ProductTypeRequest $request)
+    {
+        // Validate data
+        $validationRes = $request->validated();
 
-    //public static function getProductType () {
-    // $types = model\ProductType::all();
-    // if ($request->product_type == $types[$request->product_type) {
-    // retun static::$type id;
-    //}
-    //
+        // All data is valid, store them in database now.
+        $type = new ProductType();
+        $type->name = $request->name;
+        $type->timestamps = false;
+        $type->save();
+
+        return redirect()->back()->with('message', 'New product type has been saved');
+    }
 }

@@ -1,10 +1,11 @@
 import React, {useCallback, useState} from 'react';
 import {Button, TextField, Form, FormLayout, Select} from '@shopify/polaris';
+import axios from "axios";
 
 
 export default function FormWithoutNativeValidationExample() {
     const [name, setName] = useState('');
-    const [selected, setSelected] = useState('tablet');
+    const [selected, setSelected] = useState('1');
     const [textFieldValue, setTextFieldValue] = useState('');
     const [color, setColor] = useState('');
     const [weight, setWeight] = useState('');
@@ -20,9 +21,9 @@ export default function FormWithoutNativeValidationExample() {
     //==================================================
     //========Select-contetnt===========================
     const options = [
-        {label: 'tablet', value: 'tablet'},
-        {label: 'laptop', value: 'laptop'},
-        {label: 'smartphone', value: 'smartphone'},
+        {label: 'tablet', value: '1'},
+        {label: 'laptop', value: '2'},
+        {label: 'smartphone', value: '3'},
     ];
 
     //==================================================
@@ -39,6 +40,7 @@ export default function FormWithoutNativeValidationExample() {
                                 label="Имя продукта"
                                 type="text"
                                 name="name"
+                                id='nameProduct'
                                 error={nameVal}
                                 onBlur={handleValidUrlChange}
                             />
@@ -48,6 +50,7 @@ export default function FormWithoutNativeValidationExample() {
                                 onChange={handleSelectChange}
                                 value={selected}
                                 name="type"
+                                id='typeProduct'
                             />
                             <TextField
                                 label="Цена"
@@ -57,6 +60,7 @@ export default function FormWithoutNativeValidationExample() {
                                 prefix="$"
                                 name="price"
                                 error={priceVal}
+                                id='priceProduct'
                                 onBlur={handleValidTextFieldChange}
                             />
                             <TextField
@@ -66,12 +70,14 @@ export default function FormWithoutNativeValidationExample() {
                                 onChange={handleWeightChange}
                                 suffix='kg'
                                 name="weight"
+                                id='weightProduct'
                                 error={weightVal}
                                 onBlur={handleValidWeightChange}
                             />
                             <TextField
                                 label="Цвет"
                                 type="text"
+                                id='colorProduct'
                                 value={color}
                                 onChange={handleColorChange}
                                 name="color"
@@ -101,6 +107,40 @@ export default function FormWithoutNativeValidationExample() {
         }
         if(countField > 0){
             alert('Заполните все поля')
+        }else{
+
+            let videocardValueForm = '-';
+            let dualsimValueForm = '-';
+            let nameValueForm = _event.target.querySelector('#nameProduct').getAttribute('value');
+            let typeValueForm = _event.target.querySelector('#typeProduct').value;
+            console.log(_event.target.querySelector('#typeProduct').value);
+            let priceValueForm = _event.target.querySelector('#priceProduct').getAttribute('value');
+            let weightValueForm = _event.target.querySelector('#weightProduct').getAttribute('value');
+            let colorValueForm = _event.target.querySelector('#colorProduct').getAttribute('value');
+
+            if(typeValueForm === '2'){
+                videocardValueForm = _event.target.querySelector('#videocardProduct').value;
+            }
+            if(typeValueForm === '3'){
+                dualsimValueForm = _event.target.querySelector('#dualsimProduct').getAttribute('value');
+            }
+
+
+
+            axios.post('api/products', {
+
+                name: nameValueForm,
+                weight: weightValueForm,
+                color: colorValueForm,
+                price: priceValueForm,
+                dualsim: dualsimValueForm,
+                videocard: videocardValueForm,
+                type_id: typeValueForm,
+
+
+            })
+                .then(response => console.log(response))
+                .catch(error => console.log(error))
         }
     }, []);
     //==================================================
@@ -154,6 +194,7 @@ export default function FormWithoutNativeValidationExample() {
         type="number"
         value={sim}
         onChange={handleSimChange}
+        id='dualsimProduct'
         name="sim"
         error={simVal}
         onBlur={handleValidSimChange}
@@ -162,21 +203,22 @@ export default function FormWithoutNativeValidationExample() {
         label="Видеокарта"
         type="text"
         value={video}
+        id="videocardProduct"
         onChange={handleVideoChange}
         name="video"
         error={videoVal}
         onBlur={handleValidVideoChange}
     />;
     //==================================================
-    if(selected === 'tablet'){
+    if(selected === '1'){
         return (
             content()
         );
-    }else if(selected === 'laptop'){
+    }else if(selected === '2'){
         return (
             content(contentVideo)
         );
-    }else if(selected === 'smartphone'){
+    }else if(selected === '3'){
         return (
             content(contentSim)
         );

@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import {Card, DataTable, Page} from '@shopify/polaris';
+import axios from "axios";
 
 export default function DataTableExample() {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        async function fetch() {
+            const data = await axios.get("/api/products");
+            setProducts(data.data);
+        }
+
+        fetch();
+
+    }, []);
+
     const rows = [
         ['Emerald Silk Gown', 'Laptop', '$875.00', 124689, 'red', '-', 'IntelHD 4000'],
         ['Mauve Cashmere Scarf', 'Tablet', '$230.00', 124533, 'green', '-', '-'],
@@ -15,7 +27,18 @@ export default function DataTableExample() {
             '-',
         ],
     ];
-
+    for(let item in products){
+        console.log(products[item]);
+        let arr = [products[item].Name,
+            products[item].Type.name,
+            products[item].Price,
+            products[item].Weight,
+            products[item].Color,
+            products[item].Dualsim,
+            products[item].Videocard]
+        console.log(arr);
+        rows.push(arr);
+    }
     return (
         <Page title="Products list">
             <Card>
