@@ -16987,7 +16987,17 @@ function FormWithoutNativeValidationExample() {
         videocard: videocardValueForm,
         type_id: typeValueForm
       }).then(function (response) {
-        return console.log(response);
+        alert('Продукт успешно добавлен!!!');
+        console.log(_event.target);
+
+        _event.target.reset();
+
+        setName('');
+        setTextFieldValue('');
+        setColor('');
+        setWeight('');
+        setSim('');
+        setVideo('');
       })["catch"](function (error) {
         return console.log(error);
       });
