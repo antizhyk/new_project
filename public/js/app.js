@@ -16335,7 +16335,7 @@ function Forms() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.FormLayout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
     value: email,
     onChange: handleEmailChange,
-    label: "Email",
+    label: "\u041F\u043E\u0447\u0442\u0430 \u0430\u043A\u043A\u0430\u0443\u043D\u0442\u0430",
     type: "email",
     error: errors,
     onBlur: validField,
@@ -16347,7 +16347,7 @@ function Forms() {
     value: password,
     onChange: handlePasswordChange,
     id: "password",
-    label: "Password",
+    label: "\u041F\u0430\u0440\u043E\u043B\u044C \u0430\u043A\u043A\u0430\u0443\u043D\u0442\u0430",
     type: "password",
     name: "password",
     minLength: 6,
@@ -16382,8 +16382,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -16402,6 +16400,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function FormsRegister() {
+  //======Значения_полей=========================================
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       newsletter = _useState2[0],
@@ -16425,7 +16424,9 @@ function FormsRegister() {
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState10 = _slicedToArray(_useState9, 2),
       passwordDouble = _useState10[0],
-      setPasswordDouble = _useState10[1];
+      setPasswordDouble = _useState10[1]; //=============================================================
+  //=====Валидация=================================
+
 
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState12 = _slicedToArray(_useState11, 2),
@@ -16447,48 +16448,38 @@ function FormsRegister() {
       errorsDoublePassword = _useState18[0],
       setErrorsDoublePassword = _useState18[1];
 
-  var countValid = 0; //=============Experment=================
-
   var validField = function validField(event) {
-    var valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
-
-    if (valueField) {
-      setErrors(false);
-    } else {
-      setErrors(true);
-    }
+    validFields(event, /\w*@\w{2,7}\.\w{2,7}/, setErrors);
   };
 
   var validFieldName = function validFieldName(event) {
-    var valueField = event.target.value.match(/\w{1,4}/);
-
-    if (valueField) {
-      setErrorsName(false);
-    } else {
-      setErrorsName(true);
-    }
+    validFields(event, /\w{1,20}/, setErrorsName);
   };
 
   var validFieldPass = function validFieldPass(event) {
-    var valueField = event.target.value.match(/.{6,25}/);
-
-    if (valueField) {
-      setErrorsPassword(false);
-    } else {
-      setErrorsPassword(true);
-    }
+    validFields(event, /.{6,25}/, setErrorsPassword);
   };
 
   var validFieldPassDouble = function validFieldPassDouble(event) {
     var valueField = event.target.value.match(/.{6,25}/);
-    console.log(password);
 
     if (valueField && event.target.value === password) {
       setErrorsDoublePassword(false);
     } else {
-      setErrorsDoublePassword(true);
+      setErrorsDoublePassword("Поле заполнено не корректно");
     }
-  }; //====Функция отправки данных==========
+  };
+
+  var validFields = function validFields(e, reg, setState) {
+    var valueField = e.target.value.match(reg);
+
+    if (valueField) {
+      setState(false);
+    } else {
+      setState("Поле заполнено не корректно");
+    }
+  }; //=========================================================
+  //====Функция отправки данных==========
   // const ajaxSend = async (formData) => {
   //     const fetchResp = await fetch( 'register', {
   //         method: 'POST',
@@ -16520,7 +16511,6 @@ function FormsRegister() {
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
         var pair = _step.value;
-        console.log(_typeof(pair[1]));
 
         if (pair[1] === '') {
           countField++;
@@ -16549,11 +16539,7 @@ function FormsRegister() {
       setEmail('');
       setPassword('');
       setPasswordDouble('');
-      setNewsletter(false);
     }
-  }, []);
-  var handleNewsLetterChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    return setNewsletter(value);
   }, []);
   var handleEmailChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     return setEmail(value);
@@ -16579,7 +16565,7 @@ function FormsRegister() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.FormLayout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
     value: name,
     onChange: handleNameChange,
-    label: "Name",
+    label: "\u0418\u043C\u044F",
     id: "namelr",
     type: "text",
     name: "name",
@@ -16589,7 +16575,7 @@ function FormsRegister() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
     value: email,
     onChange: handleEmailChange,
-    label: "Email",
+    label: "\u041F\u043E\u0447\u0442\u0430",
     id: "emailr",
     type: "email",
     name: "email",
@@ -16601,7 +16587,7 @@ function FormsRegister() {
     value: password,
     name: "password",
     onChange: handlePasswordChange,
-    label: "Password",
+    label: "\u041F\u0430\u0440\u043E\u043B\u044C",
     type: "password",
     id: "passwordr",
     minLength: 6,
@@ -16613,7 +16599,7 @@ function FormsRegister() {
     value: passwordDouble,
     name: "passwordDouble",
     onChange: handlePasswordDoubleChange,
-    label: "Password Double",
+    label: "\u041F\u0430\u0440\u043E\u043B\u044C \u0435\u0449\u0435 \u0440\u0430\u0437",
     type: "password",
     id: "passwordrd",
     minLength: 6,
@@ -16854,13 +16840,13 @@ function FormWithoutNativeValidationExample() {
 
 
   var options = [{
-    label: 'tablet',
+    label: 'Планшет',
     value: '1'
   }, {
-    label: 'laptop',
+    label: 'Ноутбук',
     value: '2'
   }, {
-    label: 'smartphone',
+    label: 'Смартфон',
     value: '3'
   }]; //==================================================
   //=======Контент=======================
@@ -16905,7 +16891,7 @@ function FormWithoutNativeValidationExample() {
       type: "number",
       value: weight,
       onChange: handleWeightChange,
-      suffix: "kg",
+      suffix: "\u0433\u0440.",
       name: "weight",
       id: "weightProduct",
       error: weightVal,
@@ -17039,21 +17025,21 @@ function FormWithoutNativeValidationExample() {
     }
   }, []);
   var handleValidTextFieldChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    if (!value.target.value.match(/^.{1,50}$/)) {
+    if (!value.target.value.match(/^.{1,10}$/)) {
       setPriceVal("Максимальная длина 10 символов ");
     } else {
       setPriceVal("");
     }
   }, []);
   var handleValidColorChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    if (!value.target.value.match(/^([a-z]|[A-Z]){1,50}$/)) {
+    if (!value.target.value.match(/^([a-z]){1,50}$/i)) {
       setColorVal("Максимальная длина 50 символов");
     } else {
       setColorVal("");
     }
   }, []);
   var handleValidWeightChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    if (!value.target.value.match(/^.{1,50}$/)) {
+    if (!value.target.value.match(/^.{1,10}$/)) {
       setWeightVal("Максимальная длина 10 символов ");
     } else {
       setWeightVal("");
@@ -17147,7 +17133,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
- //import {Pagination} from 'react-laravel-paginex'
+
 
 function DataTableExample() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
@@ -17261,6 +17247,10 @@ function DataTableExample() {
     setCount(count - 1);
   };
 
+  var hello = function hello() {
+    console.log('hello world');
+  };
+
   var rows = [];
 
   for (var item in products) {
@@ -17274,7 +17264,7 @@ function DataTableExample() {
     className: "block__table"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.DataTable, {
     columnContentTypes: ['text', 'text', 'numeric', 'numeric', 'text', 'text', 'text'],
-    headings: ['Product', 'ProductType', 'Price', 'Weight', 'Color', 'number of sim', 'videocard'],
+    headings: ['Название продукта', 'Тип продукта', 'Цена в ($)', 'Вес в грамах', 'Цвет', 'Количество сим карт', 'Наличие видеокарт'],
     rows: rows
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "block__paginate"

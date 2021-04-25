@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import {Card, DataTable, Page, Pagination} from '@shopify/polaris';
 import axios from "axios";
-//import {Pagination} from 'react-laravel-paginex'
+import {Link} from "react-router-dom";
+
 
 export default function DataTableExample() {
     const [products, setProducts] = useState([]);
@@ -41,7 +42,9 @@ export default function DataTableExample() {
         fetch();
         setCount(count - 1)
     }
-
+    const hello = () =>{
+        console.log('hello world')
+    }
 
     const rows = [];
     for(let item in products){
@@ -51,12 +54,14 @@ export default function DataTableExample() {
             products[item].Weight,
             products[item].Color,
             products[item].Dualsim,
-            products[item].Videocard]
+            products[item].Videocard,
+            ]
         rows.push(arr);
     }
 
 
     return (
+
         <Page title="Products list">
             <Card>
                 <div className="block__table">
@@ -71,16 +76,17 @@ export default function DataTableExample() {
                             'text',
                         ]}
                         headings={[
-                            'Product',
-                            'ProductType',
-                            'Price',
-                            'Weight',
-                            'Color',
-                            'number of sim',
-                            'videocard',
+                            'Название продукта',
+                            'Тип продукта',
+                            'Цена в ($)',
+                            'Вес в грамах',
+                            'Цвет',
+                            'Количество сим карт',
+                            'Наличие видеокарт',
                         ]}
                         rows={rows}
                     />
+
                 </div>
             </Card>
             <div className="block__paginate">

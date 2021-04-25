@@ -153,5 +153,15 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        $product = Product::find($id);
+        if (!$product) {
+            return [];
+        }
+
+        foreach ($product->attributes()->get() as $attribute) {
+            $attribute->attributable->delete();
+        }
+
+        $product->delete();
     }
 }

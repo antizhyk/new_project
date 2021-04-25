@@ -21,9 +21,9 @@ export default function FormWithoutNativeValidationExample() {
     //==================================================
     //========Select-contetnt===========================
     const options = [
-        {label: 'tablet', value: '1'},
-        {label: 'laptop', value: '2'},
-        {label: 'smartphone', value: '3'},
+        {label: 'Планшет', value: '1'},
+        {label: 'Ноутбук', value: '2'},
+        {label: 'Смартфон', value: '3'},
     ];
 
     //==================================================
@@ -68,7 +68,7 @@ export default function FormWithoutNativeValidationExample() {
                                 type="number"
                                 value={weight}
                                 onChange={handleWeightChange}
-                                suffix='kg'
+                                suffix='гр.'
                                 name="weight"
                                 id='weightProduct'
                                 error={weightVal}
@@ -167,18 +167,18 @@ export default function FormWithoutNativeValidationExample() {
         }else{
             setNameVal("");}}, []);
     const handleValidTextFieldChange = useCallback((value) => {
-        if(!value.target.value.match(/^.{1,50}$/)){
+        if(!value.target.value.match(/^.{1,10}$/)){
             setPriceVal("Максимальная длина 10 символов ");
         }else{
             setPriceVal("")}
     },[],);
     const handleValidColorChange = useCallback((value) => {
-        if(!value.target.value.match(/^([a-z]|[A-Z]){1,50}$/)){
+        if(!value.target.value.match(/^([a-z]){1,50}$/i)){
             setColorVal("Максимальная длина 50 символов")
         }else{
             setColorVal("")}},[],);
     const handleValidWeightChange = useCallback((value) => {
-        if(!value.target.value.match(/^.{1,50}$/)){
+        if(!value.target.value.match(/^.{1,10}$/)){
             setWeightVal("Максимальная длина 10 символов ")
         }else{
             setWeightVal("")}},[],);

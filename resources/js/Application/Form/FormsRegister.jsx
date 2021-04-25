@@ -3,54 +3,45 @@ import {Button, TextField, Checkbox, Form, FormLayout} from '@shopify/polaris';
 import axios from "axios";
 
 export default function FormsRegister() {
+    //======Значения_полей=========================================
     const [newsletter, setNewsletter] = useState(false);
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [passwordDouble, setPasswordDouble] = useState('');
+    //=============================================================
+    //=====Валидация=================================
     const [errors, setErrors] = useState(false);
     const [errorsName, setErrorsName] = useState(false);
     const [errorsPassword, setErrorsPassword] = useState(false);
     const [errorsDoublePassword, setErrorsDoublePassword] = useState(false);
-    let countValid = 0;
-//=============Experment=================
     const validField = (event) =>{
-        let valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
-        if(valueField){
-            setErrors(false);
-        }else{
-            setErrors(true);
-        }
-
+        validFields(event, /\w*@\w{2,7}\.\w{2,7}/, setErrors)
     }
     const validFieldName = (event) =>{
-        let valueField = event.target.value.match(/\w{1,4}/);
-        if(valueField){
-            setErrorsName(false);
-        }else{
-            setErrorsName(true);
-        }
-
+        validFields(event, /\w{1,20}/, setErrorsName)
     }
     const validFieldPass = (event) =>{
-        let valueField = event.target.value.match(/.{6,25}/);
-        if(valueField){
-            setErrorsPassword(false);
-        }else{
-            setErrorsPassword(true);
-        }
-
+        validFields(event, /.{6,25}/, setErrorsPassword);
     }
     const validFieldPassDouble = (event) =>{
         let valueField = event.target.value.match(/.{6,25}/);
-        console.log(password)
         if(valueField && event.target.value === password){
             setErrorsDoublePassword(false);
         }else{
-            setErrorsDoublePassword(true);
+            setErrorsDoublePassword("Поле заполнено не корректно");
         }
 
     }
+    const validFields = (e, reg, setState) => {
+        let valueField = e.target.value.match(reg);
+        if(valueField){
+            setState(false);
+        }else{
+            setState("Поле заполнено не корректно");
+        }
+    }
+    //=========================================================
     //====Функция отправки данных==========
     // const ajaxSend = async (formData) => {
     //     const fetchResp = await fetch( 'register', {
@@ -72,7 +63,6 @@ export default function FormsRegister() {
         const formData = new FormData(event.target);
         let countField = 0;
         for(let pair of formData.entries()){
-            console.log(typeof pair[1]);
             if(pair[1] === ''){
                 countField++;
             }
@@ -81,13 +71,10 @@ export default function FormsRegister() {
             alert('Заполните все поля')
         }else{
             axios.post('register', {
-
                 name: nameValueForm,
                 email: emailValueForm,
                 password: passwordValueForm,
                 password_confirmation: passwordDoubleValueForm
-
-
             })
                 .then(response => location.href = '/warehouse')
                 .catch(error => console.log(error))
@@ -95,13 +82,8 @@ export default function FormsRegister() {
             setEmail('');
             setPassword('');
             setPasswordDouble('');
-            setNewsletter(false);
         }}, []);
 
-    const handleNewsLetterChange = useCallback(
-        (value) => setNewsletter(value),
-        [],
-    );
 
     const handleEmailChange = useCallback((value) => setEmail(value), []);
     const handleNameChange = useCallback((value) => setName(value), []);
@@ -120,7 +102,7 @@ export default function FormsRegister() {
                 <TextField
                     value={name}
                     onChange={handleNameChange}
-                    label="Name"
+                    label="Имя"
                     id="namelr"
                     type="text"
                     name="name"
@@ -134,7 +116,7 @@ export default function FormsRegister() {
                 <TextField
                     value={email}
                     onChange={handleEmailChange}
-                    label="Email"
+                    label="Почта"
                     id="emailr"
                     type="email"
                     name="email"
@@ -151,7 +133,7 @@ export default function FormsRegister() {
                     value={password}
                     name="password"
                     onChange={handlePasswordChange}
-                    label="Password"
+                    label="Пароль"
                     type="password"
                     id="passwordr"
                     minLength={6} maxLength={50}
@@ -167,7 +149,7 @@ export default function FormsRegister() {
                     value={passwordDouble}
                     name="passwordDouble"
                     onChange={handlePasswordDoubleChange}
-                    label="Password Double"
+                    label="Пароль еще раз"
                     type="password"
                     id="passwordrd"
                     minLength={6} maxLength={50}

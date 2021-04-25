@@ -66,7 +66,7 @@ export default function Forms() {
                 <TextField
                     value={email}
                     onChange={handleEmailChange}
-                    label="Email"
+                    label="Почта аккаунта"
                     type="email"
                     error={errors}
                     onBlur={validField}
@@ -83,7 +83,7 @@ export default function Forms() {
                     value={password}
                     onChange={handlePasswordChange}
                     id="password"
-                    label="Password"
+                    label="Пароль аккаунта"
                     type="password"
                     name="password"
                     minLength={6} maxLength={50}
