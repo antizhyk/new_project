@@ -122,13 +122,11 @@ export default function FormWithoutNativeValidationExample() {
                 videocardValueForm = _event.target.querySelector('#videocardProduct').value;
             }
             if(typeValueForm === '3'){
-                dualsimValueForm = _event.target.querySelector('#dualsimProduct').getAttribute('value');
+                dualsimValueForm = _event.target.querySelector('#dualsimProduct').value;
             }
-
-
+            console.log(typeValueForm)
 
             axios.post('api/products', {
-
                 name: nameValueForm,
                 weight: weightValueForm,
                 color: colorValueForm,
@@ -136,8 +134,6 @@ export default function FormWithoutNativeValidationExample() {
                 dualsim: dualsimValueForm,
                 videocard: videocardValueForm,
                 type_id: typeValueForm,
-
-
             })
                 .then(response => console.log(response))
                 .catch(error => console.log(error))
@@ -156,23 +152,23 @@ export default function FormWithoutNativeValidationExample() {
     //=======События валидации=================
     const handleValidSelectChange = useCallback((value) => setSelected(value), []);
     const handleValidUrlChange = useCallback((value) => {
-        if(!value.target.value.match(/^.{1,4}$/)){
+        if(!value.target.value.match(/^.{1,50}$/)){
             setNameVal("Максимальная длина 50 символов")
         }else{
             setNameVal("");}}, []);
     const handleValidTextFieldChange = useCallback((value) => {
-        if(!value.target.value.match(/^.{1,4}$/)){
+        if(!value.target.value.match(/^.{1,50}$/)){
             setPriceVal("Максимальная длина 10 символов ");
         }else{
             setPriceVal("")}
     },[],);
     const handleValidColorChange = useCallback((value) => {
-        if(!value.target.value.match(/^([a-z]|[A-Z]){1,4}$/)){
+        if(!value.target.value.match(/^([a-z]|[A-Z]){1,50}$/)){
             setColorVal("Максимальная длина 50 символов")
         }else{
             setColorVal("")}},[],);
     const handleValidWeightChange = useCallback((value) => {
-        if(!value.target.value.match(/^.{1,4}$/)){
+        if(!value.target.value.match(/^.{1,50}$/)){
             setWeightVal("Максимальная длина 10 символов ")
         }else{
             setWeightVal("")}},[],);
@@ -182,7 +178,7 @@ export default function FormWithoutNativeValidationExample() {
         }else{
             setSimVal("")}}, []);
     const handleValidVideoChange = useCallback((value) => {
-        if(!value.target.value.match(/^.{1,4}$/)){
+        if(!value.target.value.match(/^.{1,50}$/)){
             setVideoVal("Максимальная длина 50 символов")
         }else{
             setVideoVal("")}

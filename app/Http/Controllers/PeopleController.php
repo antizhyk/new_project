@@ -6,11 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\people;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
-<<<<<<< HEAD
-use  \App\Http\Requests\PeopleRequest;
-=======
 
->>>>>>> 72ffac274e75a58b5f230bd127a97aeef20262ff
 
 class PeopleController extends Controller
 {

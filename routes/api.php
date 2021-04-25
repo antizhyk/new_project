@@ -24,10 +24,6 @@ Route::middleware('auth')->get('/me', function (Request $request) {
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-<<<<<<< HEAD
-Route::post('people', [PeopleController::class, 'index']);
-Route::post('send', [PeopleController::class, 'sendForm']);
-=======
 
 Route::group(['middleware' => 'auth'], function () {
     // Product types routes
@@ -45,5 +41,4 @@ Route::group(['middleware' => 'auth'], function () {
 //// Used for authentication on the frontend
 //Route::get('/profile', [ProfileController::class, 'get']);
 
->>>>>>> 72ffac274e75a58b5f230bd127a97aeef20262ff
 

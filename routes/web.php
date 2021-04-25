@@ -22,13 +22,10 @@ use Illuminate\Auth\Events\Logout;
 //    return view('welcome');
 //});
 //Auth::routes();
-Route::get('/warehouse', function () {
+Route::get('/', function () {
     return view('welcome');
-});
+})->middleware(['auth'])->name('/');
 
-Route::get('/dashboard', function () {
-    return view('welcome');
-})->middleware(['auth'])->name('dashboard');
 
 Route::get('/login', function () {
     return view('welcome');

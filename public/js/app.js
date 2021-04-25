@@ -16214,7 +16214,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-n;
 function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.AppProvider, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Routes__WEBPACK_IMPORTED_MODULE_1__.default, null));
 }
@@ -16239,8 +16238,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -16289,83 +16286,80 @@ function Forms() {
   };
 
   var validFieldPass = function validFieldPass(event) {
-    var _React$createElement;
-
     var valueField = event.target.value.match(/.{6,25}/);
 
     if (valueField) {
-      if (valueField) {
-        setErrorsPassword(false);
-      } else {
-        setErrorsPassword(true);
-      }
-    } //====================
+      setErrorsPassword(false);
+    } else {
+      setErrorsPassword(true);
+    }
+  }; //====================
 
 
-    var handleSubmit = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (_event) {
-      var emailValueForm = _event.target.querySelector('#email').getAttribute('value');
+  var handleSubmit = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (_event) {
+    var emailValueForm = _event.target.querySelector('#email').getAttribute('value');
 
-      var passwordValueForm = _event.target.querySelector('#password').getAttribute('value');
+    var passwordValueForm = _event.target.querySelector('#password').getAttribute('value');
 
-      var formData = new FormData(event.target);
-      console.log(emailValueForm);
-      console.log(passwordValueForm);
-      event.preventDefault(); // axios.get('/sanctum/csrf-cookie', {
-      //     headers: { 'Retry-After': 3600 }
-      // }).then(
+    var formData = new FormData(event.target);
+    console.log(emailValueForm);
+    console.log(passwordValueForm);
+    event.preventDefault(); // axios.get('/sanctum/csrf-cookie', {
+    //     headers: { 'Retry-After': 3600 }
+    // }).then(
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default().post('login', {
-        email: emailValueForm,
-        password: passwordValueForm
-      }).then(function (response) {
-        return location.href = '/warehouse';
-      })["catch"](function (error) {
-        return console.log(error);
-      }); // );
-    }, []);
-    var handleEmailChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-      return setEmail(value);
-    }, []);
-    var handlePasswordChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-      return setPassword(value);
-    }, []);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "block__login-wrap"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "block__login"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Form, {
-      onSubmit: handleSubmit,
-      name: "people",
-      id: "people",
-      noValidate: true
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.FormLayout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, (_React$createElement = {
-      value: email,
-      onChange: handleEmailChange,
-      label: "Email",
-      type: "email",
-      name: "email",
-      error: errors,
-      onBlur: validField,
-      id: "email"
-    }, _defineProperty(_React$createElement, "name", "email"), _defineProperty(_React$createElement, "helpText", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 e-mail")), _React$createElement)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-      onBlur: validFieldPass,
-      value: password,
-      onChange: handlePasswordChange,
-      id: "password",
-      label: "Password",
-      type: "password",
-      name: "password",
-      minLength: 6,
-      maxLength: 50,
-      error: errorsPassword,
-      helpText: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0430\u0440\u043E\u043B\u044C")
-    }), errorsPassword && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F \u043C\u0438\u043D\u0438\u043C\u0443\u043C 6 \u0437\u043D\u0430\u043A\u043E\u0432"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
-      submit: true
-    }, "\u0412\u043E\u0439\u0442\u0438")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-      href: "http://0.0.0.0:81/register",
-      className: "block__link-registration"
-    }, "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"))));
-  };
+    axios__WEBPACK_IMPORTED_MODULE_1___default().post('login', {
+      email: emailValueForm,
+      password: passwordValueForm
+    }).then(function (response) {
+      return location.href = '/warehouse';
+    })["catch"](function (error) {
+      return console.log(error);
+    }); // );
+  }, []);
+  var handleEmailChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setEmail(value);
+  }, []);
+  var handlePasswordChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setPassword(value);
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "block__login-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "block__login"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Form, {
+    onSubmit: handleSubmit,
+    name: "people",
+    id: "people",
+    noValidate: true
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.FormLayout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+    value: email,
+    onChange: handleEmailChange,
+    label: "Email",
+    type: "email",
+    error: errors,
+    onBlur: validField,
+    id: "email",
+    name: "email",
+    helpText: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 e-mail")
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+    onBlur: validFieldPass,
+    value: password,
+    onChange: handlePasswordChange,
+    id: "password",
+    label: "Password",
+    type: "password",
+    name: "password",
+    minLength: 6,
+    maxLength: 50,
+    error: errorsPassword,
+    helpText: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0430\u0440\u043E\u043B\u044C")
+  }), errorsPassword && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F \u043C\u0438\u043D\u0438\u043C\u0443\u043C 6 \u0437\u043D\u0430\u043A\u043E\u0432"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
+    submit: true
+  }, "\u0412\u043E\u0439\u0442\u0438")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "http://0.0.0.0:81/register",
+    className: "block__link-registration"
+  }, "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"))));
 }
 
 /***/ }),
@@ -16374,9 +16368,265 @@ function Forms() {
 /*!*********************************************************!*\
   !*** ./resources/js/Application/Form/FormsRegister.jsx ***!
   \*********************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/dev/projects/new_project/resources/js/Application/Form/FormsRegister.jsx: Unexpected token (44:1)\n\n\u001b[0m \u001b[90m 42 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 43 |\u001b[39m     }\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 44 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 45 |\u001b[39m     \u001b[90m//====Функция отправки данных==========\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 46 |\u001b[39m     \u001b[36mconst\u001b[39m ajaxSend \u001b[33m=\u001b[39m \u001b[36masync\u001b[39m (formData) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 47 |\u001b[39m         \u001b[36mconst\u001b[39m fetchResp \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m fetch(process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mMIX_APP_URL\u001b[39m \u001b[33m+\u001b[39m \u001b[32m'api/send'\u001b[39m\u001b[33m,\u001b[39m {\u001b[0m\n    at Object._raise (/home/dev/projects/new_project/node_modules/@babel/parser/lib/index.js:776:17)\n    at Object.raiseWithData (/home/dev/projects/new_project/node_modules/@babel/parser/lib/index.js:769:17)\n    at Object.raise (/home/dev/projects/new_project/node_modules/@babel/parser/lib/index.js:737:17)\n    at Object.unexpected (/home/dev/projects/new_project/node_modules/@babel/parser/lib/index.js:9735:16)\n    at Object.jsxParseIdentifier (/home/dev/projects/new_project/node_modules/@babel/parser/lib/index.js:4947:12)\n    at Object.jsxParseNamespacedName (/home/dev/projects/new_project/node_modules/@babel/parser/lib/index.js:4957:23)\n    at Object.jsxParseElementName (/home/dev/projects/new_project/node_modules/@babel/parser/lib/index.js:4968:21)\n    at Object.jsxParseOpeningElementAt (/home/dev/projects/new_project/node_modules/@babel/parser/lib/index.js:5055:22)\n    at Object.jsxParseElementAt (/home/dev/projects/new_project/node_modules/@babel/parser/lib/index.js:5088:33)\n    at Object.jsxParseElement (/home/dev/projects/new_project/node_modules/@babel/parser/lib/index.js:5162:17)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FormsRegister)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+function FormsRegister() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      newsletter = _useState2[0],
+      setNewsletter = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      email = _useState4[0],
+      setEmail = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      name = _useState6[0],
+      setName = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      password = _useState8[0],
+      setPassword = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      passwordDouble = _useState10[0],
+      setPasswordDouble = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      errors = _useState12[0],
+      setErrors = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState14 = _slicedToArray(_useState13, 2),
+      errorsName = _useState14[0],
+      setErrorsName = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState16 = _slicedToArray(_useState15, 2),
+      errorsPassword = _useState16[0],
+      setErrorsPassword = _useState16[1];
+
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState18 = _slicedToArray(_useState17, 2),
+      errorsDoublePassword = _useState18[0],
+      setErrorsDoublePassword = _useState18[1];
+
+  var countValid = 0; //=============Experment=================
+
+  var validField = function validField(event) {
+    var valueField = event.target.value.match(/\w*@\w{2,7}\.\w{2,7}/);
+
+    if (valueField) {
+      setErrors(false);
+    } else {
+      setErrors(true);
+    }
+  };
+
+  var validFieldName = function validFieldName(event) {
+    var valueField = event.target.value.match(/\w{1,4}/);
+
+    if (valueField) {
+      setErrorsName(false);
+    } else {
+      setErrorsName(true);
+    }
+  };
+
+  var validFieldPass = function validFieldPass(event) {
+    var valueField = event.target.value.match(/.{6,25}/);
+
+    if (valueField) {
+      setErrorsPassword(false);
+    } else {
+      setErrorsPassword(true);
+    }
+  };
+
+  var validFieldPassDouble = function validFieldPassDouble(event) {
+    var valueField = event.target.value.match(/.{6,25}/);
+    console.log(password);
+
+    if (valueField && event.target.value === password) {
+      setErrorsDoublePassword(false);
+    } else {
+      setErrorsDoublePassword(true);
+    }
+  }; //====Функция отправки данных==========
+  // const ajaxSend = async (formData) => {
+  //     const fetchResp = await fetch( 'register', {
+  //         method: 'POST',
+  //         body: formData
+  //     });
+  //     return await fetchResp.text();
+  // };
+  //===============================
+  //====================
+
+
+  var handleSubmit = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (_event) {
+    event.preventDefault();
+
+    var emailValueForm = _event.target.querySelector('#emailr').getAttribute('value');
+
+    var nameValueForm = _event.target.querySelector('#namelr').getAttribute('value');
+
+    var passwordValueForm = _event.target.querySelector('#passwordr').getAttribute('value');
+
+    var passwordDoubleValueForm = _event.target.querySelector('#passwordrd').getAttribute('value');
+
+    var formData = new FormData(event.target);
+    var countField = 0;
+
+    var _iterator = _createForOfIteratorHelper(formData.entries()),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var pair = _step.value;
+        console.log(_typeof(pair[1]));
+
+        if (pair[1] === '') {
+          countField++;
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+
+    if (countField > 0) {
+      alert('Заполните все поля');
+    } else {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().post('register', {
+        name: nameValueForm,
+        email: emailValueForm,
+        password: passwordValueForm,
+        password_confirmation: passwordDoubleValueForm
+      }).then(function (response) {
+        return location.href = '/warehouse';
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+      setName('');
+      setEmail('');
+      setPassword('');
+      setPasswordDouble('');
+      setNewsletter(false);
+    }
+  }, []);
+  var handleNewsLetterChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setNewsletter(value);
+  }, []);
+  var handleEmailChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setEmail(value);
+  }, []);
+  var handleNameChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setName(value);
+  }, []);
+  var handlePasswordChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setPassword(value);
+  }, []);
+  var handlePasswordDoubleChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    return setPasswordDouble(value);
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "block__login-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "block__login"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Form, {
+    onSubmit: handleSubmit,
+    name: "send",
+    id: "send",
+    noValidate: true
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.FormLayout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+    value: name,
+    onChange: handleNameChange,
+    label: "Name",
+    id: "namelr",
+    type: "text",
+    name: "name",
+    error: errorsName,
+    onBlur: validFieldName,
+    helpText: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043C\u044F")
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+    value: email,
+    onChange: handleEmailChange,
+    label: "Email",
+    id: "emailr",
+    type: "email",
+    name: "email",
+    error: errors,
+    onBlur: validField,
+    helpText: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 e-mail")
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+    onBlur: validFieldPass,
+    value: password,
+    name: "password",
+    onChange: handlePasswordChange,
+    label: "Password",
+    type: "password",
+    id: "passwordr",
+    minLength: 6,
+    maxLength: 50,
+    error: errorsPassword,
+    helpText: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0430\u0440\u043E\u043B\u044C")
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+    onBlur: validFieldPassDouble,
+    value: passwordDouble,
+    name: "passwordDouble",
+    onChange: handlePasswordDoubleChange,
+    label: "Password Double",
+    type: "password",
+    id: "passwordrd",
+    minLength: 6,
+    maxLength: 50,
+    error: errorsDoublePassword,
+    helpText: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u041F\u0430\u0440\u043E\u043B\u0438 \u043D\u0435 \u0441\u043E\u0432\u043F\u0430\u0434\u0430\u044E\u0442")
+  }), errorsPassword && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F \u043C\u0438\u043D\u0438\u043C\u0443\u043C 6 \u0437\u043D\u0430\u043A\u043E\u0432"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
+    submit: true
+  }, "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "http://0.0.0.0:81/login",
+    className: "block__link-registration"
+  }, "\u0412\u0445\u043E\u0434")));
+}
 
 /***/ }),
 
@@ -16396,7 +16646,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Warehouse__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Warehouse */ "./resources/js/Application/Warehouse.jsx");
 /* harmony import */ var _Form_Forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Form/Forms */ "./resources/js/Application/Form/Forms.jsx");
 /* harmony import */ var _Form_FormsRegister__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Form/FormsRegister */ "./resources/js/Application/Form/FormsRegister.jsx");
-/* harmony import */ var _Form_FormsRegister__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Form_FormsRegister__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -16405,14 +16654,15 @@ __webpack_require__.r(__webpack_exports__);
 
 var Routes = function Routes() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
-    component: (_Form_FormsRegister__WEBPACK_IMPORTED_MODULE_3___default()),
+    component: _Form_FormsRegister__WEBPACK_IMPORTED_MODULE_3__.default,
     path: "/register"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
     component: _Form_Forms__WEBPACK_IMPORTED_MODULE_2__.default,
     path: "/login"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
     component: _Warehouse__WEBPACK_IMPORTED_MODULE_1__.default,
-    path: "/warehouse"
+    path: "/",
+    exact: true
   }));
 };
 
@@ -16437,7 +16687,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _productList_ListProduct__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./productList/ListProduct */ "./resources/js/Application/productList/ListProduct.jsx");
 /* harmony import */ var _addProduct_AddProduct__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addProduct/AddProduct */ "./resources/js/Application/addProduct/AddProduct.jsx");
 /* harmony import */ var _Form_FormsRegister__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Form/FormsRegister */ "./resources/js/Application/Form/FormsRegister.jsx");
-/* harmony import */ var _Form_FormsRegister__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Form_FormsRegister__WEBPACK_IMPORTED_MODULE_3__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -16725,9 +16974,10 @@ function FormWithoutNativeValidationExample() {
       }
 
       if (typeValueForm === '3') {
-        dualsimValueForm = _event.target.querySelector('#dualsimProduct').getAttribute('value');
+        dualsimValueForm = _event.target.querySelector('#dualsimProduct').value;
       }
 
+      console.log(typeValueForm);
       axios__WEBPACK_IMPORTED_MODULE_1___default().post('api/products', {
         name: nameValueForm,
         weight: weightValueForm,
@@ -16772,28 +17022,28 @@ function FormWithoutNativeValidationExample() {
     return setSelected(value);
   }, []);
   var handleValidUrlChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    if (!value.target.value.match(/^.{1,4}$/)) {
+    if (!value.target.value.match(/^.{1,50}$/)) {
       setNameVal("Максимальная длина 50 символов");
     } else {
       setNameVal("");
     }
   }, []);
   var handleValidTextFieldChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    if (!value.target.value.match(/^.{1,4}$/)) {
+    if (!value.target.value.match(/^.{1,50}$/)) {
       setPriceVal("Максимальная длина 10 символов ");
     } else {
       setPriceVal("");
     }
   }, []);
   var handleValidColorChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    if (!value.target.value.match(/^([a-z]|[A-Z]){1,4}$/)) {
+    if (!value.target.value.match(/^([a-z]|[A-Z]){1,50}$/)) {
       setColorVal("Максимальная длина 50 символов");
     } else {
       setColorVal("");
     }
   }, []);
   var handleValidWeightChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    if (!value.target.value.match(/^.{1,4}$/)) {
+    if (!value.target.value.match(/^.{1,50}$/)) {
       setWeightVal("Максимальная длина 10 символов ");
     } else {
       setWeightVal("");
@@ -16807,7 +17057,7 @@ function FormWithoutNativeValidationExample() {
     }
   }, []);
   var handleValidVideoChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    if (!value.target.value.match(/^.{1,4}$/)) {
+    if (!value.target.value.match(/^.{1,50}$/)) {
       setVideoVal("Максимальная длина 50 символов");
     } else {
       setVideoVal("");

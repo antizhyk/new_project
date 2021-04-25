@@ -41,14 +41,6 @@ export default function FormsRegister() {
         }
 
     }
-    //====Функция отправки данных==========
-    const ajaxSend = async (formData) => {
-        const fetchResp = await fetch(process.env.MIX_APP_URL + 'api/send', {
-            method: 'POST',
-            body: formData
-        });
-        return await fetchResp.text();
-    };
     const validFieldPassDouble = (event) =>{
         let valueField = event.target.value.match(/.{6,25}/);
         console.log(password)
@@ -74,22 +66,6 @@ export default function FormsRegister() {
     const handleSubmit = useCallback((_event) => {
         event.preventDefault();
         let emailValueForm = _event.target.querySelector('#emailr').getAttribute('value');
-        let passwordValueForm = _event.target.querySelector('#passwordr').getAttribute('value');
-        const formData = new FormData(event.target);
-        for(let value of formData.values()){
-            console.log(value);
-        }
-        ajaxSend(formData)
-            .then(responce => {
-                console.log(responce)
-            })
-            .catch(err => console.error(err))
-
-        setEmail('');
-        setPassword('');
-        setNewsletter(false);
-    }, []);
-
         let nameValueForm = _event.target.querySelector('#namelr').getAttribute('value');
         let passwordValueForm = _event.target.querySelector('#passwordr').getAttribute('value');
         let passwordDoubleValueForm = _event.target.querySelector('#passwordrd').getAttribute('value');
@@ -103,7 +79,7 @@ export default function FormsRegister() {
         }
         if(countField > 0){
             alert('Заполните все поля')
-        }else {
+        }else{
             axios.post('register', {
 
                 name: nameValueForm,
@@ -120,7 +96,7 @@ export default function FormsRegister() {
             setPassword('');
             setPasswordDouble('');
             setNewsletter(false);
-        , []);
+        }}, []);
 
     const handleNewsLetterChange = useCallback(
         (value) => setNewsletter(value),
@@ -212,7 +188,5 @@ export default function FormsRegister() {
                 <a href="http://0.0.0.0:81/login" className="block__link-registration">Вход</a>
             </div>
         </div>
-
     );
-
-
+}
