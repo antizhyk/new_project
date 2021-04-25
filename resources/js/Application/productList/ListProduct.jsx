@@ -9,8 +9,7 @@ export default function DataTableExample() {
 
     useEffect(() => {
         async function fetch() {
-            const data = await axios.get("/api/products/");
-            console.log(data)
+            const data = await axios.get("/api/products/?page=1");
             setProducts(data.data);
         }
 
@@ -20,8 +19,27 @@ export default function DataTableExample() {
 
     //console.log(products.length)
     const movePage = () => {
-        axios.get('/api/products/?page=' + count)
-            .then(response => setProducts(response.data))
+
+        async function fetch() {
+            const data = await axios.get("/api/products/?page=" + (count + 1));
+            if(data.data.length >= 1){
+                setProducts(data.data);
+                setCount(count + 1)
+            }
+
+        }
+        fetch();
+
+
+    }
+    const prevMovePage = () => {
+
+        async function fetch() {
+            const data = await axios.get("/api/products/?page=" + (count - 1));
+            setProducts(data.data);
+        }
+        fetch();
+        setCount(count - 1)
     }
 
 
@@ -37,7 +55,6 @@ export default function DataTableExample() {
         rows.push(arr);
     }
 
-    console.log(products);
 
     return (
         <Page title="Products list">
@@ -70,18 +87,14 @@ export default function DataTableExample() {
                 <Pagination
                     hasPrevious
                     onPrevious={() => {
-                        if(count > 1){
-                            setCount(count - 1)
-                        }
-                        console.log(count)
-                        movePage()
+                         if(count > 1){
+                             prevMovePage()
+                         }
                         console.log('Previous');
 
                     }}
                     hasNext
                     onNext={() => {
-                        setCount(count + 1)
-                        console.log(count)
                         movePage()
                         console.log('Next');
                     }}

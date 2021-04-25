@@ -17173,14 +17173,13 @@ function DataTableExample() {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/products/");
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/products/?page=1");
 
               case 2:
                 data = _context.sent;
-                console.log(data);
                 setProducts(data.data);
 
-              case 5:
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -17194,9 +17193,72 @@ function DataTableExample() {
   }, []); //console.log(products.length)
 
   var movePage = function movePage() {
-    axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/products/?page=' + count).then(function (response) {
-      return setProducts(response.data);
-    });
+    function fetch() {
+      return _fetch2.apply(this, arguments);
+    }
+
+    function _fetch2() {
+      _fetch2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/products/?page=" + (count + 1));
+
+              case 2:
+                data = _context2.sent;
+
+                if (data.data.length >= 1) {
+                  setProducts(data.data);
+                  setCount(count + 1);
+                }
+
+              case 4:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+      return _fetch2.apply(this, arguments);
+    }
+
+    fetch();
+  };
+
+  var prevMovePage = function prevMovePage() {
+    function fetch() {
+      return _fetch3.apply(this, arguments);
+    }
+
+    function _fetch3() {
+      _fetch3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/products/?page=" + (count - 1));
+
+              case 2:
+                data = _context3.sent;
+                setProducts(data.data);
+
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+      return _fetch3.apply(this, arguments);
+    }
+
+    fetch();
+    setCount(count - 1);
   };
 
   var rows = [];
@@ -17206,7 +17268,6 @@ function DataTableExample() {
     rows.push(arr);
   }
 
-  console.log(products);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Page, {
     title: "Products list"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
@@ -17221,17 +17282,13 @@ function DataTableExample() {
     hasPrevious: true,
     onPrevious: function onPrevious() {
       if (count > 1) {
-        setCount(count - 1);
+        prevMovePage();
       }
 
-      console.log(count);
-      movePage();
       console.log('Previous');
     },
     hasNext: true,
     onNext: function onNext() {
-      setCount(count + 1);
-      console.log(count);
       movePage();
       console.log('Next');
     }
