@@ -41,7 +41,7 @@ export default function Warehouse() {
                 </Card.Section>
 
             </Tabs>
-            <a href="http://0.0.0.0:81/logout" className="block__logout">logout</a>
+            <a href="http://0.0.0.0:8084/logout" className="block__logout">logout</a>
         </Card>
     );
 }

@@ -15,7 +15,7 @@ class CreateVideocardsTable extends Migration
     {
         Schema::create('videocards', function (Blueprint $table) {
             $table->id();
-            $table->string('video');
+            $table->string('value');
             $table->timestamps();
         });
     }

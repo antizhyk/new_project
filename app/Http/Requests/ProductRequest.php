@@ -26,10 +26,10 @@ class ProductRequest extends FormRequest
         return [
             'name' => 'string|required|max:255',
             'weight' => 'numeric|required',
-            'color' => 'string|required|max:6',
+            'color' => 'string|required|max:20',
             'price' => 'numeric|required',
-            'videocard' => 'string|required|max:6',
-            'dualsim' => 'string|required|max:6',
+            'videocard' => 'string|required|max:20',
+            'dualsim' => 'string|required|max:20',
             'type_id' => 'required|exists:product_types,id',
         ];
     }

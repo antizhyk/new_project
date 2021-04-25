@@ -16312,7 +16312,7 @@ function Forms() {
       email: emailValueForm,
       password: passwordValueForm
     }).then(function (response) {
-      return location.href = '/warehouse';
+      return location.href = '/';
     })["catch"](function (error) {
       return console.log(error);
     }); // );
@@ -16357,7 +16357,7 @@ function Forms() {
   }), errorsPassword && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F \u043C\u0438\u043D\u0438\u043C\u0443\u043C 6 \u0437\u043D\u0430\u043A\u043E\u0432"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
     submit: true
   }, "\u0412\u043E\u0439\u0442\u0438")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "http://0.0.0.0:81/register",
+    href: "http://0.0.0.0:8084/register",
     className: "block__link-registration"
   }, "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"))));
 }
@@ -16623,7 +16623,7 @@ function FormsRegister() {
   }), errorsPassword && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "\u0414\u043B\u0438\u043D\u0430 \u043F\u0430\u0440\u043E\u043B\u044F \u043C\u0438\u043D\u0438\u043C\u0443\u043C 6 \u0437\u043D\u0430\u043A\u043E\u0432"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Button, {
     submit: true
   }, "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "http://0.0.0.0:81/login",
+    href: "http://0.0.0.0:8084/login",
     className: "block__link-registration"
   }, "\u0412\u0445\u043E\u0434")));
 }
@@ -16739,7 +16739,7 @@ function Warehouse() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Card.Section, {
     title: tabs[selected].content
   }, select(tabs[selected].id))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    href: "http://0.0.0.0:81/logout",
+    href: "http://0.0.0.0:8084/logout",
     className: "block__logout"
   }, "logout"));
 }

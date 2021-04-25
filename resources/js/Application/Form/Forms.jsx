@@ -45,7 +45,7 @@ export default function Forms() {
             email: emailValueForm,
             password: passwordValueForm
         })
-            .then(response => location.href = '/warehouse')
+            .then(response => location.href = '/')
             .catch(error => console.log(error))
         // );
     }, []);
@@ -101,7 +101,7 @@ export default function Forms() {
 
                 <Button submit>Войти</Button>
             </FormLayout>
-            <a href="http://0.0.0.0:81/register" className="block__link-registration">Регистрация</a>
+            <a href="http://0.0.0.0:8084/register" className="block__link-registration">Регистрация</a>
         </Form>
         </div>
         </div>
