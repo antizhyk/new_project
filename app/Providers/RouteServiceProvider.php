@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/warehouse';
 
     /**
      * The controller namespace for the application.
@@ -26,7 +26,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string|null
      */
-    // protected $namespace = 'App\\Http\\Controllers';
+    // protected $namespace = 'StartPage\\Http\\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -35,16 +35,16 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->configureRateLimiting();
+//        $this->configureRateLimiting();
 
         $this->routes(function () {
             Route::prefix('api')
-                ->middleware('api')
-                ->namespace($this->namespace)
+                ->middleware('web')
+//                ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
-                ->namespace($this->namespace)
+//                ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
     }
@@ -54,10 +54,10 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function configureRateLimiting()
-    {
-        RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
-        });
-    }
+//    protected function configureRateLimiting()
+//    {
+//        RateLimiter::for('api', function (Request $request) {
+//            return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
+//        });
+//    }
 }

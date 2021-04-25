@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\UniversallController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Auth\Events\Logout;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{query}', function () {
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//Auth::routes();
+Route::get('/warehouse', function () {
     return view('welcome');
-})->where('query', '^((?!api).)*$');
+});
+
+Route::get('/dashboard', function () {
+    return view('welcome');
+})->middleware(['auth'])->name('dashboard');
+
+Route::get('/login', function () {
+    return view('welcome');
+});
+Route::get('/show', UniversallController::class);
+Route::post('/show', [UniversallController::class, 'create']);
+
+require __DIR__.'/auth.php';
