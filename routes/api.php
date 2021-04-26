@@ -25,7 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {//Если пользователь авторизован
     // Product types routes
     Route::get('/product_type', [ProductTypeController::class, 'get']);
     Route::post('/product_type', [ProductTypeController::class, 'post']);

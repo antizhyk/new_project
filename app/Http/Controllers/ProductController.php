@@ -23,24 +23,26 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(3);
+        $products = Product::paginate(3);//Получаю первые три записи
 
-        $res = [];
+        $res = [];//Создаю массив для добавления
 
 
         for ($i = 0; $i < count($products); ++$i) {
-            $product = $products[$i];
-            $res[$i] = ['Name' => $product->name, 'Type' => ProductType::find($product->product_type_id), 'Id' => $product->id];
-            $attributes = $product->productType->attributes()->get();
-            foreach ($attributes as $attribute) {
-                $model = $attribute->attributable_type;
-                $type = substr($model, strrpos($model, '\\') + 1);
+            $product = $products[$i];//Создаю переменную в которую вкладываю значение продукта
+            $res[$i] = ['Name' => $product->name, 'Type' => ProductType::find($product->product_type_id), 'Id' => $product->id]; //В массив для добавления
+            //Добавля массив из имени продукта, типа продукта (который нахожу по ключу), id продукта
+            $attributes = $product->productType->attributes()->get();//В эту переменную устанавливаю атрибуты товара, добавляя их
+            // через функцию связи таблицы attributes()
 
-                $res[$i][$type] = $attribute->attributable->value;
+            foreach ($attributes as $attribute) {//Далее я начинаю их перебирать
+                $model = $attribute->attributable_type;//находим по id названия атрибутов и их значения и добавляем в переменную
+                $type = substr($model, strrpos($model, '\\') + 1);
+                $res[$i][$type] = $attribute->attributable->value; //значения атрибутов в массив для добавления
             }
         }
 
-        return $res;
+        return $res;//возвращаем массив продуктов с атрибутами
     }
 
     /**

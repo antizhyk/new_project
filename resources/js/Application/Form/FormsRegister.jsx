@@ -76,7 +76,7 @@ export default function FormsRegister() {
                 password: passwordValueForm,
                 password_confirmation: passwordDoubleValueForm
             })
-                .then(response => location.href = '/warehouse')
+                .then(response => location.href = '/')
                 .catch(error => console.log(error))
             setName('');
             setEmail('');
