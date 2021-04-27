@@ -2,15 +2,17 @@ import React, { Fragment, useEffect, useState } from 'react';
 import {Card, DataTable, Page, Pagination} from '@shopify/polaris';
 import axios from "axios";
 import {Link} from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 
 
 export default function DataTableExample() {
     const [products, setProducts] = useState([]);
     const [count, setCount] = useState(1);
-
+    const { id } = useParams();
     useEffect(() => {
         async function fetch() {
             const data = await axios.get("/api/products/?page=1");
+
             setProducts(data.data);
         }
 
@@ -18,12 +20,12 @@ export default function DataTableExample() {
 
     }, []);
 
-    //console.log(products.length)
     const movePage = () => {
 
         async function fetch() {
             const data = await axios.get("/api/products/?page=" + (count + 1));
             if(data.data.length >= 1){
+
                 setProducts(data.data);
                 setCount(count + 1)
             }
@@ -33,6 +35,7 @@ export default function DataTableExample() {
 
 
     }
+
     const prevMovePage = () => {
 
         async function fetch() {
@@ -41,9 +44,6 @@ export default function DataTableExample() {
         }
         fetch();
         setCount(count - 1)
-    }
-    const hello = () =>{
-        console.log('hello world')
     }
 
     const rows = [];
@@ -55,11 +55,26 @@ export default function DataTableExample() {
             products[item].Color,
             products[item].Dualsim,
             products[item].Videocard,
+            <button onClick={deleteProduct} value={products[item].Id}>Delete</button>,
             ]
         rows.push(arr);
     }
-
-
+//==========Experement======================
+    async function deleteProduct(e) {
+        // setLoading(true);
+        console.log(e.target.value)
+        let id = e.target.value;
+        const res = await axios({
+            method: "delete",
+            url: `/api/products/` + id,
+        })
+            .then(response => ocation.reload());
+        res();
+        // success("Successfully deleted item");
+        // setRedirect(true);
+        // setLoading(false);
+    }
+//===========================================
     return (
 
         <Page title="Products list">
@@ -74,6 +89,7 @@ export default function DataTableExample() {
                             'text',
                             'text',
                             'text',
+                            'React.ReactNode'
                         ]}
                         headings={[
                             'Название продукта',

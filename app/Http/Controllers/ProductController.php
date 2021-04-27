@@ -39,9 +39,9 @@ class ProductController extends Controller
                 $model = $attribute->attributable_type;//находим по id названия атрибутов и их значения и добавляем в переменную
                 $type = substr($model, strrpos($model, '\\') + 1);
                 $res[$i][$type] = $attribute->attributable->value; //значения атрибутов в массив для добавления
+
             }
         }
-
         return $res;//возвращаем массив продуктов с атрибутами
     }
 
@@ -155,15 +155,15 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::find($id);
+        $product = Product::find($id);//Находит продукт по id
         if (!$product) {
-            return [];
+            return [];//если такого нет то возвращает ничего
         }
 
         foreach ($product->attributes()->get() as $attribute) {
-            $attribute->attributable->delete();
+            $attribute->attributable->delete();//если есть то сначала ищем и убираем атрибуты
         }
 
-        $product->delete();
+        $product->delete();//а затем удаляем сам продукт
     }
 }

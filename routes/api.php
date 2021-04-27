@@ -25,7 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => 'auth'], function () {//Если пользователь авторизован
+Route::middleware('auth')->group( function () {//Группа маршрутов доступная пользователю в случае авторизациии
     // Product types routes
     Route::get('/product_type', [ProductTypeController::class, 'get']);
     Route::post('/product_type', [ProductTypeController::class, 'post']);
@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth'], function () {//Если пользова�
     // Product routes
     Route::get('/products', [ProductController::class, 'index']);
     Route::post('/products', [ProductController::class, 'store']);
+    Route::delete('/products/{id}', [ProductController::class, 'destroy']);
 
     Route::get('/products/{id}', [ProductController::class, 'show']);
     // Route::put('/products/{id}', [ProductController::class, 'update']);
