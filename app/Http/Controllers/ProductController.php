@@ -11,6 +11,7 @@ use App\Models\Attribute;
 use App\Models\ProductType;
 use App\Models\Videocard;
 use App\Models\Weight;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 
@@ -39,9 +40,9 @@ class ProductController extends Controller
                 $model = $attribute->attributable_type;//находим по id названия атрибутов и их значения и добавляем в переменную
                 $type = substr($model, strrpos($model, '\\') + 1);
                 $res[$i][$type] = $attribute->attributable->value; //значения атрибутов в массив для добавления
-
             }
         }
+        //dd($res);
         return $res;//возвращаем массив продуктов с атрибутами
     }
 
@@ -52,12 +53,13 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
+
         // Create product
         $product = new Product();
         $product->name = $request->name;
         $product->product_type_id = $request->type_id;
         $product->save();
-
+dd($request->color);
         $attributes = [
             ['class' => Weight::class, 'value' => $request->weight],
             ['class' => Price::class, 'value' => $request->price],
@@ -85,32 +87,35 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        $product = Product::find($id);
-        // If product isn't stored, return empty result
-        if (!$product) return [];
 
-        $res = ['Name' => $product->name, 'Type' => ProductType::find($product->product_type_id), 'Id' => $product->id];
-
-        $attributes = $product->productType->attributes()->get();
-        foreach ($attributes as $attribute) {
-            $model = $attribute->attributable_type;
-            $type = substr($model, strrpos($model, '\\') + 1);
-
-            $res[$type] = $attribute->attributable->value;
-        }
+        $search = $request->search;
+        $product = Product::query()->where('name', 'LIKE', $search)->firstOrFail();
+        $productName = $product->name;
+        $productId = $product->id;
+        $proustType = $product->productType;
+        $attributes = $product->attributes;
+        $attributableId = $attributes[0]->attributable_id;
+        $weight = Weight::find(12)->value('value');
+        $color = Color::find(12)->value('value');
+        $price = Price::find(12)->value('value');
+        $dualSim = Dualsim::find(12)->value('value');
+        $video = Videocard::find(12)->value('value');
+        //dd([$weight, $color, $price, $dualSim, $video]);
+        $res = [
+            'Name' => $productName,
+            'Type' => $proustType,
+            'Id' => $productId,
+            'Weight' => $weight,
+            'Color' => $color,
+            'Videocard' => $video,
+            'Dualsim' => $dualSim
+            ];
+        //dd($res);
 
         return $res;
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
     }

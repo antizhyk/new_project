@@ -26,7 +26,7 @@ class ProductRequest extends FormRequest
         return [
             'name' => 'string|required|max:255',
             'weight' => 'numeric|required',
-            'color' => 'string|required|max:20',
+            'color' => 'required|max:100',
             'price' => 'numeric|required',
             'videocard' => 'string|required|max:20',
             'dualsim' => 'string|required|max:20',

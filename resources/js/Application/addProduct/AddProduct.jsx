@@ -1,5 +1,5 @@
-import React, {useCallback, useState} from 'react';
-import {Button, TextField, Form, FormLayout, Select} from '@shopify/polaris';
+import React, {useCallback, useEffect, useState} from 'react';
+import {Button, TextField, Form, FormLayout, Select, ColorPicker, Popover} from '@shopify/polaris';
 import axios from "axios";
 
 
@@ -7,10 +7,15 @@ export default function FormWithoutNativeValidationExample() {
     const [name, setName] = useState('');
     const [selected, setSelected] = useState('1');
     const [textFieldValue, setTextFieldValue] = useState('');
-    const [color, setColor] = useState('');
+    //const [color, setColor] = useState('');
     const [weight, setWeight] = useState('');
     const [sim, setSim] = useState('');
     const [video, setVideo] = useState('');
+    const [color, setColor] = useState({
+        hue: 120,
+        brightness: 1,
+        saturation: 1,
+    });
     //========State-validation==========================
     const [nameVal, setNameVal] = useState('');
     const [priceVal, setPriceVal] = useState('');
@@ -27,6 +32,8 @@ export default function FormWithoutNativeValidationExample() {
     ];
 
     //==================================================
+
+
     //=======Контент=======================
     function content (cont){
         return (
@@ -74,16 +81,17 @@ export default function FormWithoutNativeValidationExample() {
                                 error={weightVal}
                                 onBlur={handleValidWeightChange}
                             />
-                            <TextField
-                                label="Цвет"
-                                type="text"
-                                id='colorProduct'
-                                value={color}
-                                onChange={handleColorChange}
-                                name="color"
-                                error={colorVal}
-                                onBlur={handleValidColorChange}
-                            />
+                            <ColorPicker onChange={handleChange} color={color} id='color' />
+                            {/*<TextField*/}
+                            {/*    label="Цвет"*/}
+                            {/*    type="text"*/}
+                            {/*    id='colorProduct'*/}
+                            {/*    value={color}*/}
+                            {/*    onChange={handleColorChange}*/}
+                            {/*    name="color"*/}
+                            {/*    error={colorVal}*/}
+                            {/*    onBlur={handleValidColorChange}*/}
+                            {/*/>*/}
                             {cont}
                             <Button submit>Занести в базу</Button>
                         </FormLayout>
@@ -116,8 +124,8 @@ export default function FormWithoutNativeValidationExample() {
             console.log(_event.target.querySelector('#typeProduct').value);
             let priceValueForm = _event.target.querySelector('#priceProduct').getAttribute('value');
             let weightValueForm = _event.target.querySelector('#weightProduct').getAttribute('value');
-            let colorValueForm = _event.target.querySelector('#colorProduct').getAttribute('value');
-
+            let colorValueForm = color.hue + ', ' + (color.brightness * 100) + '%, ' + (color.saturation * 100) + '%';
+            console.log(colorValueForm)
             if(typeValueForm === '2'){
                 videocardValueForm = _event.target.querySelector('#videocardProduct').value;
             }
@@ -154,10 +162,15 @@ export default function FormWithoutNativeValidationExample() {
     const handleSelectChange = useCallback((value) => setSelected(value), []);
     const handleUrlChange = useCallback((value) => setName(value), []);
     const handleTextFieldChange = useCallback((value) => setTextFieldValue(value),[],);
-    const handleColorChange = useCallback((value) => setColor(value),[],);
+    //const handleColorChange = useCallback((value) => setColor(value),[],);
     const handleWeightChange = useCallback((value) => setWeight(value),[],);
     const handleSimChange = useCallback((value) => setSim(value), []);
     const handleVideoChange = useCallback((value) => setVideo(value), []);
+    const handleChange = useCallback((value) => {
+        console.log(document.querySelector('#color'));
+        setColor(value)
+        //console.log(color)
+    }, []);
     //==================================================
     //=======События валидации=================
     const handleValidSelectChange = useCallback((value) => setSelected(value), []);
@@ -172,11 +185,11 @@ export default function FormWithoutNativeValidationExample() {
         }else{
             setPriceVal("")}
     },[],);
-    const handleValidColorChange = useCallback((value) => {
-        if(!value.target.value.match(/^([a-z]){1,50}$/i)){
-            setColorVal("Максимальная длина 50 символов")
-        }else{
-            setColorVal("")}},[],);
+    // const handleValidColorChange = useCallback((value) => {
+    //     if(!value.target.value.match(/^([a-z]){1,50}$/i)){
+    //         setColorVal("Максимальная длина 50 символов")
+    //     }else{
+    //         setColorVal("")}},[],);
     const handleValidWeightChange = useCallback((value) => {
         if(!value.target.value.match(/^.{1,10}$/)){
             setWeightVal("Максимальная длина 10 символов ")

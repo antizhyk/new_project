@@ -4135,6 +4135,698 @@ function Subsection({
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ColorPicker": () => (/* binding */ ColorPicker)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_clamp_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/clamp.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/clamp.js");
+/* harmony import */ var _utilities_color_transformers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilities/color-transformers.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/color-transformers.js");
+/* harmony import */ var _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ColorPicker.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.scss.js");
+/* harmony import */ var _components_Slidable_Slidable_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Slidable/Slidable.js */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/Slidable/Slidable.js");
+/* harmony import */ var _components_AlphaPicker_AlphaPicker_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/AlphaPicker/AlphaPicker.js */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/AlphaPicker/AlphaPicker.js");
+/* harmony import */ var _components_HuePicker_HuePicker_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/HuePicker/HuePicker.js */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/HuePicker/HuePicker.js");
+
+
+
+
+
+
+
+
+class ColorPicker extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      pickerSize: 0
+    };
+    this.colorNode = null;
+
+    this.setColorNode = node => {
+      this.colorNode = node;
+    };
+
+    this.handleHueChange = hue => {
+      const {
+        color: {
+          brightness,
+          saturation,
+          alpha = 1
+        },
+        onChange
+      } = this.props;
+      onChange({
+        hue,
+        brightness,
+        saturation,
+        alpha
+      });
+    };
+
+    this.handleAlphaChange = alpha => {
+      const {
+        color: {
+          hue,
+          brightness,
+          saturation
+        },
+        onChange
+      } = this.props;
+      onChange({
+        hue,
+        brightness,
+        saturation,
+        alpha
+      });
+    };
+
+    this.handleDraggerMove = ({
+      x,
+      y
+    }) => {
+      const {
+        pickerSize
+      } = this.state;
+      const {
+        color: {
+          hue,
+          alpha = 1
+        },
+        onChange
+      } = this.props;
+      const saturation = (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_1__.clamp)(x / pickerSize, 0, 1);
+      const brightness = (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_1__.clamp)(1 - y / pickerSize, 0, 1);
+      onChange({
+        hue,
+        saturation,
+        brightness,
+        alpha
+      });
+    };
+
+    this.handlePickerDrag = event => {
+      // prevents external elements from being selected
+      event.preventDefault();
+    };
+  }
+
+  componentDidMount() {
+    const {
+      colorNode
+    } = this;
+
+    if (colorNode == null) {
+      return;
+    }
+
+    this.setState({
+      pickerSize: colorNode.clientWidth
+    });
+
+    if (true) {
+      setTimeout(() => {
+        this.setState({
+          pickerSize: colorNode.clientWidth
+        });
+      }, 0);
+    }
+  }
+
+  render() {
+    const {
+      id,
+      color,
+      allowAlpha
+    } = this.props;
+    const {
+      hue,
+      saturation,
+      brightness,
+      alpha: providedAlpha
+    } = color;
+    const {
+      pickerSize
+    } = this.state;
+    const alpha = providedAlpha != null && allowAlpha ? providedAlpha : 1;
+    const {
+      red,
+      green,
+      blue
+    } = (0,_utilities_color_transformers_js__WEBPACK_IMPORTED_MODULE_2__.hsbToRgb)({
+      hue,
+      saturation: 1,
+      brightness: 1
+    });
+    const colorString = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+    const draggerX = (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_1__.clamp)(saturation * pickerSize, 0, pickerSize);
+    const draggerY = (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_1__.clamp)(pickerSize - brightness * pickerSize, 0, pickerSize);
+    const alphaSliderMarkup = allowAlpha ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_AlphaPicker_AlphaPicker_js__WEBPACK_IMPORTED_MODULE_3__.AlphaPicker, {
+      alpha: alpha,
+      color: color,
+      onChange: this.handleAlphaChange
+    }) : null;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.ColorPicker,
+      id: id,
+      onMouseDown: this.handlePickerDrag
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      ref: this.setColorNode,
+      className: _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.MainColor
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_4__.default.ColorLayer,
+      style: {
+        backgroundColor: colorString
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Slidable_Slidable_js__WEBPACK_IMPORTED_MODULE_5__.Slidable, {
+      onChange: this.handleDraggerMove,
+      draggerX: draggerX,
+      draggerY: draggerY
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_HuePicker_HuePicker_js__WEBPACK_IMPORTED_MODULE_6__.HuePicker, {
+      hue: hue,
+      onChange: this.handleHueChange
+    }), alphaSliderMarkup);
+  }
+
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.scss.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.scss.js ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var styles = {
+  "ColorPicker": "Polaris-ColorPicker",
+  "MainColor": "Polaris-ColorPicker__MainColor",
+  "Dragger": "Polaris-ColorPicker__Dragger",
+  "ColorLayer": "Polaris-ColorPicker__ColorLayer",
+  "HuePicker": "Polaris-ColorPicker__HuePicker",
+  "AlphaPicker": "Polaris-ColorPicker__AlphaPicker",
+  "Slidable": "Polaris-ColorPicker__Slidable"
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (styles);
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/AlphaPicker/AlphaPicker.js":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/AlphaPicker/AlphaPicker.js ***!
+  \*************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AlphaPicker": () => (/* binding */ AlphaPicker)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utilities_color_transformers_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../utilities/color-transformers.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/color-transformers.js");
+/* harmony import */ var _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../ColorPicker.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.scss.js");
+/* harmony import */ var _Slidable_Slidable_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Slidable/Slidable.js */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/Slidable/Slidable.js");
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utilities.js */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/AlphaPicker/utilities.js");
+
+
+
+
+
+
+class AlphaPicker extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      sliderHeight: 0,
+      draggerHeight: 0
+    };
+
+    this.setSliderHeight = node => {
+      if (node == null) {
+        return;
+      }
+
+      this.setState({
+        sliderHeight: node.clientHeight
+      });
+
+      if (true) {
+        setTimeout(() => {
+          this.setState({
+            sliderHeight: node.clientHeight
+          });
+        }, 0);
+      }
+    };
+
+    this.setDraggerHeight = height => {
+      this.setState({
+        draggerHeight: height
+      });
+    };
+
+    this.handleChange = ({
+      y
+    }) => {
+      const {
+        onChange
+      } = this.props;
+      const {
+        sliderHeight
+      } = this.state;
+      const alpha = (0,_utilities_js__WEBPACK_IMPORTED_MODULE_1__.alphaForDraggerY)(y, sliderHeight);
+      onChange(alpha);
+    };
+  }
+
+  render() {
+    const {
+      color,
+      alpha
+    } = this.props;
+    const {
+      sliderHeight,
+      draggerHeight
+    } = this.state;
+    const draggerY = (0,_utilities_js__WEBPACK_IMPORTED_MODULE_1__.calculateDraggerY)(alpha, sliderHeight, draggerHeight);
+    const background = alphaGradientForColor(color);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.AlphaPicker,
+      ref: this.setSliderHeight
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.ColorLayer,
+      style: {
+        background
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Slidable_Slidable_js__WEBPACK_IMPORTED_MODULE_3__.Slidable, {
+      draggerY: draggerY,
+      draggerX: 0,
+      onChange: this.handleChange,
+      onDraggerHeight: this.setDraggerHeight
+    }));
+  }
+
+}
+
+function alphaGradientForColor(color) {
+  const {
+    red,
+    green,
+    blue
+  } = (0,_utilities_color_transformers_js__WEBPACK_IMPORTED_MODULE_4__.hsbToRgb)(color);
+  const rgb = `${red}, ${green}, ${blue}`;
+  return `linear-gradient(to top, rgba(${rgb}, 0) 18px, rgba(${rgb}, 1) calc(100% - 18px))`;
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/AlphaPicker/utilities.js":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/AlphaPicker/utilities.js ***!
+  \***********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "alphaForDraggerY": () => (/* binding */ alphaForDraggerY),
+/* harmony export */   "alphaForOffset": () => (/* binding */ alphaForOffset),
+/* harmony export */   "calculateDraggerY": () => (/* binding */ calculateDraggerY)
+/* harmony export */ });
+/* harmony import */ var _utilities_clamp_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../utilities/clamp.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/clamp.js");
+
+
+const VERTICAL_PADDING = 13;
+function calculateDraggerY(alpha, sliderHeight, draggerHeight) {
+  const offset = offsetForAlpha(alpha, sliderHeight, draggerHeight);
+  return (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_0__.clamp)(offset, 0, sliderHeight);
+}
+function alphaForDraggerY(y, sliderHeight) {
+  const offsetY = (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_0__.clamp)(y, 0, sliderHeight);
+  return alphaForOffset(offsetY, sliderHeight);
+}
+function alphaForOffset(offset, sliderHeight) {
+  const selectionHeight = offset - VERTICAL_PADDING;
+  const slidableArea = sliderHeight - VERTICAL_PADDING * 2;
+  return (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_0__.clamp)(1 - selectionHeight / slidableArea, 0, 1);
+}
+
+function offsetForAlpha(alpha, sliderHeight, draggerHeight) {
+  const slidableArea = sliderHeight - (draggerHeight + VERTICAL_PADDING);
+  return (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_0__.clamp)((1 - alpha) * slidableArea + VERTICAL_PADDING, 0, sliderHeight - draggerHeight);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/HuePicker/HuePicker.js":
+/*!*********************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/HuePicker/HuePicker.js ***!
+  \*********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "HuePicker": () => (/* binding */ HuePicker)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../ColorPicker.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.scss.js");
+/* harmony import */ var _Slidable_Slidable_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Slidable/Slidable.js */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/Slidable/Slidable.js");
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utilities.js */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/HuePicker/utilities.js");
+
+
+
+
+
+class HuePicker extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      sliderHeight: 0,
+      draggerHeight: 0
+    };
+
+    this.setSliderHeight = node => {
+      if (node == null) {
+        return;
+      }
+
+      this.setState({
+        sliderHeight: node.clientHeight
+      });
+
+      if (true) {
+        setTimeout(() => {
+          this.setState({
+            sliderHeight: node.clientHeight
+          });
+        }, 0);
+      }
+    };
+
+    this.setDraggerHeight = height => {
+      this.setState({
+        draggerHeight: height
+      });
+    };
+
+    this.handleChange = ({
+      y
+    }) => {
+      const {
+        onChange
+      } = this.props;
+      const {
+        sliderHeight
+      } = this.state;
+      const hue = (0,_utilities_js__WEBPACK_IMPORTED_MODULE_1__.hueForDraggerY)(y, sliderHeight);
+      onChange(hue);
+    };
+  }
+
+  render() {
+    const {
+      hue
+    } = this.props;
+    const {
+      sliderHeight,
+      draggerHeight
+    } = this.state;
+    const draggerY = (0,_utilities_js__WEBPACK_IMPORTED_MODULE_1__.calculateDraggerY)(hue, sliderHeight, draggerHeight);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_2__.default.HuePicker,
+      ref: this.setSliderHeight
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Slidable_Slidable_js__WEBPACK_IMPORTED_MODULE_3__.Slidable, {
+      draggerY: draggerY,
+      draggerX: 0,
+      onChange: this.handleChange,
+      onDraggerHeight: this.setDraggerHeight
+    }));
+  }
+
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/HuePicker/utilities.js":
+/*!*********************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/HuePicker/utilities.js ***!
+  \*********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "calculateDraggerY": () => (/* binding */ calculateDraggerY),
+/* harmony export */   "hueForDraggerY": () => (/* binding */ hueForDraggerY)
+/* harmony export */ });
+/* harmony import */ var _utilities_clamp_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../utilities/clamp.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/clamp.js");
+
+
+const VERTICAL_PADDING = 13;
+function calculateDraggerY(hue, sliderHeight, draggerHeight) {
+  const offset = offsetForHue(hue, sliderHeight, draggerHeight);
+  return (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_0__.clamp)(offset, 0, sliderHeight);
+}
+function hueForDraggerY(y, sliderHeight) {
+  const offsetY = (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_0__.clamp)(y, 0, sliderHeight);
+  return hueForOffset(offsetY, sliderHeight);
+}
+
+function hueForOffset(offset, sliderHeight) {
+  const selectionHeight = offset - VERTICAL_PADDING;
+  const slidableArea = sliderHeight - VERTICAL_PADDING * 2;
+  return (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_0__.clamp)(selectionHeight / slidableArea * 360, 0, 360);
+}
+
+function offsetForHue(hue, sliderHeight, draggerHeight) {
+  const slidableArea = sliderHeight - (draggerHeight + VERTICAL_PADDING);
+  return (0,_utilities_clamp_js__WEBPACK_IMPORTED_MODULE_0__.clamp)(hue / 360 * slidableArea + VERTICAL_PADDING, 0, sliderHeight - draggerHeight);
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/Slidable/Slidable.js":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/components/Slidable/Slidable.js ***!
+  \*******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Slidable": () => (/* binding */ Slidable)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _EventListener_EventListener_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../EventListener/EventListener.js */ "./node_modules/@shopify/polaris/dist/esm/components/EventListener/EventListener.js");
+/* harmony import */ var _utilities_target_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../utilities/target.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/target.js");
+/* harmony import */ var _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../ColorPicker.scss.js */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.scss.js");
+
+
+
+
+
+let isDragging = false; // Required to solve a bug causing the underlying page/container to scroll
+// while trying to drag the ColorPicker controls.
+// This must be called as soon as possible to properly prevent the event.
+// `passive: false` must also be set, as it seems webkit has changed the "default" behaviour
+// https://bugs.webkit.org/show_bug.cgi?id=182521
+
+if (!_utilities_target_js__WEBPACK_IMPORTED_MODULE_1__.isServer) {
+  window.addEventListener('touchmove', event => {
+    if (!isDragging) {
+      return;
+    }
+
+    event.preventDefault();
+  }, {
+    passive: false
+  });
+}
+
+class Slidable extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      dragging: false
+    };
+    this.node = null;
+    this.draggerNode = null;
+
+    this.setDraggerNode = node => {
+      this.draggerNode = node;
+    };
+
+    this.setNode = node => {
+      this.node = node;
+    };
+
+    this.startDrag = event => {
+      if (isMouseDownEvent(event)) {
+        this.handleDraggerMove(event.clientX, event.clientY);
+      }
+
+      isDragging = true;
+      this.setState({
+        dragging: true
+      });
+    };
+
+    this.handleDragEnd = () => {
+      isDragging = false;
+      this.setState({
+        dragging: false
+      });
+    };
+
+    this.handleMove = event => {
+      event.stopImmediatePropagation();
+      event.stopPropagation();
+
+      if (event.cancelable) {
+        event.preventDefault();
+      }
+
+      if (isMouseMoveEvent(event)) {
+        this.handleDraggerMove(event.clientX, event.clientY);
+        return;
+      }
+
+      this.handleDraggerMove(event.touches[0].clientX, event.touches[0].clientY);
+    };
+
+    this.handleDraggerMove = (x, y) => {
+      if (this.node == null) {
+        return;
+      }
+
+      const {
+        onChange
+      } = this.props;
+      const rect = this.node.getBoundingClientRect();
+      const offsetX = x - rect.left;
+      const offsetY = y - rect.top;
+      onChange({
+        x: offsetX,
+        y: offsetY
+      });
+    };
+  }
+
+  componentDidMount() {
+    const {
+      onDraggerHeight
+    } = this.props;
+
+    if (onDraggerHeight == null) {
+      return;
+    }
+
+    const {
+      draggerNode
+    } = this;
+
+    if (draggerNode == null) {
+      return;
+    }
+
+    onDraggerHeight(draggerNode.clientWidth);
+
+    if (true) {
+      setTimeout(() => {
+        onDraggerHeight(draggerNode.clientWidth);
+      }, 0);
+    }
+  }
+
+  render() {
+    const {
+      dragging
+    } = this.state;
+    const {
+      draggerX = 0,
+      draggerY = 0
+    } = this.props;
+    const draggerPositioning = {
+      transform: `translate3d(${draggerX}px, ${draggerY}px, 0)`
+    };
+    const moveListener = dragging ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventListener_EventListener_js__WEBPACK_IMPORTED_MODULE_2__.EventListener, {
+      event: "mousemove",
+      handler: this.handleMove,
+      passive: false
+    }) : null;
+    const touchMoveListener = dragging ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventListener_EventListener_js__WEBPACK_IMPORTED_MODULE_2__.EventListener, {
+      event: "touchmove",
+      handler: this.handleMove,
+      passive: false
+    }) : null;
+    const endDragListener = dragging ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventListener_EventListener_js__WEBPACK_IMPORTED_MODULE_2__.EventListener, {
+      event: "mouseup",
+      handler: this.handleDragEnd
+    }) : null;
+    const touchEndListener = dragging ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventListener_EventListener_js__WEBPACK_IMPORTED_MODULE_2__.EventListener, {
+      event: "touchend",
+      handler: this.handleDragEnd
+    }) : null;
+    const touchCancelListener = dragging ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_EventListener_EventListener_js__WEBPACK_IMPORTED_MODULE_2__.EventListener, {
+      event: "touchcancel",
+      handler: this.handleDragEnd
+    }) : null;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      ref: this.setNode,
+      className: _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Slidable,
+      onMouseDown: this.startDrag,
+      onTouchStart: this.startDrag
+    }, endDragListener, moveListener, touchMoveListener, touchEndListener, touchCancelListener, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      style: draggerPositioning,
+      className: _ColorPicker_scss_js__WEBPACK_IMPORTED_MODULE_3__.default.Dragger,
+      ref: this.setDraggerNode
+    }));
+  }
+
+}
+
+function isMouseMoveEvent(event) {
+  return event.type === 'mousemove';
+}
+
+function isMouseDownEvent(event) {
+  return event.type === 'mousedown';
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/components/Connected/Connected.js":
 /*!**********************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/components/Connected/Connected.js ***!
@@ -10508,6 +11200,268 @@ function stackedContent() {
 
 /***/ }),
 
+/***/ "./node_modules/@shopify/polaris/dist/esm/utilities/clamp.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/utilities/clamp.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "clamp": () => (/* binding */ clamp)
+/* harmony export */ });
+function clamp(number, min, max) {
+  if (number < min) return min;
+  if (number > max) return max;
+  return number;
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/utilities/color-transformers.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/utilities/color-transformers.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "hsbToHex": () => (/* binding */ hsbToHex),
+/* harmony export */   "hsbToRgb": () => (/* binding */ hsbToRgb),
+/* harmony export */   "hslToRgb": () => (/* binding */ hslToRgb),
+/* harmony export */   "rgbString": () => (/* binding */ rgbString),
+/* harmony export */   "rgbToHex": () => (/* binding */ rgbToHex),
+/* harmony export */   "rgbToHsb": () => (/* binding */ rgbToHsb),
+/* harmony export */   "rgbToHsl": () => (/* binding */ rgbToHsl),
+/* harmony export */   "rgbaString": () => (/* binding */ rgbaString)
+/* harmony export */ });
+/* harmony import */ var _clamp_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clamp.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/clamp.js");
+/* harmony import */ var _roundNumberToDecimalPlaces_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./roundNumberToDecimalPlaces.js */ "./node_modules/@shopify/polaris/dist/esm/utilities/roundNumberToDecimalPlaces.js");
+
+
+
+function rgbString(color) {
+  const {
+    red,
+    green,
+    blue
+  } = color;
+
+  if ('alpha' in color) {
+    return `rgba(${red}, ${green}, ${blue}, ${color.alpha})`;
+  } else {
+    return `rgb(${red}, ${green}, ${blue})`;
+  }
+}
+const rgbaString = rgbString;
+function rgbToHex({
+  red,
+  green,
+  blue
+}) {
+  return `#${componentToHex(red)}${componentToHex(green)}${componentToHex(blue)}`;
+}
+
+function componentToHex(component) {
+  const hex = component.toString(16);
+  return hex.length === 1 ? `0${hex}` : hex;
+}
+
+function hsbToHex(color) {
+  return rgbToHex(hsbToRgb(color));
+}
+
+function rgbFromHueAndChroma(hue, chroma) {
+  const huePrime = hue / 60;
+  const hueDelta = 1 - Math.abs(huePrime % 2 - 1);
+  const intermediateValue = chroma * hueDelta;
+  let red = 0;
+  let green = 0;
+  let blue = 0;
+
+  if (huePrime >= 0 && huePrime <= 1) {
+    red = chroma;
+    green = intermediateValue;
+    blue = 0;
+  }
+
+  if (huePrime >= 1 && huePrime <= 2) {
+    red = intermediateValue;
+    green = chroma;
+    blue = 0;
+  }
+
+  if (huePrime >= 2 && huePrime <= 3) {
+    red = 0;
+    green = chroma;
+    blue = intermediateValue;
+  }
+
+  if (huePrime >= 3 && huePrime <= 4) {
+    red = 0;
+    green = intermediateValue;
+    blue = chroma;
+  }
+
+  if (huePrime >= 4 && huePrime <= 5) {
+    red = intermediateValue;
+    green = 0;
+    blue = chroma;
+  }
+
+  if (huePrime >= 5 && huePrime <= 6) {
+    red = chroma;
+    green = 0;
+    blue = intermediateValue;
+  }
+
+  return {
+    red,
+    green,
+    blue
+  };
+} // implements https://en.wikipedia.org/wiki/HSL_and_HSV#From_HSV
+
+
+function hsbToRgb(color) {
+  const {
+    hue,
+    saturation,
+    brightness,
+    alpha = 1
+  } = color;
+  const chroma = brightness * saturation;
+  let {
+    red,
+    green,
+    blue
+  } = rgbFromHueAndChroma(hue, chroma);
+  const chromaBrightnessDelta = brightness - chroma;
+  red += chromaBrightnessDelta;
+  green += chromaBrightnessDelta;
+  blue += chromaBrightnessDelta;
+  return {
+    red: Math.round(red * 255),
+    green: Math.round(green * 255),
+    blue: Math.round(blue * 255),
+    alpha
+  };
+} // implements https://en.wikipedia.org/wiki/HSL_and_HSV#From_HSV
+
+function hslToRgb(color) {
+  const {
+    hue,
+    saturation,
+    lightness,
+    alpha = 1
+  } = color;
+  const chroma = (1 - Math.abs(2 * (lightness / 100) - 1)) * (saturation / 100);
+  let {
+    red,
+    green,
+    blue
+  } = rgbFromHueAndChroma(hue, chroma);
+  const lightnessVal = lightness / 100 - chroma / 2;
+  red += lightnessVal;
+  green += lightnessVal;
+  blue += lightnessVal;
+  return {
+    red: Math.round(red * 255),
+    green: Math.round(green * 255),
+    blue: Math.round(blue * 255),
+    alpha
+  };
+} // ref https://en.wikipedia.org/wiki/HSL_and_HSV
+
+function rgbToHsbl(color, type = 'b') {
+  const {
+    alpha = 1
+  } = color;
+  const red = color.red / 255;
+  const green = color.green / 255;
+  const blue = color.blue / 255;
+  const largestComponent = Math.max(red, green, blue);
+  const smallestComponent = Math.min(red, green, blue);
+  const delta = largestComponent - smallestComponent;
+  const lightness = (largestComponent + smallestComponent) / 2;
+  let saturation = 0;
+
+  if (largestComponent === 0) {
+    saturation = 0;
+  } else if (type === 'b') {
+    saturation = delta / largestComponent;
+  } else if (type === 'l') {
+    const baseSaturation = lightness > 0.5 ? delta / (2 - largestComponent - smallestComponent) : delta / (largestComponent + smallestComponent);
+    saturation = isNaN(baseSaturation) ? 0 : baseSaturation;
+  }
+
+  let huePercentage = 0;
+
+  switch (largestComponent) {
+    case red:
+      huePercentage = (green - blue) / delta + (green < blue ? 6 : 0);
+      break;
+
+    case green:
+      huePercentage = (blue - red) / delta + 2;
+      break;
+
+    case blue:
+      huePercentage = (red - green) / delta + 4;
+  }
+
+  const hue = huePercentage / 6 * 360;
+  const clampedHue = (0,_clamp_js__WEBPACK_IMPORTED_MODULE_0__.clamp)(hue, 0, 360);
+  return {
+    hue: clampedHue ? (0,_roundNumberToDecimalPlaces_js__WEBPACK_IMPORTED_MODULE_1__.roundNumberToDecimalPlaces)(clampedHue, 2) : 0,
+    saturation: (0,_roundNumberToDecimalPlaces_js__WEBPACK_IMPORTED_MODULE_1__.roundNumberToDecimalPlaces)((0,_clamp_js__WEBPACK_IMPORTED_MODULE_0__.clamp)(saturation, 0, 1), 4),
+    brightness: (0,_roundNumberToDecimalPlaces_js__WEBPACK_IMPORTED_MODULE_1__.roundNumberToDecimalPlaces)((0,_clamp_js__WEBPACK_IMPORTED_MODULE_0__.clamp)(largestComponent, 0, 1), 4),
+    lightness: (0,_roundNumberToDecimalPlaces_js__WEBPACK_IMPORTED_MODULE_1__.roundNumberToDecimalPlaces)(lightness, 4),
+    alpha: (0,_roundNumberToDecimalPlaces_js__WEBPACK_IMPORTED_MODULE_1__.roundNumberToDecimalPlaces)(alpha, 4)
+  };
+}
+
+function rgbToHsb(color) {
+  const {
+    hue,
+    saturation,
+    brightness,
+    alpha = 1
+  } = rgbToHsbl(color, 'b');
+  return {
+    hue,
+    saturation,
+    brightness,
+    alpha
+  };
+}
+function rgbToHsl(color) {
+  const {
+    hue,
+    saturation: rawSaturation,
+    lightness: rawLightness,
+    alpha = 1
+  } = rgbToHsbl(color, 'l');
+  const saturation = (0,_roundNumberToDecimalPlaces_js__WEBPACK_IMPORTED_MODULE_1__.roundNumberToDecimalPlaces)(rawSaturation * 100, 2);
+  const lightness = (0,_roundNumberToDecimalPlaces_js__WEBPACK_IMPORTED_MODULE_1__.roundNumberToDecimalPlaces)(rawLightness * 100, 2);
+  return {
+    hue,
+    saturation,
+    lightness,
+    alpha
+  };
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@shopify/polaris/dist/esm/utilities/components.js":
 /*!************************************************************************!*\
   !*** ./node_modules/@shopify/polaris/dist/esm/utilities/components.js ***!
@@ -11286,6 +12240,36 @@ function usePortalsManager() {
   }
 
   return portalsManager;
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@shopify/polaris/dist/esm/utilities/roundNumberToDecimalPlaces.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@shopify/polaris/dist/esm/utilities/roundNumberToDecimalPlaces.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "roundNumberToDecimalPlaces": () => (/* binding */ roundNumberToDecimalPlaces)
+/* harmony export */ });
+// Because everything is a float in JS, Number.toFixed sometimes rounds in the
+// "wrong" direction because of float imprecision. For instance:
+// `(1.005).toFixed(2)` is `1.00`, NOT `1.01` because 1.005 in floating point is
+// actually 1.004999995. By using exponentiation tricks here we can work around
+// this imprecision, so `roundNumberToDecimalPlaces(1.005)` returns the expected
+// value of `1.01`
+// See https://www.jacklmoore.com/notes/rounding-in-javascript/
+function roundNumberToDecimalPlaces(value, decimals) {
+  const exponent = Number(`${value}e${decimals}`);
+  const roundedExponent = Math.round(exponent);
+  const numberWithDecimalPlaces = Number(`${roundedExponent}e-${decimals}`);
+  return numberWithDecimalPlaces;
 }
 
 
@@ -16668,11 +17652,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Warehouse)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Tabs/Tabs.js");
 /* harmony import */ var _productList_ListProduct__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./productList/ListProduct */ "./resources/js/Application/productList/ListProduct.jsx");
 /* harmony import */ var _addProduct_AddProduct__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addProduct/AddProduct */ "./resources/js/Application/addProduct/AddProduct.jsx");
-/* harmony import */ var _Form_FormsRegister__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Form/FormsRegister */ "./resources/js/Application/Form/FormsRegister.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -16684,7 +17667,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -16712,17 +17694,17 @@ function Warehouse() {
 
   var select = function select(id) {
     if (id === 'productList') {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_productList_ListProduct__WEBPACK_IMPORTED_MODULE_1__.default, null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_productList_ListProduct__WEBPACK_IMPORTED_MODULE_1__.default, null));
     } else if (id === 'addProduct') {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_addProduct_AddProduct__WEBPACK_IMPORTED_MODULE_2__.default, null);
     }
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Tabs, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Tabs, {
     tabs: tabs,
     selected: selected,
     onSelect: handleTabChange
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Card.Section, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Card.Section, {
     title: tabs[selected].content
   }, select(tabs[selected].id))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "http://0.0.0.0:8084/logout",
@@ -16748,7 +17730,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
 /* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Select/Select.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -16784,27 +17767,32 @@ function FormWithoutNativeValidationExample() {
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState6 = _slicedToArray(_useState5, 2),
       textFieldValue = _useState6[0],
-      setTextFieldValue = _useState6[1];
+      setTextFieldValue = _useState6[1]; //const [color, setColor] = useState('');
+
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState8 = _slicedToArray(_useState7, 2),
-      color = _useState8[0],
-      setColor = _useState8[1];
+      weight = _useState8[0],
+      setWeight = _useState8[1];
 
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState10 = _slicedToArray(_useState9, 2),
-      weight = _useState10[0],
-      setWeight = _useState10[1];
+      sim = _useState10[0],
+      setSim = _useState10[1];
 
   var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState12 = _slicedToArray(_useState11, 2),
-      sim = _useState12[0],
-      setSim = _useState12[1];
+      video = _useState12[0],
+      setVideo = _useState12[1];
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    hue: 120,
+    brightness: 1,
+    saturation: 1
+  }),
       _useState14 = _slicedToArray(_useState13, 2),
-      video = _useState14[0],
-      setVideo = _useState14[1]; //========State-validation==========================
+      color = _useState14[0],
+      setColor = _useState14[1]; //========State-validation==========================
 
 
   var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
@@ -16896,16 +17884,11 @@ function FormWithoutNativeValidationExample() {
       id: "weightProduct",
       error: weightVal,
       onBlur: handleValidWeightChange
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
-      label: "\u0426\u0432\u0435\u0442",
-      type: "text",
-      id: "colorProduct",
-      value: color,
-      onChange: handleColorChange,
-      name: "color",
-      error: colorVal,
-      onBlur: handleValidColorChange
-    }), cont, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Button, {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.ColorPicker, {
+      onChange: handleChange,
+      color: color,
+      id: "color"
+    }), cont, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Button, {
       submit: true
     }, "\u0417\u0430\u043D\u0435\u0441\u0442\u0438 \u0432 \u0431\u0430\u0437\u0443")))));
   } //==================================================
@@ -16953,7 +17936,8 @@ function FormWithoutNativeValidationExample() {
 
       var weightValueForm = _event.target.querySelector('#weightProduct').getAttribute('value');
 
-      var colorValueForm = _event.target.querySelector('#colorProduct').getAttribute('value');
+      var colorValueForm = color.hue + ', ' + color.brightness * 100 + '%, ' + color.saturation * 100 + '%';
+      console.log(colorValueForm);
 
       if (typeValueForm === '2') {
         videocardValueForm = _event.target.querySelector('#videocardProduct').value;
@@ -16999,10 +17983,8 @@ function FormWithoutNativeValidationExample() {
   }, []);
   var handleTextFieldChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     return setTextFieldValue(value);
-  }, []);
-  var handleColorChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    return setColor(value);
-  }, []);
+  }, []); //const handleColorChange = useCallback((value) => setColor(value),[],);
+
   var handleWeightChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     return setWeight(value);
   }, []);
@@ -17011,6 +17993,10 @@ function FormWithoutNativeValidationExample() {
   }, []);
   var handleVideoChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     return setVideo(value);
+  }, []);
+  var handleChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    console.log(document.querySelector('#color'));
+    setColor(value); //console.log(color)
   }, []); //==================================================
   //=======События валидации=================
 
@@ -17030,14 +18016,12 @@ function FormWithoutNativeValidationExample() {
     } else {
       setPriceVal("");
     }
-  }, []);
-  var handleValidColorChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    if (!value.target.value.match(/^([a-z]){1,50}$/i)) {
-      setColorVal("Максимальная длина 50 символов");
-    } else {
-      setColorVal("");
-    }
-  }, []);
+  }, []); // const handleValidColorChange = useCallback((value) => {
+  //     if(!value.target.value.match(/^([a-z]){1,50}$/i)){
+  //         setColorVal("Максимальная длина 50 символов")
+  //     }else{
+  //         setColorVal("")}},[],);
+
   var handleValidWeightChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
     if (!value.target.value.match(/^.{1,10}$/)) {
       setWeightVal("Максимальная длина 10 символов ");
@@ -17107,10 +18091,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Page/Page.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/DataTable/DataTable.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Pagination/Pagination.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Page/Page.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Card/Card.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/DataTable/DataTable.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Pagination/Pagination.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
@@ -17138,7 +18126,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function DataTableExample() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
       products = _useState2[0],
       setProducts = _useState2[1];
@@ -17148,16 +18136,51 @@ function DataTableExample() {
       count = _useState4[0],
       setCount = _useState4[1];
 
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      value = _useState6[0],
+      setValue = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState8 = _slicedToArray(_useState7, 2),
+      data = _useState8[0],
+      setData = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+      _useState10 = _slicedToArray(_useState9, 2),
+      status = _useState10[0],
+      setStatus = _useState10[1];
+
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
       id = _useParams.id;
 
+  var arr = [];
+  var rows = []; //=======================Заполнение массива контентом==============================
+  // const divStyle = {
+  //     backgroundСolor: 'hsl(60,100%,25%)',
+  // };
+  //==================================================================================
+  //=======================Заполнение массива контентом==============================
+
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    function fetch() {
-      return _fetch.apply(this, arguments);
+    rows = [];
+    console.log(products);
+
+    for (var item in products) {
+      var _arr2 = [products[item].Name, products[item].Type.name, products[item].Price, products[item].Weight, products[item].Color, products[item].Dualsim, products[item].Videocard, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
+        onClick: deleteProduct,
+        value: products[item].Id
+      }, "Delete")];
+      rows.push(_arr2);
     }
 
-    function _fetch() {
-      _fetch = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+    console.log(status); // setTimeout(()=>console.log(rows), 1000);
+  }, [products]); //==================================================================================
+  // =======================Получение всех продуктов==============================
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (status === true) {
+      _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         var data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
@@ -17176,30 +18199,75 @@ function DataTableExample() {
             }
           }
         }, _callee);
-      }));
-      return _fetch.apply(this, arguments);
+      }))();
     }
+  }, [status]); //==================================================================================
+  // ===Если продукт найден то переписывает масссив продуктов=========================
 
-    fetch();
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (data) {
+      setStatus(false);
+      arr.push(data);
+      setProducts(arr);
+    } else {
+      console.log('und');
+    }
+  }, [data]); //==================================================================================
+  // =======================Поиск продукта==============================
+
+  var handleSubmit = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (_event) {
+    event.preventDefault();
+
+    var searchValue = _event.target.querySelector('#search').value;
+
+    _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().post('api/search', {
+                search: searchValue
+              }).then(function (response) {
+                setData(response.data);
+              })["catch"](function (error) {
+                return console.log(error);
+              });
+
+            case 2:
+              setValue('');
+
+            case 3:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }))();
+  }, []); //==================================================================================
+  // =======================Переключение страниц==============================
+
+  var handleChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (newValue) {
+    return setValue(newValue);
   }, []);
 
   var movePage = function movePage() {
     function fetch() {
-      return _fetch2.apply(this, arguments);
+      return _fetch.apply(this, arguments);
     }
 
-    function _fetch2() {
-      _fetch2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+    function _fetch() {
+      _fetch = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
         var data;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
-                _context2.next = 2;
+                _context3.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/products/?page=" + (count + 1));
 
               case 2:
-                data = _context2.sent;
+                data = _context3.sent;
 
                 if (data.data.length >= 1) {
                   setProducts(data.data);
@@ -17208,12 +18276,12 @@ function DataTableExample() {
 
               case 4:
               case "end":
-                return _context2.stop();
+                return _context3.stop();
             }
           }
-        }, _callee2);
+        }, _callee3);
       }));
-      return _fetch2.apply(this, arguments);
+      return _fetch.apply(this, arguments);
     }
 
     fetch();
@@ -17221,98 +18289,121 @@ function DataTableExample() {
 
   var prevMovePage = function prevMovePage() {
     function fetch() {
-      return _fetch3.apply(this, arguments);
+      return _fetch2.apply(this, arguments);
     }
 
-    function _fetch3() {
-      _fetch3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+    function _fetch2() {
+      _fetch2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
         var data;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context3.prev = _context3.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
-                _context3.next = 2;
+                _context4.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/api/products/?page=" + (count - 1));
 
               case 2:
-                data = _context3.sent;
+                data = _context4.sent;
                 setProducts(data.data);
 
               case 4:
               case "end":
-                return _context3.stop();
+                return _context4.stop();
             }
           }
-        }, _callee3);
+        }, _callee4);
       }));
-      return _fetch3.apply(this, arguments);
+      return _fetch2.apply(this, arguments);
     }
 
     fetch();
     setCount(count - 1);
-  };
-
-  var rows = [];
-
-  for (var item in products) {
-    var arr = [products[item].Name, products[item].Type.name, products[item].Price, products[item].Weight, products[item].Color, products[item].Dualsim, products[item].Videocard, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
-      onClick: deleteProduct,
-      value: products[item].Id
-    }, "Delete")];
-    rows.push(arr);
-  } //==========Experement======================
+  }; //==================================================================================
+  //==========Experement======================
 
 
   function deleteProduct(_x) {
     return _deleteProduct.apply(this, arguments);
   } //===========================================
+  //products[item].Color
 
 
   function _deleteProduct() {
-    _deleteProduct = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4(e) {
+    _deleteProduct = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5(e) {
       var id, res;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
         while (1) {
-          switch (_context4.prev = _context4.next) {
+          switch (_context5.prev = _context5.next) {
             case 0:
               // setLoading(true);
               console.log(e.target.value);
               id = e.target.value;
-              _context4.next = 4;
+              _context5.next = 4;
               return axios__WEBPACK_IMPORTED_MODULE_2___default()({
                 method: "delete",
                 url: "/api/products/" + id
               }).then(function (response) {
-                return ocation.reload();
+                return location.reload();
               });
 
             case 4:
-              res = _context4.sent;
+              res = _context5.sent;
               res(); // success("Successfully deleted item");
               // setRedirect(true);
               // setLoading(false);
 
             case 6:
             case "end":
-              return _context4.stop();
+              return _context5.stop();
           }
         }
-      }, _callee4);
+      }, _callee5);
     }));
     return _deleteProduct.apply(this, arguments);
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Page, {
+  for (var item in products) {
+    var _arr3 = [products[item].Name, products[item].Type.name, products[item].Price, products[item].Weight, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+      className: "block__color-wrapper"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+      className: "block__color",
+      style: {
+        backgroundColor: 'hsl(100,100%,25%)'
+      }
+    })), products[item].Dualsim, products[item].Videocard, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
+      onClick: deleteProduct,
+      value: products[item].Id
+    }, "Delete")];
+    rows.push(_arr3);
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+    className: "block__search"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.Form, {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.FormLayout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.TextField, {
+    value: value,
+    onChange: handleChange,
+    inputMode: "search",
+    maxLength: 50,
+    minLength: 4,
+    name: "search",
+    id: "search",
+    placeholder: "Search..."
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Button, {
+    submit: true
+  }, "Search")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Page, {
     title: "Products list"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_9__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "block__table"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.DataTable, {
-    columnContentTypes: ['text', 'text', 'numeric', 'numeric', 'text', 'text', 'text', 'React.ReactNode'],
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_10__.DataTable, {
+    columnContentTypes: ['text', 'text', 'numeric', 'numeric', 'React.ReactNode', 'text', 'text', 'React.ReactNode'],
     headings: ['Название продукта', 'Тип продукта', 'Цена в ($)', 'Вес в грамах', 'Цвет', 'Количество сим карт', 'Наличие видеокарт'],
-    rows: rows
+    rows: rows,
+    verticalAlign: "center"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "block__paginate"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Pagination, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_11__.Pagination, {
     hasPrevious: true,
     onPrevious: function onPrevious() {
       if (count > 1) {
@@ -17326,7 +18417,7 @@ function DataTableExample() {
       movePage();
       console.log('Next');
     }
-  })));
+  }))));
 }
 
 /***/ }),

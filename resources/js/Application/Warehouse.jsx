@@ -2,7 +2,8 @@ import React, {useCallback, useState} from 'react';
 import {Card, Tabs} from '@shopify/polaris';
 import ListProduct from './productList/ListProduct';
 import AddProduct from "./addProduct/AddProduct";
-import FormsRegister from "./Form/FormsRegister";
+
+
 
 export default function Warehouse() {
     const [selected, setSelected] = useState(0);
@@ -27,7 +28,11 @@ export default function Warehouse() {
     ];
     const select = (id) =>{
         if(id === 'productList'){
-            return <ListProduct/> ;
+            return (
+                <div>
+                    <ListProduct/>
+                </div>
+            ) ;
         }else if(id === 'addProduct'){
             return <AddProduct/>
         }}

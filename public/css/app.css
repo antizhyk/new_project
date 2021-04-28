@@ -32125,6 +32125,55 @@ select {
   margin-top: 15px;
 }
 
+.block__search{
+  max-width: 935px;
+  margin: 0 auto;
+  position: relative;
+  height: 30px;
+  margin-bottom: 30px;
+}
+
+/*.block__search button{*/
+
+/*    position: absolute;*/
+
+/*    top: 20px;*/
+
+/*    right: 0;*/
+
+/*    z-index: 10;*/
+
+/*}*/
+
+.block__search .Polaris-FormLayout__Item:nth-child(2){
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  z-index: 2;
+}
+
+.block__search .Polaris-FormLayout__Item:first-child{
+  position: absolute;
+  z-index: 1;
+  min-width: 100%;
+}
+
+.block__color-wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block__color{
+  width: 10px;
+  height: 10px;
+  /*background-color: hsl(60,100%,25%);*/
+  margin: 0 auto;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

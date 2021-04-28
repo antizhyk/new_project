@@ -10,9 +10,9 @@ host: "localhost:8084"
 basePath: "/api"
 tags:
   - name: "products"
-    description: "CRUD products"
+    description: "Создание, вывод и удаление продуктов"
   - name: "auth"
-    description: "User authentication"
+    description: "Регистрация, вход и выход"
 schemes:
   - "http"
 consumes:
@@ -24,12 +24,11 @@ paths:
     post:
       tags:
         - "auth"
-      summary: "Register a new user"
-      description: "Saves in database user data, which includes: name, email and password hash."
+      summary: "Регистрация нового пользователя"
       parameters:
         - in: "body"
           name: "user"
-          description: "User's data"
+          description: "Данные пользователя"
           required: true
           schema:
             type: "object"
@@ -46,21 +45,17 @@ paths:
                 minLength: 8
       responses:
         "201":
-          description: "User has been created"
-        "442":
-          description: "Invalid register input data"
-          schema:
-            $ref: "#/schemaDefinitions/responses/AuthError"
+          description: "Пользователь создан"
   /login:
     post:
       tags:
         - "auth"
-      summary: "Login"
-      description: "Login with existing user"
+      summary: "Вход"
+      description: "Вход в аккаунт пользователя"
       parameters:
         - in: "body"
           name: "user"
-          description: "User's data"
+          description: "Данные для входа"
           required: true
           schema:
             type: "object"
@@ -71,23 +66,18 @@ paths:
                 type: "string"
       responses:
         "204":
-          description: "Successfully logged in"
-        "442":
-          description: "Invalid login input data"
-          schema:
-            $ref: "#/schemaDefinitions/responses/AuthError"
+          description: "Пользовате вошел в свой аккаунт"
   /logout:
     post:
       tags:
         - "auth"
-      summary: "Logout"
-      description: "Logout"
+      summary: "Выход"
       security:
         - auth: []
       parameters:
         - in: "body"
           name: "user"
-          description: "User's data"
+          description: "Данные для выхода"
           required: true
           schema:
             type: "object"
@@ -98,42 +88,36 @@ paths:
                 type: "string"
       responses:
         "204":
-          description: "Successfully logged in"
-        "442":
-          description: "Invalid login input data"
-          schema:
-            $ref: "#/schemaDefinitions/responses/AuthError"
-
-
+          description: "Пользователь вышел"
 
 
   /products:
     get:
       tags:
         - "products"
-      summary: "Get products data"
-      description: "Get products data"
+      summary: "Вывести продукты"
+      description: "Вывести продукты"
       security:
         - auth: []
       parameters:
         - in: "query"
           name: "page"
           type: "integer"
-          description: "Page number"
+          description: "Номер страницы"
           required: false
         - in: "query"
           name: "type"
           type: "integer"
-          description: "Product type id"
+          description: "Тип продукта id"
           required: false
         - in: "query"
           name: "name"
           type: "string"
-          description: "Product name"
+          description: "Название продукта"
           required: false
       responses:
         "200":
-          description: "Successfully retrieved products"
+          description: "В случае успеха мы получаем следующие"
           schema:
             type: "array"
             items:
@@ -141,25 +125,40 @@ paths:
     post:
       tags:
         - "products"
-      summary: "Create new product"
-      description: "Create new product"
+      summary: "Создать продукт"
+      description: "Создать продукт"
       security:
         - auth: []
       parameters:
         - in: "body"
           name: "page"
-          description: "Product data"
+          description: ""
           required: true
           schema:
             $ref: "#/schemaDefinitions/product/Product"
 
       responses:
         "200":
-          description: "Successfully created products"
-        "422":
-          description: "Successfully created products"
-          schema:
-            $ref: "#/schemaDefinitions/responses/ProductError"
+          description: "Продукт создан"
+
+  /products/{id}:
+    delete:
+      tags:
+        - "products"
+      summary: "Удалить продукт"
+      description: "Удалить продукт по id"
+      security:
+        - auth: []
+      parameters:
+        - in: "path"
+          name: "id"
+          type: "integer"
+          required: true
+          description: "Product id"
+      responses:
+        "200":
+          description: "Продукт удален"
+
 
 
 
