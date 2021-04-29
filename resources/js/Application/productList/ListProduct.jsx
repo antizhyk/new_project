@@ -130,12 +130,13 @@ export default function DataTableExample() {
             products[item].Type.name,
             products[item].Price,
             products[item].Weight,
-            <div className='block__color-wrapper'><div className='block__color' style={{backgroundColor: 'hsl(100,100%,25%)'}}></div></div>,
+            <div className='block__color-wrapper'><div className='block__color' style={{backgroundColor: 'hsl(' + products[item].Color + ')'}}></div></div>,
             products[item].Dualsim,
             products[item].Videocard,
             <button onClick={deleteProduct} value={products[item].Id}>Delete</button>,
         ]
         rows.push(arr);
+        console.log('hsl(' + products[item].Color + ')')
     }
     return (
         <div>

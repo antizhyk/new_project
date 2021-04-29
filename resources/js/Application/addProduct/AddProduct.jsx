@@ -6,7 +6,7 @@ import axios from "axios";
 export default function FormWithoutNativeValidationExample() {
     const [name, setName] = useState('');
     const [selected, setSelected] = useState('1');
-    const [textFieldValue, setTextFieldValue] = useState('');
+    const [price, setPrice] = useState('');
     //const [color, setColor] = useState('');
     const [weight, setWeight] = useState('');
     const [sim, setSim] = useState('');
@@ -16,6 +16,7 @@ export default function FormWithoutNativeValidationExample() {
         brightness: 1,
         saturation: 1,
     });
+
     //========State-validation==========================
     const [nameVal, setNameVal] = useState('');
     const [priceVal, setPriceVal] = useState('');
@@ -33,7 +34,6 @@ export default function FormWithoutNativeValidationExample() {
 
     //==================================================
 
-
     //=======Контент=======================
     function content (cont){
         return (
@@ -43,7 +43,7 @@ export default function FormWithoutNativeValidationExample() {
                         <FormLayout>
                             <TextField
                                 value={name}
-                                onChange={handleUrlChange}
+                                onChange={setName}
                                 label="Имя продукта"
                                 type="text"
                                 name="name"
@@ -54,7 +54,7 @@ export default function FormWithoutNativeValidationExample() {
                             <Select
                                 label="Тип продукта"
                                 options={options}
-                                onChange={handleSelectChange}
+                                onChange={setSelected}
                                 value={selected}
                                 name="type"
                                 id='typeProduct'
@@ -62,8 +62,8 @@ export default function FormWithoutNativeValidationExample() {
                             <TextField
                                 label="Цена"
                                 type="number"
-                                value={textFieldValue}
-                                onChange={handleTextFieldChange}
+                                value={price}
+                                onChange={setPrice}
                                 prefix="$"
                                 name="price"
                                 error={priceVal}
@@ -74,14 +74,14 @@ export default function FormWithoutNativeValidationExample() {
                                 label="Вес"
                                 type="number"
                                 value={weight}
-                                onChange={handleWeightChange}
+                                onChange={setWeight}
                                 suffix='гр.'
                                 name="weight"
                                 id='weightProduct'
                                 error={weightVal}
                                 onBlur={handleValidWeightChange}
                             />
-                            <ColorPicker onChange={handleChange} color={color} id='color' />
+                            <ColorPicker onChange={setColor} color={color} id='color' />
                             {/*<TextField*/}
                             {/*    label="Цвет"*/}
                             {/*    type="text"*/}
@@ -101,14 +101,14 @@ export default function FormWithoutNativeValidationExample() {
         );
     }
     //==================================================
+
     //=======События при отправке=======================
-    const handleSubmit = useCallback((_event) => {
+    const handleSubmit = async (_event) => {
         _event.preventDefault();
         const formId = _event.target;
         const formData = new FormData(formId);
         let countField = 0;
         for(let pair of formData.entries()){
-            console.log(typeof pair[1]);
             if(pair[1] === ''){
                 countField++;
             }
@@ -116,62 +116,57 @@ export default function FormWithoutNativeValidationExample() {
         if(countField > 0){
             alert('Заполните все поля')
         }else{
-
             let videocardValueForm = '-';
             let dualsimValueForm = '-';
-            let nameValueForm = _event.target.querySelector('#nameProduct').getAttribute('value');
-            let typeValueForm = _event.target.querySelector('#typeProduct').value;
-            console.log(_event.target.querySelector('#typeProduct').value);
-            let priceValueForm = _event.target.querySelector('#priceProduct').getAttribute('value');
-            let weightValueForm = _event.target.querySelector('#weightProduct').getAttribute('value');
-            let colorValueForm = color.hue + ', ' + (color.brightness * 100) + '%, ' + (color.saturation * 100) + '%';
-            console.log(colorValueForm)
+            let typeValueForm = selected;
+            let colorValueForm = Math.round(color.hue) + ', ' + (Math.round(color.brightness * 100)) + '%, ' + (Math.round(color.saturation * 100)) + '%';
             if(typeValueForm === '2'){
-                videocardValueForm = _event.target.querySelector('#videocardProduct').value;
+                videocardValueForm = video;
             }
             if(typeValueForm === '3'){
-                dualsimValueForm = _event.target.querySelector('#dualsimProduct').value;
+                dualsimValueForm = sim;
             }
-            console.log(typeValueForm)
-
-            axios.post('api/products', {
-                name: nameValueForm,
-                weight: weightValueForm,
-                color: colorValueForm,
-                price: priceValueForm,
-                dualsim: dualsimValueForm,
-                videocard: videocardValueForm,
-                type_id: typeValueForm,
-            })
-                .then(response => {
-                    alert('Продукт успешно добавлен!!!')
-                    console.log(_event.target);
-                    _event.target.reset();
-                    setName('');
-                    setTextFieldValue('');
-                    setColor('');
-                    setWeight('');
-                    setSim('');
-                    setVideo('');
+            try{
+                const response =  await axios.post('api/products', {
+                    name: name,
+                    weight: weight,
+                    color: colorValueForm,
+                    price: price,
+                    dualsim: dualsimValueForm,
+                    videocard: videocardValueForm,
+                    type_id: selected,
                 })
-                .catch(error => console.log(error))
+
+                alert('Продукт успешно добавлен!!!')
+                _event.target.reset();
+                setName('');
+                setPrice('');
+                setColor('');
+                setWeight('');
+                setSim('');
+                setVideo('');
+            } catch (e) {
+                console.log(e)
+            }
         }
-    }, []);
+    };
     //==================================================
     //=======События при изменение форм=================
-    const handleSelectChange = useCallback((value) => setSelected(value), []);
-    const handleUrlChange = useCallback((value) => setName(value), []);
-    const handleTextFieldChange = useCallback((value) => setTextFieldValue(value),[],);
-    //const handleColorChange = useCallback((value) => setColor(value),[],);
-    const handleWeightChange = useCallback((value) => setWeight(value),[],);
-    const handleSimChange = useCallback((value) => setSim(value), []);
-    const handleVideoChange = useCallback((value) => setVideo(value), []);
-    const handleChange = useCallback((value) => {
-        //console.log(document.querySelector('#color'));
-        console.log(value);
-        setColor(value);
-        //console.log(color)
-    }, []);
+    // const handleSelectChange = useCallback((value) => {
+    //     console.log(value)
+    //     setSelected(value)}, []);
+    // const handleUrlChange = useCallback((value) => setName(value), []);
+    // const handleTextFieldChange = useCallback((value) => setTextFieldValue(value),[],);
+    // //const handleColorChange = useCallback((value) => setColor(value),[],);
+    // const handleWeightChange = useCallback((value) => setWeight(value),[],);
+    // const handleSimChange = useCallback((value) => setSim(value), []);
+    // const handleVideoChange = useCallback((value) => setVideo(value), []);
+    // const handleChange = useCallback((value) => {
+    //     //console.log(document.querySelector('#color'));
+    //     console.log(value);
+    //     setColor(value);
+    //     //console.log(color)
+    // }, []);
     //==================================================
     //=======События валидации=================
     const handleValidSelectChange = useCallback((value) => setSelected(value), []);
@@ -212,19 +207,19 @@ export default function FormWithoutNativeValidationExample() {
     const contentSim = <TextField
         label="Количество сим-карт"
         type="number"
-        value={sim}
-        onChange={handleSimChange}
+        value={simVal}
+        onChange={setSimVal}
         id='dualsimProduct'
         name="sim"
-        error={simVal}
+        //error={simVal}
         onBlur={handleValidSimChange}
     />;
     const contentVideo = <TextField
         label="Видеокарта"
         type="text"
-        value={video}
+        value={videoVal}
         id="videocardProduct"
-        onChange={handleVideoChange}
+        onChange={setVideoVal}
         name="video"
         error={videoVal}
         onBlur={handleValidVideoChange}

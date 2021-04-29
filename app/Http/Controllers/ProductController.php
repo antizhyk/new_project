@@ -24,7 +24,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(3);//Получаю первые три записи
+        $products = Product::paginate(10);//Получаю первые три записи
 
         $res = [];//Создаю массив для добавления
 
@@ -35,11 +35,16 @@ class ProductController extends Controller
             //Добавля массив из имени продукта, типа продукта (который нахожу по ключу), id продукта
             $attributes = $product->productType->attributes()->get();//В эту переменную устанавливаю атрибуты товара, добавляя их
             // через функцию связи таблицы attributes()
-
+            dd($attributes);
             foreach ($attributes as $attribute) {//Далее я начинаю их перебирать
+                //dd($attribute);
                 $model = $attribute->attributable_type;//находим по id названия атрибутов и их значения и добавляем в переменную
+
                 $type = substr($model, strrpos($model, '\\') + 1);
+
                 $res[$i][$type] = $attribute->attributable->value; //значения атрибутов в массив для добавления
+                echo $res[$i][$type] . '<br>';
+                //dd($res[$i][$type]);
             }
         }
         //dd($res);
@@ -53,13 +58,12 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-
         // Create product
         $product = new Product();
         $product->name = $request->name;
         $product->product_type_id = $request->type_id;
         $product->save();
-dd($request->color);
+
         $attributes = [
             ['class' => Weight::class, 'value' => $request->weight],
             ['class' => Price::class, 'value' => $request->price],

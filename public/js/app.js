@@ -17725,18 +17725,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ FormWithoutNativeValidationExample)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Select/Select.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.js");
-/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Form/Form.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/FormLayout/FormLayout.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/TextField/TextField.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Select/Select.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/ColorPicker/ColorPicker.js");
+/* harmony import */ var _shopify_polaris__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shopify/polaris */ "./node_modules/@shopify/polaris/dist/esm/components/Button/Button.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -17754,38 +17760,38 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function FormWithoutNativeValidationExample() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       name = _useState2[0],
       setName = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('1'),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('1'),
       _useState4 = _slicedToArray(_useState3, 2),
       selected = _useState4[0],
       setSelected = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState6 = _slicedToArray(_useState5, 2),
-      textFieldValue = _useState6[0],
-      setTextFieldValue = _useState6[1]; //const [color, setColor] = useState('');
+      price = _useState6[0],
+      setPrice = _useState6[1]; //const [color, setColor] = useState('');
 
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState8 = _slicedToArray(_useState7, 2),
       weight = _useState8[0],
       setWeight = _useState8[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState10 = _slicedToArray(_useState9, 2),
       sim = _useState10[0],
       setSim = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState12 = _slicedToArray(_useState11, 2),
       video = _useState12[0],
       setVideo = _useState12[1];
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     hue: 120,
     brightness: 1,
     saturation: 1
@@ -17795,32 +17801,32 @@ function FormWithoutNativeValidationExample() {
       setColor = _useState14[1]; //========State-validation==========================
 
 
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState16 = _slicedToArray(_useState15, 2),
       nameVal = _useState16[0],
       setNameVal = _useState16[1];
 
-  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState18 = _slicedToArray(_useState17, 2),
       priceVal = _useState18[0],
       setPriceVal = _useState18[1];
 
-  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState20 = _slicedToArray(_useState19, 2),
       colorVal = _useState20[0],
       setColorVal = _useState20[1];
 
-  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState22 = _slicedToArray(_useState21, 2),
       weightVal = _useState22[0],
       setWeightVal = _useState22[1];
 
-  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState24 = _slicedToArray(_useState23, 2),
       videoVal = _useState24[0],
       setVideoVal = _useState24[1];
 
-  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState26 = _slicedToArray(_useState25, 2),
       simVal = _useState26[0],
       setSimVal = _useState26[1]; //==================================================
@@ -17840,178 +17846,188 @@ function FormWithoutNativeValidationExample() {
   //=======Контент=======================
 
   function content(cont) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
       className: "block__form-wrap"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
       className: "block__product"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_2__.Form, {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.Form, {
       noValidate: true,
       id: "sendProduct",
       onSubmit: handleSubmit
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_3__.FormLayout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.FormLayout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
       value: name,
-      onChange: handleUrlChange,
+      onChange: setName,
       label: "\u0418\u043C\u044F \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0430",
       type: "text",
       name: "name",
       id: "nameProduct",
       error: nameVal,
       onBlur: handleValidUrlChange
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.Select, {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.Select, {
       label: "\u0422\u0438\u043F \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u0430",
       options: options,
-      onChange: handleSelectChange,
+      onChange: setSelected,
       value: selected,
       name: "type",
       id: "typeProduct"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
       label: "\u0426\u0435\u043D\u0430",
       type: "number",
-      value: textFieldValue,
-      onChange: handleTextFieldChange,
+      value: price,
+      onChange: setPrice,
       prefix: "$",
       name: "price",
       error: priceVal,
       id: "priceProduct",
       onBlur: handleValidTextFieldChange
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
       label: "\u0412\u0435\u0441",
       type: "number",
       value: weight,
-      onChange: handleWeightChange,
+      onChange: setWeight,
       suffix: "\u0433\u0440.",
       name: "weight",
       id: "weightProduct",
       error: weightVal,
       onBlur: handleValidWeightChange
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_6__.ColorPicker, {
-      onChange: handleChange,
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.ColorPicker, {
+      onChange: setColor,
       color: color,
       id: "color"
-    }), cont, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_7__.Button, {
+    }), cont, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_8__.Button, {
       submit: true
     }, "\u0417\u0430\u043D\u0435\u0441\u0442\u0438 \u0432 \u0431\u0430\u0437\u0443")))));
   } //==================================================
   //=======События при отправке=======================
 
 
-  var handleSubmit = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (_event) {
-    _event.preventDefault();
+  var handleSubmit = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(_event) {
+      var formId, formData, countField, _iterator, _step, pair, videocardValueForm, dualsimValueForm, typeValueForm, colorValueForm, response;
 
-    var formId = _event.target;
-    var formData = new FormData(formId);
-    var countField = 0;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _event.preventDefault();
 
-    var _iterator = _createForOfIteratorHelper(formData.entries()),
-        _step;
+              formId = _event.target;
+              formData = new FormData(formId);
+              countField = 0;
+              _iterator = _createForOfIteratorHelper(formData.entries());
 
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var pair = _step.value;
-        console.log(_typeof(pair[1]));
+              try {
+                for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                  pair = _step.value;
 
-        if (pair[1] === '') {
-          countField++;
+                  if (pair[1] === '') {
+                    countField++;
+                  }
+                }
+              } catch (err) {
+                _iterator.e(err);
+              } finally {
+                _iterator.f();
+              }
+
+              if (!(countField > 0)) {
+                _context.next = 10;
+                break;
+              }
+
+              alert('Заполните все поля');
+              _context.next = 33;
+              break;
+
+            case 10:
+              videocardValueForm = '-';
+              dualsimValueForm = '-';
+              typeValueForm = selected;
+              colorValueForm = Math.round(color.hue) + ', ' + Math.round(color.brightness * 100) + '%, ' + Math.round(color.saturation * 100) + '%';
+
+              if (typeValueForm === '2') {
+                videocardValueForm = video;
+              }
+
+              if (typeValueForm === '3') {
+                dualsimValueForm = sim;
+              }
+
+              _context.prev = 16;
+              _context.next = 19;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().post('api/products', {
+                name: name,
+                weight: weight,
+                color: colorValueForm,
+                price: price,
+                dualsim: dualsimValueForm,
+                videocard: videocardValueForm,
+                type_id: selected
+              });
+
+            case 19:
+              response = _context.sent;
+              alert('Продукт успешно добавлен!!!');
+
+              _event.target.reset();
+
+              setName('');
+              setPrice('');
+              setColor('');
+              setWeight('');
+              setSim('');
+              setVideo('');
+              _context.next = 33;
+              break;
+
+            case 30:
+              _context.prev = 30;
+              _context.t0 = _context["catch"](16);
+              console.log(_context.t0);
+
+            case 33:
+            case "end":
+              return _context.stop();
+          }
         }
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
+      }, _callee, null, [[16, 30]]);
+    }));
 
-    if (countField > 0) {
-      alert('Заполните все поля');
-    } else {
-      var videocardValueForm = '-';
-      var dualsimValueForm = '-';
-
-      var nameValueForm = _event.target.querySelector('#nameProduct').getAttribute('value');
-
-      var typeValueForm = _event.target.querySelector('#typeProduct').value;
-
-      console.log(_event.target.querySelector('#typeProduct').value);
-
-      var priceValueForm = _event.target.querySelector('#priceProduct').getAttribute('value');
-
-      var weightValueForm = _event.target.querySelector('#weightProduct').getAttribute('value');
-
-      var colorValueForm = color.hue + ', ' + color.brightness * 100 + '%, ' + color.saturation * 100 + '%';
-      console.log(colorValueForm);
-
-      if (typeValueForm === '2') {
-        videocardValueForm = _event.target.querySelector('#videocardProduct').value;
-      }
-
-      if (typeValueForm === '3') {
-        dualsimValueForm = _event.target.querySelector('#dualsimProduct').value;
-      }
-
-      console.log(typeValueForm);
-      axios__WEBPACK_IMPORTED_MODULE_1___default().post('api/products', {
-        name: nameValueForm,
-        weight: weightValueForm,
-        color: colorValueForm,
-        price: priceValueForm,
-        dualsim: dualsimValueForm,
-        videocard: videocardValueForm,
-        type_id: typeValueForm
-      }).then(function (response) {
-        alert('Продукт успешно добавлен!!!');
-        console.log(_event.target);
-
-        _event.target.reset();
-
-        setName('');
-        setTextFieldValue('');
-        setColor('');
-        setWeight('');
-        setSim('');
-        setVideo('');
-      })["catch"](function (error) {
-        return console.log(error);
-      });
-    }
-  }, []); //==================================================
+    return function handleSubmit(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }(); //==================================================
   //=======События при изменение форм=================
-
-  var handleSelectChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    return setSelected(value);
-  }, []);
-  var handleUrlChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    return setName(value);
-  }, []);
-  var handleTextFieldChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    return setTextFieldValue(value);
-  }, []); //const handleColorChange = useCallback((value) => setColor(value),[],);
-
-  var handleWeightChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    return setWeight(value);
-  }, []);
-  var handleSimChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    return setSim(value);
-  }, []);
-  var handleVideoChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    return setVideo(value);
-  }, []);
-  var handleChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    //console.log(document.querySelector('#color'));
-    console.log(value);
-    setColor(value); //console.log(color)
-  }, []); //==================================================
+  // const handleSelectChange = useCallback((value) => {
+  //     console.log(value)
+  //     setSelected(value)}, []);
+  // const handleUrlChange = useCallback((value) => setName(value), []);
+  // const handleTextFieldChange = useCallback((value) => setTextFieldValue(value),[],);
+  // //const handleColorChange = useCallback((value) => setColor(value),[],);
+  // const handleWeightChange = useCallback((value) => setWeight(value),[],);
+  // const handleSimChange = useCallback((value) => setSim(value), []);
+  // const handleVideoChange = useCallback((value) => setVideo(value), []);
+  // const handleChange = useCallback((value) => {
+  //     //console.log(document.querySelector('#color'));
+  //     console.log(value);
+  //     setColor(value);
+  //     //console.log(color)
+  // }, []);
+  //==================================================
   //=======События валидации=================
 
-  var handleValidSelectChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+
+  var handleValidSelectChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (value) {
     return setSelected(value);
   }, []);
-  var handleValidUrlChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+  var handleValidUrlChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (value) {
     if (!value.target.value.match(/^.{1,50}$/)) {
       setNameVal("Максимальная длина 50 символов");
     } else {
       setNameVal("");
     }
   }, []);
-  var handleValidTextFieldChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+  var handleValidTextFieldChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (value) {
     if (!value.target.value.match(/^.{1,10}$/)) {
       setPriceVal("Максимальная длина 10 символов ");
     } else {
@@ -18023,21 +18039,21 @@ function FormWithoutNativeValidationExample() {
   //     }else{
   //         setColorVal("")}},[],);
 
-  var handleValidWeightChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+  var handleValidWeightChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (value) {
     if (!value.target.value.match(/^.{1,10}$/)) {
       setWeightVal("Максимальная длина 10 символов ");
     } else {
       setWeightVal("");
     }
   }, []);
-  var handleValidSimChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+  var handleValidSimChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (value) {
     if (!value.target.value.match(/^.?$/)) {
       setSimVal("Максимальная длина 1 символ ");
     } else {
       setSimVal("");
     }
   }, []);
-  var handleValidVideoChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+  var handleValidVideoChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function (value) {
     if (!value.target.value.match(/^.{1,50}$/)) {
       setVideoVal("Максимальная длина 50 символов");
     } else {
@@ -18046,22 +18062,22 @@ function FormWithoutNativeValidationExample() {
   }, []); //==================================================
   //=======Сим и видео поля=================
 
-  var contentSim = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+  var contentSim = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
     label: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u0438\u043C-\u043A\u0430\u0440\u0442",
     type: "number",
-    value: sim,
-    onChange: handleSimChange,
+    value: simVal,
+    onChange: setSimVal,
     id: "dualsimProduct",
-    name: "sim",
-    error: simVal,
+    name: "sim" //error={simVal}
+    ,
     onBlur: handleValidSimChange
   });
-  var contentVideo = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_4__.TextField, {
+  var contentVideo = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_shopify_polaris__WEBPACK_IMPORTED_MODULE_5__.TextField, {
     label: "\u0412\u0438\u0434\u0435\u043E\u043A\u0430\u0440\u0442\u0430",
     type: "text",
-    value: video,
+    value: videoVal,
     id: "videocardProduct",
-    onChange: handleVideoChange,
+    onChange: setVideoVal,
     name: "video",
     error: videoVal,
     onBlur: handleValidVideoChange
@@ -18369,13 +18385,14 @@ function DataTableExample() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
       className: "block__color",
       style: {
-        backgroundColor: 'hsl(100,100%,25%)'
+        backgroundColor: 'hsl(' + products[item].Color + ')'
       }
     })), products[item].Dualsim, products[item].Videocard, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
       onClick: deleteProduct,
       value: products[item].Id
     }, "Delete")];
     rows.push(_arr3);
+    console.log('hsl(' + products[item].Color + ')');
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
