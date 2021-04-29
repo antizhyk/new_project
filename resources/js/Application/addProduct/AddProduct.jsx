@@ -167,8 +167,9 @@ export default function FormWithoutNativeValidationExample() {
     const handleSimChange = useCallback((value) => setSim(value), []);
     const handleVideoChange = useCallback((value) => setVideo(value), []);
     const handleChange = useCallback((value) => {
-        console.log(document.querySelector('#color'));
-        setColor(value)
+        //console.log(document.querySelector('#color'));
+        console.log(value);
+        setColor(value);
         //console.log(color)
     }, []);
     //==================================================

@@ -17995,7 +17995,8 @@ function FormWithoutNativeValidationExample() {
     return setVideo(value);
   }, []);
   var handleChange = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
-    console.log(document.querySelector('#color'));
+    //console.log(document.querySelector('#color'));
+    console.log(value);
     setColor(value); //console.log(color)
   }, []); //==================================================
   //=======События валидации=================
